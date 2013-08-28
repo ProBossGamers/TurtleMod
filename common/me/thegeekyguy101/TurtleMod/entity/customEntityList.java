@@ -211,5 +211,6 @@ public class customEntityList
         addMapping(EntityTurtle.class, "Turtle", 351, 0x6F9DD1, 0x7AD16F);
         addMapping(EntityZombieTurtle.class, "ZombieTurtle", 352, 0x6F9DD1, 0x7AD16F);
         addMapping(EntityMineTurtle.class, "MineTurtle", 353, 0x6F9DD1, 0x7AD16F);
+        addMapping(EntityHelloGuy.class, "HelloGuy", 354, 0x6F9DD1, 0x7AD16F);
     }
 }

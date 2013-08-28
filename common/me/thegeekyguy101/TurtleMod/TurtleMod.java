@@ -1,6 +1,7 @@
 //IDK what this is for
 package me.thegeekyguy101.TurtleMod;
 
+import me.thegeekyguy101.TurtleMod.entity.EntityHelloGuy;
 import me.thegeekyguy101.TurtleMod.entity.EntityMineTurtle;
 import me.thegeekyguy101.TurtleMod.entity.EntityTurtle;
 import me.thegeekyguy101.TurtleMod.entity.EntityZombieTurtle;
@@ -174,12 +175,14 @@ public class TurtleMod {
 				"ZombieTurtle", 2);
 		EntityRegistry.registerGlobalEntityID(EntityMineTurtle.class,
 				"MineTurtle", 3);
+		EntityRegistry.registerGlobalEntityID(EntityHelloGuy.class, "HelloGuy", 4);
 		EntityRegistry.addSpawn(EntityTurtle.class, 10, 2, 4,
 				EnumCreatureType.creature);
 		EntityRegistry.addSpawn(EntityZombieTurtle.class, 10, 2, 4,
 				EnumCreatureType.monster);
 		EntityRegistry.addSpawn(EntityMineTurtle.class, 10, 2, 4,
 				EnumCreatureType.monster);
+		EntityRegistry.addSpawn(EntityHelloGuy.class, 10, 2, 4, EnumCreatureType.creature);
 		// registerEntityEgg(EntityTurtle.class, 0x6F9DD1, 0x7AD16F);
 		LanguageRegistry.instance().addStringLocalization("entity.Turtle.name",
 				"Turtle");
@@ -187,6 +190,8 @@ public class TurtleMod {
 				"entity.ZombieTurtle.name", "Zombie Turtle");
 		LanguageRegistry.instance().addStringLocalization(
 				"entity.MineTurtle.name", "Mine Turtle");
+		LanguageRegistry.instance().addStringLocalization(
+				"entity.HelloGuy.name", "Hello Guy");
 
 	}
 }

@@ -3,6 +3,7 @@ package me.thegeekyguy101.TurtleMod.entity;
 import me.thegeekyguy101.TurtleMod.TurtleMod;
 import me.thegeekyguy101.TurtleMod.entity.ai.EntityAIMineTurtleSwell;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIAvoidEntity;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
@@ -51,7 +52,15 @@ public class EntityMineTurtle extends EntityMob
         this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
         this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, false));
     }
-
+    
+    protected void func_110147_ax()
+    {
+        super.func_110147_ax();
+        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(20.0D);
+        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.20000000298023224D);
+        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(3.0D);
+    }
+    
     /**
      * Returns true if the newer Entity AI code should be run
      */
