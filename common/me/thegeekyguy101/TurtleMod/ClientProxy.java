@@ -1,15 +1,19 @@
 package me.thegeekyguy101.TurtleMod;
 
+import me.thegeekyguy101.TurtleMod.entity.EntityDonatello;
 import me.thegeekyguy101.TurtleMod.entity.EntityHelloGuy;
 import me.thegeekyguy101.TurtleMod.entity.EntityLeonardo;
+import me.thegeekyguy101.TurtleMod.entity.EntityMichelangelo;
 import me.thegeekyguy101.TurtleMod.entity.EntityMineTurtle;
 import me.thegeekyguy101.TurtleMod.entity.EntityRaphael;
 import me.thegeekyguy101.TurtleMod.entity.EntityTurtle;
 import me.thegeekyguy101.TurtleMod.entity.EntityZombieTurtle;
 import me.thegeekyguy101.TurtleMod.model.ModelMineTurtle;
 import me.thegeekyguy101.TurtleMod.model.ModelTurtle;
+import me.thegeekyguy101.TurtleMod.render.RenderDonatello;
 import me.thegeekyguy101.TurtleMod.render.RenderHelloGuy;
 import me.thegeekyguy101.TurtleMod.render.RenderLeonardo;
+import me.thegeekyguy101.TurtleMod.render.RenderMichelangelo;
 import me.thegeekyguy101.TurtleMod.render.RenderMineTurtle;
 import me.thegeekyguy101.TurtleMod.render.RenderRaphael;
 import me.thegeekyguy101.TurtleMod.render.RenderTurtle;
@@ -28,6 +32,8 @@ public class ClientProxy extends ServerProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityHelloGuy.class, new RenderHelloGuy(new ModelBiped(), 0.3F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityLeonardo.class, new RenderLeonardo(new ModelBiped(), 0.3F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityRaphael.class, new RenderRaphael(new ModelBiped(), 0.3F));
+		RenderingRegistry.registerEntityRenderingHandler(EntityDonatello.class, new RenderDonatello(new ModelBiped(), 0.3F));
+		RenderingRegistry.registerEntityRenderingHandler(EntityMichelangelo.class, new RenderMichelangelo(new ModelBiped(), 0.3F));
 	}
 	
 	@Override
