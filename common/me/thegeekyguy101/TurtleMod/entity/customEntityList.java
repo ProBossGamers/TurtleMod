@@ -212,5 +212,9 @@ public class customEntityList
         addMapping(EntityZombieTurtle.class, "ZombieTurtle", 352, 0x6F9DD1, 0x7AD16F);
         addMapping(EntityMineTurtle.class, "MineTurtle", 353, 0x6F9DD1, 0x7AD16F);
         addMapping(EntityHelloGuy.class, "HelloGuy", 354, 0x6F9DD1, 0x7AD16F);
+        addMapping(EntityLeonardo.class, "Leonardo", 355, 0x6F9DD1, 0x7AD16F);
+        addMapping(EntityRaphael.class, "Raphael", 356, 0x6F9DD1, 0x7AD16F);
+        addMapping(EntityDonatello.class, "Donatello", 357, 0x6F9DD1, 0x7AD16F);
+        addMapping(EntityDonatello.class, "Michelangelo", 358, 0x6F9DD1, 0x7AD16F);
     }
 }

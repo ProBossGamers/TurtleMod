@@ -1,8 +1,11 @@
-//IDK what this is for
 package me.thegeekyguy101.TurtleMod;
 
+import me.thegeekyguy101.TurtleMod.entity.EntityDonatello;
 import me.thegeekyguy101.TurtleMod.entity.EntityHelloGuy;
+import me.thegeekyguy101.TurtleMod.entity.EntityLeonardo;
+import me.thegeekyguy101.TurtleMod.entity.EntityMichelangelo;
 import me.thegeekyguy101.TurtleMod.entity.EntityMineTurtle;
+import me.thegeekyguy101.TurtleMod.entity.EntityRaphael;
 import me.thegeekyguy101.TurtleMod.entity.EntityTurtle;
 import me.thegeekyguy101.TurtleMod.entity.EntityZombieTurtle;
 import me.thegeekyguy101.TurtleMod.item.ItemTMNTrecord;
@@ -101,15 +104,15 @@ public class TurtleMod {
 		int renderTurtleArmor = proxy.addArmor("turtle");
 		int renderShell = proxy.addArmor("shell");
 
-		recordTMNT80 = new ItemTMNTrecord(1012, "turtlemod:TMNT80", "TMNT80")
+		recordTMNT80 = new ItemTMNTrecord(1006, "turtlemod:TMNT80", "TMNT80")
 				.setUnlocalizedName("TMNT80").func_111206_d("turtlemod:TMNT80");
-		recordTMNT2003 = new ItemTMNTrecord(1013, "turtlemod:TMNT2003",
+		recordTMNT2003 = new ItemTMNTrecord(1007, "turtlemod:TMNT2003",
 				"TMNT2003").setUnlocalizedName("TMNT2003").func_111206_d(
 				"turtlemod:TMNT2003");
-		recordTMNT2012 = new ItemTMNTrecord(1022, "turtlemod:TMNT2012",
+		recordTMNT2012 = new ItemTMNTrecord(1008, "turtlemod:TMNT2012",
 				"TMNT2012").setUnlocalizedName("TMNT2012").func_111206_d(
 				"turtlemod:TMNT2012");
-		recordMineturtle = new ItemTMNTrecord(1025, "turtlemod:mineturtle",
+		recordMineturtle = new ItemTMNTrecord(1009, "turtlemod:mineturtle",
 				"mineturtle").setUnlocalizedName("mineturtle").func_111206_d(
 				"turtlemod:mineturtle");
 
@@ -119,28 +122,28 @@ public class TurtleMod {
 		LanguageRegistry.addName(recordMineturtle, "Mine Turtle");
 
 		// Turtle Leather
-		Turtleleather = new ItemTurtleLeather(1007)
+		Turtleleather = new ItemTurtleLeather(1000)
 				.setUnlocalizedName("turtlemod:turtleLeather");
 		LanguageRegistry.addName(Turtleleather, "Turtle Leather");
 
 		// Turtle Shell
-		turtleShell = new ItemTurtleShell(1014, turtleArmor, renderShell, 1)
+		turtleShell = new ItemTurtleShell(1001, turtleArmor, renderShell, 1)
 				.setUnlocalizedName("turtleShell").setCreativeTab(
 						this.turtleTab);
 		GameRegistry.registerItem(turtleShell, "turtleShell");
 		LanguageRegistry.addName(turtleShell, "Turtle Shell");
 
 		// Armor
-		turtleHelmet = new ItemTurtleHelmet(1008, turtleArmor,
+		turtleHelmet = new ItemTurtleHelmet(1002, turtleArmor,
 				renderTurtleArmor, 0).setUnlocalizedName("turtleHelmet")
 				.setCreativeTab(this.turtleTab);
-		turtleChestplate = new ItemTurtleChestplate(1009, turtleArmor,
+		turtleChestplate = new ItemTurtleChestplate(1003, turtleArmor,
 				renderTurtleArmor, 1).setUnlocalizedName("turtleChestplate")
 				.setCreativeTab(this.turtleTab);
-		turtleLeggings = new ItemTurtleLeggings(1010, turtleArmor,
+		turtleLeggings = new ItemTurtleLeggings(1004, turtleArmor,
 				renderTurtleArmor, 2).setUnlocalizedName("turtleLeggings")
 				.setCreativeTab(this.turtleTab);
-		turtleBoots = new ItemTurtleBoots(1011, turtleArmor, renderTurtleArmor,
+		turtleBoots = new ItemTurtleBoots(1005, turtleArmor, renderTurtleArmor,
 				3).setUnlocalizedName("turtleBoots").setCreativeTab(
 				this.turtleTab);
 		GameRegistry.registerItem(turtleHelmet, "turtleHelmet");
@@ -161,7 +164,7 @@ public class TurtleMod {
 				"T T", "T T", 'T', Turtleleather });
 
 		// Custom spawn egg for custom creative tab
-		customSpawnEgg = new customSpawnEgg(1015)
+		customSpawnEgg = new customSpawnEgg(1020)
 				.setUnlocalizedName("customSpawnEgg")
 				.func_111206_d("turtlemod:customSpawnEgg")
 				.setCreativeTab(this.turtleTab);
@@ -176,6 +179,10 @@ public class TurtleMod {
 		EntityRegistry.registerGlobalEntityID(EntityMineTurtle.class,
 				"MineTurtle", 3);
 		EntityRegistry.registerGlobalEntityID(EntityHelloGuy.class, "HelloGuy", 4);
+		EntityRegistry.registerGlobalEntityID(EntityLeonardo.class, "Leonardo", 5);
+		EntityRegistry.registerGlobalEntityID(EntityRaphael.class, "Raphael", 6);
+		EntityRegistry.registerGlobalEntityID(EntityDonatello.class, "Donatello", 7);
+		EntityRegistry.registerGlobalEntityID(EntityMichelangelo.class, "Michelangelo", 8);
 		EntityRegistry.addSpawn(EntityTurtle.class, 10, 2, 4,
 				EnumCreatureType.creature);
 		EntityRegistry.addSpawn(EntityZombieTurtle.class, 10, 2, 4,
@@ -183,6 +190,14 @@ public class TurtleMod {
 		EntityRegistry.addSpawn(EntityMineTurtle.class, 10, 2, 4,
 				EnumCreatureType.monster);
 		EntityRegistry.addSpawn(EntityHelloGuy.class, 10, 2, 4, EnumCreatureType.creature);
+		EntityRegistry.addSpawn(EntityLeonardo.class, 10, 2, 4,
+				EnumCreatureType.monster);
+		EntityRegistry.addSpawn(EntityRaphael.class, 10, 2, 4,
+				EnumCreatureType.monster);
+		EntityRegistry.addSpawn(EntityDonatello.class, 10, 2, 4,
+				EnumCreatureType.monster);
+		EntityRegistry.addSpawn(EntityMichelangelo.class, 10, 2, 4,
+				EnumCreatureType.monster);
 		// registerEntityEgg(EntityTurtle.class, 0x6F9DD1, 0x7AD16F);
 		LanguageRegistry.instance().addStringLocalization("entity.Turtle.name",
 				"Turtle");
@@ -192,6 +207,10 @@ public class TurtleMod {
 				"entity.MineTurtle.name", "Mine Turtle");
 		LanguageRegistry.instance().addStringLocalization(
 				"entity.HelloGuy.name", "Hello Guy");
+		LanguageRegistry.instance().addStringLocalization("entity.Leonardo.name", "Leonardo");
+		LanguageRegistry.instance().addStringLocalization("entity.Raphael.name", "Raphael");
+		LanguageRegistry.instance().addStringLocalization("entity.Donatello.name", "Donatello");
+		LanguageRegistry.instance().addStringLocalization("entity.Michelangelo.name", "Michelangelo");
 
 	}
 }
