@@ -40,7 +40,7 @@ public class EntityHelloGuy extends EntityAnimal {
      */
     protected String getLivingSound()
     {
-        return "";
+        return "turtlemod:mob.helloGuy.hg";
     }
 
     /**

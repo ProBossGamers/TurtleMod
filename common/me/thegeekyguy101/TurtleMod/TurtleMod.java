@@ -8,6 +8,7 @@ import me.thegeekyguy101.TurtleMod.entity.EntityMineTurtle;
 import me.thegeekyguy101.TurtleMod.entity.EntityRaphael;
 import me.thegeekyguy101.TurtleMod.entity.EntityTurtle;
 import me.thegeekyguy101.TurtleMod.entity.EntityZombieTurtle;
+import me.thegeekyguy101.TurtleMod.entity.customEntityList;
 import me.thegeekyguy101.TurtleMod.item.ItemTMNTrecord;
 import me.thegeekyguy101.TurtleMod.item.ItemTurtleBoots;
 import me.thegeekyguy101.TurtleMod.item.ItemTurtleChestplate;
@@ -70,15 +71,15 @@ public class TurtleMod {
 	public static int getUniqueEntityId() {
 		do {
 			startEntityId++;
-		} while (EntityList.getStringFromID(startEntityId) != null);
+		} while (customEntityList.getStringFromID(startEntityId) != null);
 		return startEntityId++;
 	}
 
 	public static void registerEntityEgg(Class<? extends Entity> entity,
 			int primaryColor, int secondaryColor) {
 		int id = getUniqueEntityId();
-		EntityList.IDtoClassMapping.put(id, entity);
-		EntityList.entityEggs.put(id, new EntityEggInfo(id, primaryColor,
+		customEntityList.IDtoClassMapping.put(id, entity);
+		customEntityList.entityEggs.put(id, new EntityEggInfo(id, primaryColor,
 				secondaryColor));
 	}
 
