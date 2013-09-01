@@ -215,6 +215,7 @@ public class customEntityList
         addMapping(EntityLeonardo.class, "Leonardo", 355, 0x6F9DD1, 0x7AD16F);
         addMapping(EntityRaphael.class, "Raphael", 356, 0x6F9DD1, 0x7AD16F);
         addMapping(EntityDonatello.class, "Donatello", 357, 0x6F9DD1, 0x7AD16F);
-        addMapping(EntityDonatello.class, "Michelangelo", 358, 0x6F9DD1, 0x7AD16F);
+        addMapping(EntityMichelangelo.class, "Michelangelo", 358, 0x6F9DD1, 0x7AD16F);
+        
     }
 }
