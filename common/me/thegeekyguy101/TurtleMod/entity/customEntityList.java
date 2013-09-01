@@ -208,14 +208,14 @@ public class customEntityList
         addMapping(EntityItem.class, "Item", 1);
         addMapping(EntityLiving.class, "Mob", 48);
         addMapping(EntityMob.class, "Monster", 49);
-        addMapping(EntityTurtle.class, "Turtle", 351, 0x6F9DD1, 0x7AD16F);
-        addMapping(EntityZombieTurtle.class, "ZombieTurtle", 352, 0x6F9DD1, 0x7AD16F);
-        addMapping(EntityMineTurtle.class, "MineTurtle", 353, 0x6F9DD1, 0x7AD16F);
-        addMapping(EntityHelloGuy.class, "HelloGuy", 354, 0x6F9DD1, 0x7AD16F);
-        addMapping(EntityLeonardo.class, "Leonardo", 355, 0x6F9DD1, 0x7AD16F);
-        addMapping(EntityRaphael.class, "Raphael", 356, 0x6F9DD1, 0x7AD16F);
-        addMapping(EntityDonatello.class, "Donatello", 357, 0x6F9DD1, 0x7AD16F);
-        addMapping(EntityMichelangelo.class, "Michelangelo", 358, 0x6F9DD1, 0x7AD16F);
+        addMapping(EntityTurtle.class, "Turtle", 351, 0x1e8100, 0x7d3900);
+        addMapping(EntityZombieTurtle.class, "ZombieTurtle", 352, 0x008344, 0x823F02);
+        addMapping(EntityMineTurtle.class, "MineTurtle", 353, 0x1e8100, 0xef0000);
+        addMapping(EntityHelloGuy.class, "HelloGuy", 354, 0xffffff, 0xf90000);
+        addMapping(EntityLeonardo.class, "Leonardo", 355, 0x1e8100, 0x002dff);
+        addMapping(EntityRaphael.class, "Raphael", 356, 0x1e8100, 0xec0100);
+        addMapping(EntityDonatello.class, "Donatello", 357, 0x1e8100, 0x640087);
+        addMapping(EntityMichelangelo.class, "Michelangelo", 358, 0x1e8100, 0xff6900);
         
     }
 }
