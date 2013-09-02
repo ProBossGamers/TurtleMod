@@ -72,7 +72,7 @@ public class EntityRaphael extends EntityMob {
 	 * Returns the sound this mob makes while it's alive.
 	 */
 	protected String getLivingSound() {
-		return "turtlemod:mob.turtle.living";
+		return "turtlemod:mob.TMNT.Raphael.raph";
 	}
 
 	/**
