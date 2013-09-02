@@ -14,9 +14,11 @@ public class SoundHandler {
 		event.manager.addSound("turtlemod:mob/turtle/hurt.ogg");
 		event.manager.addSound("turtlemod:mob/turtle/death.ogg");
 		
-		event.manager.soundPoolSounds.getRandomSoundFromSoundPool("turtlemod:mob/helloGuy/hg.ogg");
+		event.manager.addSound("turtlemod:mob/helloGuy/hg0.ogg");
+		event.manager.addSound("turtlemod:mob/helloGuy/hg1.ogg");
+		event.manager.addSound("turtlemod:mob/helloGuy/hg2.ogg");
+		event.manager.addSound("turtlemod:mob/helloGuy/hgh0.ogg");
 		event.manager.addSound("turtlemod:mob/helloGuy/hgh1.ogg");
-		event.manager.addSound("turtlemod:mob/helloGuy/hgh2.ogg");
 		event.manager.addSound("turtlemod:mob/helloGuy/hgd.ogg");
 		
 		event.manager.soundPoolStreaming.addSound("turtlemod:TMNT80.ogg");

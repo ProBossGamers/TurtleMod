@@ -1,5 +1,7 @@
 package me.thegeekyguy101.TurtleMod.entity;
 
+import java.util.Random;
+
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAvoidEntity;
@@ -38,7 +40,7 @@ public class EntityHelloGuy extends EntityAnimal {
     /**
      * Returns the sound this mob makes while it's alive.
      */
-    protected String getLivingSound()
+   	public String getLivingSound()
     {
         return "turtlemod:mob.helloGuy.hg";
     }
@@ -48,7 +50,7 @@ public class EntityHelloGuy extends EntityAnimal {
      */
     protected String getHurtSound()
     {
-        return "";
+        return "turtlemod:mob.helloGuy.hgh";
     }
 
     /**
@@ -56,7 +58,7 @@ public class EntityHelloGuy extends EntityAnimal {
      */
     protected String getDeathSound()
     {
-        return "";
+        return "turtlemod:mob.helloGuy.hgd";
     }
     
 	@Override
