@@ -9,3 +9,5 @@
 *.ear
 
 no github
+build
+release
