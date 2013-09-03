@@ -1,4 +1,4 @@
-package me.thegeekyguy101.TurtleMod.entity;
+package me.thegeekyguy101.TurtleMod.entity.monster;
 
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;

@@ -1,7 +1,7 @@
-package me.thegeekyguy101.TurtleMod.render;
+package me.thegeekyguy101.TurtleMod.client.renderer.entity;
 
-import me.thegeekyguy101.TurtleMod.entity.EntityZombieTurtle;
-import me.thegeekyguy101.TurtleMod.model.ModelTurtle;
+import me.thegeekyguy101.TurtleMod.client.model.ModelTurtle;
+import me.thegeekyguy101.TurtleMod.entity.monster.EntityZombieTurtle;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;

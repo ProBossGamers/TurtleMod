@@ -5,6 +5,14 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
+import me.thegeekyguy101.TurtleMod.entity.monster.EntityDonatello;
+import me.thegeekyguy101.TurtleMod.entity.monster.EntityLeonardo;
+import me.thegeekyguy101.TurtleMod.entity.monster.EntityMichelangelo;
+import me.thegeekyguy101.TurtleMod.entity.monster.EntityMineTurtle;
+import me.thegeekyguy101.TurtleMod.entity.monster.EntityRaphael;
+import me.thegeekyguy101.TurtleMod.entity.monster.EntityZombieTurtle;
+import me.thegeekyguy101.TurtleMod.entity.passive.EntityHelloGuy;
+import me.thegeekyguy101.TurtleMod.entity.passive.EntityTurtle;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityEggInfo;
 import net.minecraft.entity.EntityLiving;

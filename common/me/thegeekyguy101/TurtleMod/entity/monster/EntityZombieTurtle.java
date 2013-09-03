@@ -1,4 +1,4 @@
-package me.thegeekyguy101.TurtleMod.entity;
+package me.thegeekyguy101.TurtleMod.entity.monster;
 
 import me.thegeekyguy101.TurtleMod.TurtleMod;
 import net.minecraft.entity.SharedMonsterAttributes;

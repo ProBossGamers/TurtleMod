@@ -1,5 +1,7 @@
-package me.thegeekyguy101.TurtleMod.entity;
+package me.thegeekyguy101.TurtleMod.entity.monster;
 
+import me.thegeekyguy101.TurtleMod.client.audio.SoundHandler;
+import net.minecraft.client.audio.SoundManager;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIBreakDoor;
@@ -14,6 +16,7 @@ import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
+import net.minecraftforge.client.event.sound.SoundLoadEvent;
 
 public class EntityDonatello extends EntityMob {
 
@@ -71,7 +74,7 @@ public class EntityDonatello extends EntityMob {
 	/**
 	 * Returns the sound this mob makes while it's alive.
 	 */
-	protected String getLivingSound() {
+	public String getLivingSound() {
 		return "turtlemod:mob.TMNT.Donatello.don";
 	}
 

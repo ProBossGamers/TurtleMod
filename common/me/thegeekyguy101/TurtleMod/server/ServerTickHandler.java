@@ -1,7 +1,8 @@
-package me.thegeekyguy101.TurtleMod;
+package me.thegeekyguy101.TurtleMod.server;
 
 import java.util.EnumSet;
 
+import me.thegeekyguy101.TurtleMod.TurtleMod;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;

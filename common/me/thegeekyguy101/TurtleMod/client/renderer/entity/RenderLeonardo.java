@@ -1,6 +1,6 @@
-package me.thegeekyguy101.TurtleMod.render;
+package me.thegeekyguy101.TurtleMod.client.renderer.entity;
 
-import me.thegeekyguy101.TurtleMod.entity.EntityLeonardo;
+import me.thegeekyguy101.TurtleMod.entity.monster.EntityLeonardo;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.entity.RenderLiving;

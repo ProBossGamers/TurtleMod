@@ -1,14 +1,14 @@
 package me.thegeekyguy101.TurtleMod;
 
-import me.thegeekyguy101.TurtleMod.entity.EntityDonatello;
-import me.thegeekyguy101.TurtleMod.entity.EntityHelloGuy;
-import me.thegeekyguy101.TurtleMod.entity.EntityLeonardo;
-import me.thegeekyguy101.TurtleMod.entity.EntityMichelangelo;
-import me.thegeekyguy101.TurtleMod.entity.EntityMineTurtle;
-import me.thegeekyguy101.TurtleMod.entity.EntityRaphael;
-import me.thegeekyguy101.TurtleMod.entity.EntityTurtle;
-import me.thegeekyguy101.TurtleMod.entity.EntityZombieTurtle;
 import me.thegeekyguy101.TurtleMod.entity.customEntityList;
+import me.thegeekyguy101.TurtleMod.entity.monster.EntityDonatello;
+import me.thegeekyguy101.TurtleMod.entity.monster.EntityLeonardo;
+import me.thegeekyguy101.TurtleMod.entity.monster.EntityMichelangelo;
+import me.thegeekyguy101.TurtleMod.entity.monster.EntityMineTurtle;
+import me.thegeekyguy101.TurtleMod.entity.monster.EntityRaphael;
+import me.thegeekyguy101.TurtleMod.entity.monster.EntityZombieTurtle;
+import me.thegeekyguy101.TurtleMod.entity.passive.EntityHelloGuy;
+import me.thegeekyguy101.TurtleMod.entity.passive.EntityTurtle;
 import me.thegeekyguy101.TurtleMod.item.ItemTMNTrecord;
 import me.thegeekyguy101.TurtleMod.item.ItemTurtleBoots;
 import me.thegeekyguy101.TurtleMod.item.ItemTurtleChestplate;
@@ -17,6 +17,7 @@ import me.thegeekyguy101.TurtleMod.item.ItemTurtleLeather;
 import me.thegeekyguy101.TurtleMod.item.ItemTurtleLeggings;
 import me.thegeekyguy101.TurtleMod.item.ItemTurtleShell;
 import me.thegeekyguy101.TurtleMod.item.customSpawnEgg;
+import me.thegeekyguy101.TurtleMod.server.ServerProxy;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityEggInfo;
@@ -25,6 +26,7 @@ import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.EnumHelper;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -40,7 +42,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class TurtleMod {
 
 	// Proxy stuff
-	@SidedProxy(clientSide = "me.thegeekyguy101.TurtleMod.ClientProxy", serverSide = "me.thegeekyguy101.TurtleMod.ServerProxy")
+	@SidedProxy(clientSide = "me.thegeekyguy101.TurtleMod.client.ClientProxy", serverSide = "me.thegeekyguy101.TurtleMod.server.ServerProxy")
 	public static ServerProxy proxy;
 
 	// Items
@@ -179,26 +181,64 @@ public class TurtleMod {
 				"ZombieTurtle", 2);
 		EntityRegistry.registerGlobalEntityID(EntityMineTurtle.class,
 				"MineTurtle", 3);
-		EntityRegistry.registerGlobalEntityID(EntityHelloGuy.class, "HelloGuy", 4);
-		EntityRegistry.registerGlobalEntityID(EntityLeonardo.class, "Leonardo", 5);
-		EntityRegistry.registerGlobalEntityID(EntityRaphael.class, "Raphael", 6);
-		EntityRegistry.registerGlobalEntityID(EntityDonatello.class, "Donatello", 7);
-		EntityRegistry.registerGlobalEntityID(EntityMichelangelo.class, "Michelangelo", 8);
+		EntityRegistry.registerGlobalEntityID(EntityHelloGuy.class, "HelloGuy",
+				4);
+		EntityRegistry.registerGlobalEntityID(EntityLeonardo.class, "Leonardo",
+				5);
+		EntityRegistry
+				.registerGlobalEntityID(EntityRaphael.class, "Raphael", 6);
+		EntityRegistry.registerGlobalEntityID(EntityDonatello.class,
+				"Donatello", 7);
+		EntityRegistry.registerGlobalEntityID(EntityMichelangelo.class,
+				"Michelangelo", 8);
 		EntityRegistry.addSpawn(EntityTurtle.class, 10, 2, 4,
-				EnumCreatureType.creature);
+				EnumCreatureType.creature, BiomeGenBase.beach,
+				BiomeGenBase.frozenRiver, BiomeGenBase.iceMountains,
+				BiomeGenBase.icePlains, BiomeGenBase.plains,
+				BiomeGenBase.river, BiomeGenBase.swampland, BiomeGenBase.taiga,
+				BiomeGenBase.taigaHills);
 		EntityRegistry.addSpawn(EntityZombieTurtle.class, 10, 2, 4,
-				EnumCreatureType.monster);
+				EnumCreatureType.monster, BiomeGenBase.beach,
+				BiomeGenBase.frozenRiver, BiomeGenBase.iceMountains,
+				BiomeGenBase.icePlains, BiomeGenBase.plains,
+				BiomeGenBase.river, BiomeGenBase.swampland, BiomeGenBase.taiga,
+				BiomeGenBase.taigaHills);
 		EntityRegistry.addSpawn(EntityMineTurtle.class, 10, 2, 4,
-				EnumCreatureType.monster);
-		EntityRegistry.addSpawn(EntityHelloGuy.class, 10, 2, 4, EnumCreatureType.creature);
-		EntityRegistry.addSpawn(EntityLeonardo.class, 10, 2, 4,
-				EnumCreatureType.monster);
-		EntityRegistry.addSpawn(EntityRaphael.class, 10, 2, 4,
-				EnumCreatureType.monster);
-		EntityRegistry.addSpawn(EntityDonatello.class, 10, 2, 4,
-				EnumCreatureType.monster);
-		EntityRegistry.addSpawn(EntityMichelangelo.class, 10, 2, 4,
-				EnumCreatureType.monster);
+				EnumCreatureType.monster, BiomeGenBase.beach,
+				BiomeGenBase.frozenRiver, BiomeGenBase.iceMountains,
+				BiomeGenBase.icePlains, BiomeGenBase.plains,
+				BiomeGenBase.river, BiomeGenBase.swampland, BiomeGenBase.taiga,
+				BiomeGenBase.taigaHills);
+		EntityRegistry.addSpawn(EntityHelloGuy.class, 10, 2, 4,
+				EnumCreatureType.creature, BiomeGenBase.beach,
+				BiomeGenBase.frozenRiver, BiomeGenBase.iceMountains,
+				BiomeGenBase.icePlains, BiomeGenBase.plains,
+				BiomeGenBase.river, BiomeGenBase.swampland, BiomeGenBase.taiga,
+				BiomeGenBase.taigaHills);
+		EntityRegistry.addSpawn(EntityLeonardo.class, 10, 1, 1,
+				EnumCreatureType.monster, BiomeGenBase.beach,
+				BiomeGenBase.frozenRiver, BiomeGenBase.iceMountains,
+				BiomeGenBase.icePlains, BiomeGenBase.plains,
+				BiomeGenBase.river, BiomeGenBase.swampland, BiomeGenBase.taiga,
+				BiomeGenBase.taigaHills);
+		EntityRegistry.addSpawn(EntityRaphael.class, 10, 1, 1,
+				EnumCreatureType.monster, BiomeGenBase.beach,
+				BiomeGenBase.frozenRiver, BiomeGenBase.iceMountains,
+				BiomeGenBase.icePlains, BiomeGenBase.plains,
+				BiomeGenBase.river, BiomeGenBase.swampland, BiomeGenBase.taiga,
+				BiomeGenBase.taigaHills);
+		EntityRegistry.addSpawn(EntityDonatello.class, 10, 1, 1,
+				EnumCreatureType.monster, BiomeGenBase.beach,
+				BiomeGenBase.frozenRiver, BiomeGenBase.iceMountains,
+				BiomeGenBase.icePlains, BiomeGenBase.plains,
+				BiomeGenBase.river, BiomeGenBase.swampland, BiomeGenBase.taiga,
+				BiomeGenBase.taigaHills);
+		EntityRegistry.addSpawn(EntityMichelangelo.class, 10, 1, 1,
+				EnumCreatureType.monster, BiomeGenBase.beach,
+				BiomeGenBase.frozenRiver, BiomeGenBase.iceMountains,
+				BiomeGenBase.icePlains, BiomeGenBase.plains,
+				BiomeGenBase.river, BiomeGenBase.swampland, BiomeGenBase.taiga,
+				BiomeGenBase.taigaHills);
 		// registerEntityEgg(EntityTurtle.class, 0x6F9DD1, 0x7AD16F);
 		LanguageRegistry.instance().addStringLocalization("entity.Turtle.name",
 				"Turtle");
@@ -208,10 +248,14 @@ public class TurtleMod {
 				"entity.MineTurtle.name", "Mine Turtle");
 		LanguageRegistry.instance().addStringLocalization(
 				"entity.HelloGuy.name", "Hello Guy");
-		LanguageRegistry.instance().addStringLocalization("entity.Leonardo.name", "Leonardo");
-		LanguageRegistry.instance().addStringLocalization("entity.Raphael.name", "Raphael");
-		LanguageRegistry.instance().addStringLocalization("entity.Donatello.name", "Donatello");
-		LanguageRegistry.instance().addStringLocalization("entity.Michelangelo.name", "Michelangelo");
+		LanguageRegistry.instance().addStringLocalization(
+				"entity.Leonardo.name", "Leonardo");
+		LanguageRegistry.instance().addStringLocalization(
+				"entity.Raphael.name", "Raphael");
+		LanguageRegistry.instance().addStringLocalization(
+				"entity.Donatello.name", "Donatello");
+		LanguageRegistry.instance().addStringLocalization(
+				"entity.Michelangelo.name", "Michelangelo");
 
 	}
 }

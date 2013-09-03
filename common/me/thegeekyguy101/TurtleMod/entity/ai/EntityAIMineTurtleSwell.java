@@ -1,6 +1,6 @@
 package me.thegeekyguy101.TurtleMod.entity.ai;
 
-import me.thegeekyguy101.TurtleMod.entity.EntityMineTurtle;
+import me.thegeekyguy101.TurtleMod.entity.monster.EntityMineTurtle;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.monster.EntityCreeper;

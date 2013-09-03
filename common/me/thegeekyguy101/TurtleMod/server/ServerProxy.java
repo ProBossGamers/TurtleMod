@@ -1,4 +1,4 @@
-package me.thegeekyguy101.TurtleMod;
+package me.thegeekyguy101.TurtleMod.server;
 
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.registry.TickRegistry;

@@ -1,4 +1,4 @@
-package me.thegeekyguy101.TurtleMod.entity;
+package me.thegeekyguy101.TurtleMod.entity.monster;
 
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
@@ -15,9 +15,9 @@ import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public class EntityRaphael extends EntityMob {
+public class EntityMichelangelo extends EntityMob {
 
-	public EntityRaphael(World par1World) {
+	public EntityMichelangelo(World par1World) {
 		super(par1World);
 		this.tasks.addTask(0, new EntityAISwimming(this));
 		this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityBlaze.class, 0.25F, false));
@@ -72,7 +72,7 @@ public class EntityRaphael extends EntityMob {
 	 * Returns the sound this mob makes while it's alive.
 	 */
 	protected String getLivingSound() {
-		return "turtlemod:mob.TMNT.Raphael.raph";
+		return "turtlemod:mob.TMNT.Michelangelo.mike";
 	}
 
 	/**

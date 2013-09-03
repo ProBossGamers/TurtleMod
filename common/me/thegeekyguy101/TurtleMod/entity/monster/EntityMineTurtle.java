@@ -1,7 +1,8 @@
-package me.thegeekyguy101.TurtleMod.entity;
+package me.thegeekyguy101.TurtleMod.entity.monster;
 
 import me.thegeekyguy101.TurtleMod.TurtleMod;
 import me.thegeekyguy101.TurtleMod.entity.ai.EntityAIMineTurtleSwell;
+import me.thegeekyguy101.TurtleMod.entity.passive.EntityHelloGuy;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;

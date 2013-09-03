@@ -1,4 +1,4 @@
-package me.thegeekyguy101.TurtleMod.entity;
+package me.thegeekyguy101.TurtleMod.entity.passive;
 
 import me.thegeekyguy101.TurtleMod.TurtleMod;
 import net.minecraft.entity.EntityAgeable;

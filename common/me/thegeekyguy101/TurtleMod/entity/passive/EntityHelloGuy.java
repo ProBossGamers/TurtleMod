@@ -1,7 +1,8 @@
-package me.thegeekyguy101.TurtleMod.entity;
+package me.thegeekyguy101.TurtleMod.entity.passive;
 
 import java.util.Random;
 
+import me.thegeekyguy101.TurtleMod.entity.monster.EntityMineTurtle;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAvoidEntity;
