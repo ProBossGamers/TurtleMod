@@ -58,15 +58,11 @@ public class EntityMineTurtle extends EntityMob {
 		this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, false));
 	}
 
-	protected void func_110147_ax() {
-		super.func_110147_ax();
-		this.func_110148_a(SharedMonsterAttributes.field_111267_a)
-				.func_111128_a(20.0D);
-		this.func_110148_a(SharedMonsterAttributes.field_111263_d)
-				.func_111128_a(0.20000000298023224D);
-		this.func_110148_a(SharedMonsterAttributes.field_111264_e)
-				.func_111128_a(3.0D);
-	}
+	protected void applyEntityAttributes()
+    {
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.25D);
+    }
 
 	/**
 	 * Returns true if the newer Entity AI code should be run
@@ -75,10 +71,13 @@ public class EntityMineTurtle extends EntityMob {
 		return true;
 	}
 
-	public int func_82143_as() {
-		return this.getAttackTarget() == null ? 3 : 3 + (int) (this
-				.func_110143_aJ() - 1.0F);
-	}
+	/**
+     * The number of iterations PathFinder.getSafePoint will execute before giving up.
+     */
+    public int getMaxSafePointTries()
+    {
+        return this.getAttackTarget() == null ? 3 : 3 + (int)(this.getHealth() - 1.0F);
+    }
 
 	/**
 	 * Called when the mob is falling. Calculates and applies fall damage.
@@ -90,10 +89,6 @@ public class EntityMineTurtle extends EntityMob {
 		if (this.timeSinceIgnited > this.fuseTime - 5) {
 			this.timeSinceIgnited = this.fuseTime - 5;
 		}
-	}
-
-	public int getMaxHealth() {
-		return 20;
 	}
 
 	protected void entityInit() {

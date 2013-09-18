@@ -73,15 +73,15 @@ public class TurtleMod {
 	public static int getUniqueEntityId() {
 		do {
 			startEntityId++;
-		} while (customEntityList.getStringFromID(startEntityId) != null);
+		} while (EntityList.getStringFromID(startEntityId) != null);
 		return startEntityId++;
 	}
 
 	public static void registerEntityEgg(Class<? extends Entity> entity,
 			int primaryColor, int secondaryColor) {
 		int id = getUniqueEntityId();
-		customEntityList.IDtoClassMapping.put(id, entity);
-		customEntityList.entityEggs.put(id, new EntityEggInfo(id, primaryColor,
+		EntityList.IDtoClassMapping.put(id, entity);
+		EntityList.entityEggs.put(id, new EntityEggInfo(id, primaryColor,
 				secondaryColor));
 	}
 
@@ -108,15 +108,15 @@ public class TurtleMod {
 		int renderShell = proxy.addArmor("shell");
 
 		recordTMNT80 = new ItemTMNTrecord(1006, "turtlemod:TMNT80", "TMNT80")
-				.setUnlocalizedName("TMNT80").func_111206_d("turtlemod:TMNT80");
+				.setUnlocalizedName("TMNT80").setTextureName("turtlemod:TMNT80");
 		recordTMNT2003 = new ItemTMNTrecord(1007, "turtlemod:TMNT2003",
-				"TMNT2003").setUnlocalizedName("TMNT2003").func_111206_d(
+				"TMNT2003").setUnlocalizedName("TMNT2003").setTextureName(
 				"turtlemod:TMNT2003");
 		recordTMNT2012 = new ItemTMNTrecord(1008, "turtlemod:TMNT2012",
-				"TMNT2012").setUnlocalizedName("TMNT2012").func_111206_d(
+				"TMNT2012").setUnlocalizedName("TMNT2012").setTextureName(
 				"turtlemod:TMNT2012");
 		recordMineturtle = new ItemTMNTrecord(1009, "turtlemod:mineturtle",
-				"mineturtle").setUnlocalizedName("mineturtle").func_111206_d(
+				"mineturtle").setUnlocalizedName("mineturtle").setTextureName(
 				"turtlemod:mineturtle");
 
 		LanguageRegistry.addName(recordTMNT80, "TMNT80");
@@ -169,7 +169,7 @@ public class TurtleMod {
 		// Custom spawn egg for custom creative tab
 		customSpawnEgg = new customSpawnEgg(1020)
 				.setUnlocalizedName("customSpawnEgg")
-				.func_111206_d("turtlemod:customSpawnEgg")
+				.setTextureName("turtlemod:customSpawnEgg")
 				.setCreativeTab(this.turtleTab);
 		LanguageRegistry.addName(customSpawnEgg, "Spawn");
 

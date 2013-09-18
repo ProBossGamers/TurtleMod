@@ -1,7 +1,5 @@
 package me.thegeekyguy101.TurtleMod.entity.passive;
 
-import java.util.Random;
-
 import me.thegeekyguy101.TurtleMod.entity.monster.EntityMineTurtle;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -24,10 +22,10 @@ public class EntityHelloGuy extends EntityAnimal {
 		this.tasks.addTask(3, new EntityAIWander(this, 0.6D));
 	}
 	
-	protected void func_110147_ax()
+	protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.5D);
+		super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.5D);
     }
 	
 	/**

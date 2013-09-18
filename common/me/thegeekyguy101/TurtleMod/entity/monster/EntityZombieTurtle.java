@@ -45,12 +45,12 @@ public class EntityZombieTurtle extends EntityMob {
         return true;
     }
 	
-	protected void func_110147_ax()
+	protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(20.0D);
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.20000000298023224D);
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(3.0D);
+		super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(20.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.20000000298023224D);
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(3.0D);
     }
 	
 	public int getDropItemId() {

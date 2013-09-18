@@ -157,35 +157,38 @@ public class customSpawnEgg extends Item {
 	}
 
 	/**
-	 * Spawns the creature specified by the egg's type in the location specified
-	 * by the last three parameters. Parameters: world, entityID, x, y, z.
-	 */
-	public static Entity spawnCreature(World par0World, int par1, double par2,
-			double par4, double par6) {
-		if (!customEntityList.entityEggs.containsKey(Integer.valueOf(par1))) {
-			return null;
-		} else {
-			Entity entity = null;
+     * Spawns the creature specified by the egg's type in the location specified by the last three parameters.
+     * Parameters: world, entityID, x, y, z.
+     */
+    public static Entity spawnCreature(World par0World, int par1, double par2, double par4, double par6)
+    {
+        if (!EntityList.entityEggs.containsKey(Integer.valueOf(par1)))
+        {
+            return null;
+        }
+        else
+        {
+            Entity entity = null;
 
-			for (int j = 0; j < 1; ++j) {
-				entity = customEntityList.createEntityByID(par1, par0World);
+            for (int j = 0; j < 1; ++j)
+            {
+                entity = EntityList.createEntityByID(par1, par0World);
 
-				if (entity != null && entity instanceof EntityLivingBase) {
-					EntityLiving entityliving = (EntityLiving) entity;
-					entity.setLocationAndAngles(par2, par4, par6,
-							MathHelper.wrapAngleTo180_float(par0World.rand
-									.nextFloat() * 360.0F), 0.0F);
-					entityliving.rotationYawHead = entityliving.rotationYaw;
-					entityliving.renderYawOffset = entityliving.rotationYaw;
-					entityliving.func_110161_a((EntityLivingData) null);
-					par0World.spawnEntityInWorld(entity);
-					entityliving.playLivingSound();
-				}
-			}
+                if (entity != null && entity instanceof EntityLivingBase)
+                {
+                    EntityLiving entityliving = (EntityLiving)entity;
+                    entity.setLocationAndAngles(par2, par4, par6, MathHelper.wrapAngleTo180_float(par0World.rand.nextFloat() * 360.0F), 0.0F);
+                    entityliving.rotationYawHead = entityliving.rotationYaw;
+                    entityliving.renderYawOffset = entityliving.rotationYaw;
+                    entityliving.onSpawnWithEgg((EntityLivingData)null);
+                    par0World.spawnEntityInWorld(entity);
+                    entityliving.playLivingSound();
+                }
+            }
 
-			return entity;
-		}
-	}
+            return entity;
+        }
+    }
 
 	@SideOnly(Side.CLIENT)
 	public boolean requiresMultipleRenderPasses() {
@@ -202,23 +205,25 @@ public class customSpawnEgg extends Item {
 	}
 
 	@SideOnly(Side.CLIENT)
+	
 	/**
-	 * returns a list of items with the same ID, but different meta (eg: dye returns 16 items)
-	 */
-	public void getSubItems(int par1, CreativeTabs par2CreativeTabs,
-			List par3List) {
-		Iterator iterator = customEntityList.entityEggs.values().iterator();
+     * returns a list of items with the same ID, but different meta (eg: dye returns 16 items)
+     */
+    public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List par3List)
+    {
+        Iterator iterator = EntityList.entityEggs.values().iterator();
 
-		while (iterator.hasNext()) {
-			EntityEggInfo entityegginfo = (EntityEggInfo) iterator.next();
-			par3List.add(new ItemStack(par1, 1, entityegginfo.spawnedID));
-		}
-	}
+        while (iterator.hasNext())
+        {
+            EntityEggInfo entityegginfo = (EntityEggInfo)iterator.next();
+            par3List.add(new ItemStack(par1, 1, entityegginfo.spawnedID));
+        }
+    }
 
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister par1IconRegister) {
-		super.registerIcons(par1IconRegister);
-		this.theIcon = par1IconRegister.registerIcon(this.func_111208_A()
-				+ "_overlay");
-	}
+    public void registerIcons(IconRegister par1IconRegister)
+    {
+        super.registerIcons(par1IconRegister);
+        this.theIcon = par1IconRegister.registerIcon(this.getIconString() + "_overlay");
+    }
 }

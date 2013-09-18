@@ -1,8 +1,6 @@
 package me.thegeekyguy101.TurtleMod.client.renderer.entity;
 
-import me.thegeekyguy101.TurtleMod.client.model.ModelTurtle;
 import me.thegeekyguy101.TurtleMod.entity.passive.EntityHelloGuy;
-import me.thegeekyguy101.TurtleMod.entity.passive.EntityTurtle;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -33,7 +31,7 @@ public class RenderHelloGuy extends RenderLiving {
 	}
 
 	@Override
-	protected ResourceLocation func_110775_a(Entity entity) {
+	protected ResourceLocation getEntityTexture(Entity entity) {
 		return new ResourceLocation("turtlemod:textures/mobs/HelloGuy.png");
 	}
 

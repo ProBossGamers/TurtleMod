@@ -2,7 +2,6 @@ package me.thegeekyguy101.TurtleMod.entity.monster;
 
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
-import net.minecraft.entity.ai.EntityAIBreakDoor;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMoveThroughVillage;
@@ -10,8 +9,21 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.monster.*;
-import net.minecraft.entity.passive.EntityVillager;
+import net.minecraft.entity.monster.EntityBlaze;
+import net.minecraft.entity.monster.EntityCaveSpider;
+import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntityEnderman;
+import net.minecraft.entity.monster.EntityGhast;
+import net.minecraft.entity.monster.EntityGiantZombie;
+import net.minecraft.entity.monster.EntityMagmaCube;
+import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.monster.EntityPigZombie;
+import net.minecraft.entity.monster.EntitySilverfish;
+import net.minecraft.entity.monster.EntitySkeleton;
+import net.minecraft.entity.monster.EntitySlime;
+import net.minecraft.entity.monster.EntitySpider;
+import net.minecraft.entity.monster.EntityWitch;
+import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
@@ -60,12 +72,12 @@ public class EntityMichelangelo extends EntityMob {
         return true;
     }
 	
-	protected void func_110147_ax()
+	protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(20.0D);
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.20000000298023224D);
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(3.0D);
+		super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(20.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.20000000298023224D);
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(3.0D);
     }
 	
 	/**

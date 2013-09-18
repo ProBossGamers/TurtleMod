@@ -31,7 +31,7 @@ public class RenderMichelangelo extends RenderLiving {
 	}
 
 	@Override
-	protected ResourceLocation func_110775_a(Entity entity) {
+	protected ResourceLocation getEntityTexture(Entity entity) {
 		return new ResourceLocation("turtlemod:textures/mobs/Michelangelo.png");
 	}
 

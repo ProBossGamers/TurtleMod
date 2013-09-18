@@ -3,17 +3,13 @@ package me.thegeekyguy101.TurtleMod.entity.passive;
 import me.thegeekyguy101.TurtleMod.TurtleMod;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
-import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAIPanic;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.world.World;
 
 public class EntityTurtle extends EntityAnimal {
@@ -32,13 +28,13 @@ public class EntityTurtle extends EntityAnimal {
 		return true;
 	}
 	
-	protected void func_110147_ax()
+	protected void applyEntityAttributes()
     {
-        super.func_110147_ax();
-        this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(15.0D);
-        this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.20000000298023224D);
+		super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(15.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.20000000298023224D);
     }
-
+	
 	public int getDropItemId() {
 		return TurtleMod.turtleShell.itemID;
 	}
