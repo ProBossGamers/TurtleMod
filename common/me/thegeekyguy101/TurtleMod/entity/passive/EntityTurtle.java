@@ -18,8 +18,8 @@ public class EntityTurtle extends EntityAnimal {
 		super(par1World);
 		this.setSize(1.0F, 0.5F);
 		this.tasks.addTask(0, new EntityAISwimming(this));
-		this.tasks.addTask(1, new EntityAIWander(this, 0.25F));
-		this.tasks.addTask(2, new EntityAIPanic(this, 0.5F));
+		this.tasks.addTask(1, new EntityAIWander(this, 0.5D));
+		this.tasks.addTask(2, new EntityAIPanic(this, 0.5D));
 		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		this.tasks.addTask(4, new EntityAILookIdle(this));
 	}

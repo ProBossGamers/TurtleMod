@@ -19,7 +19,7 @@ public class EntityHelloGuy extends EntityAnimal {
 		this.tasks.addTask(0, new EntityAISwimming(this));
 		this.tasks.addTask(1, new EntityAIAvoidEntity(this, EntityMineTurtle.class, 8.0F, 0.6D, 0.6D));
 		this.tasks.addTask(2, new EntityAIWatchClosest(this, EntityPlayer.class, 3.0F, 1.0F));
-		this.tasks.addTask(3, new EntityAIWander(this, 0.6D));
+		this.tasks.addTask(3, new EntityAIWander(this, 1.0D));
 	}
 	
 	protected void applyEntityAttributes()

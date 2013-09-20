@@ -26,12 +26,12 @@ public class EntityZombieTurtle extends EntityMob {
 		this.tasks.addTask(0, new EntityAISwimming(this));
 		this.tasks.addTask(1, new EntityAIBreakDoor(this));
 		this.tasks.addTask(2, new EntityAIAttackOnCollide(this,
-				EntityPlayer.class, 0.25F, false));
+				EntityPlayer.class, 0.5D, false));
 		this.tasks.addTask(3, new EntityAIAttackOnCollide(this,
-				EntityVillager.class, 0.25F, true));
+				EntityVillager.class, 0.5D, true));
 		this.tasks.addTask(5,
-				new EntityAIMoveThroughVillage(this, 0.25F, false));
-		this.tasks.addTask(6, new EntityAIWander(this, 0.25F));
+				new EntityAIMoveThroughVillage(this, 0.5D, false));
+		this.tasks.addTask(6, new EntityAIWander(this, 0.5D));
 		this.tasks.addTask(7, new EntityAIWatchClosest(this,
 				EntityPlayer.class, 8.0F));
 		this.tasks.addTask(7, new EntityAILookIdle(this));
