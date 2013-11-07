@@ -3,12 +3,12 @@
 	"modid": "DJCTM",
 	"name": "DeathJustys Crazy Turtle Mod",
 	"description": "Add turtles and other crazy things!",
-	"mcversion": "1.6.2",
-	"version": "Alpha 4.0",
+	"mcversion": "1.6.4",
+	"version": "Alpha 4.2",
 	"url": "",
 	"authors": [
 		"Ry_dog101/TheGeekyGuy101 and DeathJusty"
 	],
-	"credits": "Ry_dog101/TheGeekyGuy101 (Main Java developer) DeathJusty (Textures and models and some code)"
+	"credits": "Ry_dog101/TheGeekyGuy101 (Main Java developer) DeathJusty (Textures, models, some code, and ideas man)"
 }
 ]
