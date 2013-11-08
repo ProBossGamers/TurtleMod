@@ -38,6 +38,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import net.minecraftforge.common.Property;
 
 @Mod(modid = "DJCTM", name = "DeathJustys Crazy Turtle Mod", version = "Alpha 4.2")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -74,6 +75,7 @@ public class TurtleMod {
 	public static int recordTMNT2012ID;
 	public static Item recordMineturtle;
 	public static int recordMineturtleID;
+	public static int EntityID;
 
 	public static EnumArmorMaterial turtleArmor = EnumHelper.addArmorMaterial("Turtle", 5, new int[] { 1, 3, 2, 1 }, 15);
 
@@ -81,7 +83,7 @@ public class TurtleMod {
 	public static CreativeTabs turtleTab;
 
 	// Mob stuff
-	static int startEntityId = 350;
+	static int startEntityId = EntityID;
 
 	public static int getUniqueEntityId() {
 		do {
@@ -117,7 +119,7 @@ public class TurtleMod {
 		int recordTMNT2012ID = config.getItem("TMNT 2012 record", 3849).getInt();
 		int recordMineturtleID = config.getItem("Mineturtle record", 3850).getInt();
 		int customSpawnEggID = config.getItem("Custom Spawn Egg ID", 3851).getInt();
-		
+		int EntityID = config.get(Configuration.CATEGORY_GENERAL, "Start Entity ID's", 350).getInt();
 		
 		config.save();
 		
