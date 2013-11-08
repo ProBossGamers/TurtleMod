@@ -75,7 +75,7 @@ public class ModelMineTurtle extends ModelBase
   public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
   {
     super.render(entity, f, f1, f2, f3, f4, f5);
-    setRotationAngles(f, f1, f2, f3, f4, f5);
+    setRotationAngles(f, f1, f2, f3, f4, f5, entity);
     Shape2.render(f5);
     head.render(f5);
     body.render(f5);
@@ -93,9 +93,9 @@ public class ModelMineTurtle extends ModelBase
     model.rotateAngleZ = z;
   }
   
-  public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5)
+  public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
   {
-    super.setRotationAngles(f, f1, f2, f3, f4, f5, null);
+    super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
     FrontLeft.rotateAngleX = MathHelper.cos(f * 0.666F)* 1.4F * f1;
     FrontRight.rotateAngleX = MathHelper.cos(f * 0.666F + (float)Math.PI) * 1.4F * f1;
     BackLeft.rotateAngleX = MathHelper.cos(f * 0.666F + (float)Math.PI) * 1.4F * f1;

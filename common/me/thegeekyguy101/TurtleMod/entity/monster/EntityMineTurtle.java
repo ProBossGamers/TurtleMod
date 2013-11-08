@@ -58,8 +58,7 @@ public class EntityMineTurtle extends EntityMob {
 		this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, false));
 	}
 
-	protected void applyEntityAttributes()
-    {
+	protected void applyEntityAttributes() {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.25D);
     }
@@ -74,8 +73,7 @@ public class EntityMineTurtle extends EntityMob {
 	/**
      * The number of iterations PathFinder.getSafePoint will execute before giving up.
      */
-    public int getMaxSafePointTries()
-    {
+    public int getMaxSafePointTries() {
         return this.getAttackTarget() == null ? 3 : 3 + (int)(this.getHealth() - 1.0F);
     }
 

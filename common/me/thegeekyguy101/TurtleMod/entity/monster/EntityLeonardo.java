@@ -67,13 +67,11 @@ public class EntityLeonardo extends EntityMob {
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityZombie.class, 0, true));
 	}
 	
-	protected boolean isAIEnabled()
-    {
+	protected boolean isAIEnabled() {
         return true;
     }
 	
-	protected void applyEntityAttributes()
-    {
+	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.followRange).setAttribute(40.0D);
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.23000000417232513D);

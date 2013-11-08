@@ -22,8 +22,7 @@ public class EntityHelloGuy extends EntityAnimal {
 		this.tasks.addTask(3, new EntityAIWander(this, 1.0D));
 	}
 	
-	protected void applyEntityAttributes()
-    {
+	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.5D);
     }
@@ -31,32 +30,28 @@ public class EntityHelloGuy extends EntityAnimal {
 	/**
      * Returns true if the newer Entity AI code should be run
      */
-    public boolean isAIEnabled()
-    {
+    public boolean isAIEnabled() {
         return true;
     }
     
     /**
      * Returns the sound this mob makes while it's alive.
      */
-   	public String getLivingSound()
-    {
+   	public String getLivingSound() {
         return "turtlemod:mob.helloGuy.hg";
     }
 
     /**
      * Returns the sound this mob makes when it is hurt.
      */
-    protected String getHurtSound()
-    {
+    protected String getHurtSound() {
         return "turtlemod:mob.helloGuy.hgh";
     }
 
     /**
      * Returns the sound this mob makes on death.
      */
-    protected String getDeathSound()
-    {
+    protected String getDeathSound() {
         return "turtlemod:mob.helloGuy.hgd";
     }
     

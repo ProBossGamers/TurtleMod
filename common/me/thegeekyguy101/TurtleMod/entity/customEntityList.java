@@ -22,8 +22,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.FMLLog;
 
-public class customEntityList
-{
+public class customEntityList {
     /** Provides a mapping between entity classes and a string */
     public static Map stringToClassMapping = new HashMap();
 
@@ -45,8 +44,7 @@ public class customEntityList
     /**
      * adds a mapping between Entity classes and both a string representation and an ID
      */
-    public static void addMapping(Class par0Class, String par1Str, int par2)
-    {
+    public static void addMapping(Class par0Class, String par1Str, int par2) {
         stringToClassMapping.put(par1Str, par0Class);
         classToStringMapping.put(par0Class, par1Str);
         IDtoClassMapping.put(Integer.valueOf(par2), par0Class);
@@ -57,8 +55,7 @@ public class customEntityList
     /**
      * Adds a entity mapping with egg info.
      */
-    public static void addMapping(Class par0Class, String par1Str, int par2, int par3, int par4)
-    {
+    public static void addMapping(Class par0Class, String par1Str, int par2, int par3, int par4) {
         addMapping(par0Class, par1Str, par2);
         entityEggs.put(Integer.valueOf(par2), new EntityEggInfo(par2, par3, par4));
     }
@@ -66,21 +63,16 @@ public class customEntityList
     /**
      * Create a new instance of an entity in the world by using the entity name.
      */
-    public static Entity createEntityByName(String par0Str, World par1World)
-    {
+    public static Entity createEntityByName(String par0Str, World par1World) {
         Entity entity = null;
 
-        try
-        {
+        try {
             Class oclass = (Class)stringToClassMapping.get(par0Str);
 
-            if (oclass != null)
-            {
+            if (oclass != null) {
                 entity = (Entity)oclass.getConstructor(new Class[] {World.class}).newInstance(new Object[] {par1World});
             }
-        }
-        catch (Exception exception)
-        {
+        } catch (Exception exception) {
             exception.printStackTrace();
         }
 
@@ -90,14 +82,11 @@ public class customEntityList
     /**
      * create a new instance of an entity from NBT store
      */
-    public static Entity createEntityFromNBT(NBTTagCompound par0NBTTagCompound, World par1World)
-    {
+    public static Entity createEntityFromNBT(NBTTagCompound par0NBTTagCompound, World par1World) {
         Entity entity = null;
 
-        if ("Minecart".equals(par0NBTTagCompound.getString("id")))
-        {
-            switch (par0NBTTagCompound.getInteger("Type"))
-            {
+        if ("Minecart".equals(par0NBTTagCompound.getString("id"))) {
+            switch (par0NBTTagCompound.getInteger("Type")) {
                 case 0:
                     par0NBTTagCompound.setString("id", "MinecartRideable");
                     break;
@@ -112,36 +101,26 @@ public class customEntityList
         }
 
         Class oclass = null;
-        try
-        {
+        try {
             oclass = (Class)stringToClassMapping.get(par0NBTTagCompound.getString("id"));
 
-            if (oclass != null)
-            {
+            if (oclass != null) {
                 entity = (Entity)oclass.getConstructor(new Class[] {World.class}).newInstance(new Object[] {par1World});
             }
-        }
-        catch (Exception exception)
-        {
+        } catch (Exception exception) {
             exception.printStackTrace();
         }
 
-        if (entity != null)
-        {
-            try
-            {
+        if (entity != null) {
+            try {
                 entity.readFromNBT(par0NBTTagCompound);
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 FMLLog.log(Level.SEVERE, e,
                         "An Entity %s(%s) has thrown an exception during loading, its state cannot be restored. Report this to the mod author",
                         par0NBTTagCompound.getString("id"), oclass.getName());
                 entity = null;
             }
-        }
-        else
-        {
+        } else {
             par1World.getWorldLogAgent().logWarning("Skipping Entity with id " + par0NBTTagCompound.getString("id"));
         }
 
@@ -151,26 +130,20 @@ public class customEntityList
     /**
      * Create a new instance of an entity in the world by using an entity ID.
      */
-    public static Entity createEntityByID(int par0, World par1World)
-    {
+    public static Entity createEntityByID(int par0, World par1World) {
         Entity entity = null;
 
-        try
-        {
+        try {
             Class oclass = getClassFromID(par0);
 
-            if (oclass != null)
-            {
+            if (oclass != null) {
                 entity = (Entity)oclass.getConstructor(new Class[] {World.class}).newInstance(new Object[] {par1World});
             }
-        }
-        catch (Exception exception)
-        {
+        } catch (Exception exception) {
             exception.printStackTrace();
         }
 
-        if (entity == null)
-        {
+        if (entity == null) {
             par1World.getWorldLogAgent().logWarning("Skipping Entity with id " + par0);
         }
 
@@ -180,8 +153,7 @@ public class customEntityList
     /**
      * gets the entityID of a specific entity
      */
-    public static int getEntityID(Entity par0Entity)
-    {
+    public static int getEntityID(Entity par0Entity) {
         Class oclass = par0Entity.getClass();
         return classToIDMapping.containsKey(oclass) ? ((Integer)classToIDMapping.get(oclass)).intValue() : 0;
     }
@@ -189,30 +161,26 @@ public class customEntityList
     /**
      * Return the class assigned to this entity ID.
      */
-    public static Class getClassFromID(int par0)
-    {
+    public static Class getClassFromID(int par0) {
         return (Class)IDtoClassMapping.get(Integer.valueOf(par0));
     }
 
     /**
      * Gets the string representation of a specific entity.
      */
-    public static String getEntityString(Entity par0Entity)
-    {
+    public static String getEntityString(Entity par0Entity) {
         return (String)classToStringMapping.get(par0Entity.getClass());
     }
 
     /**
      * Finds the class using IDtoClassMapping and classToStringMapping
      */
-    public static String getStringFromID(int par0)
-    {
+    public static String getStringFromID(int par0) {
         Class oclass = getClassFromID(par0);
         return oclass != null ? (String)classToStringMapping.get(oclass) : null;
     }
 
-    static
-    {
+    static {
         addMapping(EntityItem.class, "Item", 1);
         addMapping(EntityLiving.class, "Mob", 48);
         addMapping(EntityMob.class, "Monster", 49);

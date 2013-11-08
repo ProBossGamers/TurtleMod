@@ -40,13 +40,11 @@ public class EntityZombieTurtle extends EntityMob {
 				EntityPlayer.class, 0, true));
 	}
 	
-	protected boolean isAIEnabled()
-    {
+	protected boolean isAIEnabled() {
         return true;
     }
 	
-	protected void applyEntityAttributes()
-    {
+	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(20.0D);
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.20000000298023224D);

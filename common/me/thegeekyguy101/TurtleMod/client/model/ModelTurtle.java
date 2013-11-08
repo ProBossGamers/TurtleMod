@@ -66,10 +66,10 @@ public class ModelTurtle extends ModelBase
     /**
      * Sets the models various rotation angles then renders the model.
      */
-    public void render(Entity var1, float var2, float var3, float var4, float var5, float var6, float var7)
+    public void render(Entity entity, float var2, float var3, float var4, float var5, float var6, float var7)
     {
-        super.render(var1, var2, var3, var4, var5, var6, var7);
-        this.setRotationAngles(var2, var3, var4, var5, var6, var7);
+        super.render(entity, var2, var3, var4, var5, var6, var7);
+        this.setRotationAngles(var2, var3, var4, var5, var6, var7, entity);
         this.head.render(var7);
         this.body.render(var7);
         this.FrontRight.render(var7);
@@ -86,9 +86,9 @@ public class ModelTurtle extends ModelBase
         var1.rotateAngleZ = var4;
     }
 
-    public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5)
+    public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
     {
-        super.setRotationAngles(f, f1, f2, f3, f4, f5, null);
+        super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
         FrontLeft.rotateAngleX = MathHelper.cos(f * 0.666F)* 1.4F * f1;
         FrontRight.rotateAngleX = MathHelper.cos(f * 0.666F + (float)Math.PI) * 1.4F * f1;
         BackLeft.rotateAngleX = MathHelper.cos(f * 0.666F + (float)Math.PI) * 1.4F * f1;
