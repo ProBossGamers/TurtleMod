@@ -20,15 +20,7 @@ public class ServerTickHandler implements ITickHandler {
 			if (helmet.getItem() == TurtleMod.turtleHelmet) {
 				player.addPotionEffect(new PotionEffect(Potion.waterBreathing.getId(), 10, 0));
 			}
-		}
-		
-		if (player.getCurrentItemOrArmor(3) != null) {
-			ItemStack Chestplate = player.getCurrentItemOrArmor(3);
-			
-			if (Chestplate.getItem() == TurtleMod.turtleShell) {
-				player.addPotionEffect(new PotionEffect(Potion.waterBreathing.getId(), 10, 0));
-			}
-		}
+		}		
 	}
 	
 	@Override

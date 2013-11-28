@@ -69,7 +69,7 @@ public class EntityZombieTurtle extends EntityMob {
 			if (this.isBurning()) {
 
 			} else {
-				this.dropItem(TurtleMod.Turtleleather.itemID, 1);
+				this.dropItem(TurtleMod.turtleLeather.itemID, 1);
 			}
 		}
 	}

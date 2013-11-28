@@ -89,10 +89,6 @@ public class ModelTurtle extends ModelBase
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
     {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-        FrontLeft.rotateAngleX = MathHelper.cos(f * 0.666F)* 1.4F * f1;
-        FrontRight.rotateAngleX = MathHelper.cos(f * 0.666F + (float)Math.PI) * 1.4F * f1;
-        BackLeft.rotateAngleX = MathHelper.cos(f * 0.666F + (float)Math.PI) * 1.4F * f1;
-        BackRight.rotateAngleX = MathHelper.cos(f * 0.666F)* 1.4F * f1;
        
         FrontRight.rotateAngleY = 0.0F;
         FrontLeft.rotateAngleY = 0.0F;
