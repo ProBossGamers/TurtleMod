@@ -1,5 +1,7 @@
 package me.thegeekyguy101.TurtleMod;
 
+import me.thegeekyguy101.TurtleMod.block.BlockTurtleShell;
+import me.thegeekyguy101.TurtleMod.client.renderer.item.ItemRendererTurtleShell;
 import me.thegeekyguy101.TurtleMod.entity.monster.EntityDonatello;
 import me.thegeekyguy101.TurtleMod.entity.monster.EntityLeonardo;
 import me.thegeekyguy101.TurtleMod.entity.monster.EntityMichelangelo;
@@ -17,6 +19,7 @@ import me.thegeekyguy101.TurtleMod.item.ItemTurtleLeggings;
 import me.thegeekyguy101.TurtleMod.item.ItemTurtleShell;
 import me.thegeekyguy101.TurtleMod.item.customSpawnEgg;
 import me.thegeekyguy101.TurtleMod.server.ServerProxy;
+import me.thegeekyguy101.TurtleMod.tileentity.TileEntityTurtleShell;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -27,8 +30,10 @@ import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.EnumHelper;
+import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
@@ -58,7 +63,7 @@ public class TurtleMod {
 	public static Block turtleShellBlock;
 	
 	public static Item turtleLeather;
-	public static Item turtleShell;
+	public static Item turtleShellItem;
 	public static Item turtleHelmet;
 	public static Item turtleChestplate;
 	public static Item turtleLeggings;
@@ -72,7 +77,7 @@ public class TurtleMod {
 	public static int turtleShellBlockID;
 	
 	public static int turtleLeatherID;
-	public static int turtleShellID;
+	public static int turtleShellItemID;
 	public static int turtleHelmetID;
 	public static int turtleChestplateID;
 	public static int turtleLeggingsID;
@@ -119,7 +124,7 @@ public class TurtleMod {
 		
 		// item configs
 		int turtleLeatherID = config.getItem("turtle Leather", startid++).getInt();
-		int turtleShellID = config.getItem("Turtle Shell", startid++).getInt();
+		int turtleShellBlockID = config.getItem("Turtle Shell Block", startid++).getInt();
 		int turtleShellItemID = config.getItem("Turtle Shell Item", startid++).getInt();
 		int turtleHelmetID = config.getItem("Turtle Helmet", startid++).getInt();
 		int turtleChestplateID = config.getItem("Turtle Chestplate", startid++).getInt();
@@ -135,11 +140,6 @@ public class TurtleMod {
 		
 		config.save();
 		
-		// more Proxy stuff
-		proxy.registerRenderThings();
-		proxy.registerServerTickHandler();
-		proxy.registerSound();
-		
 		// Armor stuff
 		int renderTurtleArmor = proxy.addArmor("turtle");
 		int renderShell = proxy.addArmor("shell");
@@ -147,36 +147,40 @@ public class TurtleMod {
 		// custom creative tab
 		turtleTab = new CreativeTabs("turtleTab") {
 			public ItemStack getIconItemStack() {
-				return new ItemStack(turtleShell, 1, 0);
+				return new ItemStack(turtleShellBlock, 1, 0);
 			}
 		};
 		LanguageRegistry.instance().addStringLocalization("itemGroup.turtleTab", "en_US","DeathJusty's Crazy Turtle Mod");
 		
 		// Turtle Leather
-		turtleLeather = new ItemTurtleLeather(turtleLeatherID).setUnlocalizedName("turtlemod:turtleLeather");
+		turtleLeather = new ItemTurtleLeather(turtleLeatherID).setUnlocalizedName("turtleLeather");
 		registerItem(turtleLeather, "Turtle Leather");
 		
-		// Turtle Shell		
-		turtleShell = new ItemTurtleShell(turtleShellID, turtleArmor, renderShell, 1).setUnlocalizedName("turtleShell").setCreativeTab(this.turtleTab);
-		registerItem(turtleShell, "Turtle Shell");
+		// Turtle Shell
+		turtleShellBlock = new BlockTurtleShell(turtleShellBlockID).setUnlocalizedName("turtleShellBlock");
+		registerBlock(turtleShellBlock, "Turtle Shell");
+		GameRegistry.registerTileEntity(TileEntityTurtleShell.class, "Turtle Shell");
+		
+		turtleShellItem = new ItemTurtleShell(turtleShellItemID, turtleArmor, renderShell, 1).setUnlocalizedName("turtleShellItem").setCreativeTab(this.turtleTab);
+		registerItem(turtleShellItem, "Turtle Shell");
 		
 		// Turtle Helmet
 		turtleHelmet = new ItemTurtleHelmet(turtleHelmetID, turtleArmor, renderTurtleArmor, 0).setUnlocalizedName("turtleHelmet").setCreativeTab(this.turtleTab);
 		registerItem(turtleHelmet, "Turtle Helmet");
 		GameRegistry.addRecipe(new ItemStack(turtleHelmet), new Object[] {
-			"TST", "T T", 'T', turtleLeather, 'S', turtleShell });
+			"TST", "T T", 'T', turtleLeather, 'S', turtleShellItem });
 		
 		// Turtle Chestplate
 		turtleChestplate = new ItemTurtleChestplate(turtleChestplateID, turtleArmor, renderTurtleArmor, 1).setUnlocalizedName("turtleChestplate").setCreativeTab(this.turtleTab);
 		registerItem(turtleChestplate, "Turtle Chestplate");
 		GameRegistry.addRecipe(new ItemStack(turtleChestplate), new Object[] {
-			"T T", "TST", "TTT", 'T', turtleLeather, 'S', turtleShell });
+			"T T", "TST", "TTT", 'T', turtleLeather, 'S', turtleShellItem });
 		
 		// Turtle Leggings
 		turtleLeggings = new ItemTurtleLeggings(turtleLeggingsID, turtleArmor, renderTurtleArmor, 2).setUnlocalizedName("turtleLeggings").setCreativeTab(this.turtleTab);
 		registerItem(turtleLeggings, "Turtle Leggings");
 		GameRegistry.addRecipe(new ItemStack(turtleLeggings), new Object[] {
-			"TST", "T T", "T T", 'T', turtleLeather, 'S', turtleShell });
+			"TST", "T T", "T T", 'T', turtleLeather, 'S', turtleShellItem });
 		
 		// Turtle Boots
 		turtleBoots = new ItemTurtleBoots(turtleBootsID, turtleArmor, renderTurtleArmor,3).setUnlocalizedName("turtleBoots").setCreativeTab(this.turtleTab);
@@ -223,6 +227,11 @@ public class TurtleMod {
 		addSpawn(EntityRaphael.class, 10, 1, 1, EnumCreatureType.monster);
 		addSpawn(EntityDonatello.class, 10, 1, 1, EnumCreatureType.monster);
 		addSpawn(EntityMichelangelo.class, 10, 1, 1, EnumCreatureType.monster);
+		
+		// more Proxy stuff
+		proxy.registerRenderThings();
+		proxy.registerServerTickHandler();
+		proxy.registerSound();
 	}
 	public static void registerItem(Item par1, String par2) {
 		GameRegistry.registerItem(par1, par1.toString());

@@ -52,7 +52,7 @@ public class EntityZombieTurtle extends EntityMob {
     }
 	
 	public int getDropItemId() {
-		return TurtleMod.turtleShell.itemID;
+		return TurtleMod.turtleShellBlock.blockID;
 	}
 	
 	protected void dropFewItems(boolean par1, int par2) {
@@ -60,7 +60,7 @@ public class EntityZombieTurtle extends EntityMob {
 		int var4;
 
 		for (var4 = 0; var4 < var3; ++var4) {
-			this.dropItem(TurtleMod.turtleShell.itemID, 1);
+			this.dropItem(TurtleMod.turtleShellBlock.blockID, 1);
 		}
 
 		var3 = this.rand.nextInt(3) + 1 + this.rand.nextInt(1 + par2);

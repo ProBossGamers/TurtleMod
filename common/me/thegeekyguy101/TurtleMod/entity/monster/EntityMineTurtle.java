@@ -225,7 +225,7 @@ public class EntityMineTurtle extends EntityMob {
 	 * Returns the item ID for the item the mob drops on death.
 	 */
 	protected int getDropItemId() {
-		return TurtleMod.turtleShell.itemID;
+		return TurtleMod.turtleShellBlock.blockID;
 	}
 
 	/**
