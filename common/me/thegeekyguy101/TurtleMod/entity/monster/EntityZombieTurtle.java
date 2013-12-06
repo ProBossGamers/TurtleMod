@@ -14,6 +14,7 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
@@ -51,27 +52,9 @@ public class EntityZombieTurtle extends EntityMob {
         this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(3.0D);
     }
 	
-	public int getDropItemId() {
-		return TurtleMod.turtleShellBlock.blockID;
-	}
-	
 	protected void dropFewItems(boolean par1, int par2) {
-		int var3 = this.rand.nextInt(3) + this.rand.nextInt(1 + par2);
-		int var4;
-
-		for (var4 = 0; var4 < var3; ++var4) {
-			this.dropItem(TurtleMod.turtleShellBlock.blockID, 1);
-		}
-
-		var3 = this.rand.nextInt(3) + 1 + this.rand.nextInt(1 + par2);
-
-		for (var4 = 0; var4 < var3; ++var4) {
-			if (this.isBurning()) {
-
-			} else {
-				this.dropItem(TurtleMod.turtleLeather.itemID, 1);
-			}
-		}
+		this.dropItem(Item.rottenFlesh.itemID, 2);
+		this.dropItem(TurtleMod.turtleShellBlock.blockID, 1);
 	}
 	
 	/**

@@ -221,11 +221,9 @@ public class EntityMineTurtle extends EntityMob {
 				/ (float) (this.fuseTime - 2);
 	}
 
-	/**
-	 * Returns the item ID for the item the mob drops on death.
-	 */
-	protected int getDropItemId() {
-		return TurtleMod.turtleShellBlock.blockID;
+	protected void dropFewItems(boolean par1, int par2) {
+		this.dropItem(Item.gunpowder.itemID, 1);
+		this.dropItem(TurtleMod.turtleShellBlock.blockID, 1);
 	}
 
 	/**

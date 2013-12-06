@@ -156,11 +156,12 @@ public class TurtleMod {
 		turtleLeather = new ItemTurtleLeather(turtleLeatherID).setUnlocalizedName("turtleLeather");
 		registerItem(turtleLeather, "Turtle Leather");
 		
-		// Turtle Shell
+		// Turtle Shell Block
 		turtleShellBlock = new BlockTurtleShell(turtleShellBlockID).setUnlocalizedName("turtleShellBlock");
 		registerBlock(turtleShellBlock, "Turtle Shell");
 		GameRegistry.registerTileEntity(TileEntityTurtleShell.class, "Turtle Shell");
 		
+		//Turtle Shell Item
 		turtleShellItem = new ItemTurtleShell(turtleShellItemID, turtleArmor, renderShell, 1).setUnlocalizedName("turtleShellItem").setCreativeTab(this.turtleTab);
 		registerItem(turtleShellItem, "Wearable Turtle Shell");
 		GameRegistry.addRecipe(new ItemStack(turtleShellItem), new Object[] {
