@@ -13,6 +13,10 @@ public class ServerProxy {
 		TickRegistry.registerTickHandler(new ServerTickHandler(), Side.SERVER);
 	}
 	
+	public void test() {
+		
+	}
+	
 	public int addArmor(String armor) {
 		return 0;
 	}

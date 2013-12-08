@@ -34,5 +34,4 @@ public class RenderTurtle extends RenderLiving {
 	protected ResourceLocation getEntityTexture(Entity entity) {
 		return new ResourceLocation("turtlemod:textures/mobs/Turtle.png");
 	}
-
 }

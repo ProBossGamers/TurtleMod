@@ -1,5 +1,6 @@
 package me.thegeekyguy101.TurtleMod.client;
 
+import me.thegeekyguy101.TurtleMod.RenderModel;
 import me.thegeekyguy101.TurtleMod.TurtleMod;
 import me.thegeekyguy101.TurtleMod.client.audio.SoundHandler;
 import me.thegeekyguy101.TurtleMod.client.model.ModelMineTurtle;
@@ -46,6 +47,11 @@ public class ClientProxy extends ServerProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityRaphael.class, new RenderRaphael(new ModelBiped(), 0.3F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityDonatello.class, new RenderDonatello(new ModelBiped(), 0.3F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityMichelangelo.class, new RenderMichelangelo(new ModelBiped(), 0.3F));
+	}
+	
+	@Override
+	public void test() {
+		MinecraftForge.EVENT_BUS.register(new RenderModel());
 	}
 	
 	@Override

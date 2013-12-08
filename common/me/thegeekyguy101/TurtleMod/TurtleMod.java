@@ -37,6 +37,7 @@ import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.EntityRegistry;
@@ -236,6 +237,12 @@ public class TurtleMod {
 		proxy.registerServerTickHandler();
 		proxy.registerSound();
 	}
+	
+	@EventHandler
+	public void Load(FMLInitializationEvent Event) {
+		proxy.test();
+	}
+	
 	public static void registerItem(Item par1, String par2) {
 		GameRegistry.registerItem(par1, par1.toString());
 		LanguageRegistry.addName(par1, par2);
