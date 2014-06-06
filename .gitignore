@@ -4,6 +4,9 @@
 *.iws
 *.txt
 .gradle/
+.classpath
+.project
+.settings/
 build/
 minecraft/
 out/
