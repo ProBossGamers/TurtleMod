@@ -6,7 +6,9 @@ import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import net.minecraft.entity.EntityList;
 import net.probossgamers.TurtleMod.Server.ServerProxy;
+import net.probossgamers.TurtleMod.entity.EntityMineTurtle;
 import net.probossgamers.TurtleMod.entity.EntityTurtle;
+import net.probossgamers.TurtleMod.entity.EntityZombieTurtle;
 
 import java.util.Random;
 
@@ -31,6 +33,8 @@ public class TurtleMod {
     public void preInit(FMLPreInitializationEvent event) {
         proxy.registerRenderers();
         registerEntity(EntityTurtle.class, "Entity Turtle");
+        registerEntity(EntityZombieTurtle.class, "Zombie Turtle");
+        registerEntity(EntityMineTurtle.class, "Mine Turtle");
     }
 
     @Mod.EventHandler
