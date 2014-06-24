@@ -1,4 +1,4 @@
-package net.probossgamers.TurtleMod.entity;
+package net.probossgamers.TurtleMod.entity.passive;
 
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;

@@ -1,9 +1,8 @@
-package net.probossgamers.TurtleMod.model;
+package net.probossgamers.TurtleMod.client.model;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.MathHelper;
 
 public class ModelTurtle extends ModelBase
 {

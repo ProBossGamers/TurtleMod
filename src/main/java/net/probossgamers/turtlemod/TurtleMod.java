@@ -5,10 +5,10 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import net.minecraft.entity.EntityList;
-import net.probossgamers.TurtleMod.Server.ServerProxy;
-import net.probossgamers.TurtleMod.entity.EntityMineTurtle;
-import net.probossgamers.TurtleMod.entity.EntityTurtle;
-import net.probossgamers.TurtleMod.entity.EntityZombieTurtle;
+import net.probossgamers.TurtleMod.server.ServerProxy;
+import net.probossgamers.TurtleMod.entity.monster.EntityMineTurtle;
+import net.probossgamers.TurtleMod.entity.passive.EntityTurtle;
+import net.probossgamers.TurtleMod.entity.monster.EntityZombieTurtle;
 
 import java.util.Random;
 

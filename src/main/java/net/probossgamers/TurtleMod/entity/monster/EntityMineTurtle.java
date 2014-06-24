@@ -1,4 +1,4 @@
-package net.probossgamers.TurtleMod.entity;
+package net.probossgamers.TurtleMod.entity.monster;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -23,6 +23,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
+import net.probossgamers.TurtleMod.entity.ai.EntityAIMineTurtleSwell;
 
 public class EntityMineTurtle extends EntityMob
 {

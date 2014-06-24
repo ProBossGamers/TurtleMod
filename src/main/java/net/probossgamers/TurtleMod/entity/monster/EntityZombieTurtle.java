@@ -1,4 +1,4 @@
-package net.probossgamers.TurtleMod.entity;
+package net.probossgamers.TurtleMod.entity.monster;
 
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
