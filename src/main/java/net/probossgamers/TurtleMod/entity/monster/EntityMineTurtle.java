@@ -38,7 +38,7 @@ public class EntityMineTurtle extends EntityMob
     private int timeSinceIgnited;
     private int fuseTime = 30;
     /** Explosion radius for this creeper. */
-    private int explosionRadius = 3;
+    private int explosionRadius = 1;
     private static final String __OBFID = "CL_00001684";
 
     public EntityMineTurtle(World par1World)
