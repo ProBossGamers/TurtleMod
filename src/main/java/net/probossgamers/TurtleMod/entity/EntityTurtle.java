@@ -24,6 +24,13 @@ public class EntityTurtle extends EntityAnimal {
         this.tasks.addTask(4, new EntityAILookIdle(this));
     }
 
+    protected void applyEntityAttributes()
+    {
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(15.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.20000000298023224D);
+    }
+
     protected boolean isAIEnabled() {
         return true;
     }

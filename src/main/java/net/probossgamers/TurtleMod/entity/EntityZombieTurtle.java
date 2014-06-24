@@ -40,6 +40,13 @@ public class EntityZombieTurtle extends EntityMob {
                 EntityPlayer.class, 0, true));
     }
 
+    protected void applyEntityAttributes() {
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(20.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.20000000298023224D);
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(3.0D);
+    }
+
     protected boolean isAIEnabled() {
         return true;
     }
@@ -64,5 +71,44 @@ public class EntityZombieTurtle extends EntityMob {
     protected String getDeathSound() {
         return "turtlemod:mob.turtle.death";
     }
+    /**
+     * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
+     * use this to react to sunlight and start to burn.
+     */
+    public void onLivingUpdate()
+    {
+        if (this.worldObj.isDaytime() && !this.worldObj.isRemote && !this.isChild())
+        {
+            float f = this.getBrightness(1.0F);
 
+            if (f > 0.5F && this.rand.nextFloat() * 30.0F < (f - 0.4F) * 2.0F && this.worldObj.canBlockSeeTheSky(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY), MathHelper.floor_double(this.posZ)))
+            {
+                boolean flag = true;
+                ItemStack itemstack = this.getEquipmentInSlot(4);
+
+                if (itemstack != null)
+                {
+                    if (itemstack.isItemStackDamageable())
+                    {
+                        itemstack.setItemDamage(itemstack.getItemDamageForDisplay() + this.rand.nextInt(2));
+
+                        if (itemstack.getItemDamageForDisplay() >= itemstack.getMaxDamage())
+                        {
+                            this.renderBrokenItemStack(itemstack);
+                            this.setCurrentItemOrArmor(4, (ItemStack)null);
+                        }
+                    }
+
+                    flag = false;
+                }
+
+                if (flag)
+                {
+                    this.setFire(8);
+                }
+            }
+        }
+
+        super.onLivingUpdate();
+    }
 }
