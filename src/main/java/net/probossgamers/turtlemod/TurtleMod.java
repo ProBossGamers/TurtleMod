@@ -4,7 +4,10 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.registry.EntityRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.entity.EntityList;
+import net.minecraft.item.Item;
+import net.probossgamers.TurtleMod.item.ItemTurtleLeather;
 import net.probossgamers.TurtleMod.server.ServerProxy;
 import net.probossgamers.TurtleMod.entity.monster.EntityMineTurtle;
 import net.probossgamers.TurtleMod.entity.passive.EntityTurtle;
@@ -23,6 +26,8 @@ public class TurtleMod {
     public static final String MODID = "turtlemod";
     public static final String VERSION = "Alpha 5.0";
 
+    public Item turtleLeather;
+
     @Mod.Instance(MODID)
     public static TurtleMod instance;
 
@@ -35,6 +40,8 @@ public class TurtleMod {
         registerEntity(EntityTurtle.class, "Entity Turtle");
         registerEntity(EntityZombieTurtle.class, "Zombie Turtle");
         registerEntity(EntityMineTurtle.class, "Mine Turtle");
+        turtleLeather = new ItemTurtleLeather();
+        GameRegistry.registerItem(turtleLeather, "Turtle Leather");
     }
 
     @Mod.EventHandler
