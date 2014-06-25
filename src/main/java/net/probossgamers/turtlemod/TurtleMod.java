@@ -7,7 +7,9 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.entity.EntityList;
 import net.minecraft.item.Item;
-import net.probossgamers.TurtleMod.item.ItemTurtleLeather;
+import net.minecraft.item.ItemArmor;
+import net.minecraftforge.common.util.EnumHelper;
+import net.probossgamers.TurtleMod.item.*;
 import net.probossgamers.TurtleMod.server.ServerProxy;
 import net.probossgamers.TurtleMod.entity.monster.EntityMineTurtle;
 import net.probossgamers.TurtleMod.entity.passive.EntityTurtle;
@@ -27,6 +29,17 @@ public class TurtleMod {
     public static final String VERSION = "Alpha 5.0";
 
     public Item turtleLeather;
+    public static Item turtleHelmet;
+    public static Item turtleChestplate;
+    public static Item turtleLeggings;
+    public static Item turtleBoots;
+
+    public static int turtleHelmetid;
+    public static int turtleChestplateid;
+    public static int turtleLeggingsid;
+    public static int turtleBootsid;
+
+    public static ItemArmor.ArmorMaterial turtleMaterial = EnumHelper.addArmorMaterial("Turtle", 5, new int[] { 1, 3, 2, 1 }, 15);
 
     @Mod.Instance(MODID)
     public static TurtleMod instance;
@@ -41,7 +54,15 @@ public class TurtleMod {
         registerEntity(EntityZombieTurtle.class, "Zombie Turtle");
         registerEntity(EntityMineTurtle.class, "Mine Turtle");
         turtleLeather = new ItemTurtleLeather();
+        turtleHelmet = new ItemTurtleArmor(turtleMaterial, turtleHelmetid, 0).setTextureName("turtlemod:turtleHelmet");
+        turtleChestplate = new ItemTurtleArmor(turtleMaterial, turtleChestplateid, 1).setTextureName("turtlemod:turtleChestplate");
+        turtleLeggings = new ItemTurtleArmor(turtleMaterial, turtleLeggingsid, 2).setTextureName("turtlemod:turtleLeggings");
+        turtleBoots = new ItemTurtleArmor(turtleMaterial, turtleBootsid, 3).setTextureName("turtlemod:turtleBoots");
         GameRegistry.registerItem(turtleLeather, "Turtle Leather");
+        GameRegistry.registerItem(turtleHelmet, "Turtle Helmet");
+        GameRegistry.registerItem(turtleChestplate, "Turtle Chestplate");
+        GameRegistry.registerItem(turtleLeggings, "Turtle Leggings");
+        GameRegistry.registerItem(turtleBoots, "Turtle Boots");
     }
 
     @Mod.EventHandler
