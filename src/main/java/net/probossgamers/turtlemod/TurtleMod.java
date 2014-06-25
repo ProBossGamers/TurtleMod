@@ -50,14 +50,14 @@ public class TurtleMod {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         proxy.registerRenderers();
-        registerEntity(EntityTurtle.class, "Entity Turtle");
-        registerEntity(EntityZombieTurtle.class, "Zombie Turtle");
-        registerEntity(EntityMineTurtle.class, "Mine Turtle");
-        turtleLeather = new ItemTurtleLeather();
-        turtleHelmet = new ItemTurtleArmor(turtleMaterial, turtleHelmetid, 0).setTextureName("turtlemod:turtleHelmet");
-        turtleChestplate = new ItemTurtleArmor(turtleMaterial, turtleChestplateid, 1).setTextureName("turtlemod:turtleChestplate");
-        turtleLeggings = new ItemTurtleArmor(turtleMaterial, turtleLeggingsid, 2).setTextureName("turtlemod:turtleLeggings");
-        turtleBoots = new ItemTurtleArmor(turtleMaterial, turtleBootsid, 3).setTextureName("turtlemod:turtleBoots");
+        registerEntity(EntityTurtle.class, "turtle");
+        registerEntity(EntityZombieTurtle.class, "zombieTurtle");
+        registerEntity(EntityMineTurtle.class, "mineTurtle");
+        turtleLeather = new ItemTurtleLeather().setUnlocalizedName("turtleLeather");
+        turtleHelmet = new ItemTurtleArmor(turtleMaterial, turtleHelmetid, 0).setTextureName("turtlemod:turtleHelmet").setUnlocalizedName("turtleHelmet");
+        turtleChestplate = new ItemTurtleArmor(turtleMaterial, turtleChestplateid, 1).setTextureName("turtlemod:turtleChestplate").setUnlocalizedName("turtleChestplate");
+        turtleLeggings = new ItemTurtleArmor(turtleMaterial, turtleLeggingsid, 2).setTextureName("turtlemod:turtleLeggings").setUnlocalizedName("turtleLeggings");
+        turtleBoots = new ItemTurtleArmor(turtleMaterial, turtleBootsid, 3).setTextureName("turtlemod:turtleBoots").setUnlocalizedName("turtleBoots");
         GameRegistry.registerItem(turtleLeather, "Turtle Leather");
         GameRegistry.registerItem(turtleHelmet, "Turtle Helmet");
         GameRegistry.registerItem(turtleChestplate, "Turtle Chestplate");
