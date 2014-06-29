@@ -2,8 +2,12 @@ package net.probossgamers.TurtleMod.item;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.world.World;
 import net.probossgamers.TurtleMod.TurtleMod;
 
 public class ItemTurtleArmor extends ItemArmor {
@@ -20,6 +24,17 @@ public class ItemTurtleArmor extends ItemArmor {
             return "turtlemod:textures/models/armor/turtle_2.png";
         } else {
             return null;
+        }
+    }
+
+    @Override
+    public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
+        if (player.getCurrentArmor(3) != null) {
+            ItemStack helmet = player.getCurrentArmor(3);
+
+            if (helmet.getItem() == TurtleMod.turtleHelmet) {
+                player.addPotionEffect(new PotionEffect(Potion.waterBreathing.getId(), 10, 0));
+            }
         }
     }
 }
