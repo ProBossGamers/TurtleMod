@@ -29,11 +29,13 @@ public class TurtleMod {
     public static final String VERSION = "Alpha 5.0";
 
     public Item turtleLeather;
+    public static Item turtleShell;
     public static Item turtleHelmet;
     public static Item turtleChestplate;
     public static Item turtleLeggings;
     public static Item turtleBoots;
 
+    public static int turtleShellid;
     public static int turtleHelmetid;
     public static int turtleChestplateid;
     public static int turtleLeggingsid;
@@ -54,11 +56,13 @@ public class TurtleMod {
         registerEntity(EntityZombieTurtle.class, "zombieTurtle");
         registerEntity(EntityMineTurtle.class, "mineTurtle");
         turtleLeather = new ItemTurtleLeather().setUnlocalizedName("turtleLeather");
+        turtleShell = new ItemTurtleShell(turtleMaterial, turtleShellid, 1).setTextureName("turtlemod:turtleShell").setUnlocalizedName("turtleShell");
         turtleHelmet = new ItemTurtleArmor(turtleMaterial, turtleHelmetid, 0).setTextureName("turtlemod:turtleHelmet").setUnlocalizedName("turtleHelmet");
         turtleChestplate = new ItemTurtleArmor(turtleMaterial, turtleChestplateid, 1).setTextureName("turtlemod:turtleChestplate").setUnlocalizedName("turtleChestplate");
         turtleLeggings = new ItemTurtleArmor(turtleMaterial, turtleLeggingsid, 2).setTextureName("turtlemod:turtleLeggings").setUnlocalizedName("turtleLeggings");
         turtleBoots = new ItemTurtleArmor(turtleMaterial, turtleBootsid, 3).setTextureName("turtlemod:turtleBoots").setUnlocalizedName("turtleBoots");
         GameRegistry.registerItem(turtleLeather, "Turtle Leather");
+        GameRegistry.registerItem(turtleShell, "Turtle Shell");
         GameRegistry.registerItem(turtleHelmet, "Turtle Helmet");
         GameRegistry.registerItem(turtleChestplate, "Turtle Chestplate");
         GameRegistry.registerItem(turtleLeggings, "Turtle Leggings");
