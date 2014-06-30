@@ -10,7 +10,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraftforge.common.util.EnumHelper;
 import net.probossgamers.TurtleMod.item.*;
-import net.probossgamers.TurtleMod.server.ServerProxy;
 import net.probossgamers.TurtleMod.entity.monster.EntityMineTurtle;
 import net.probossgamers.TurtleMod.entity.passive.EntityTurtle;
 import net.probossgamers.TurtleMod.entity.monster.EntityZombieTurtle;
@@ -47,7 +46,7 @@ public class TurtleMod {
     public static TurtleMod instance;
 
     @SidedProxy(clientSide = "net.probossgamers.TurtleMod.client.ClientProxy", serverSide = "net.probossgamers.TurtleMod.server.ServerProxy")
-    public static ServerProxy proxy;
+    public static net.probossgamers.TurtleMod.server.ServerProxy proxy;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
