@@ -22,21 +22,15 @@ buildscript
 
 apply plugin: 'forge'
 
-version = "1.7.10-5.0_SNAPSHOT"
-group= "net.probossgamers.TurtleMod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+version = "1.7.10-10.13.0.1199"
+group= "net.probossgamers.TurtleMod"
 archivesBaseName = "TurtleMod"
 libsDirName = '../target'
 
 minecraft 
 {
     version = "1.7.10-10.13.0.1180"
-    if (file('../run').exists()) {
-        assetDir = "../run/assets"
-    } else if (file('../../run').exists()) {
-        assetDir = "../../run/assets"
-    } else {
-        assetDir = "assets"
-    }
+    runDir = "minecraft"
 }
 
 processResources
@@ -47,7 +41,6 @@ processResources
     from(sourceSets.main.resources.srcDirs)
     {
         include 'mcmod.info'
-                
         expand 'version':project.version, 'mcversion':project.minecraft.version
     }
         
