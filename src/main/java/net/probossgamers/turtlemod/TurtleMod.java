@@ -6,7 +6,7 @@ import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.EntityList;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
@@ -80,26 +80,11 @@ public class TurtleMod {
         GameRegistry.registerItem(turtleBoots, "Turtle Boots");
     }
 
-    @Mod.EventHandler
-    public void Init(FMLInitializationEvent event) {
-
-    }
-
-    @Mod.EventHandler
-    public void postInit(FMLPostInitializationEvent event) {
-
-    }
-
-    public static void addSpawn(Class par1, int par2, int par3, int par4, EnumCreatureType par5) {
-
-    }
-
-    public static void registerEntity(Class entityClass, String name, int par1, int par2, int par3, int par4, int par5, EnumCreatureType CreatureType)
+    public static void registerEntity(Class<? extends EntityLiving> entityClass, String name, int par1, int par2, int par3, int par4, int par5, EnumCreatureType CreatureType)
     {
         int entityID = EntityRegistry.findGlobalUniqueEntityId();
-        EntityRegistry.registerGlobalEntityID(entityClass, name, entityID);
+        EntityRegistry.registerGlobalEntityID(entityClass, name, entityID, par1, par2);
         EntityRegistry.registerModEntity(entityClass, name, entityID, instance, 64, 1, true);
-        EntityList.entityEggs.put(entityID, new EntityList.EntityEggInfo(entityID, par1, par2));
         EntityRegistry.addSpawn(entityClass, par3, par4, par5, CreatureType, BiomeGenBase.beach,
                 BiomeGenBase.frozenRiver, BiomeGenBase.iceMountains,
                 BiomeGenBase.icePlains, BiomeGenBase.plains,
