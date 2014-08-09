@@ -2,7 +2,7 @@ package net.probossgamers.turtlemod;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
@@ -29,29 +29,34 @@ public class TurtleMod {
 
     public static final String MODID = "turtlemod";
     public static final String VERSION = "Alpha 5.0";
-
-    public Item turtleLeather;
     public static Item turtleShell;
     public static Item turtleHelmet;
     public static Item turtleChestplate;
     public static Item turtleLeggings;
     public static Item turtleBoots;
-
     public static int turtleShellid;
     public static int turtleHelmetid;
     public static int turtleChestplateid;
     public static int turtleLeggingsid;
     public static int turtleBootsid;
-
-    public static ItemArmor.ArmorMaterial turtleMaterial = EnumHelper.addArmorMaterial("Turtle", 5, new int[] { 1, 3, 2, 1 }, 15);
-
+    public static ItemArmor.ArmorMaterial turtleMaterial = EnumHelper.addArmorMaterial("Turtle", 5, new int[]{1, 3, 2, 1}, 15);
     public static CreativeTabs turtleTab;
-
     @Mod.Instance(MODID)
     public static TurtleMod instance;
-
     @SidedProxy(clientSide = "net.probossgamers.turtlemod.client.ClientProxy", serverSide = "net.probossgamers.turtlemod.server.ServerProxy")
     public static ServerProxy proxy;
+    public Item turtleLeather;
+
+    public static void registerEntity(Class<? extends EntityLiving> entityClass, String name, int par1, int par2, int par3, int par4, int par5, EnumCreatureType CreatureType) {
+        int entityID = EntityRegistry.findGlobalUniqueEntityId();
+        EntityRegistry.registerGlobalEntityID(entityClass, name, entityID, par1, par2);
+        EntityRegistry.registerModEntity(entityClass, name, entityID, instance, 64, 1, true);
+        EntityRegistry.addSpawn(entityClass, par3, par4, par5, CreatureType, BiomeGenBase.beach,
+                BiomeGenBase.frozenRiver, BiomeGenBase.iceMountains,
+                BiomeGenBase.icePlains, BiomeGenBase.plains,
+                BiomeGenBase.river, BiomeGenBase.swampland, BiomeGenBase.taiga,
+                BiomeGenBase.taigaHills);
+    }
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -78,17 +83,5 @@ public class TurtleMod {
         GameRegistry.registerItem(turtleChestplate, "Turtle Chestplate");
         GameRegistry.registerItem(turtleLeggings, "Turtle Leggings");
         GameRegistry.registerItem(turtleBoots, "Turtle Boots");
-    }
-
-    public static void registerEntity(Class<? extends EntityLiving> entityClass, String name, int par1, int par2, int par3, int par4, int par5, EnumCreatureType CreatureType)
-    {
-        int entityID = EntityRegistry.findGlobalUniqueEntityId();
-        EntityRegistry.registerGlobalEntityID(entityClass, name, entityID, par1, par2);
-        EntityRegistry.registerModEntity(entityClass, name, entityID, instance, 64, 1, true);
-        EntityRegistry.addSpawn(entityClass, par3, par4, par5, CreatureType, BiomeGenBase.beach,
-                BiomeGenBase.frozenRiver, BiomeGenBase.iceMountains,
-                BiomeGenBase.icePlains, BiomeGenBase.plains,
-                BiomeGenBase.river, BiomeGenBase.swampland, BiomeGenBase.taiga,
-                BiomeGenBase.taigaHills);
     }
 }

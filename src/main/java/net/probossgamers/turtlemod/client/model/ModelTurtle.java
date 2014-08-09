@@ -4,8 +4,7 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelTurtle extends ModelBase
-{
+public class ModelTurtle extends ModelBase {
     ModelRenderer head;
     ModelRenderer body;
     ModelRenderer FrontRight;
@@ -14,8 +13,7 @@ public class ModelTurtle extends ModelBase
     ModelRenderer BackRight;
     ModelRenderer Shape1;
 
-    public ModelTurtle()
-    {
+    public ModelTurtle() {
         this.textureWidth = 64;
         this.textureHeight = 64;
         this.head = new ModelRenderer(this, 0, 0);
@@ -29,7 +27,7 @@ public class ModelTurtle extends ModelBase
         this.body.setRotationPoint(1.0F, 15.0F, 6.0F);
         this.body.setTextureSize(64, 64);
         this.body.mirror = true;
-        this.setRotation(this.body, ((float)Math.PI / 2F), 0.0F, 0.0F);
+        this.setRotation(this.body, ((float) Math.PI / 2F), 0.0F, 0.0F);
         this.FrontRight = new ModelRenderer(this, 0, 16);
         this.FrontRight.addBox(0.0F, 0.0F, 0.0F, 3, 3, 3);
         this.FrontRight.setRotationPoint(-7.0F, 21.0F, -4.0F);
@@ -65,8 +63,7 @@ public class ModelTurtle extends ModelBase
     /**
      * Sets the models various rotation angles then renders the model.
      */
-    public void render(Entity entity, float var2, float var3, float var4, float var5, float var6, float var7)
-    {
+    public void render(Entity entity, float var2, float var3, float var4, float var5, float var6, float var7) {
         super.render(entity, var2, var3, var4, var5, var6, var7);
         this.setRotationAngles(var2, var3, var4, var5, var6, var7, entity);
         this.head.render(var7);
@@ -78,15 +75,13 @@ public class ModelTurtle extends ModelBase
         this.Shape1.render(var7);
     }
 
-    private void setRotation(ModelRenderer var1, float var2, float var3, float var4)
-    {
+    private void setRotation(ModelRenderer var1, float var2, float var3, float var4) {
         var1.rotateAngleX = var2;
         var1.rotateAngleY = var3;
         var1.rotateAngleZ = var4;
     }
 
-    public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
-    {
+    public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
 
         FrontRight.rotateAngleY = 0.0F;
