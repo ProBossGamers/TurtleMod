@@ -22,14 +22,14 @@ buildscript
 
 apply plugin: 'forge'
 
-version = "1.7.2-5.0_SNAPSHOT"
+version = "1.7.10-5.0_SNAPSHOT"
 group= "net.probossgamers.TurtleMod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "TurtleMod"
 libsDirName = '../target'
 
 minecraft 
 {
-    version = "1.7.2-10.12.2.1133"
+    version = "1.7.10-10.13.0.1180"
     if (file('../run').exists()) {
         assetDir = "../run/assets"
     } else if (file('../../run').exists()) {
