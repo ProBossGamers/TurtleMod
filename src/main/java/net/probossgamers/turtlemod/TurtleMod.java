@@ -17,8 +17,6 @@ import net.probossgamers.turtlemod.item.ItemTurtleArmor;
 import net.probossgamers.turtlemod.item.ItemTurtleShell;
 import net.probossgamers.turtlemod.server.ServerProxy;
 
-import java.util.Random;
-
 @Mod(
         modid = TurtleMod.MODID,
         name = "Turtle Mod",
@@ -45,6 +43,8 @@ public class TurtleMod {
 
     public static ItemArmor.ArmorMaterial turtleMaterial = EnumHelper.addArmorMaterial("Turtle", 5, new int[] { 1, 3, 2, 1 }, 15);
 
+    public static CreativeTabs turtleTab;
+
     @Mod.Instance(MODID)
     public static TurtleMod instance;
 
@@ -54,10 +54,16 @@ public class TurtleMod {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         proxy.registerRenderers();
-        registerEntity(EntityTurtle.class, "turtle");
-        registerEntity(EntityZombieTurtle.class, "zombieTurtle");
-        registerEntity(EntityMineTurtle.class, "mineTurtle");
-        turtleLeather = new Item().setUnlocalizedName("turtleLeather").setTextureName("turtlemod:turtleLeather").setCreativeTab(CreativeTabs.tabMisc);
+        turtleTab = new CreativeTabs("turtleTab") {
+            @Override
+            public Item getTabIconItem() {
+                return turtleShell;
+            }
+        };
+        registerEntity(EntityTurtle.class, "turtle", 0x1e8100, 0x7d3900);
+        registerEntity(EntityZombieTurtle.class, "zombieTurtle", 0x008344, 0x823F02);
+        registerEntity(EntityMineTurtle.class, "mineTurtle", 0x1e8100, 0xef0000);
+        turtleLeather = new Item().setUnlocalizedName("turtleLeather").setTextureName("turtlemod:turtleLeather").setCreativeTab(turtleTab);
         turtleShell = new ItemTurtleShell(turtleMaterial, turtleShellid, 1).setTextureName("turtlemod:turtleShell").setUnlocalizedName("turtleShell");
         turtleHelmet = new ItemTurtleArmor(turtleMaterial, turtleHelmetid, 0).setTextureName("turtlemod:turtleHelmet").setUnlocalizedName("turtleHelmet");
         turtleChestplate = new ItemTurtleArmor(turtleMaterial, turtleChestplateid, 1).setTextureName("turtlemod:turtleChestplate").setUnlocalizedName("turtleChestplate");
@@ -81,16 +87,11 @@ public class TurtleMod {
 
     }
 
-    public static void registerEntity(Class entityClass, String name)
+    public static void registerEntity(Class<? extends net.minecraft.entity.Entity> entityClass, String name, int par3, int par4)
     {
         int entityID = EntityRegistry.findGlobalUniqueEntityId();
-        long seed = name.hashCode();
-        Random rand = new Random(seed);
-        int primaryColor = rand.nextInt() * 16777215;
-        int secondaryColor = rand.nextInt() * 16777215;
-
         EntityRegistry.registerGlobalEntityID(entityClass, name, entityID);
         EntityRegistry.registerModEntity(entityClass, name, entityID, instance, 64, 1, true);
-        EntityList.entityEggs.put(Integer.valueOf(entityID), new EntityList.EntityEggInfo(entityID, primaryColor, secondaryColor));
+        EntityList.entityEggs.put(entityID, new EntityList.EntityEggInfo(entityID, par3, par4));
     }
 }

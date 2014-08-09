@@ -13,7 +13,7 @@ import net.probossgamers.turtlemod.TurtleMod;
 public class ItemTurtleArmor extends ItemArmor {
     public ItemTurtleArmor(ItemArmor.ArmorMaterial material, int id, int placement) {
         super(material, id, placement);
-        setCreativeTab(CreativeTabs.tabMisc);
+        setCreativeTab(TurtleMod.turtleTab);
     }
 
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
