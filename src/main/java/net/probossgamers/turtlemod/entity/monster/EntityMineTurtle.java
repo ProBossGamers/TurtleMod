@@ -1,7 +1,5 @@
 package net.probossgamers.turtlemod.entity.monster;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
@@ -23,7 +21,7 @@ public class EntityMineTurtle extends EntityMob {
      * Time when this creeper was last in an active state (Messed up code here, probably causes creeper animation to go
      * weird)
      */
-    private int lastActiveTime;
+    public int lastActiveTime;
     /**
      * The amount of time since the creeper was close enough to the player to ignite
      */
@@ -190,14 +188,6 @@ public class EntityMineTurtle extends EntityMob {
     public boolean getPowered() {
         return this.dataWatcher.getWatchableObjectByte(17) == 1;
     }
-
-    /**
-     * Params: (Float)Render tick. Returns the intensity of the creeper's flash when it is ignited.
-     *
-    @SideOnly(Side.CLIENT)
-    public float getCreeperFlashIntensity(float par1) {
-        return ((float) this.lastActiveTime + (float) (this.timeSinceIgnited - this.lastActiveTime) * par1) / (float) (this.fuseTime - 2);
-    } **/
 
     protected Item getDropItem() {
         return Items.gunpowder;
