@@ -1,8 +1,8 @@
-package net.probossgamers.TurtleMod.entity.ai;
+package net.probossgamers.turtlemod.entity.ai;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
-import net.probossgamers.TurtleMod.entity.monster.EntityMineTurtle;
+import net.probossgamers.turtlemod.entity.monster.EntityMineTurtle;
 
 public class EntityAIMineTurtleSwell extends EntityAIBase
 {

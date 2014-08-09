@@ -1,15 +1,15 @@
-package net.probossgamers.TurtleMod.client;
+package net.probossgamers.turtlemod.client;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
-import net.probossgamers.TurtleMod.server.ServerProxy;
-import net.probossgamers.TurtleMod.entity.monster.EntityMineTurtle;
-import net.probossgamers.TurtleMod.entity.passive.EntityTurtle;
-import net.probossgamers.TurtleMod.entity.monster.EntityZombieTurtle;
-import net.probossgamers.TurtleMod.client.model.ModelMineTurtle;
-import net.probossgamers.TurtleMod.client.model.ModelTurtle;
-import net.probossgamers.TurtleMod.client.render.RenderMineTurtle;
-import net.probossgamers.TurtleMod.client.render.RenderTurtle;
-import net.probossgamers.TurtleMod.client.render.RenderZombieTurtle;
+import net.probossgamers.turtlemod.client.model.ModelMineTurtle;
+import net.probossgamers.turtlemod.client.model.ModelTurtle;
+import net.probossgamers.turtlemod.client.render.RenderMineTurtle;
+import net.probossgamers.turtlemod.client.render.RenderTurtle;
+import net.probossgamers.turtlemod.client.render.RenderZombieTurtle;
+import net.probossgamers.turtlemod.entity.monster.EntityMineTurtle;
+import net.probossgamers.turtlemod.entity.monster.EntityZombieTurtle;
+import net.probossgamers.turtlemod.entity.passive.EntityTurtle;
+import net.probossgamers.turtlemod.server.ServerProxy;
 
 public class ClientProxy extends ServerProxy {
     @Override

@@ -1,4 +1,4 @@
-package net.probossgamers.TurtleMod.item;
+package net.probossgamers.turtlemod.item;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
-import net.probossgamers.TurtleMod.TurtleMod;
+import net.probossgamers.turtlemod.TurtleMod;
 
 public class ItemTurtleArmor extends ItemArmor {
     public ItemTurtleArmor(ItemArmor.ArmorMaterial material, int id, int placement) {

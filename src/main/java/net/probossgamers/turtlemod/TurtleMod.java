@@ -1,4 +1,4 @@
-package net.probossgamers.TurtleMod;
+package net.probossgamers.turtlemod;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -10,10 +10,12 @@ import net.minecraft.entity.EntityList;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraftforge.common.util.EnumHelper;
-import net.probossgamers.TurtleMod.item.*;
-import net.probossgamers.TurtleMod.entity.monster.EntityMineTurtle;
-import net.probossgamers.TurtleMod.entity.passive.EntityTurtle;
-import net.probossgamers.TurtleMod.entity.monster.EntityZombieTurtle;
+import net.probossgamers.turtlemod.entity.monster.EntityMineTurtle;
+import net.probossgamers.turtlemod.entity.monster.EntityZombieTurtle;
+import net.probossgamers.turtlemod.entity.passive.EntityTurtle;
+import net.probossgamers.turtlemod.item.ItemTurtleArmor;
+import net.probossgamers.turtlemod.item.ItemTurtleShell;
+import net.probossgamers.turtlemod.server.ServerProxy;
 
 import java.util.Random;
 
@@ -46,8 +48,8 @@ public class TurtleMod {
     @Mod.Instance(MODID)
     public static TurtleMod instance;
 
-    @SidedProxy(clientSide = "net.probossgamers.TurtleMod.client.ClientProxy", serverSide = "net.probossgamers.TurtleMod.server.ServerProxy")
-    public static net.probossgamers.TurtleMod.server.ServerProxy proxy;
+    @SidedProxy(clientSide = "net.probossgamers.turtlemod.client.ClientProxy", serverSide = "net.probossgamers.turtlemod.server.ServerProxy")
+    public static ServerProxy proxy;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {

@@ -1,4 +1,4 @@
-package net.probossgamers.TurtleMod.client.model;
+package net.probossgamers.turtlemod.client.model;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;

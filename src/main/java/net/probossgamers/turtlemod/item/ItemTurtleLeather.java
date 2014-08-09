@@ -1,6 +1,5 @@
-package net.probossgamers.TurtleMod.item;
+package net.probossgamers.turtlemod.item;
 
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 

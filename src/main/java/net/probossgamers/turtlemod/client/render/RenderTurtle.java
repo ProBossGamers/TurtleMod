@@ -1,10 +1,10 @@
-package net.probossgamers.TurtleMod.client.render;
+package net.probossgamers.turtlemod.client.render;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.util.ResourceLocation;
-import net.probossgamers.TurtleMod.client.model.ModelTurtle;
+import net.probossgamers.turtlemod.client.model.ModelTurtle;
 
 @SideOnly(Side.CLIENT)
 public class RenderTurtle extends RenderLiving {
