@@ -5,7 +5,6 @@ import net.minecraft.entity.ai.EntityAIBase;
 import net.probossgamers.turtlemod.entity.monster.EntityMineTurtle;
 
 public class EntityAIMineTurtleSwell extends EntityAIBase {
-    private static final String __OBFID = "CL_00001614";
     /**
      * The creeper that is swelling.
      */

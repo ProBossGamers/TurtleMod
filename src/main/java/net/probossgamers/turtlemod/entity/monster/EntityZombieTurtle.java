@@ -81,7 +81,7 @@ public class EntityZombieTurtle extends EntityMob {
 
                         if (itemstack.getItemDamageForDisplay() >= itemstack.getMaxDamage()) {
                             this.renderBrokenItemStack(itemstack);
-                            this.setCurrentItemOrArmor(4, (ItemStack) null);
+                            this.setCurrentItemOrArmor(4, null);
                         }
                     }
 

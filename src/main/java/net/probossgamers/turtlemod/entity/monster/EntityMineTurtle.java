@@ -19,7 +19,6 @@ import net.minecraft.world.World;
 import net.probossgamers.turtlemod.entity.ai.EntityAIMineTurtleSwell;
 
 public class EntityMineTurtle extends EntityMob {
-    private static final String __OBFID = "CL_00001684";
     /**
      * Time when this creeper was last in an active state (Messed up code here, probably causes creeper animation to go
      * weird)
@@ -81,9 +80,9 @@ public class EntityMineTurtle extends EntityMob {
 
     protected void entityInit() {
         super.entityInit();
-        this.dataWatcher.addObject(16, Byte.valueOf((byte) -1));
-        this.dataWatcher.addObject(17, Byte.valueOf((byte) 0));
-        this.dataWatcher.addObject(18, Byte.valueOf((byte) 0));
+        this.dataWatcher.addObject(16, (byte) -1);
+        this.dataWatcher.addObject(17, (byte) 0);
+        this.dataWatcher.addObject(18, (byte) 0);
     }
 
     /**
@@ -106,7 +105,7 @@ public class EntityMineTurtle extends EntityMob {
      */
     public void readEntityFromNBT(NBTTagCompound par1NBTTagCompound) {
         super.readEntityFromNBT(par1NBTTagCompound);
-        this.dataWatcher.updateObject(17, Byte.valueOf((byte) (par1NBTTagCompound.getBoolean("powered") ? 1 : 0)));
+        this.dataWatcher.updateObject(17, (byte) (par1NBTTagCompound.getBoolean("powered") ? 1 : 0));
 
         if (par1NBTTagCompound.hasKey("Fuse", 99)) {
             this.fuseTime = par1NBTTagCompound.getShort("Fuse");
@@ -194,11 +193,11 @@ public class EntityMineTurtle extends EntityMob {
 
     /**
      * Params: (Float)Render tick. Returns the intensity of the creeper's flash when it is ignited.
-     */
+     *
     @SideOnly(Side.CLIENT)
     public float getCreeperFlashIntensity(float par1) {
         return ((float) this.lastActiveTime + (float) (this.timeSinceIgnited - this.lastActiveTime) * par1) / (float) (this.fuseTime - 2);
-    }
+    } **/
 
     protected Item getDropItem() {
         return Items.gunpowder;
@@ -215,7 +214,7 @@ public class EntityMineTurtle extends EntityMob {
      * Sets the state of creeper, -1 to idle and 1 to be 'in fuse'
      */
     public void setCreeperState(int par1) {
-        this.dataWatcher.updateObject(16, Byte.valueOf((byte) par1));
+        this.dataWatcher.updateObject(16, (byte) par1);
     }
 
     /**
@@ -223,7 +222,7 @@ public class EntityMineTurtle extends EntityMob {
      */
     public void onStruckByLightning(EntityLightningBolt par1EntityLightningBolt) {
         super.onStruckByLightning(par1EntityLightningBolt);
-        this.dataWatcher.updateObject(17, Byte.valueOf((byte) 1));
+        this.dataWatcher.updateObject(17, (byte) 1);
     }
 
     /**
@@ -265,6 +264,6 @@ public class EntityMineTurtle extends EntityMob {
     }
 
     public void func_146079_cb() {
-        this.dataWatcher.updateObject(18, Byte.valueOf((byte) 1));
+        this.dataWatcher.updateObject(18, (byte) 1);
     }
 }
