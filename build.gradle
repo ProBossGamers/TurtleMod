@@ -22,8 +22,13 @@ buildscript
 
 apply plugin: 'forge'
 
+<<<<<<< HEAD
 version = "1.7.10-10.13.0.1199"
 group= "net.probossgamers.TurtleMod"
+=======
+version = "1.7.10-5.0_SNAPSHOT"
+group= "net.probossgamers.turtlemod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+>>>>>>> origin/master
 archivesBaseName = "TurtleMod"
 libsDirName = '../target'
 
