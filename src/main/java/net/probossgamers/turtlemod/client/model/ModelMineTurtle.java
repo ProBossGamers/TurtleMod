@@ -6,7 +6,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.MathHelper;
 
 public class ModelMineTurtle extends ModelBase {
-    //fields
     ModelRenderer Shape2;
     ModelRenderer head;
     ModelRenderer body;

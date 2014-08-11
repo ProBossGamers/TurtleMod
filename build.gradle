@@ -23,19 +23,30 @@ buildscript
 apply plugin: 'forge'
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 version = "1.7.10-10.13.0.1199"
 group= "net.probossgamers.TurtleMod"
 =======
 version = "1.7.10-5.0_SNAPSHOT"
 group= "net.probossgamers.turtlemod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 >>>>>>> origin/master
+=======
+version = "1.7.10-5.0_SNAPSHOT"
+group= "net.probossgamers.TurtleMod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+>>>>>>> parent of fbf840d... Use valid forge version ;-;
 archivesBaseName = "TurtleMod"
 libsDirName = '../target'
 
 minecraft 
 {
     version = "1.7.10-10.13.0.1180"
-    runDir = "minecraft"
+    if (file('../run').exists()) {
+        assetDir = "../run/assets"
+    } else if (file('../../run').exists()) {
+        assetDir = "../../run/assets"
+    } else {
+        assetDir = "assets"
+    }
 }
 
 processResources
@@ -46,6 +57,7 @@ processResources
     from(sourceSets.main.resources.srcDirs)
     {
         include 'mcmod.info'
+                
         expand 'version':project.version, 'mcversion':project.minecraft.version
     }
         
