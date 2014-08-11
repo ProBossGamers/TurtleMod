@@ -13,7 +13,6 @@ Changelog
 -----------
 
 * Updated to 1.7.10
-* Better Mine Turtle ai
 
 The Crew
 --------------
