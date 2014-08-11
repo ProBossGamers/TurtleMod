@@ -1,0 +1,34 @@
+{
+    "mineturtle:hello":
+    {
+        "category":"neutral",
+        "sounds":
+        [
+            "mineturtle/hello"
+        ]
+    },
+    "turtle:living":
+    {
+        "category":"neutral",
+        "sounds":
+        [
+            "turtle/living"
+        ]
+    },
+    "turtle:hurt":
+    {
+        "category":"neutral",
+        "sounds":
+        [
+            "turtle/hurt"
+        ]
+    },
+    "turtle:death":
+    {
+        "category":"neutral",
+        "sounds":
+        [
+            "turtle/death"
+        ]
+    }
+}
