@@ -42,9 +42,4 @@ public class EntityMineTurtle extends EntityCreature {
     public String getDeathSound() {
         return "turtlemod:turtle:death";
     }
-
-    public void explode() {
-        worldObj.createExplosion(this, posX, posY, posZ, 10f, worldObj.getGameRules().getGameRuleBooleanValue("mobGriefing"));
-        setDead();
-    }
 }
