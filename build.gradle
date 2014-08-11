@@ -24,6 +24,7 @@ apply plugin: 'forge'
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version = "1.7.10-10.13.0.1199"
 group= "net.probossgamers.TurtleMod"
 =======
@@ -34,6 +35,10 @@ group= "net.probossgamers.turtlemod" // http://maven.apache.org/guides/mini/guid
 version = "1.7.10-5.0_SNAPSHOT"
 group= "net.probossgamers.TurtleMod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 >>>>>>> parent of fbf840d... Use valid forge version ;-;
+=======
+version = "1.7.10-10.13.0.1199"
+group= "net.probossgamers.turtlemod"
+>>>>>>> parent of 2772712... Revert "You cant mess up more"
 archivesBaseName = "TurtleMod"
 libsDirName = '../target'
 
