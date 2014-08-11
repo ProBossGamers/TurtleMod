@@ -19,8 +19,16 @@ import net.probossgamers.turtlemod.item.ItemTurtleArmor;
 import net.probossgamers.turtlemod.item.ItemTurtleShell;
 import net.probossgamers.turtlemod.server.ServerProxy;
 
-@Mod(modid = "turtlemod", name = "Turtle Mod", version = "1.0.0")
+@Mod(
+        modid = TurtleMod.MODID,
+        name = "Turtle Mod",
+        version = TurtleMod.VERSION
+)
+
 public class TurtleMod {
+
+    public static final String MODID = "turtlemod";
+    public static final String VERSION = "Alpha 5.0";
     public static Item turtleShell;
     public static Item turtleHelmet;
     public static Item turtleChestplate;
@@ -33,7 +41,7 @@ public class TurtleMod {
     public static int turtleBootsid;
     public static ItemArmor.ArmorMaterial turtleMaterial = EnumHelper.addArmorMaterial("Turtle", 5, new int[]{1, 3, 2, 1}, 15);
     public static CreativeTabs turtleTab;
-    @Mod.Instance("turtlemod")
+    @Mod.Instance(MODID)
     public static TurtleMod instance;
     @SidedProxy(clientSide = "net.probossgamers.turtlemod.client.ClientProxy", serverSide = "net.probossgamers.turtlemod.server.ServerProxy")
     public static ServerProxy proxy;
