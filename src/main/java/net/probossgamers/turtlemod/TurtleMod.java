@@ -25,7 +25,7 @@ public class TurtleMod
 	public static final String MODID = "turtlemod";
     public static final String VERSION = "Alpha 5.0";
 
-    public static CreativeTabs turtleTab;=
+    public static CreativeTabs turtleTab;
 
     public Item turtleLeather;
     public static Item turtleShell;
