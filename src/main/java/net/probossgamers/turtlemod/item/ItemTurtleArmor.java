@@ -16,11 +16,11 @@ public class ItemTurtleArmor extends ItemArmor {
     }
 
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
-        if (stack.getItem() == TurtleMod.turtleHelmet || stack.getItem() == TurtleMod.turtleChestplate || stack.getItem() == TurtleMod.turtleBoots) {
-            return "turtlemod:textures/models/armor/turtle_1.png";
+        if (stack.getItem() == RegisterItems.turtleHelmet || stack.getItem() == RegisterItems.turtleChestplate || stack.getItem() == RegisterItems.turtleBoots) {
+            return "RegisterItems:textures/models/armor/turtle_1.png";
         }
-        if (stack.getItem() == TurtleMod.turtleLeggings) {
-            return "turtlemod:textures/models/armor/turtle_2.png";
+        if (stack.getItem() == RegisterItems.turtleLeggings) {
+            return "RegisterItems:textures/models/armor/turtle_2.png";
         } else {
             return null;
         }
@@ -31,7 +31,7 @@ public class ItemTurtleArmor extends ItemArmor {
         if (player.getCurrentArmor(3) != null) {
             ItemStack helmet = player.getCurrentArmor(3);
 
-            if (helmet.getItem() == TurtleMod.turtleHelmet) {
+            if (helmet.getItem() == RegisterItems.turtleHelmet) {
                 player.addPotionEffect(new PotionEffect(Potion.waterBreathing.getId(), 10, 0));
             }
         }

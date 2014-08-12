@@ -12,7 +12,7 @@ public class ItemTurtleShell extends ItemArmor {
     }
 
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
-        if (stack.getItem() == TurtleMod.turtleShell) {
+        if (stack.getItem() == RegisterItems.turtleShell) {
             return "turtlemod:textures/models/armor/shell_1.png";
         } else {
             return null;

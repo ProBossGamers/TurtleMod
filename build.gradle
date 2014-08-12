@@ -33,12 +33,6 @@ minecraft
     runDir = "minecraft"
 }
 
-jar {
-    manifest {
-        attributes 'FMLAT': 'turtlemod_at.cfg'
-    }
-}
-
 processResources
 {
     inputs.property "version", project.version
