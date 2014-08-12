@@ -14,12 +14,12 @@ import net.probossgamers.turtlemod.entity.ai.EntityAIExplodeOnCollide;
 public class EntityMineTurtle extends EntityCreature {
     public EntityMineTurtle(World world) {
         super(world);
-        setSize(1f, 0.3f);
         tasks.addTask(1, new EntityAISwimming(this));
         tasks.addTask(2, new EntityAIAvoidEntity(this, EntityCreeper.class, 6.0f, 1.0f, 1.2f));
         tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0f));
         tasks.addTask(3, new EntityAILookIdle(this));
         tasks.addTask(4, new EntityAIExplodeOnCollide(this, EntityPlayer.class));
+        this.setSize(0.6F, 0.5F);
     }
 
     public boolean isAIEnabled() {
