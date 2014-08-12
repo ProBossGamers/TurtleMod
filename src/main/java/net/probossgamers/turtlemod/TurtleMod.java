@@ -1,51 +1,57 @@
 package net.probossgamers.turtlemod;
 
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.EntityRegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
-import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraftforge.common.util.EnumHelper;
-import net.probossgamers.turtlemod.entity.monster.EntityMineTurtle;
-import net.probossgamers.turtlemod.entity.monster.EntityZombieTurtle;
-import net.probossgamers.turtlemod.entity.passive.EntityTurtle;
-import net.probossgamers.turtlemod.item.ItemTurtleArmor;
-import net.probossgamers.turtlemod.item.ItemTurtleShell;
-import net.probossgamers.turtlemod.server.ServerProxy;
+    import cpw.mods.fml.common.SidedProxy;
+    import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+    import cpw.mods.fml.common.registry.EntityRegistry;
+    import cpw.mods.fml.common.registry.GameRegistry;
+    import net.minecraft.creativetab.CreativeTabs;
+    import net.minecraft.entity.EntityLiving;
+    import net.minecraft.entity.EnumCreatureType;
+    import net.minecraft.item.Item;
+    import net.minecraft.item.ItemArmor;
+    import net.minecraft.world.biome.BiomeGenBase;
+    import net.minecraftforge.common.util.EnumHelper;
+    import net.probossgamers.turtlemod.entity.monster.EntityMineTurtle;
+    import net.probossgamers.turtlemod.entity.monster.EntityZombieTurtle;
+    import net.probossgamers.turtlemod.entity.passive.EntityTurtle;
+    import net.probossgamers.turtlemod.item.ItemTurtleArmor;
+    import net.probossgamers.turtlemod.item.ItemTurtleShell;
+    import net.probossgamers.turtlemod.server.ServerProxy;
 
-@Mod(
-        modid = TurtleMod.MODID,
-        name = "Turtle Mod",
-        version = TurtleMod.VERSION
-)
+    @Mod(
+            modid = TurtleMod.MODID,
+            name = "Turtle Mod",
+            version = TurtleMod.VERSION
+    )
 
-public class TurtleMod {
+    public class TurtleMod {
 
-    public static final String MODID = "turtlemod";
-    public static final String VERSION = "Alpha 5.0";
-    public static Item turtleShell;
-    public static Item turtleHelmet;
-    public static Item turtleChestplate;
+        public static final String MODID = "turtlemod";
+        public static final String VERSION = "Alpha 5.0";
+
+        public static CreativeTabs turtleTab;
+
+        public static int turtleShellid;
+        public static int turtleHelmetid;
+        public static int turtleChestplateid;
+        public static int turtleLeggingsid;
+        public static int turtleBootsid;
+
+        public Item turtleLeather;
+        public static Item turtleShell;
+        public static Item turtleHelmet;
+        public static Item turtleChestplate;
     public static Item turtleLeggings;
     public static Item turtleBoots;
-    public static int turtleShellid;
-    public static int turtleHelmetid;
-    public static int turtleChestplateid;
-    public static int turtleLeggingsid;
-    public static int turtleBootsid;
-    public static ItemArmor.ArmorMaterial turtleMaterial = EnumHelper.addArmorMaterial("Turtle", 5, new int[]{1, 3, 2, 1}, 15);
-    public static CreativeTabs turtleTab;
+
+    public ItemArmor.ArmorMaterial turtleMaterial = EnumHelper.addArmorMaterial("Turtle", 5, new int[]{1, 3, 2, 1}, 15);
+
     @Mod.Instance(MODID)
     public static TurtleMod instance;
+
     @SidedProxy(clientSide = "net.probossgamers.turtlemod.client.ClientProxy", serverSide = "net.probossgamers.turtlemod.server.ServerProxy")
     public static ServerProxy proxy;
-    public Item turtleLeather;
 
     public static void registerEntity(Class<? extends EntityLiving> entityClass, String name, int par1, int par2, int par3, int par4, int par5, EnumCreatureType CreatureType) {
         int entityID = EntityRegistry.findGlobalUniqueEntityId();
