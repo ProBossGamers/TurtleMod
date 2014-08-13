@@ -1,13 +1,12 @@
 package net.probossgamers.turtlemod.entity.passive;
 
-import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
-import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public class EntityTurtle extends EntityAnimal {
+public class EntityTurtle extends EntityCreature {
 
     public EntityTurtle(World world) {
         super(world);
@@ -40,10 +39,4 @@ public class EntityTurtle extends EntityAnimal {
     public String getDeathSound() {
         return "turtlemod:mob.turtle.death";
     }
-
-    @Override
-    public EntityAgeable createChild(EntityAgeable entityageable) {
-        return null;
-    }
-
 }
