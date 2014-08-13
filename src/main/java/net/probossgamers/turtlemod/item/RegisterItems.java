@@ -3,6 +3,7 @@ package net.probossgamers.turtlemod.item;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 import net.probossgamers.turtlemod.TurtleMod;
 
@@ -30,5 +31,9 @@ public class RegisterItems {
         GameRegistry.registerItem(turtleChestplate, "Turtle Chestplate");
         GameRegistry.registerItem(turtleLeggings, "Turtle Leggings");
         GameRegistry.registerItem(turtleBoots, "Turtle Boots");
+        GameRegistry.addRecipe(new ItemStack(turtleHelmet), "TST", "T T", 'T', turtleLeather, 'S', turtleShell);
+        GameRegistry.addRecipe(new ItemStack(turtleChestplate), "T T", "TST", "TTT", 'T', turtleLeather, 'S', turtleShell);
+        GameRegistry.addRecipe(new ItemStack(turtleLeggings), "TTT", "T T", "T T", 'T', turtleLeather);
+        GameRegistry.addRecipe(new ItemStack(turtleBoots), "T T", "T T", 'T', turtleLeather);
     }
 }
