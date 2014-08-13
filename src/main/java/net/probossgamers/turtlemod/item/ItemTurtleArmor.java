@@ -17,10 +17,10 @@ public class ItemTurtleArmor extends ItemArmor {
 
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
         if (stack.getItem() == RegisterItems.turtleHelmet || stack.getItem() == RegisterItems.turtleChestplate || stack.getItem() == RegisterItems.turtleBoots) {
-            return "RegisterItems:textures/models/armor/turtle_1.png";
+            return "turtlemod:textures/models/armor/turtle_1.png";
         }
         if (stack.getItem() == RegisterItems.turtleLeggings) {
-            return "RegisterItems:textures/models/armor/turtle_2.png";
+            return "turtlemod:textures/models/armor/turtle_2.png";
         } else {
             return null;
         }
