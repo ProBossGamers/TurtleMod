@@ -12,4 +12,6 @@ entity.zombieTurtle.name=Zombie Turtle
 entity.mineTurtle.name=Mine Turtle
 entity.helloGuy.name=Hello Guy
 entity.leonardo.name=Leonardo
+entity.michelangelo.name=Michelangelo
 entity.donatello.name=Donatello
+entity.raphael.name=Raphael
