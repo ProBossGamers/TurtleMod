@@ -14,7 +14,7 @@ Changelog
 
 * Updated to 1.7.10
 * Better Mine Turtle ai
-* Zombie Turtles burn now height half a block
+* Turtle sizes fixed (Which fixed the burning height for the turtles)
 * New high quality textures
 
 The Crew
