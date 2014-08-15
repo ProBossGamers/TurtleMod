@@ -10,3 +10,6 @@ item.turtleBoots.name=Turtle Boots
 entity.turtle.name=Turtle
 entity.zombieTurtle.name=Zombie Turtle
 entity.mineTurtle.name=Mine Turtle
+entity.helloGuy.name=Hello Guy
+entity.leonardo.name=Leonardo
+entity.donatello.name=Donatello
