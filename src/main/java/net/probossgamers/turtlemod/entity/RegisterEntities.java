@@ -6,6 +6,7 @@ import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.probossgamers.turtlemod.TurtleMod;
 import net.probossgamers.turtlemod.entity.monster.EntityDonatello;
+import net.probossgamers.turtlemod.entity.monster.EntityLeonardo;
 import net.probossgamers.turtlemod.entity.monster.EntityMineTurtle;
 import net.probossgamers.turtlemod.entity.monster.EntityZombieTurtle;
 import net.probossgamers.turtlemod.entity.passive.EntityTurtle;
@@ -17,6 +18,7 @@ public class RegisterEntities {
         registerEntity(EntityZombieTurtle.class, "zombieTurtle", 0x008344, 0x823F02, 10, 2, 4, EnumCreatureType.monster);
         registerEntity(EntityMineTurtle.class, "mineTurtle", 0x1e8100, 0xef0000, 10, 2, 4, EnumCreatureType.monster);
         registerEntity(EntityDonatello.class, "donatello", 0x1e8100, 0x640087, 10, 2, 4, EnumCreatureType.monster);
+        registerEntity(EntityLeonardo.class, "leonardo", 0x1e8100, 0x640087, 10, 2, 4, EnumCreatureType.monster);
     }
 
     public static void registerEntity(Class<? extends EntityLiving> entityClass, String name, int par1, int par2, int par3, int par4, int par5, EnumCreatureType CreatureType) {

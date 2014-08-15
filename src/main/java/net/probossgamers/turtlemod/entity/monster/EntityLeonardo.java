@@ -6,9 +6,9 @@ import net.minecraft.entity.monster.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public class EntityDonatello extends EntityMob {
+public class EntityLeonardo extends EntityMob {
 
-    public EntityDonatello(World world) {
+    public EntityLeonardo(World world) {
         super(world);
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityBlaze.class, 1.0D, false));
