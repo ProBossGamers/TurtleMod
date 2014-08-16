@@ -30,6 +30,10 @@ public class EntityHelloGuy extends EntityCreature {
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.23000000417232513D);
     }
 
+    public void dropFewItems(boolean hit, int looting) {
+
+    }
+
     public String getLivingSound() {
         return "turtlemod:mob.helloGuy.hg";
     }

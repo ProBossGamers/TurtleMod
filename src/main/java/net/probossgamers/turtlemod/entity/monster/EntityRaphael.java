@@ -4,7 +4,9 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.*;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.probossgamers.turtlemod.item.RegisterItems;
 
 public class EntityRaphael extends EntityMob {
 
@@ -54,6 +56,11 @@ public class EntityRaphael extends EntityMob {
         this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(40.0D);
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.23000000417232513D);
         this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(3.0D);
+    }
+
+    public void dropFewItems(boolean hit, int looting) {
+        this.entityDropItem(new ItemStack(RegisterItems.turtleLeather), 5);
+        this.entityDropItem(new ItemStack(RegisterItems.turtleShell), 1);
     }
 
     public String getLivingSound() {
