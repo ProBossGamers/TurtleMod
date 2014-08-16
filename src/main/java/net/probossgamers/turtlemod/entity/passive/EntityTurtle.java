@@ -4,7 +4,10 @@ import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.probossgamers.turtlemod.item.RegisterItems;
 
 public class EntityTurtle extends EntityCreature {
 
@@ -28,6 +31,15 @@ public class EntityTurtle extends EntityCreature {
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.1150000021D);
     }
 
+    /** public Item getDropItem() {
+        return RegisterItems.turtleShell;
+    } **/
+
+    public void dropFewItems(boolean hit, int looting) {
+        this.entityDropItem(new ItemStack(RegisterItems.turtleLeather), 5);
+        this.entityDropItem(new ItemStack(RegisterItems.turtleShell), 1);
+    }
+
     public String getLivingSound() {
         return "turtlemod:mob.turtle.living";
     }
@@ -39,4 +51,6 @@ public class EntityTurtle extends EntityCreature {
     public String getDeathSound() {
         return "turtlemod:mob.turtle.death";
     }
+
+
 }
