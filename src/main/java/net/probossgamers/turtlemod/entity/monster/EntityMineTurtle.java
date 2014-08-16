@@ -35,7 +35,8 @@ public class EntityMineTurtle extends EntityCreature {
 
     public void applyEntityAttributes() {
         super.applyEntityAttributes();
-        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.20D);
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(15.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.20D);
     }
 
     public String getLivingSound() {
