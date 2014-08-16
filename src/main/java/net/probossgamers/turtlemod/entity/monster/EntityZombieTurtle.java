@@ -35,6 +35,7 @@ public class EntityZombieTurtle extends EntityMob {
     public void applyEntityAttributes() {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(40.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(15.0D);
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.1150000021D);
         this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(6.0D);
     }
