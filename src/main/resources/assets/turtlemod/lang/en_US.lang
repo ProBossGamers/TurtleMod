@@ -1,7 +1,7 @@
 itemGroup.turtleTab=Turtle Mod
 
 item.turtleLeather.name=Turtle Leather
-item.turtleShell.name=Turtle Shell
+item.turtleShell.name=Wearable Turtle Shell
 item.turtleHelmet.name=Turtle Helmet
 item.turtleChestplate.name=Turtle Chestplate
 item.turtleLeggings.name=Turtle Leggings
@@ -15,3 +15,5 @@ entity.leonardo.name=Leonardo
 entity.michelangelo.name=Michelangelo
 entity.donatello.name=Donatello
 entity.raphael.name=Raphael
+
+tile.turtleShell.name=Turtle Shell

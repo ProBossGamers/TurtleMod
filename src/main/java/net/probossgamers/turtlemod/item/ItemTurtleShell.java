@@ -8,7 +8,8 @@ import net.probossgamers.turtlemod.TurtleMod;
 public class ItemTurtleShell extends ItemArmor {
     public ItemTurtleShell(ItemArmor.ArmorMaterial material, int id, int placement) {
         super(material, id, placement);
-        setCreativeTab(TurtleMod.turtleTab);
+        this.setCreativeTab(TurtleMod.turtleTab);
+        this.setMaxStackSize(16);
     }
 
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {

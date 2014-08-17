@@ -8,6 +8,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import net.probossgamers.turtlemod.block.RegisterBlocks;
 import net.probossgamers.turtlemod.item.RegisterItems;
 
 public class EntityZombieTurtle extends EntityMob {
@@ -42,7 +43,7 @@ public class EntityZombieTurtle extends EntityMob {
 
     public void dropFewItems(boolean hit, int looting) {
         this.entityDropItem(new ItemStack(RegisterItems.turtleLeather), 1);
-        this.entityDropItem(new ItemStack(RegisterItems.turtleShell), 1);
+        this.entityDropItem(new ItemStack(RegisterBlocks.turtleShell), 1);
     }
 
     public String getLivingSound() {

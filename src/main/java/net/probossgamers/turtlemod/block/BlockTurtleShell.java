@@ -8,10 +8,12 @@ import net.probossgamers.turtlemod.TurtleMod;
 import net.probossgamers.turtlemod.tileentity.TileEntityTurtleShell;
 
 public class BlockTurtleShell extends BlockContainer {
-    public BlockTurtleShell(Material material) {
+    public BlockTurtleShell() {
         super(Material.rock);
         this.setBlockBounds(1F/16F*4, 0F, 1F/16F*4, 1F-1F/16F*4, 1F-1F/16F*11, 1F-1F/16F*4);
         this.setCreativeTab(TurtleMod.turtleTab);
+        this.setBlockTextureName("turtlemod:turtleShell");
+        this.setBlockName("turtleShell");
     }
 
     @Override

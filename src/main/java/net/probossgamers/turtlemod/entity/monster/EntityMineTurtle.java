@@ -11,6 +11,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.probossgamers.turtlemod.block.RegisterBlocks;
 import net.probossgamers.turtlemod.entity.ai.EntityAIExplodeOnCollide;
 import net.probossgamers.turtlemod.item.RegisterItems;
 
@@ -27,7 +28,7 @@ public class EntityMineTurtle extends EntityCreature {
 
     public void dropFewItems(boolean hit, int looting) {
         this.entityDropItem(new ItemStack(RegisterItems.turtleLeather), 1);
-        this.entityDropItem(new ItemStack(RegisterItems.turtleShell), 1);
+        this.entityDropItem(new ItemStack(RegisterBlocks.turtleShell), 1);
         this.entityDropItem(new ItemStack(Items.gunpowder), 1);
     }
 

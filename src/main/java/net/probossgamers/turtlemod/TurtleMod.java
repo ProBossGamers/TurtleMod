@@ -9,6 +9,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.probossgamers.turtlemod.block.BlockTurtleShell;
+import net.probossgamers.turtlemod.block.RegisterBlocks;
 import net.probossgamers.turtlemod.entity.RegisterEntities;
 import net.probossgamers.turtlemod.item.RegisterItems;
 import net.probossgamers.turtlemod.server.ServerProxy;
@@ -18,8 +19,6 @@ public class TurtleMod
 {
 	public static final String MODID = "turtlemod";
     public static final String VERSION = "Alpha 5.0";
-
-    public static Block blockTurtleShell;
 
     public static CreativeTabs turtleTab;
 
@@ -41,8 +40,7 @@ public class TurtleMod
         };
 
         RegisterItems.itemInit();
+        RegisterBlocks.blockInit();
         RegisterEntities.entityInit();
-        blockTurtleShell = new BlockTurtleShell(Material.rock).setBlockTextureName("turtlemod:turtleShell").setBlockName("turtleShell");
-        GameRegistry.registerBlock(blockTurtleShell, "blockTurtleShell");
     }
 }
