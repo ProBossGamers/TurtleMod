@@ -1,4 +1,4 @@
-package net.probossgamers.turtlemod.proxy;
+package net.probossgamers.turtlemod.server;
 
 public class ServerProxy
 {

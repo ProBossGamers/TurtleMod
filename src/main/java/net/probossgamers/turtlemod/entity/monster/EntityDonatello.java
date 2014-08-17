@@ -6,8 +6,7 @@ import net.minecraft.entity.monster.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.probossgamers.turtlemod.ModBlocks;
-import net.probossgamers.turtlemod.ModItems;
+import net.probossgamers.turtlemod.item.ModItems;
 
 public class EntityDonatello extends EntityMob
 {
@@ -65,7 +64,6 @@ public class EntityDonatello extends EntityMob
     public void dropFewItems(boolean hit, int looting)
     {
         this.entityDropItem(new ItemStack(ModItems.turtleLeather), 1);
-        this.entityDropItem(new ItemStack(ModBlocks.turtleShell), 1);
     }
 
     public String getLivingSound()

@@ -1,20 +1,16 @@
-package net.probossgamers.turtlemod;
+package net.probossgamers.turtlemod.block;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
-import net.probossgamers.turtlemod.block.BlockTurtleShell;
-import net.probossgamers.turtlemod.content.ContentHandler;
+import net.probossgamers.turtlemod.creativetab.ModTabs;
+import net.probossgamers.turtlemod.ContentHandler;
 
 import java.lang.reflect.Field;
 
 public class ModBlocks implements ContentHandler.IContentProvider
 {
-    public static Block turtleShell;
-
     public void init()
     {
-        turtleShell = new BlockTurtleShell();
-
         setCreativeTabs();
         registerBlocks();
     }

@@ -1,8 +1,7 @@
-package net.probossgamers.turtlemod;
+package net.probossgamers.turtlemod.tileentity;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.probossgamers.turtlemod.content.ContentHandler;
-import net.probossgamers.turtlemod.tileentity.TileEntityTurtleShell;
+import net.probossgamers.turtlemod.ContentHandler;
 
 public class ModTileEntities implements ContentHandler.IContentProvider
 {

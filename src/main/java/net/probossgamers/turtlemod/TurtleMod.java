@@ -3,15 +3,19 @@ package net.probossgamers.turtlemod;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import net.probossgamers.turtlemod.content.ContentHandler;
-import net.probossgamers.turtlemod.proxy.ServerProxy;
+import net.probossgamers.turtlemod.block.ModBlocks;
+import net.probossgamers.turtlemod.creativetab.ModTabs;
+import net.probossgamers.turtlemod.entity.ModEntities;
+import net.probossgamers.turtlemod.item.ModItems;
+import net.probossgamers.turtlemod.server.ServerProxy;
+import net.probossgamers.turtlemod.tileentity.ModTileEntities;
 
 @Mod(modid = "turtlemod", name = "Turtle Mod", version = "Alpha 0.4")
 public class TurtleMod
 {
 	@Mod.Instance("turtlemod")
     public static TurtleMod instance;
-    @SidedProxy(clientSide = "net.probossgamers.turtlemod.proxy.ClientProxy", serverSide = "net.probossgamers.turtlemod.proxy.ServerProxy")
+    @SidedProxy(clientSide = "net.probossgamers.turtlemod.client.ClientProxy", serverSide = "net.probossgamers.turtlemod.server.ServerProxy")
     public static ServerProxy proxy;
 
     public ContentHandler contentHandler = new ContentHandler();

@@ -1,19 +1,17 @@
-package net.probossgamers.turtlemod;
+package net.probossgamers.turtlemod.item;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraftforge.common.util.EnumHelper;
-import net.probossgamers.turtlemod.content.ContentHandler;
-import net.probossgamers.turtlemod.item.ItemTurtleArmor;
+import net.probossgamers.turtlemod.creativetab.ModTabs;
+import net.probossgamers.turtlemod.ContentHandler;
 
 import java.lang.reflect.Field;
 
 public class ModItems implements ContentHandler.IContentProvider
 {
     public static Item turtleLeather;
-    //public static Item turtleShell;
-    public static Item mineTurtleShell;
     public static Item turtleHelmet;
     public static Item turtleChestplate;
     public static Item turtleLeggings;
@@ -26,8 +24,6 @@ public class ModItems implements ContentHandler.IContentProvider
         turtleArmor = EnumHelper.addArmorMaterial("Turtle", 5, new int[]{1, 3, 2, 1}, 15);
 
         turtleLeather = new Item().setUnlocalizedName("turtleLeather").setTextureName("turtlemod:turtleLeather");
-        //turtleShell = new ItemTurtleShell();
-        mineTurtleShell = new Item().setUnlocalizedName("mineTurtleShell").setTextureName("turtlemod:turtleShell");
         turtleHelmet = new ItemTurtleArmor(0, "turtleHelmet");
         turtleChestplate = new ItemTurtleArmor(1, "turtleChestplate");
         turtleLeggings = new ItemTurtleArmor(2, "turtleLeggings");

@@ -1,11 +1,11 @@
-package net.probossgamers.turtlemod;
+package net.probossgamers.turtlemod.creativetab;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.probossgamers.turtlemod.content.ContentHandler;
+import net.probossgamers.turtlemod.ContentHandler;
 
 public class ModTabs implements ContentHandler.IContentProvider
 {

@@ -1,10 +1,11 @@
-package net.probossgamers.turtlemod;
+package net.probossgamers.turtlemod.entity;
 
 import cpw.mods.fml.common.registry.EntityRegistry;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
-import net.probossgamers.turtlemod.content.ContentHandler;
+import net.probossgamers.turtlemod.TurtleMod;
+import net.probossgamers.turtlemod.ContentHandler;
 import net.probossgamers.turtlemod.entity.monster.*;
 import net.probossgamers.turtlemod.entity.passive.EntityHelloGuy;
 import net.probossgamers.turtlemod.entity.passive.EntityTurtle;
