@@ -8,6 +8,7 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.probossgamers.turtlemod.entity.ai.EntityAIExplodeOnCollide;
@@ -25,8 +26,9 @@ public class EntityMineTurtle extends EntityCreature {
     }
 
     public void dropFewItems(boolean hit, int looting) {
-        this.entityDropItem(new ItemStack(RegisterItems.turtleLeather), 5);
+        this.entityDropItem(new ItemStack(RegisterItems.turtleLeather), 1);
         this.entityDropItem(new ItemStack(RegisterItems.turtleShell), 1);
+        this.entityDropItem(new ItemStack(Items.gunpowder), 1);
     }
 
     public boolean isAIEnabled() {
