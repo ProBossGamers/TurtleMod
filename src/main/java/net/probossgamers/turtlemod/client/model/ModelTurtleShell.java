@@ -4,9 +4,11 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
+/**
+ * Ryan, you can clean up the model classes...
+ */
 public class ModelTurtleShell extends ModelBase
 {
-    //fields
     ModelRenderer bottom_shell;
     ModelRenderer topshell;
 
@@ -37,7 +39,8 @@ public class ModelTurtleShell extends ModelBase
         topshell.render(f5);
     }
 
-    public void renderModel(float f) {
+    public void renderModel(float f)
+    {
         bottom_shell.render(f);
         topshell.render(f);
     }
@@ -53,5 +56,4 @@ public class ModelTurtleShell extends ModelBase
     {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
     }
-
 }

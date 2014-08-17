@@ -7,33 +7,31 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
-import net.probossgamers.turtlemod.TurtleMod;
+import net.probossgamers.turtlemod.ModItems;
 
-public class ItemTurtleArmor extends ItemArmor {
-    public ItemTurtleArmor(ItemArmor.ArmorMaterial material, int id, int placement) {
-        super(material, id, placement);
-        setCreativeTab(TurtleMod.turtleTab);
+public class ItemTurtleArmor extends ItemArmor
+{
+    public ItemTurtleArmor(int placement, String name)
+    {
+        super(ModItems.turtleArmor, 0, placement);
+        setUnlocalizedName(name);
+        setTextureName("turtlemod:" + name);
     }
 
-    public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
-        if (stack.getItem() == RegisterItems.turtleHelmet || stack.getItem() == RegisterItems.turtleChestplate || stack.getItem() == RegisterItems.turtleBoots) {
-            return "turtlemod:textures/models/armor/turtle_1.png";
-        }
-        if (stack.getItem() == RegisterItems.turtleLeggings) {
-            return "turtlemod:textures/models/armor/turtle_2.png";
-        } else {
-            return null;
-        }
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
+    {
+        if (stack.getItem() != ModItems.turtleLeggings) return "turtlemod:textures/models/armor/turtle_1.png";
+        else return "turtlemod:textures/models/armor/turtle_2.png";
     }
 
-    @Override
-    public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
-        if (player.getCurrentArmor(3) != null) {
+    public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack)
+    {
+        if (player.getCurrentArmor(3) != null)
+        {
             ItemStack helmet = player.getCurrentArmor(3);
 
-            if (helmet.getItem() == RegisterItems.turtleHelmet) {
+            if (helmet.getItem() == this)
                 player.addPotionEffect(new PotionEffect(Potion.waterBreathing.getId(), 10, 0));
-            }
         }
     }
 }

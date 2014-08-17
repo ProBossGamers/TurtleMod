@@ -4,7 +4,11 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class ModelTurtle extends ModelBase {
+/**
+ * Ryan, you can clean up the model classes...
+ */
+public class ModelTurtle extends ModelBase
+{
     ModelRenderer head;
     ModelRenderer body;
     ModelRenderer FrontRight;
@@ -13,7 +17,8 @@ public class ModelTurtle extends ModelBase {
     ModelRenderer BackRight;
     ModelRenderer Shape1;
 
-    public ModelTurtle() {
+    public ModelTurtle()
+    {
         this.textureWidth = 64;
         this.textureHeight = 64;
         this.head = new ModelRenderer(this, 0, 0);
@@ -60,10 +65,8 @@ public class ModelTurtle extends ModelBase {
         this.setRotation(this.Shape1, 0.0F, 0.0F, 0.0F);
     }
 
-    /**
-     * Sets the models various rotation angles then renders the model.
-     */
-    public void render(Entity entity, float var2, float var3, float var4, float var5, float var6, float var7) {
+    public void render(Entity entity, float var2, float var3, float var4, float var5, float var6, float var7)
+    {
         super.render(entity, var2, var3, var4, var5, var6, var7);
         this.setRotationAngles(var2, var3, var4, var5, var6, var7, entity);
         this.head.render(var7);
@@ -75,13 +78,15 @@ public class ModelTurtle extends ModelBase {
         this.Shape1.render(var7);
     }
 
-    private void setRotation(ModelRenderer var1, float var2, float var3, float var4) {
+    private void setRotation(ModelRenderer var1, float var2, float var3, float var4)
+    {
         var1.rotateAngleX = var2;
         var1.rotateAngleY = var3;
         var1.rotateAngleZ = var4;
     }
 
-    public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
+    public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
+    {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
 
         FrontRight.rotateAngleY = 0.0F;

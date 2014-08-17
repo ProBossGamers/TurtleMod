@@ -10,11 +10,11 @@ import net.probossgamers.turtlemod.client.model.ModelMineTurtle;
 @SideOnly(Side.CLIENT)
 public class RenderMineTurtle extends RenderLiving
 {
-    public static final ResourceLocation textures = new ResourceLocation("turtlemod:textures/mobs/MineTurtle.png");
+    public ResourceLocation textures = new ResourceLocation("turtlemod:textures/mobs/MineTurtle.png");
 
-    public RenderMineTurtle(ModelMineTurtle model, float shadowSize)
+    public RenderMineTurtle()
     {
-        super(model, shadowSize);
+        super(new ModelMineTurtle(), 0.5f);
     }
 
     public ResourceLocation getEntityTexture(Entity entity)

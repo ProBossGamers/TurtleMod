@@ -3,44 +3,29 @@ package net.probossgamers.turtlemod;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-import net.probossgamers.turtlemod.block.BlockTurtleShell;
-import net.probossgamers.turtlemod.block.RegisterBlocks;
-import net.probossgamers.turtlemod.entity.RegisterEntities;
-import net.probossgamers.turtlemod.item.RegisterItems;
-import net.probossgamers.turtlemod.server.ServerProxy;
+import net.probossgamers.turtlemod.content.ContentHandler;
+import net.probossgamers.turtlemod.proxy.ServerProxy;
 
-@Mod(modid = TurtleMod.MODID, name = "Turtle Mod", version = TurtleMod.VERSION)
+@Mod(modid = "turtlemod", name = "Turtle Mod", version = "Alpha 0.4")
 public class TurtleMod
 {
-	public static final String MODID = "turtlemod";
-    public static final String VERSION = "Alpha 5.0";
-
-    public static CreativeTabs turtleTab;
-
-    @Mod.Instance(MODID)
+	@Mod.Instance("turtlemod")
     public static TurtleMod instance;
-
-    @SidedProxy(clientSide = "net.probossgamers.turtlemod.client.ClientProxy", serverSide = "net.probossgamers.turtlemod.server.ServerProxy")
+    @SidedProxy(clientSide = "net.probossgamers.turtlemod.proxy.ClientProxy", serverSide = "net.probossgamers.turtlemod.proxy.ServerProxy")
     public static ServerProxy proxy;
 
-    @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
-        proxy.registerRenderers();
-		
-        turtleTab = new CreativeTabs("turtleTab") {
-            @Override
-            public Item getTabIconItem() {
-                return RegisterItems.turtleShell;
-            }
-        };
+    public ContentHandler contentHandler = new ContentHandler();
 
-        RegisterItems.itemInit();
-        RegisterBlocks.blockInit();
-        RegisterEntities.entityInit();
+    @Mod.EventHandler
+    public void preInit(FMLPreInitializationEvent event)
+    {
+        contentHandler.addContentProvider(ModTabs.class);
+        contentHandler.addContentProvider(ModItems.class);
+        contentHandler.addContentProvider(ModBlocks.class);
+        contentHandler.addContentProvider(ModTileEntities.class);
+        contentHandler.addContentProvider(ModEntities.class);
+
+        contentHandler.init();
+        proxy.init();
     }
 }

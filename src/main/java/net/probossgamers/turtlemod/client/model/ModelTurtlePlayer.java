@@ -5,6 +5,9 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.MathHelper;
 
+/**
+ * Ryan, you can clean up the model classes...
+ */
 public class ModelTurtlePlayer extends ModelBase
 {
     ModelRenderer head;
@@ -63,9 +66,6 @@ public class ModelTurtlePlayer extends ModelBase
         this.setRotation(this.Shape1, 0.0F, 0.0F, 0.0F);
     }
 
-    /**
-     * Sets the models various rotation angles then renders the model.
-     */
     public void render(Entity entity, float var2, float var3, float var4, float var5, float var6, float var7)
     {
         super.render(entity, var2, var3, var4, var5, var6, var7);

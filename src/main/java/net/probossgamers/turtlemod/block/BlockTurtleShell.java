@@ -7,17 +7,17 @@ import net.minecraft.world.World;
 import net.probossgamers.turtlemod.TurtleMod;
 import net.probossgamers.turtlemod.tileentity.TileEntityTurtleShell;
 
-public class BlockTurtleShell extends BlockContainer {
-    public BlockTurtleShell() {
+public class BlockTurtleShell extends BlockContainer
+{
+    public BlockTurtleShell()
+    {
         super(Material.rock);
-        this.setBlockBounds(1F/16F*4, 0F, 1F/16F*4, 1F-1F/16F*4, 1F-1F/16F*11, 1F-1F/16F*4);
-        this.setCreativeTab(TurtleMod.turtleTab);
+        this.setBlockBounds(1f / 16f * 4, 0f, 1f / 16f * 4, 1f - 1f / 16f * 4, 1f - 1f / 16f * 11, 1f - 1f / 16f * 4);
         this.setBlockTextureName("turtlemod:turtleShell");
         this.setBlockName("turtleShell");
     }
 
-    @Override
-    public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
+    public TileEntity createNewTileEntity(World world, int meta) {
         return new TileEntityTurtleShell();
     }
 

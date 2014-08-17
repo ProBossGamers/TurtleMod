@@ -5,22 +5,20 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.probossgamers.turtlemod.client.model.ModelTurtlePlayer;
 
-public class PlayerRender {
-
+public class PlayerRender
+{
     // public final RenderTurtlePlayer turtleRenderer = new RenderTurtlePlayer(new ModelTurtlePlayer(), 0.3F);
     public ModelTurtlePlayer turtleModel;
 
     @SubscribeEvent
-    public void pre(RenderPlayerEvent.Pre event) {
+    public void pre(RenderPlayerEvent.Pre event)
+    {
         String username = event.entityPlayer.getDisplayName();
         EntityPlayer player = event.entityPlayer;
 
-        if (username.equals("Ry_dog101")) {
+        if (username.equals("Ry_dog101") || username.equals("iLexiconn")) // :3
+        {
             // event.setCanceled(true);
         }
-    }
-
-    public void renderEntityTurtle() {
-
     }
 }

@@ -1,29 +1,27 @@
 package net.probossgamers.turtlemod.client.render.tileentity;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.probossgamers.turtlemod.client.model.ModelTurtleShell;
 import org.lwjgl.opengl.GL11;
 
-public class RenderTurtleShell extends TileEntitySpecialRenderer {
+@SideOnly(Side.CLIENT)
+public class RenderTurtleShell extends TileEntitySpecialRenderer
+{
+    public ResourceLocation texture = new ResourceLocation("turtlemod:textures/mobs/Turtle.png");
+    public ModelTurtleShell model = new ModelTurtleShell();
 
-    private static final ResourceLocation texture = new ResourceLocation("turtlemod:textures/mobs/Turtle.png");
-
-    private ModelTurtleShell model;
-
-    public RenderTurtleShell() {
-        this.model = new ModelTurtleShell();
-    }
-
-    @Override
-    public void renderTileEntityAt(TileEntity tileEntity, double x, double y, double z, float f) {
+    public void renderTileEntityAt(TileEntity tileEntity, double x, double y, double z, float f)
+    {
         GL11.glPushMatrix();
-        GL11.glTranslatef((float)x + 0.5F, (float)y + 1.5F, (float)z + 0.5F);
-        GL11.glRotatef(180, 0F, 0F, 1F);
+        GL11.glTranslatef((float)x + 0.5f, (float)y + 1.5f, (float)z + 0.5f);
+        GL11.glRotatef(180f, 0f, 0f, 1f);
         this.bindTexture(texture);
         GL11.glPushMatrix();
-        model.renderModel(0.0625F);
+        model.renderModel(0.0625f);
         GL11.glPopMatrix();
         GL11.glPopMatrix();
     }

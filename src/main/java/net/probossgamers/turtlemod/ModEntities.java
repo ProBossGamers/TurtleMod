@@ -1,17 +1,18 @@
-package net.probossgamers.turtlemod.entity;
+package net.probossgamers.turtlemod;
 
 import cpw.mods.fml.common.registry.EntityRegistry;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
-import net.probossgamers.turtlemod.TurtleMod;
+import net.probossgamers.turtlemod.content.ContentHandler;
 import net.probossgamers.turtlemod.entity.monster.*;
 import net.probossgamers.turtlemod.entity.passive.EntityHelloGuy;
 import net.probossgamers.turtlemod.entity.passive.EntityTurtle;
 
-public class RegisterEntities {
-
-    public static void entityInit() {
+public class ModEntities implements ContentHandler.IContentProvider
+{
+    public void init()
+    {
         registerEntity(EntityTurtle.class, "turtle", 0x1e8100, 0x7d3900, 10, 2, 4, EnumCreatureType.creature);
         registerEntity(EntityZombieTurtle.class, "zombieTurtle", 0x008344, 0x823F02, 10, 2, 4, EnumCreatureType.monster);
         registerEntity(EntityMineTurtle.class, "mineTurtle", 0x1e8100, 0xef0000, 10, 2, 4, EnumCreatureType.creature);
@@ -22,7 +23,8 @@ public class RegisterEntities {
         registerEntity(EntityMichelangelo.class, "michelangelo", 0x1e8100, 0xff6900, 10, 2, 4, EnumCreatureType.creature);
     }
 
-    public static void registerEntity(Class<? extends EntityLiving> entityClass, String name, int par1, int par2, int par3, int par4, int par5, EnumCreatureType CreatureType) {
+    public static void registerEntity(Class<? extends EntityLiving> entityClass, String name, int par1, int par2, int par3, int par4, int par5, EnumCreatureType CreatureType)
+    {
         int entityID = EntityRegistry.findGlobalUniqueEntityId();
         EntityRegistry.registerGlobalEntityID(entityClass, name, entityID, par1, par2);
         EntityRegistry.registerModEntity(entityClass, name, entityID, TurtleMod.instance, 64, 1, true);
