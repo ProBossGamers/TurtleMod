@@ -12,8 +12,8 @@ public class BlockTurtleShell extends BlockContainer
     {
         super(Material.rock);
         this.setBlockBounds(1f / 16f * 4, 0f, 1f / 16f * 4, 1f - 1f / 16f * 4, 1f - 1f / 16f * 11, 1f - 1f / 16f * 4);
-        this.setBlockTextureName("turtlemod:turtleShellBlock");
-        this.setBlockName("turtleShell");
+        this.setBlockTextureName("turtlemod:turtleShell");
+        this.setBlockName("turtleShellBlock");
     }
 
     public TileEntity createNewTileEntity(World world, int meta) {
