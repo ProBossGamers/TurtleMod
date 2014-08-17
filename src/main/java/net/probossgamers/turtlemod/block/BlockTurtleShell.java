@@ -4,7 +4,6 @@ import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import net.probossgamers.turtlemod.TurtleMod;
 import net.probossgamers.turtlemod.tileentity.TileEntityTurtleShell;
 
 public class BlockTurtleShell extends BlockContainer
@@ -13,7 +12,7 @@ public class BlockTurtleShell extends BlockContainer
     {
         super(Material.rock);
         this.setBlockBounds(1f / 16f * 4, 0f, 1f / 16f * 4, 1f - 1f / 16f * 4, 1f - 1f / 16f * 11, 1f - 1f / 16f * 4);
-        this.setBlockTextureName("turtlemod:turtleShell");
+        this.setBlockTextureName("turtlemod:turtleShellBlock");
         this.setBlockName("turtleShell");
     }
 
