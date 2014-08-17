@@ -16,7 +16,7 @@ public class PlayerRender {
         EntityPlayer player = event.entityPlayer;
 
         if (username.equals("Ry_dog101")) {
-            event.setCanceled(true);
+            // event.setCanceled(true);
         }
     }
 
