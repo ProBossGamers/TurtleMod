@@ -13,9 +13,6 @@ import net.probossgamers.turtlemod.TurtleMod;
 
 public class RegisterItems {
 
-
-    // Mineturtle shell
-    // Stone button + turtle shell + redstone + tnt
     public static Item turtleLeather;
     public static Item turtleShell;
     public static Item mineTurtleShell;

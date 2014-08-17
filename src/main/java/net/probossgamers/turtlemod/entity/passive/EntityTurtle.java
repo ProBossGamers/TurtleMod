@@ -36,7 +36,7 @@ public class EntityTurtle extends EntityCreature {
     } **/
 
     public void dropFewItems(boolean hit, int looting) {
-        this.entityDropItem(new ItemStack(RegisterItems.turtleLeather), 5);
+        this.entityDropItem(new ItemStack(RegisterItems.turtleLeather), 1);
         this.entityDropItem(new ItemStack(RegisterItems.turtleShell), 1);
     }
 
