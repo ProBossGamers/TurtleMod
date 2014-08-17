@@ -4,7 +4,6 @@ import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.probossgamers.turtlemod.ModBlocks;
@@ -35,10 +34,10 @@ public class EntityTurtle extends EntityCreature
         getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.1150000021D);
     }
 
-    public Item getDropItem()
-    {
-        return ModItems.turtleShell;
-    }
+    //public Item getDropItem()
+    //{
+    //    return ModItems.turtleShell;
+    //}
 
     public void dropFewItems(boolean hit, int looting)
     {
