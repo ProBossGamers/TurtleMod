@@ -22,7 +22,7 @@ The Crew
 
 * [DeathJusty](https://github.com/DeathJusty) - Textures/Models/Sounds
 * [TheGeekyGuy101](https://github.com/TheGeekyGuy101) - Code
-* [iLexiconn](https://github.com/iLexiconn) - More code
+* [iLexiconn](https://github.com/iLexiconn) - A lot of crap, and a bit of code
 
 License
 --------
