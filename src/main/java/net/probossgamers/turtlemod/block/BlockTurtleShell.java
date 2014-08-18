@@ -24,7 +24,7 @@ public class BlockTurtleShell extends BlockContainer implements ICustomHighlight
 
     public BlockTurtleShell()
     {
-        super(Material.cake);
+        super(Material.glass);
         setBlockName("shellBlock");
         setHardness(1f);
         setBlockBounds(4 * pixel, 0 * pixel, 4 * pixel, 1 - (4 * pixel), 4 * pixel, 1 - (4 * pixel));

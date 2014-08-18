@@ -15,9 +15,30 @@ public class ItemTurtleShell extends ItemArmor
         setTextureName("turtlemod:turtleShell");
     }
 
-    public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int h, float f, float t, float k)
+    public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float i, float d, float k)
     {
-        world.setBlock(x, y + 1, z, ModBlocks.shellBlock);
-        return false;
+        switch (side)
+        {
+            case 0:
+                world.setBlock(x, y - 1, z, ModBlocks.shellBlock);
+                break;
+            case 1:
+                world.setBlock(x, y + 1, z, ModBlocks.shellBlock);
+                break;
+            case 2:
+                world.setBlock(x, y, z - 1, ModBlocks.shellBlock);
+                break;
+            case 3:
+                world.setBlock(x, y, z + 1, ModBlocks.shellBlock);
+                break;
+            case 4:
+                world.setBlock(x - 1, y, z, ModBlocks.shellBlock);
+                break;
+            case 5:
+                world.setBlock(x + 1, y, z, ModBlocks.shellBlock);
+                break;
+        }
+        player.getCurrentEquippedItem().stackSize--;
+        return true;
     }
 }
