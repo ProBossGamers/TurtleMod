@@ -18,7 +18,7 @@ public class PlayerRender
 
         if (username.equals("Ry_dog101") || username.equals("iLexiconn")) // :3
         {
-            // event.setCanceled(true);
+            event.setCanceled(true);
         }
     }
 }

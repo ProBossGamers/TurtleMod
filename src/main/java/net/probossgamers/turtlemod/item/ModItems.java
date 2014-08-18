@@ -16,6 +16,7 @@ public class ModItems implements ContentHandler.IContentProvider
     public static Item turtleChestplate;
     public static Item turtleLeggings;
     public static Item turtleBoots;
+    public static Item turtleShell;
 
     public static ItemArmor.ArmorMaterial turtleArmor;
 
@@ -28,6 +29,7 @@ public class ModItems implements ContentHandler.IContentProvider
         turtleChestplate = new ItemTurtleArmor(1, "turtleChestplate");
         turtleLeggings = new ItemTurtleArmor(2, "turtleLeggings");
         turtleBoots = new ItemTurtleArmor(3, "turtleLeggings");
+        turtleShell = new ItemTurtleShell();
 
         setCreativeTabs();
         registerItems();

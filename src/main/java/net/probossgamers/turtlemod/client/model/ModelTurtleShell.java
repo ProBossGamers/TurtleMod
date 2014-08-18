@@ -2,58 +2,34 @@ package net.probossgamers.turtlemod.client.model;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.entity.Entity;
 
-/**
- * Ryan, you can clean up the model classes...
- */
 public class ModelTurtleShell extends ModelBase
 {
-    ModelRenderer bottom_shell;
-    ModelRenderer topshell;
+    public ModelRenderer[] boxes = new ModelRenderer[2];
 
     public ModelTurtleShell()
     {
         textureWidth = 64;
         textureHeight = 64;
 
-        bottom_shell = new ModelRenderer(this, 28, 8);
-        bottom_shell.addBox(-4F, -4F, -4F, 8, 8, 4);
-        bottom_shell.setRotationPoint(0F, 20F, 0F);
-        bottom_shell.setTextureSize(64, 64);
-        bottom_shell.mirror = true;
-        setRotation(bottom_shell, 1.570796F, 0F, 0F);
-        topshell = new ModelRenderer(this, 28, 21);
-        topshell.addBox(-3F, 0F, -3F, 6, 1, 6);
-        topshell.setRotationPoint(0F, 19F, 0F);
-        topshell.setTextureSize(64, 64);
-        topshell.mirror = true;
-        setRotation(topshell, 0F, 0F, 0F);
+        boxes[0] = new ModelRenderer(this, 28, 8);
+        boxes[0].addBox(-4f, -4f, -4f, 8, 8, 4);
+        boxes[0].setRotationPoint(0f, 20f, 0f);
+        setRotation(0, 1.570796f, 0f, 0f);
+        boxes[1] = new ModelRenderer(this, 28, 21);
+        boxes[1].addBox(-3f, 0f, -3f, 6, 1, 6);
+        boxes[1].setRotationPoint(0f, 19f, 0f);
     }
 
-    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
+    public void render()
     {
-        super.render(entity, f, f1, f2, f3, f4, f5);
-        setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-        bottom_shell.render(f5);
-        topshell.render(f5);
+        for (ModelRenderer box : boxes) box.render(0.0625f);
     }
 
-    public void renderModel(float f)
+    public void setRotation(int boxIndex, float x, float y, float z)
     {
-        bottom_shell.render(f);
-        topshell.render(f);
-    }
-
-    private void setRotation(ModelRenderer model, float x, float y, float z)
-    {
-        model.rotateAngleX = x;
-        model.rotateAngleY = y;
-        model.rotateAngleZ = z;
-    }
-
-    public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity)
-    {
-        super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+        boxes[boxIndex].rotateAngleX = x;
+        boxes[boxIndex].rotateAngleY = y;
+        boxes[boxIndex].rotateAngleZ = z;
     }
 }

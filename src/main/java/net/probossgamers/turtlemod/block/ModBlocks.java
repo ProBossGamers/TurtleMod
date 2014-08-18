@@ -9,8 +9,12 @@ import java.lang.reflect.Field;
 
 public class ModBlocks implements ContentHandler.IContentProvider
 {
+    public static Block shellBlock;
+
     public void init()
     {
+        shellBlock = new BlockTurtleShell();
+
         setCreativeTabs();
         registerBlocks();
     }
