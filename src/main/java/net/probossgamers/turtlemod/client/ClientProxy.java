@@ -4,6 +4,7 @@ import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;
+import net.probossgamers.turtlemod.client.render.block.BlockTurtleShellRenderer;
 import net.probossgamers.turtlemod.client.render.entity.*;
 import net.probossgamers.turtlemod.client.render.item.ItemTurtleShellRenderer;
 import net.probossgamers.turtlemod.client.render.tileentity.RenderTurtleShell;
@@ -28,6 +29,8 @@ public class ClientProxy extends ServerProxy
         RenderingRegistry.registerEntityRenderingHandler(EntityRaphael.class, new RenderRaphael());
         RenderingRegistry.registerEntityRenderingHandler(EntityLeonardo.class, new RenderLeonardo());
         RenderingRegistry.registerEntityRenderingHandler(EntityMichelangelo.class, new RenderMichelangelo());
+
+        RenderingRegistry.registerBlockHandler(new BlockTurtleShellRenderer());
 
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTurtleShell.class, new RenderTurtleShell());
 
