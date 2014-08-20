@@ -1,5 +1,7 @@
 package net.probossgamers.turtlemod;
 
+import net.probossgamers.turtlemod.util.LogHelper;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -29,7 +31,7 @@ public class ContentHandler
             cal.getTime();
             SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
             contentProvider.init();
-            System.out.println("[" + sdf.format(cal.getTime()) + "] [TurtleMod/INFO] Initialized Content Provider -- " + contentProvider.getClass().getSimpleName());
+            LogHelper.info("Initialized Content Provider -- " + contentProvider.getClass().getSimpleName());
         }
     }
 
