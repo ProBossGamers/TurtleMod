@@ -27,9 +27,6 @@ public class ContentHandler
     {
         for (IContentProvider contentProvider : contentProviders)
         {
-            Calendar cal = Calendar.getInstance();
-            cal.getTime();
-            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
             contentProvider.init();
             LogHelper.info("Initialized Content Provider -- " + contentProvider.getClass().getSimpleName());
         }
