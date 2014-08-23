@@ -6,12 +6,13 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.probossgamers.turtlemod.ContentHandler;
+import net.probossgamers.turtlemod.block.ModBlocks;
 import net.probossgamers.turtlemod.item.ModItems;
 
 public class ModTabs
 {
-    // public static CreativeTab blocks = new CreativeTab("turtlemod.blocks", Item.getItemFromBlock(Blocks.command_block));
-    public static CreativeTab items = new CreativeTab("turtlemod", ModItems.turtleShell);
+    public static CreativeTab blocks = new CreativeTab("turtlemod.blocks", ModItems.turtleShell);
+    public static CreativeTab items = new CreativeTab("turtlemod.items", ModItems.turtleLeather);
 
     public static class CreativeTab extends CreativeTabs
     {

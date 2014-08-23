@@ -15,18 +15,19 @@ public class ModBlocks implements ContentHandler.IContentProvider
     {
         shellBlock = new BlockTurtleShell();
 
-        // setCreativeTabs();
+        setCreativeTabs();
         registerBlocks();
     }
 
-    /**public void setCreativeTabs()
+    public void setCreativeTabs()
     {
         try
         {
             for (Field field : getClass().getDeclaredFields())
             {
                 Object obj = field.get(null);
-                if (obj instanceof Block) ModTabs..setCreativeTab((Block) obj);
+                if (obj == ModBlocks.shellBlock) return;
+                else if (obj instanceof Block) ModTabs.blocks.setCreativeTab((Block) obj);
                 else if (obj instanceof Block[]) ModTabs.blocks.setCreativeTab((Block[]) obj);
             }
         }
@@ -34,7 +35,7 @@ public class ModBlocks implements ContentHandler.IContentProvider
         {
             e.printStackTrace();
         }
-    }**/
+    }
 
     public void registerBlocks()
     {

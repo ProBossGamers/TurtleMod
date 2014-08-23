@@ -6,6 +6,7 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.probossgamers.turtlemod.block.ModBlocks;
+import net.probossgamers.turtlemod.creativetab.ModTabs;
 
 public class ItemTurtleShell extends ItemArmor
 {

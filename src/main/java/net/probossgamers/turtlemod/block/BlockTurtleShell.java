@@ -10,6 +10,7 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import net.probossgamers.turtlemod.client.render.block.BlockTurtleShellRenderer;
+import net.probossgamers.turtlemod.creativetab.ModTabs;
 import net.probossgamers.turtlemod.tileentity.TileEntityTurtleShell;
 
 import java.util.List;
@@ -30,6 +31,7 @@ public class BlockTurtleShell extends BlockContainer implements ICustomHighlight
         setHardness(3f);
         setBlockBounds(4 * pixel, 0 * pixel, 4 * pixel, 1 - (4 * pixel), 5 * pixel, 1 - (4 * pixel));
         setStepSound(stepSound);
+        setBlockTextureName("turtlemod:shellBlock");
     }
 
     public boolean isOpaqueCube()
