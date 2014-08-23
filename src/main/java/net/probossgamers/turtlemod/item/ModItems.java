@@ -31,8 +31,8 @@ public class ModItems implements ContentHandler.IContentProvider
         turtleBoots = new ItemTurtleArmor(3, "turtleLeggings");
         turtleShell = new ItemTurtleShell();
 
-        setCreativeTabs();
         registerItems();
+        setCreativeTabs();
     }
 
     public void setCreativeTabs()

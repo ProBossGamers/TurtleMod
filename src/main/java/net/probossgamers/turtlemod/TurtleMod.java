@@ -24,11 +24,11 @@ public class TurtleMod
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        contentHandler.addContentProvider(ModTabs.class);
         contentHandler.addContentProvider(ModItems.class);
         contentHandler.addContentProvider(ModBlocks.class);
         contentHandler.addContentProvider(ModTileEntities.class);
         contentHandler.addContentProvider(ModEntities.class);
+        contentHandler.addContentProvider(ModTabs.class);
 
         contentHandler.init();
         proxy.init();

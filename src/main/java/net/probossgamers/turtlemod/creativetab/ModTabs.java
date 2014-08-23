@@ -6,6 +6,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.probossgamers.turtlemod.ContentHandler;
+import net.probossgamers.turtlemod.item.ModItems;
 
 public class ModTabs implements ContentHandler.IContentProvider
 {
@@ -15,7 +16,7 @@ public class ModTabs implements ContentHandler.IContentProvider
     public void init()
     {
         blocks = new CreativeTab("turtlemod.blocks", Item.getItemFromBlock(Blocks.command_block));
-        items = new CreativeTab("turtlemod.items", Items.baked_potato);
+        items = new CreativeTab("turtlemod.items", ModItems.turtleShell);
     }
 
     public class CreativeTab extends CreativeTabs
