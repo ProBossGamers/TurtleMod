@@ -28,7 +28,6 @@ public class TurtleMod
         contentHandler.addContentProvider(ModBlocks.class);
         contentHandler.addContentProvider(ModTileEntities.class);
         contentHandler.addContentProvider(ModEntities.class);
-        contentHandler.addContentProvider(ModTabs.class);
 
         contentHandler.init();
         proxy.init();

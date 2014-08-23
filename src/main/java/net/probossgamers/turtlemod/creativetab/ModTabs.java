@@ -8,16 +8,10 @@ import net.minecraft.item.Item;
 import net.probossgamers.turtlemod.ContentHandler;
 import net.probossgamers.turtlemod.item.ModItems;
 
-public class ModTabs implements ContentHandler.IContentProvider
+public class ModTabs
 {
-    public static CreativeTab blocks;
-    public static CreativeTab items;
-
-    public void init()
-    {
-        blocks = new CreativeTab("turtlemod.blocks", Item.getItemFromBlock(Blocks.command_block));
-        items = new CreativeTab("turtlemod.items", ModItems.turtleShell);
-    }
+    public static CreativeTab blocks = new CreativeTab("turtlemod.blocks", Item.getItemFromBlock(Blocks.command_block));
+    public static CreativeTab items = new CreativeTab("turtlemod.items", ModItems.turtleShell);
 
     public class CreativeTab extends CreativeTabs
     {
