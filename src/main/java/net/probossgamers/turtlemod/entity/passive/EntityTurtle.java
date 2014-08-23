@@ -35,7 +35,8 @@ public class EntityTurtle extends EntityCreature
 
     public void dropFewItems(boolean hit, int looting)
     {
-        this.entityDropItem(new ItemStack(ModItems.turtleLeather), 1);
+        this.entityDropItem(new ItemStack(ModItems.turtleLeather), 0);
+        this.entityDropItem(new ItemStack(ModItems.turtleShell), 0);
     }
 
     public String getLivingSound()

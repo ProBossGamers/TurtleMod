@@ -63,7 +63,8 @@ public class EntityRaphael extends EntityMob
 
     public void dropFewItems(boolean hit, int looting)
     {
-        this.entityDropItem(new ItemStack(ModItems.turtleLeather), 1);
+        this.entityDropItem(new ItemStack(ModItems.turtleLeather), 0);
+        this.entityDropItem(new ItemStack(ModItems.turtleShell), 0);
     }
 
     public String getLivingSound()
