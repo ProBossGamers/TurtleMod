@@ -6,6 +6,7 @@ import net.minecraft.item.ItemArmor;
 import net.minecraftforge.common.util.EnumHelper;
 import net.probossgamers.turtlemod.creativetab.ModTabs;
 import net.probossgamers.turtlemod.ContentHandler;
+import net.probossgamers.turtlemod.util.LogHelper;
 
 import java.lang.reflect.Field;
 
@@ -31,8 +32,8 @@ public class ModItems implements ContentHandler.IContentProvider
         turtleBoots = new ItemTurtleArmor(3, "turtleLeggings");
         turtleShell = new ItemTurtleShell();
 
-        registerItems();
         setCreativeTabs();
+        registerItems();
     }
 
     public void setCreativeTabs()

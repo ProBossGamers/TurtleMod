@@ -10,8 +10,8 @@ import net.probossgamers.turtlemod.item.ModItems;
 
 public class ModTabs
 {
-    public static CreativeTab blocks = new CreativeTab("turtlemod.blocks", Item.getItemFromBlock(Blocks.command_block));
-    public static CreativeTab items = new CreativeTab("turtlemod.items", ModItems.turtleShell);
+    // public static CreativeTab blocks = new CreativeTab("turtlemod.blocks", Item.getItemFromBlock(Blocks.command_block));
+    public static CreativeTab items = new CreativeTab("turtlemod", ModItems.turtleShell);
 
     public static class CreativeTab extends CreativeTabs
     {

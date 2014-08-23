@@ -1,5 +1,6 @@
 package net.probossgamers.turtlemod.item;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -40,5 +41,10 @@ public class ItemTurtleShell extends ItemArmor
         }
         player.getCurrentEquippedItem().stackSize--;
         return true;
+    }
+
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
+    {
+        return "turtlemod:textures/models/armor/shell_1.png";
     }
 }
