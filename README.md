@@ -16,6 +16,11 @@ Changelog
 * Better Mine Turtle ai
 * Turtle sizes fixed (Which fixed the burning height for the turtles)
 * New high quality textures
+* Wearable Turtle Shell and Peaceable Shell now same item
+* Water Breathing removed for Turtle Shell when worn
+* Foot Ninja added
+* Cream Quartz added
+* Better Logging
 
 The Crew
 ---------
