@@ -10,10 +10,12 @@ import java.lang.reflect.Field;
 public class ModBlocks implements ContentHandler.IContentProvider
 {
     public static Block shellBlock;
+    public static Block creamQuartz;
 
     public void init()
     {
         shellBlock = new BlockTurtleShell();
+        creamQuartz = new BlockCreamQuartz();
 
         setCreativeTabs();
         registerBlocks();
@@ -26,9 +28,11 @@ public class ModBlocks implements ContentHandler.IContentProvider
             for (Field field : getClass().getDeclaredFields())
             {
                 Object obj = field.get(null);
-                if (obj == ModBlocks.shellBlock) return;
-                else if (obj instanceof Block) ModTabs.blocks.setCreativeTab((Block) obj);
-                else if (obj instanceof Block[]) ModTabs.blocks.setCreativeTab((Block[]) obj);
+                if (obj != ModBlocks.shellBlock)
+                {
+                    if (obj instanceof Block) ModTabs.blocks.setCreativeTab((Block) obj);
+                    else if (obj instanceof Block[]) ModTabs.blocks.setCreativeTab((Block[]) obj);
+                }
             }
         }
         catch (Exception e)
