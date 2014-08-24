@@ -4,7 +4,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.util.ResourceLocation;
-import net.probossgamers.turtlemod.client.model.ModelTurtle;
+import net.probossgamers.turtlemod.client.model.entity.ModelTurtle;
 
 @SideOnly(Side.CLIENT)
 public class RenderZombieTurtle extends RenderLiving

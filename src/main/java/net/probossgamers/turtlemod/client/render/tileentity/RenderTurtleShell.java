@@ -5,7 +5,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
-import net.probossgamers.turtlemod.client.model.ModelTurtleShell;
+import net.probossgamers.turtlemod.client.model.block.ModelTurtleShell;
 import org.lwjgl.opengl.GL11;
 
 @SideOnly(Side.CLIENT)

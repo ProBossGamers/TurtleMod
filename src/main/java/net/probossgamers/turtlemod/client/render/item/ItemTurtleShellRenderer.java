@@ -6,7 +6,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.IItemRenderer;
-import net.probossgamers.turtlemod.client.model.ModelTurtleShell;
+import net.probossgamers.turtlemod.client.model.block.ModelTurtleShell;
 import org.lwjgl.opengl.GL11;
 
 @SideOnly(Side.CLIENT)

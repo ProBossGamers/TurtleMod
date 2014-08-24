@@ -3,7 +3,7 @@ package net.probossgamers.turtlemod.event;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.client.event.RenderPlayerEvent;
-import net.probossgamers.turtlemod.client.model.ModelTurtlePlayer;
+import net.probossgamers.turtlemod.client.model.entity.player.ModelTurtlePlayer;
 
 public class PlayerRender
 {
