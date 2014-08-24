@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.probossgamers.turtlemod.item.ModItems;
 
-public class EntityDonatello extends EntityCreature
+public class EntityDonatello extends EntityMob
 {
     public EntityDonatello(World world)
     {

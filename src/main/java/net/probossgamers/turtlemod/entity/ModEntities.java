@@ -22,6 +22,7 @@ public class ModEntities implements ContentHandler.IContentProvider
         registerEntity(EntityRaphael.class, "raphael", 0x1e8100, 0xec0100, 10, 2, 4, EnumCreatureType.creature);
         registerEntity(EntityLeonardo.class, "leonardo", 0x1e8100, 0x002dff, 10, 2, 4, EnumCreatureType.creature);
         registerEntity(EntityMichelangelo.class, "michelangelo", 0x1e8100, 0xff6900, 10, 2, 4, EnumCreatureType.creature);
+        registerEntity(EntityFootNinja.class, "footNinja", 0x000000, 0x4D4D58, 10, 2, 4, EnumCreatureType.creature);
     }
 
     public static void registerEntity(Class<? extends EntityLiving> entityClass, String name, int par1, int par2, int par3, int par4, int par5, EnumCreatureType CreatureType)

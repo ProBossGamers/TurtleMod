@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.probossgamers.turtlemod.item.ModItems;
 
-public class EntityRaphael extends EntityCreature
+public class EntityRaphael extends EntityMob
 {
     public EntityRaphael(World world)
     {
