@@ -44,8 +44,10 @@ public class ModItems implements ContentHandler.IContentProvider
             for (Field field : getClass().getDeclaredFields())
             {
                 Object obj = field.get(null);
-                if (obj instanceof Item) ModTabs.items.setCreativeTab((Item) obj);
-                else if (obj instanceof Item[]) ModTabs.items.setCreativeTab((Item[]) obj);
+                if (obj != ModItems.turtleShell) {
+                    if (obj instanceof Item) ModTabs.items.setCreativeTab((Item) obj);
+                    else if (obj instanceof Item[]) ModTabs.items.setCreativeTab((Item[]) obj);
+                }
             }
         }
         catch (Exception e)

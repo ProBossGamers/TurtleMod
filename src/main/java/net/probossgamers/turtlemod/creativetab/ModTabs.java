@@ -32,6 +32,7 @@ public class ModTabs
         public void setCreativeTab(Block... blocks)
         {
             for (Block block : blocks) if (block != null) block.setCreativeTab(this);
+            ModItems.turtleShell.setCreativeTab(this);
         }
 
         public void setCreativeTab(Item... items)
