@@ -1,5 +1,6 @@
 package net.probossgamers.turtlemod.entity.monster;
 
+import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.*;
@@ -8,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.probossgamers.turtlemod.item.ModItems;
 
-public class EntityDonatello extends EntityMob
+public class EntityDonatello extends EntityCreature
 {
     public EntityDonatello(World world)
     {
