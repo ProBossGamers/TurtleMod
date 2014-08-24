@@ -16,5 +16,7 @@ entity.leonardo.name=Leonardo
 entity.michelangelo.name=Michelangelo
 entity.donatello.name=Donatello
 entity.raphael.name=Raphael
+entity.footNinja.name=Foot Ninja
 
 tile.shellBlock.name=Turtle Shell Block
+tile.creamQuartz.name=Cream Quartz
