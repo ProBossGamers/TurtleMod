@@ -10,7 +10,6 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import net.probossgamers.turtlemod.client.render.block.BlockTurtleShellRenderer;
-import net.probossgamers.turtlemod.creativetab.ModTabs;
 import net.probossgamers.turtlemod.tileentity.TileEntityTurtleShell;
 
 import java.util.List;

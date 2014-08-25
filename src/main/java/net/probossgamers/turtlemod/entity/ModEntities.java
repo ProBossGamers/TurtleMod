@@ -4,8 +4,8 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
-import net.probossgamers.turtlemod.TurtleMod;
 import net.probossgamers.turtlemod.ContentHandler;
+import net.probossgamers.turtlemod.TurtleMod;
 import net.probossgamers.turtlemod.entity.monster.*;
 import net.probossgamers.turtlemod.entity.passive.EntityHelloGuy;
 import net.probossgamers.turtlemod.entity.passive.EntityTurtle;
@@ -18,10 +18,10 @@ public class ModEntities implements ContentHandler.IContentProvider
         registerEntity(EntityZombieTurtle.class, "zombieTurtle", 0x008344, 0x823F02, 10, 2, 4, EnumCreatureType.monster);
         registerEntity(EntityMineTurtle.class, "mineTurtle", 0x1e8100, 0xef0000, 10, 2, 4, EnumCreatureType.creature);
         registerEntity(EntityHelloGuy.class, "helloGuy", 0xffffff, 0xf90000, 10, 2, 4, EnumCreatureType.creature);
-        registerEntity(EntityDonatello.class, "donatello", 0x1e8100, 0x640087, 10, 2, 4, EnumCreatureType.creature);
-        registerEntity(EntityRaphael.class, "raphael", 0x1e8100, 0xec0100, 10, 2, 4, EnumCreatureType.creature);
-        registerEntity(EntityLeonardo.class, "leonardo", 0x1e8100, 0x002dff, 10, 2, 4, EnumCreatureType.creature);
-        registerEntity(EntityMichelangelo.class, "michelangelo", 0x1e8100, 0xff6900, 10, 2, 4, EnumCreatureType.creature);
+        registerEntity(EntityDonatello.class, "donatello", 0x1e8100, 0x640087, 10, 1, 1, EnumCreatureType.creature);
+        registerEntity(EntityRaphael.class, "raphael", 0x1e8100, 0xec0100, 10, 1, 1, EnumCreatureType.creature);
+        registerEntity(EntityLeonardo.class, "leonardo", 0x1e8100, 0x002dff, 10, 1, 1, EnumCreatureType.creature);
+        registerEntity(EntityMichelangelo.class, "michelangelo", 0x1e8100, 0xff6900, 10, 1, 1, EnumCreatureType.creature);
         registerEntity(EntityFootNinja.class, "footNinja", 0x000000, 0x4D4D58, 10, 5, 9, EnumCreatureType.creature);
     }
 

@@ -10,11 +10,9 @@ import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
-import net.probossgamers.turtlemod.item.ModItems;
 import net.probossgamers.turtlemod.entity.ai.EntityAIExplodeOnCollide;
-import net.probossgamers.turtlemod.util.LogHelper;
+import net.probossgamers.turtlemod.item.ModItems;
 
 public class EntityMineTurtle extends EntityCreature
 {

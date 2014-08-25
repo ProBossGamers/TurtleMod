@@ -2,11 +2,7 @@ package net.probossgamers.turtlemod.creativetab;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.probossgamers.turtlemod.ContentHandler;
-import net.probossgamers.turtlemod.block.ModBlocks;
 import net.probossgamers.turtlemod.item.ModItems;
 
 public class ModTabs

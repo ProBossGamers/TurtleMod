@@ -2,8 +2,8 @@ package net.probossgamers.turtlemod.block;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
-import net.probossgamers.turtlemod.creativetab.ModTabs;
 import net.probossgamers.turtlemod.ContentHandler;
+import net.probossgamers.turtlemod.creativetab.ModTabs;
 
 import java.lang.reflect.Field;
 

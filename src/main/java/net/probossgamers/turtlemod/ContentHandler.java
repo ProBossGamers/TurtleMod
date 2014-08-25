@@ -2,9 +2,7 @@ package net.probossgamers.turtlemod;
 
 import net.probossgamers.turtlemod.util.LogHelper;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 public class ContentHandler
 {

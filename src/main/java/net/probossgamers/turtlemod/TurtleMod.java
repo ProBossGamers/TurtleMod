@@ -4,7 +4,6 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.probossgamers.turtlemod.block.ModBlocks;
-import net.probossgamers.turtlemod.creativetab.ModTabs;
 import net.probossgamers.turtlemod.entity.ModEntities;
 import net.probossgamers.turtlemod.item.ModItems;
 import net.probossgamers.turtlemod.server.ServerProxy;

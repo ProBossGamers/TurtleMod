@@ -1,6 +1,5 @@
 package net.probossgamers.turtlemod.entity.monster;
 
-import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.*;

@@ -4,7 +4,6 @@ import net.minecraft.command.IEntitySelector;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.ai.EntityAIBase;
-import net.probossgamers.turtlemod.entity.monster.EntityMineTurtle;
 
 public class EntityAIExplodeOnCollide extends EntityAIBase
 {

@@ -1,13 +1,11 @@
 package net.probossgamers.turtlemod.item;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraftforge.common.util.EnumHelper;
-import net.probossgamers.turtlemod.creativetab.ModTabs;
 import net.probossgamers.turtlemod.ContentHandler;
-import net.probossgamers.turtlemod.util.LogHelper;
+import net.probossgamers.turtlemod.creativetab.ModTabs;
 
 import java.lang.reflect.Field;
 
