@@ -3,6 +3,7 @@ package net.probossgamers.turtlemod.item;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 import net.probossgamers.turtlemod.ContentHandler;
 import net.probossgamers.turtlemod.creativetab.ModTabs;
@@ -30,6 +31,11 @@ public class ModItems implements ContentHandler.IContentProvider
         turtleLeggings = new ItemTurtleArmor(2, "turtleLeggings");
         turtleBoots = new ItemTurtleArmor(3, "turtleBoots");
         turtleShell = new ItemTurtleShell();
+
+        GameRegistry.addRecipe(new ItemStack(turtleHelmet), "LSL", "L L", 'L', turtleLeather, 'S', turtleShell);
+        GameRegistry.addRecipe(new ItemStack(turtleChestplate), "L L", "LSL", "LLL", 'L', turtleLeather, 'S', turtleShell);
+        GameRegistry.addRecipe(new ItemStack(turtleLeggings), "LLL", "L L", "L L", 'L', turtleLeather);
+        GameRegistry.addRecipe(new ItemStack(turtleBoots), "L L", "L L", 'L', turtleLeather);
 
         setCreativeTabs();
         registerItems();
