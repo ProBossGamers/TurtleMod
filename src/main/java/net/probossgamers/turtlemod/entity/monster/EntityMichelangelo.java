@@ -29,6 +29,7 @@ public class EntityMichelangelo extends EntityMob
         tasks.addTask(2, new EntityAIAttackOnCollide(this, EntitySpider.class, 1.0D, false));
         tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityWitch.class, 1.0D, false));
         tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityZombie.class, 1.0D, false));
+        tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityFootNinja.class, 1.0D, false));
         tasks.addTask(4, new EntityAIWander(this, 1.0D));
         tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         tasks.addTask(5, new EntityAILookIdle(this));
@@ -47,6 +48,7 @@ public class EntityMichelangelo extends EntityMob
         targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntitySpider.class, 0, true));
         targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityWitch.class, 0, true));
         targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityZombie.class, 0, true));
+        targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityFootNinja.class, 0, true));
     }
 
     public boolean isAIEnabled()
