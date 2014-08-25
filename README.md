@@ -21,6 +21,7 @@ Changelog
 * Foot Ninja added
 * Cream Quartz added
 * Better Logging
+* Removed music discs cause copyright
 
 The Crew
 ---------
