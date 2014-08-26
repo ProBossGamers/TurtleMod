@@ -40,10 +40,10 @@ public class ModItems implements ContentHandler.IContentProvider
         creamQuartz = new Item().setUnlocalizedName("creamQuartz").setTextureName("turtlemod:creamQuartz");
 
 
-        GameRegistry.addRecipe(new ItemStack(turtleHelmet), "LSL", "L L", 'L', turtleLeather, 'S', turtleShell);
-        GameRegistry.addRecipe(new ItemStack(turtleChestplate), "L L", "LSL", "LLL", 'L', turtleLeather, 'S', turtleShell);
-        GameRegistry.addRecipe(new ItemStack(turtleLeggings), "LLL", "L L", "L L", 'L', turtleLeather);
-        GameRegistry.addRecipe(new ItemStack(turtleBoots), "L L", "L L", 'L', turtleLeather);
+        GameRegistry.addShapedRecipe(new ItemStack(turtleHelmet), "LSL", "L L", 'L', turtleLeather, 'S', turtleShell);
+        GameRegistry.addShapedRecipe(new ItemStack(turtleChestplate), "L L", "LSL", "LLL", 'L', turtleLeather, 'S', turtleShell);
+        GameRegistry.addShapedRecipe(new ItemStack(turtleLeggings), "LLL", "L L", "L L", 'L', turtleLeather);
+        GameRegistry.addShapedRecipe(new ItemStack(turtleBoots), "L L", "L L", 'L', turtleLeather);
         GameRegistry.addShapelessRecipe(new ItemStack(creamQuartz), boneMeal, quartz);
 
         setCreativeTabs();
