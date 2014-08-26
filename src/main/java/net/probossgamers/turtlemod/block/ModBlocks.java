@@ -17,6 +17,8 @@ public class ModBlocks implements ContentHandler.IContentProvider
         shellBlock = new BlockTurtleShell();
         creamQuartz = new BlockCreamQuartz();
 
+        // GameRegistry.addRecipe(new ItemStack(creamQuartz), "BBB", "BQB", "BBB", 'B', new ItemStack(Items.dye, 1, 15), 'Q', Blocks.quartz_block);
+
         setCreativeTabs();
         registerBlocks();
     }
@@ -41,19 +43,15 @@ public class ModBlocks implements ContentHandler.IContentProvider
         }
     }
 
-    public void registerBlocks()
-    {
-        try
-        {
-            for (Field field : getClass().getDeclaredFields())
-            {
+    public void registerBlocks() {
+        try {
+            for (Field field : getClass().getDeclaredFields()) {
                 Object obj = field.get(null);
                 if (obj instanceof Block) GameRegistry.registerBlock((Block) obj, field.getName());
-                else if (obj instanceof Block[]) for (Block block : (Block[]) obj) GameRegistry.registerBlock(block, block.getUnlocalizedName().split("\\.")[1]);
+                else if (obj instanceof Block[]) for (Block block : (Block[]) obj)
+                    GameRegistry.registerBlock(block, block.getUnlocalizedName().split("\\.")[1]);
             }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
