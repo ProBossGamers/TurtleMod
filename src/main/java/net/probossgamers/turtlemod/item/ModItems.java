@@ -1,6 +1,7 @@
 package net.probossgamers.turtlemod.item;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -18,6 +19,11 @@ public class ModItems implements ContentHandler.IContentProvider
     public static Item turtleLeggings;
     public static Item turtleBoots;
     public static Item turtleShell;
+    public static Item creamQuartz;
+
+    public static ItemStack boneMeal = new ItemStack(Items.dye, 1, 15);
+    public static ItemStack quartz = new ItemStack(Items.quartz);
+
 
     public static ItemArmor.ArmorMaterial turtleArmor;
 
@@ -31,11 +37,14 @@ public class ModItems implements ContentHandler.IContentProvider
         turtleLeggings = new ItemTurtleArmor(2, "turtleLeggings");
         turtleBoots = new ItemTurtleArmor(3, "turtleBoots");
         turtleShell = new ItemTurtleShell();
+        creamQuartz = new Item().setUnlocalizedName("creamQuartz").setTextureName("turtlemod:creamQuartz");
+
 
         GameRegistry.addRecipe(new ItemStack(turtleHelmet), "LSL", "L L", 'L', turtleLeather, 'S', turtleShell);
         GameRegistry.addRecipe(new ItemStack(turtleChestplate), "L L", "LSL", "LLL", 'L', turtleLeather, 'S', turtleShell);
         GameRegistry.addRecipe(new ItemStack(turtleLeggings), "LLL", "L L", "L L", 'L', turtleLeather);
         GameRegistry.addRecipe(new ItemStack(turtleBoots), "L L", "L L", 'L', turtleLeather);
+        GameRegistry.addShapelessRecipe(new ItemStack(creamQuartz), boneMeal, quartz);
 
         setCreativeTabs();
         registerItems();
