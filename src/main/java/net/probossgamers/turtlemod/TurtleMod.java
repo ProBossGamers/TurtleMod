@@ -8,8 +8,8 @@ import net.probossgamers.turtlemod.entity.ModEntities;
 import net.probossgamers.turtlemod.item.ModItems;
 import net.probossgamers.turtlemod.server.ServerProxy;
 import net.probossgamers.turtlemod.tileentity.ModTileEntities;
-import net.probossgamers.turtlemod.util.LogHelper;
-import net.probossgamers.turtlemod.util.ModCrafting;
+import net.probossgamers.turtlemod.common.LogHelper;
+import net.probossgamers.turtlemod.item.crafting.ModCrafting;
 
 @Mod(modid = "turtlemod", name = "Turtle Mod", version = "Alpha 0.4")
 public class TurtleMod

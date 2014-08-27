@@ -1,6 +1,6 @@
 package net.probossgamers.turtlemod;
 
-import net.probossgamers.turtlemod.util.LogHelper;
+import net.probossgamers.turtlemod.common.LogHelper;
 
 import java.util.ArrayList;
 

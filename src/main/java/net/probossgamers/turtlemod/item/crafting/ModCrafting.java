@@ -1,4 +1,4 @@
-package net.probossgamers.turtlemod.util;
+package net.probossgamers.turtlemod.item.crafting;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Items;
