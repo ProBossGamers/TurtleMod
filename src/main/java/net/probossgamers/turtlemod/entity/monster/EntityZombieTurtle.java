@@ -70,5 +70,6 @@ public class EntityZombieTurtle extends EntityMob
             if (f > 0.5f && rand.nextFloat() * 30.0f < (f - 0.4f) * 2.0f && worldObj.canBlockSeeTheSky(MathHelper.floor_double(posX), MathHelper.floor_double(posY), MathHelper.floor_double(posZ))) setFire(8);
             super.onLivingUpdate();
         }
+        super.onLivingUpdate();
     }
 }
