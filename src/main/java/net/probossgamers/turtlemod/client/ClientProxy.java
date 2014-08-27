@@ -12,7 +12,6 @@ import net.probossgamers.turtlemod.entity.monster.*;
 import net.probossgamers.turtlemod.entity.passive.EntityHelloGuy;
 import net.probossgamers.turtlemod.entity.passive.EntityTurtle;
 import net.probossgamers.turtlemod.event.BlockRender;
-import net.probossgamers.turtlemod.event.PlayerRender;
 import net.probossgamers.turtlemod.item.ModItems;
 import net.probossgamers.turtlemod.server.ServerProxy;
 import net.probossgamers.turtlemod.tileentity.TileEntityTurtleShell;
@@ -37,7 +36,6 @@ public class ClientProxy extends ServerProxy
 
         MinecraftForgeClient.registerItemRenderer(ModItems.turtleShell, new ItemTurtleShellRenderer());
 
-        MinecraftForge.EVENT_BUS.register(new PlayerRender());
         MinecraftForge.EVENT_BUS.register(new BlockRender());
     }
 }
