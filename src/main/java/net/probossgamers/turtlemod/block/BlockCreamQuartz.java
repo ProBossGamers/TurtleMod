@@ -11,4 +11,9 @@ public class BlockCreamQuartz extends Block {
         setBlockTextureName("turtlemod:creamQuartz");
         setBlockName("creamQuartz");
     }
+
+    public boolean renderAsNormalBlock()
+    {
+        return true;
+    }
 }

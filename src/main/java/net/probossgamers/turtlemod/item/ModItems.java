@@ -21,10 +21,6 @@ public class ModItems implements ContentHandler.IContentProvider
     public static Item turtleShell;
     public static Item creamQuartz;
 
-    public static ItemStack boneMeal = new ItemStack(Items.dye, 1, 15);
-    public static ItemStack quartz = new ItemStack(Items.quartz);
-
-
     public static ItemArmor.ArmorMaterial turtleArmor;
 
     public void init()
@@ -38,13 +34,6 @@ public class ModItems implements ContentHandler.IContentProvider
         turtleBoots = new ItemTurtleArmor(3, "turtleBoots");
         turtleShell = new ItemTurtleShell();
         creamQuartz = new Item().setUnlocalizedName("creamQuartz").setTextureName("turtlemod:creamQuartz");
-
-
-        GameRegistry.addShapedRecipe(new ItemStack(turtleHelmet), "LSL", "L L", 'L', turtleLeather, 'S', turtleShell);
-        GameRegistry.addShapedRecipe(new ItemStack(turtleChestplate), "L L", "LSL", "LLL", 'L', turtleLeather, 'S', turtleShell);
-        GameRegistry.addShapedRecipe(new ItemStack(turtleLeggings), "LLL", "L L", "L L", 'L', turtleLeather);
-        GameRegistry.addShapedRecipe(new ItemStack(turtleBoots), "L L", "L L", 'L', turtleLeather);
-        GameRegistry.addShapelessRecipe(new ItemStack(creamQuartz), boneMeal, quartz);
 
         setCreativeTabs();
         registerItems();

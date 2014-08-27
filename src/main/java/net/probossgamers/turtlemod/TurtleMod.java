@@ -9,6 +9,7 @@ import net.probossgamers.turtlemod.item.ModItems;
 import net.probossgamers.turtlemod.server.ServerProxy;
 import net.probossgamers.turtlemod.tileentity.ModTileEntities;
 import net.probossgamers.turtlemod.util.LogHelper;
+import net.probossgamers.turtlemod.util.ModCrafting;
 
 @Mod(modid = "turtlemod", name = "Turtle Mod", version = "Alpha 0.4")
 public class TurtleMod
@@ -27,6 +28,7 @@ public class TurtleMod
         contentHandler.addContentProvider(ModBlocks.class);
         contentHandler.addContentProvider(ModTileEntities.class);
         contentHandler.addContentProvider(ModEntities.class);
+        contentHandler.addContentProvider(ModCrafting.class);
 
         contentHandler.init();
         proxy.init();
