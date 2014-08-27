@@ -7,6 +7,7 @@ item.turtleHelmet.name=Turtle Helmet
 item.turtleChestplate.name=Turtle Chestplate
 item.turtleLeggings.name=Turtle Leggings
 item.turtleBoots.name=Turtle Boots
+item.creamQuartz.name=Cream Quartz
 
 entity.turtle.name=Turtle
 entity.zombieTurtle.name=Zombie Turtle
@@ -19,4 +20,4 @@ entity.raphael.name=Raphael
 entity.footNinja.name=Foot Ninja
 
 tile.shellBlock.name=Turtle Shell Block
-tile.creamQuartz.name=Cream Quartz
+tile.creamQuartz.name=Block of Cream Quartz
