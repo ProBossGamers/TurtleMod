@@ -8,15 +8,15 @@ import net.probossgamers.turtlemod.client.render.block.BlockTurtleShellRenderer;
 import net.probossgamers.turtlemod.client.render.entity.*;
 import net.probossgamers.turtlemod.client.render.item.ItemTurtleShellRenderer;
 import net.probossgamers.turtlemod.client.render.tileentity.RenderTurtleShell;
+import net.probossgamers.turtlemod.common.CommonProxy;
 import net.probossgamers.turtlemod.entity.monster.*;
 import net.probossgamers.turtlemod.entity.passive.EntityHelloGuy;
 import net.probossgamers.turtlemod.entity.passive.EntityTurtle;
 import net.probossgamers.turtlemod.event.BlockRender;
 import net.probossgamers.turtlemod.item.ModItems;
-import net.probossgamers.turtlemod.server.ServerProxy;
 import net.probossgamers.turtlemod.tileentity.TileEntityTurtleShell;
 
-public class ClientProxy extends ServerProxy
+public class ClientProxy extends CommonProxy
 {
     public void init()
     {

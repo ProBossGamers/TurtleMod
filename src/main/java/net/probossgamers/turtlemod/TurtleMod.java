@@ -4,9 +4,9 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.probossgamers.turtlemod.block.ModBlocks;
+import net.probossgamers.turtlemod.common.CommonProxy;
 import net.probossgamers.turtlemod.entity.ModEntities;
 import net.probossgamers.turtlemod.item.ModItems;
-import net.probossgamers.turtlemod.server.ServerProxy;
 import net.probossgamers.turtlemod.tileentity.ModTileEntities;
 import net.probossgamers.turtlemod.common.LogHelper;
 import net.probossgamers.turtlemod.item.crafting.ModCrafting;
@@ -16,8 +16,8 @@ public class TurtleMod
 {
 	@Mod.Instance("turtlemod")
     public static TurtleMod instance;
-    @SidedProxy(clientSide = "net.probossgamers.turtlemod.client.ClientProxy", serverSide = "net.probossgamers.turtlemod.server.ServerProxy")
-    public static ServerProxy proxy;
+    @SidedProxy(clientSide = "net.probossgamers.turtlemod.client.ClientProxy", serverSide = "net.probossgamers.turtlemod.common.ServerProxy")
+    public static CommonProxy proxy;
 
     public ContentHandler contentHandler = new ContentHandler();
 
