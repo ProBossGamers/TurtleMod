@@ -22,7 +22,7 @@ buildscript
 
 apply plugin: 'forge'
 
-version = "Alpha-5.0-Pre-03"
+version = "Alpha-5.0-Pre-04"
 group= "net.probossgamers.turtlemod"
 archivesBaseName = "TurtleMod"
 libsDirName = '../target'
