@@ -16,7 +16,7 @@ public class TurtleMod
 {
 	@Mod.Instance("turtlemod")
     public static TurtleMod instance;
-    @SidedProxy(clientSide = "net.probossgamers.turtlemod.client.ClientProxy", serverSide = "net.probossgamers.turtlemod.common.ServerProxy")
+    @SidedProxy(clientSide = "net.probossgamers.turtlemod.client.ClientProxy", serverSide = "net.probossgamers.turtlemod.common.CommonProxy")
     public static CommonProxy proxy;
 
     public ContentHandler contentHandler = new ContentHandler();
