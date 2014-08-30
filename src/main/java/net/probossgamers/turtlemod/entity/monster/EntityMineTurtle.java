@@ -2,10 +2,7 @@ package net.probossgamers.turtlemod.entity.monster;
 
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAIAvoidEntity;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAISwimming;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -20,10 +17,10 @@ public class EntityMineTurtle extends EntityCreature
     {
         super(world);
         tasks.addTask(1, new EntityAISwimming(this));
-        tasks.addTask(2, new EntityAIAvoidEntity(this, EntityCreeper.class, 6.0f, 1.0f, 1.2f));
-        tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0f));
-        tasks.addTask(3, new EntityAILookIdle(this));
-        tasks.addTask(4, new EntityAIExplodeOnCollide(this, EntityPlayer.class));
+        tasks.addTask(2, new EntityAIExplodeOnCollide(this, EntityPlayer.class));
+        tasks.addTask(3, new EntityAIWander(this, 1.0D));
+        tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0f));
+        tasks.addTask(5, new EntityAILookIdle(this));
         setSize(0.6f, 0.5f);
     }
 
@@ -43,7 +40,7 @@ public class EntityMineTurtle extends EntityCreature
     {
         super.applyEntityAttributes();
         getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(15.0D);
-        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.20D);
+        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.23000000417232513D/2);
     }
 
     public String getLivingSound()

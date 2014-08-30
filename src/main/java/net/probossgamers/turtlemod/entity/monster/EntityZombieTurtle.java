@@ -17,11 +17,11 @@ public class EntityZombieTurtle extends EntityMob
         super(world);
         getNavigator().setBreakDoors(true);
         tasks.addTask(0, new EntityAISwimming(this));
-        tasks.addTask(2, new EntityAIAttackOnCollide(this,EntityPlayer.class, 0.5D, false));
-        tasks.addTask(3, new EntityAIAttackOnCollide(this,EntityVillager.class, 0.5D, true));
+        tasks.addTask(2, new EntityAIAttackOnCollide(this,EntityPlayer.class, 1.0D, false));
+        tasks.addTask(3, new EntityAIAttackOnCollide(this,EntityVillager.class, 1.0D, true));
         tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
-        tasks.addTask(6,new EntityAIMoveThroughVillage(this, 0.5D, false));
-        tasks.addTask(7, new EntityAIWander(this, 0.5D));
+        tasks.addTask(6,new EntityAIMoveThroughVillage(this, 1.0D, false));
+        tasks.addTask(7, new EntityAIWander(this, 1.0D));
         tasks.addTask(8, new EntityAIWatchClosest(this,EntityPlayer.class, 8.0F));
         tasks.addTask(8, new EntityAILookIdle(this));
         targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
@@ -40,7 +40,7 @@ public class EntityZombieTurtle extends EntityMob
         super.applyEntityAttributes();
         getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(40.0D);
         getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(15.0D);
-        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.1150000021D);
+        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.23000000417232513D/2);
         getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(6.0D);
     }
 

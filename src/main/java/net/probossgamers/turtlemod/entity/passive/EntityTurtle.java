@@ -14,8 +14,8 @@ public class EntityTurtle extends EntityCreature
     {
         super(world);
         tasks.addTask(0, new EntityAISwimming(this));
-        tasks.addTask(1, new EntityAIWander(this, 0.5D));
-        tasks.addTask(2, new EntityAIPanic(this, 0.5D));
+        tasks.addTask(1, new EntityAIWander(this, 1.0D));
+        tasks.addTask(2, new EntityAIPanic(this, 1.0D));
         tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
         tasks.addTask(4, new EntityAILookIdle(this));
         setSize(0.6F, 0.5F);
@@ -30,7 +30,7 @@ public class EntityTurtle extends EntityCreature
     {
         super.applyEntityAttributes();
         getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(15.0D);
-        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.1150000021D);
+        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.23000000417232513D/2);
     }
 
     public void dropFewItems(boolean hit, int looting)
