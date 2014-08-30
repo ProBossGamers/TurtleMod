@@ -71,7 +71,7 @@ public class EntityDonatello extends EntityMob
 
     public String getLivingSound()
     {
-        return "turtlemod:tmnt:donatello";
+        return "turtlemod:don:living";
     }
 
     public String getHurtSound()

@@ -30,5 +30,45 @@
         [
             "turtle/death"
         ]
+    },
+    "don:living":
+    {
+        "category":"neutral",
+        "sounds":
+        [
+            "tmnt/donatello/don0",
+            "tmnt/donatello/don1",
+            "tmnt/donatello/don2"
+        ]
+    },
+    "leo:living":
+    {
+        "category":"neutral",
+        "sounds":
+        [
+            "tmnt/leonardo/leo0",
+            "tmnt/leonardo/leo1",
+            "tmnt/leonardo/leo2"
+        ]
+    },
+    "mike:living":
+    {
+        "category":"neutral",
+        "sounds":
+        [
+            "tmnt/michelangelo/mike0",
+            "tmnt/michelangelo/mike1",
+            "tmnt/michelangelo/mike2"
+        ]
+    },
+    "raph:living":
+    {
+        "category":"neutral",
+        "sounds":
+            [
+                "tmnt/raphael/raph0",
+                "tmnt/raphael/raph1",
+                "tmnt/raphael/raph2 "
+            ]
     }
 }

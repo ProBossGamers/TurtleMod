@@ -71,7 +71,7 @@ public class EntityLeonardo extends EntityMob
 
     public String getLivingSound()
     {
-        return "turtlemod:tmnt:leonardo";
+        return "turtlemod:leo:living";
     }
 
     public String getHurtSound()

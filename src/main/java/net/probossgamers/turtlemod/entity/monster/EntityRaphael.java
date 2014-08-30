@@ -71,7 +71,7 @@ public class EntityRaphael extends EntityMob
 
     public String getLivingSound()
     {
-        return "turtlemod:tmnt:raphael";
+        return "turtlemod:raph:living";
     }
 
     public String getHurtSound()
