@@ -34,7 +34,7 @@ public class EntityFootNinja extends EntityMob {
     {
         super.applyEntityAttributes();
         getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(40.0D);
-        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.3220000058412551D);
+        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.23000000417232513D+((0.23000000417232513D/3)*2));
         getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(1.5D);
     }
 
