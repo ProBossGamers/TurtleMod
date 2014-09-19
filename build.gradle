@@ -22,10 +22,22 @@ buildscript
 
 apply plugin: 'forge'
 
-version = "Alpha-5.0-Pre-05"
+version = "Alpha-5.0"
 group= "net.probossgamers.turtlemod"
 archivesBaseName = "TurtleMod"
 libsDirName = '../target'
+
+configurations {
+    repoUploadFTP
+}
+
+repositories {
+    maven
+            {
+                name = "rystuff"
+                url = "http://files.rystuff.net/maven"
+            }
+}
 
 minecraft 
 {
@@ -49,3 +61,46 @@ processResources
         exclude 'mcmod.info'
     }
 }
+
+dependencies {
+    repoUploadFTP([
+            'org.apache.maven.wagon:wagon-ftp:2.2',
+            'org.apache.maven.wagon:wagon-http:2.2',
+    ])
+}
+
+jar {
+    classifier = 'universal'
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'src'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+task devJar(type: Jar) {
+    classifier = 'dev'
+    from sourceSets.main.output
+}
+
+artifacts {
+    archives sourcesJar, javadocJar, devJar
+}
+
+uploadArchives {
+    def username  = rootProject.getProperty('upload.username')?.trim()
+    def password  = rootProject.getProperty('upload.password')?.trim()
+
+    repositories.mavenDeployer {
+        configuration = configurations.repoUploadFTP
+        repository(url: 'ftp://rystuff.net/public_html/files/maven') {
+            authentication(userName: username, password: password)
+        }
+    }
+}
+
