@@ -11,7 +11,7 @@ import net.probossgamers.turtlemod.tileentity.ModTileEntities;
 import net.probossgamers.turtlemod.common.LogHelper;
 import net.probossgamers.turtlemod.item.crafting.ModCrafting;
 
-@Mod(modid = "turtlemod", name = "Turtle Mod", version = "Alpha 0.4")
+@Mod(modid = "turtlemod", name = "Turtle Mod", version = "Alpha 5.0")
 public class TurtleMod
 {
 	@Mod.Instance("turtlemod")
