@@ -6,8 +6,10 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public class EntityFootNinja extends EntityMob {
-    public EntityFootNinja(World world) {
+public class EntityFootNinja extends EntityMob
+{
+    public EntityFootNinja(World world)
+    {
         super(world);
         tasks.addTask(0, new EntityAISwimming(this));
         tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, 1.0D, false));
@@ -26,7 +28,8 @@ public class EntityFootNinja extends EntityMob {
         targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityRaphael.class, 0, true));
     }
 
-    public boolean isAIEnabled() {
+    public boolean isAIEnabled()
+    {
         return true;
     }
 
@@ -34,7 +37,7 @@ public class EntityFootNinja extends EntityMob {
     {
         super.applyEntityAttributes();
         getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(40.0D);
-        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.23000000417232513D+((0.23000000417232513D/3)*2));
+        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.23000000417232513D + ((0.23000000417232513D / 3) * 2));
         getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(1.5D);
     }
 

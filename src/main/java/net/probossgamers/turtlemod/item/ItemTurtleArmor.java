@@ -19,8 +19,14 @@ public class ItemTurtleArmor extends ItemArmor
 
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
     {
-        if (stack.getItem() != ModItems.turtleLeggings) return "turtlemod:textures/models/armor/turtle_1.png";
-        else return "turtlemod:textures/models/armor/turtle_2.png";
+        if (stack.getItem() != ModItems.turtleLeggings)
+        {
+            return "turtlemod:textures/models/armor/turtle_1.png";
+        }
+        else
+        {
+            return "turtlemod:textures/models/armor/turtle_2.png";
+        }
     }
 
     public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack)
@@ -30,7 +36,9 @@ public class ItemTurtleArmor extends ItemArmor
             ItemStack helmet = player.getCurrentArmor(3);
 
             if (helmet.getItem() == this)
+            {
                 player.addPotionEffect(new PotionEffect(Potion.waterBreathing.getId(), 10, 0));
+            }
         }
     }
 }

@@ -12,6 +12,14 @@ import net.probossgamers.turtlemod.entity.passive.EntityTurtle;
 
 public class ModEntities implements ContentHandler.IContentProvider
 {
+    public static void registerEntity(Class<? extends EntityLiving> entityClass, String name, int par1, int par2, int par3, int par4, int par5, EnumCreatureType CreatureType)
+    {
+        int entityID = EntityRegistry.findGlobalUniqueEntityId();
+        EntityRegistry.registerGlobalEntityID(entityClass, name, entityID, par1, par2);
+        EntityRegistry.registerModEntity(entityClass, name, entityID, TurtleMod.instance, 64, 1, true);
+        EntityRegistry.addSpawn(entityClass, par3, par4, par5, CreatureType, BiomeGenBase.beach, BiomeGenBase.frozenRiver, BiomeGenBase.iceMountains, BiomeGenBase.icePlains, BiomeGenBase.plains, BiomeGenBase.river, BiomeGenBase.swampland, BiomeGenBase.taiga, BiomeGenBase.taigaHills);
+    }
+
     public void init()
     {
         registerEntity(EntityTurtle.class, "turtle", 0x1e8100, 0x7d3900, 10, 2, 4, EnumCreatureType.creature);
@@ -23,23 +31,5 @@ public class ModEntities implements ContentHandler.IContentProvider
         registerEntity(EntityLeonardo.class, "leonardo", 0x1e8100, 0x002dff, 10, 1, 1, EnumCreatureType.creature);
         registerEntity(EntityMichelangelo.class, "michelangelo", 0x1e8100, 0xff6900, 10, 1, 1, EnumCreatureType.creature);
         registerEntity(EntityFootNinja.class, "footNinja", 0x000000, 0x4D4D58, 10, 5, 9, EnumCreatureType.creature);
-    }
-
-    public static void registerEntity(Class<? extends EntityLiving> entityClass, String name, int par1, int par2, int par3, int par4, int par5, EnumCreatureType CreatureType)
-    {
-        int entityID = EntityRegistry.findGlobalUniqueEntityId();
-        EntityRegistry.registerGlobalEntityID(entityClass, name, entityID, par1, par2);
-        EntityRegistry.registerModEntity(entityClass, name, entityID, TurtleMod.instance, 64, 1, true);
-        EntityRegistry.addSpawn(entityClass, par3, par4, par5, CreatureType,
-                BiomeGenBase.beach,
-                BiomeGenBase.frozenRiver,
-                BiomeGenBase.iceMountains,
-                BiomeGenBase.icePlains,
-                BiomeGenBase.plains,
-                BiomeGenBase.river,
-                BiomeGenBase.swampland,
-                BiomeGenBase.taiga,
-                BiomeGenBase.taigaHills
-        );
     }
 }

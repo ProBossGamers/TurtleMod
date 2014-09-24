@@ -5,10 +5,6 @@
 // - ZeuX
 
 
-
-
-
-
 package net.probossgamers.turtlemod.client.model.block;
 
 import net.minecraft.client.model.ModelBase;

@@ -38,15 +38,18 @@ public class EntityHelloGuy extends EntityCreature
         //todo
     }
 
-    public String getLivingSound() {
+    public String getLivingSound()
+    {
         return "turtlemod:helloGuy:hg";
     }
 
-    public String getHurtSound() {
+    public String getHurtSound()
+    {
         return "turtlemod:helloGuy:hgh";
     }
 
-    public String getDeathSound() {
+    public String getDeathSound()
+    {
         return "turtlemod:helloGuy;hgd";
     }
 }

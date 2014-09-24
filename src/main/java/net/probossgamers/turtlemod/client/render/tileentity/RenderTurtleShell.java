@@ -17,7 +17,7 @@ public class RenderTurtleShell extends TileEntitySpecialRenderer
     public void renderTileEntityAt(TileEntity tileEntity, double x, double y, double z, float f)
     {
         GL11.glPushMatrix();
-        GL11.glTranslatef((float)x + 0.5f, (float)y + 1.5f, (float)z + 0.5f);
+        GL11.glTranslatef((float) x + 0.5f, (float) y + 1.5f, (float) z + 0.5f);
         GL11.glRotatef(180f, 0f, 0f, 1f);
         bindTexture(texture);
         GL11.glPushMatrix();

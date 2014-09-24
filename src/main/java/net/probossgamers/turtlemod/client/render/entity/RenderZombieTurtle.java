@@ -16,7 +16,8 @@ public class RenderZombieTurtle extends RenderLiving
         super(new ModelTurtle(), 0.5f);
     }
 
-    public ResourceLocation getEntityTexture(net.minecraft.entity.Entity par1Entity) {
+    public ResourceLocation getEntityTexture(net.minecraft.entity.Entity par1Entity)
+    {
         return textureLocation;
     }
 }

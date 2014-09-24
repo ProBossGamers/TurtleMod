@@ -30,7 +30,7 @@ public class EntityTurtle extends EntityCreature
     {
         super.applyEntityAttributes();
         getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(15.0D);
-        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.23000000417232513D/2);
+        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.23000000417232513D / 2);
     }
 
     public void dropFewItems(boolean hit, int looting)

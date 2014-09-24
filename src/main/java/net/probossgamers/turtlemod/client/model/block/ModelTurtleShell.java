@@ -23,7 +23,10 @@ public class ModelTurtleShell extends ModelBase
 
     public void render()
     {
-        for (ModelRenderer box : boxes) box.render(0.0625f);
+        for (ModelRenderer box : boxes)
+        {
+            box.render(0.0625f);
+        }
     }
 
     public void setRotation(int boxIndex, float x, float y, float z)

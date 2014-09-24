@@ -23,7 +23,7 @@ public class ItemTurtleShellRenderer implements IItemRenderer
 
     public boolean shouldUseRenderHelper(ItemRenderType type, ItemStack item, ItemRendererHelper helper)
     {
-        return helper!= ItemRendererHelper.BLOCK_3D;
+        return helper != ItemRendererHelper.BLOCK_3D;
     }
 
     public void renderItem(ItemRenderType type, ItemStack item, Object... data)

@@ -1,6 +1,7 @@
 package net.probossgamers.turtlemod;
 
 import net.probossgamers.turtlemod.common.LogHelper;
+import org.apache.logging.log4j.Level;
 
 import java.util.ArrayList;
 
@@ -26,7 +27,7 @@ public class ContentHandler
         for (IContentProvider contentProvider : contentProviders)
         {
             contentProvider.init();
-            LogHelper.info("Initialized Content Provider -- " + contentProvider.getClass().getSimpleName());
+            LogHelper.log(Level.INFO, "Initialized Content Provider -- " + contentProvider.getClass().getSimpleName());
         }
     }
 

@@ -44,9 +44,16 @@ public class ModItems implements ContentHandler.IContentProvider
             for (Field field : getClass().getDeclaredFields())
             {
                 Object obj = field.get(null);
-                if (obj != ModItems.turtleShell) {
-                    if (obj instanceof Item) ModTabs.items.setCreativeTab((Item) obj);
-                    else if (obj instanceof Item[]) ModTabs.items.setCreativeTab((Item[]) obj);
+                if (obj != ModItems.turtleShell)
+                {
+                    if (obj instanceof Item)
+                    {
+                        ModTabs.items.setCreativeTab((Item) obj);
+                    }
+                    else if (obj instanceof Item[])
+                    {
+                        ModTabs.items.setCreativeTab((Item[]) obj);
+                    }
                 }
             }
         }
@@ -63,8 +70,17 @@ public class ModItems implements ContentHandler.IContentProvider
             for (Field field : getClass().getDeclaredFields())
             {
                 Object obj = field.get(null);
-                if (obj instanceof Item) GameRegistry.registerItem((Item) obj, field.getName());
-                else if (obj instanceof Item[]) for (Item item : (Item[]) obj) GameRegistry.registerItem(item, item.getUnlocalizedName().split("\\.")[1]);
+                if (obj instanceof Item)
+                {
+                    GameRegistry.registerItem((Item) obj, field.getName());
+                }
+                else if (obj instanceof Item[])
+                {
+                    for (Item item : (Item[]) obj)
+                    {
+                        GameRegistry.registerItem(item, item.getUnlocalizedName().split("\\.")[1]);
+                    }
+                }
             }
         }
         catch (Exception e)

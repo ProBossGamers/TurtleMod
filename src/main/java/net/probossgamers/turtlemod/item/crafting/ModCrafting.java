@@ -13,7 +13,8 @@ public class ModCrafting implements ContentHandler.IContentProvider
     public static ItemStack boneMeal = new ItemStack(Items.dye, 1, 15);
     public static ItemStack quartz = new ItemStack(Items.quartz);
 
-    public void init() {
+    public void init()
+    {
         GameRegistry.addRecipe(new ItemStack(ModItems.turtleHelmet), "LLL", "L L", 'L', ModItems.turtleLeather, 'S', ModItems.turtleShell);
         GameRegistry.addRecipe(new ItemStack(ModItems.turtleChestplate), "L L", "LSL", "LLL", 'L', ModItems.turtleLeather, 'S', ModItems.turtleShell);
         GameRegistry.addRecipe(new ItemStack(ModItems.turtleLeggings), "LLL", "L L", "L L", 'L', ModItems.turtleLeather);

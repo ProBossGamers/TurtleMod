@@ -17,11 +17,7 @@ import java.util.List;
 public class BlockTurtleShell extends BlockContainer implements ICustomHighlightedBlock
 {
     public float pixel = 0.0625f;
-    public AxisAlignedBB[] bounds = new AxisAlignedBB[]
-    {
-        AxisAlignedBB.getBoundingBox(4 * pixel, 0 * pixel, 4 * pixel, 1 - (4 * pixel), 4 * pixel, 1 - (4 * pixel)),
-        AxisAlignedBB.getBoundingBox(5 * pixel, 4 * pixel, 5 * pixel, 1 - (5 * pixel), 5 * pixel, 1 - (5 * pixel))
-    };
+    public AxisAlignedBB[] bounds = new AxisAlignedBB[]{AxisAlignedBB.getBoundingBox(4 * pixel, 0 * pixel, 4 * pixel, 1 - (4 * pixel), 4 * pixel, 1 - (4 * pixel)), AxisAlignedBB.getBoundingBox(5 * pixel, 4 * pixel, 5 * pixel, 1 - (5 * pixel), 5 * pixel, 1 - (5 * pixel))};
 
     public BlockTurtleShell()
     {
@@ -63,20 +59,29 @@ public class BlockTurtleShell extends BlockContainer implements ICustomHighlight
         for (AxisAlignedBB aabb : bounds)
         {
             AxisAlignedBB aabbTmp = aabb.getOffsetBoundingBox(x, y, z);
-            if (box.intersectsWith(aabbTmp)) list.add(aabbTmp);
+            if (box.intersectsWith(aabbTmp))
+            {
+                list.add(aabbTmp);
+            }
         }
     }
 
     public MovingObjectPosition collisionRayTrace(World world, int x, int y, int z, Vec3 origin, Vec3 direction)
     {
-       MovingObjectPosition closest = null;
+        MovingObjectPosition closest = null;
         for (AxisAlignedBB aabb : bounds)
         {
             MovingObjectPosition mop = aabb.getOffsetBoundingBox(x, y, z).calculateIntercept(origin, direction);
             if (mop != null)
             {
-                if (closest != null && mop.hitVec.distanceTo(origin) < closest.hitVec.distanceTo(origin)) closest = mop;
-                else closest = mop;
+                if (closest != null && mop.hitVec.distanceTo(origin) < closest.hitVec.distanceTo(origin))
+                {
+                    closest = mop;
+                }
+                else
+                {
+                    closest = mop;
+                }
             }
         }
         if (closest != null)
