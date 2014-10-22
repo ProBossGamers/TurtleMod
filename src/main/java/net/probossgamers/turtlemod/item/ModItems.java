@@ -18,6 +18,14 @@ public class ModItems implements ContentHandler.IContentProvider
     public static Item turtleBoots;
     public static Item turtleShell;
     public static Item creamQuartz;
+    public static Item donsStick;
+    public static Item katana;
+    public static Item kunai;
+    public static Item leosKatana;
+    public static Item mikesChucks;
+    public static Item pizza;
+    public static Item smokePallet;
+    public static Item spatula;
 
     public static ItemArmor.ArmorMaterial turtleArmor;
 
@@ -32,6 +40,16 @@ public class ModItems implements ContentHandler.IContentProvider
         turtleBoots = new ItemTurtleArmor(3, "turtleBoots");
         turtleShell = new ItemTurtleShell();
         creamQuartz = new Item().setUnlocalizedName("creamQuartz").setTextureName("turtlemod:creamQuartz");
+        donsStick = new Item().setUnlocalizedName("donsStick").setTextureName("turtlemod:donsStick");
+        katana = new Item().setUnlocalizedName("katana").setTextureName("turtlemod:katana");
+        kunai = new Item().setUnlocalizedName("kunai").setTextureName("turtlemod:kunai");
+        leosKatana = new Item().setUnlocalizedName("leosKatana").setTextureName("turtlemod:leosKatana");
+        mikesChucks = new Item().setUnlocalizedName("mikesChucks").setTextureName("turtlemod:mikesChucks");
+        pizza = new Item().setUnlocalizedName("pizza").setTextureName("turtlemod:pizza");
+        smokePallet = new Item().setUnlocalizedName("smokePallet").setTextureName("turtlemod:smokePallet");
+        spatula = new Item().setUnlocalizedName("spatula").setTextureName("turtlemod:spatula");
+
+
 
         setCreativeTabs();
         registerItems();
