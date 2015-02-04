@@ -10,7 +10,6 @@ import net.probossgamers.turtlemod.entity.ModEntities;
 import net.probossgamers.turtlemod.item.ModItems;
 import net.probossgamers.turtlemod.item.crafting.ModCrafting;
 import net.probossgamers.turtlemod.tileentity.ModTileEntities;
-import org.apache.logging.log4j.Level;
 
 @Mod(modid = "turtlemod", name = "Turtle Mod", version = "Alpha 5.0")
 public class TurtleMod
@@ -33,6 +32,6 @@ public class TurtleMod
 
         contentHandler.init();
         proxy.init();
-        LogHelper.log(Level.INFO, "Pre Initialization complete");
+        LogHelper.info("Pre Initialization complete");
     }
 }
