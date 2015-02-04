@@ -33,15 +33,15 @@ configurations {
 
 repositories {
     maven
-            {
-                name = "rystuff"
-                url = "http://files.rystuff.net/maven"
-            }
+    {
+        name = "rystuff"
+        url = "http://files.rystuff.net/maven"
+    }
 }
 
 minecraft 
 {
-    version = "1.7.10-10.13.1.1217"
+    version = "1.7.10-10.13.2.1291"
     runDir = "minecraft"
 }
 
