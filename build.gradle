@@ -27,18 +27,6 @@ group= "net.probossgamers.turtlemod"
 archivesBaseName = "TurtleMod"
 libsDirName = '../target'
 
-configurations {
-    repoUploadFTP
-}
-
-repositories {
-    maven
-    {
-        name = "rystuff"
-        url = "http://files.rystuff.net/maven"
-    }
-}
-
 minecraft 
 {
     version = "1.7.10-10.13.2.1291"
@@ -60,13 +48,6 @@ processResources
     {
         exclude 'mcmod.info'
     }
-}
-
-dependencies {
-    repoUploadFTP([
-            'org.apache.maven.wagon:wagon-ftp:2.2',
-            'org.apache.maven.wagon:wagon-http:2.2',
-    ])
 }
 
 jar {
@@ -91,16 +72,3 @@ task devJar(type: Jar) {
 artifacts {
     archives sourcesJar, javadocJar, devJar
 }
-
-uploadArchives {
-    def username  = rootProject.getProperty('upload.username')?.trim()
-    def password  = rootProject.getProperty('upload.password')?.trim()
-
-    repositories.mavenDeployer {
-        configuration = configurations.repoUploadFTP
-        repository(url: 'ftp://rystuff.net/public_html/files/maven') {
-            authentication(userName: username, password: password)
-        }
-    }
-}
-
