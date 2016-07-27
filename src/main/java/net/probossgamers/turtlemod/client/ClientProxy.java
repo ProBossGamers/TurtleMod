@@ -1,41 +1,21 @@
 package net.probossgamers.turtlemod.client;
 
-import cpw.mods.fml.client.registry.ClientRegistry;
-import cpw.mods.fml.client.registry.RenderingRegistry;
-import net.minecraftforge.client.MinecraftForgeClient;
-import net.minecraftforge.common.MinecraftForge;
-import net.probossgamers.turtlemod.client.render.block.BlockTurtleShellRenderer;
-import net.probossgamers.turtlemod.client.render.entity.*;
-import net.probossgamers.turtlemod.client.render.item.ItemTurtleShellRenderer;
-import net.probossgamers.turtlemod.client.render.tileentity.RenderTurtleShell;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemModelMesher;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.probossgamers.turtlemod.TurtleMod;
 import net.probossgamers.turtlemod.common.CommonProxy;
-import net.probossgamers.turtlemod.entity.monster.*;
-import net.probossgamers.turtlemod.entity.passive.EntityHelloGuy;
-import net.probossgamers.turtlemod.entity.passive.EntityTurtle;
-import net.probossgamers.turtlemod.event.BlockRender;
-import net.probossgamers.turtlemod.item.ModItems;
-import net.probossgamers.turtlemod.tileentity.TileEntityTurtleShell;
 
-public class ClientProxy extends CommonProxy
-{
-    public void init()
-    {
-        RenderingRegistry.registerEntityRenderingHandler(EntityTurtle.class, new RenderTurtle());
-        RenderingRegistry.registerEntityRenderingHandler(EntityZombieTurtle.class, new RenderZombieTurtle());
-        RenderingRegistry.registerEntityRenderingHandler(EntityMineTurtle.class, new RenderMineTurtle());
-        RenderingRegistry.registerEntityRenderingHandler(EntityHelloGuy.class, new RenderHelloGuy());
-        RenderingRegistry.registerEntityRenderingHandler(EntityDonatello.class, new RenderDonatello());
-        RenderingRegistry.registerEntityRenderingHandler(EntityRaphael.class, new RenderRaphael());
-        RenderingRegistry.registerEntityRenderingHandler(EntityLeonardo.class, new RenderLeonardo());
-        RenderingRegistry.registerEntityRenderingHandler(EntityMichelangelo.class, new RenderMichelangelo());
-        RenderingRegistry.registerEntityRenderingHandler(EntityFootNinja.class, new RenderFootNinja());
-
-        RenderingRegistry.registerBlockHandler(new BlockTurtleShellRenderer());
-
-        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTurtleShell.class, new RenderTurtleShell());
-
-        MinecraftForgeClient.registerItemRenderer(ModItems.turtleShell, new ItemTurtleShellRenderer());
-
-        MinecraftForge.EVENT_BUS.register(new BlockRender());
+public class ClientProxy extends CommonProxy {
+    @Override
+    public void postInit(FMLPostInitializationEvent event) {
+        super.postInit(event);
+        ItemModelMesher modelMesher = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();
+        modelMesher.register(TurtleMod.turtleLeather, stack -> new ModelResourceLocation("turtlemod:turtleLeather", "inventory"));
+        modelMesher.register(TurtleMod.turtleHelmet, stack -> new ModelResourceLocation("turtlemod:turtleHelmet", "inventory"));
+        modelMesher.register(TurtleMod.turtleChestplate, stack -> new ModelResourceLocation("turtlemod:turtleChestplate", "inventory"));
+        modelMesher.register(TurtleMod.turtleLeggings, stack -> new ModelResourceLocation("turtlemod:turtleLeggings", "inventory"));
+        modelMesher.register(TurtleMod.turtleBoots, stack -> new ModelResourceLocation("turtlemod:turtleBoots", "inventory"));
     }
 }

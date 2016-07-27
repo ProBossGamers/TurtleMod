@@ -1,9 +1,11 @@
 package net.probossgamers.turtlemod.common;
 
-public class CommonProxy
-{
-    public void init()
-    {
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+
+public class CommonProxy {
+    @Mod.EventHandler
+    public void postInit(FMLPostInitializationEvent event) {
 
     }
 }

@@ -32,5 +32,3 @@ The Crew
 
 License
 --------
-
-DeathJusty's Crazy Turtle Mod is licensed under the MIT license which can be found in the root of this project

@@ -1,51 +1,36 @@
-buildscript 
-{
-    repositories 
-    {
-        mavenCentral()
-        maven 
-        {
+buildscript {
+    repositories {
+        jcenter()
+        maven {
             name = "forge"
             url = "http://files.minecraftforge.net/maven"
         }
-        maven 
-        {
-            name = "sonatype"
-            url = "https://oss.sonatype.org/content/repositories/snapshots/"
-        }
     }
-    dependencies 
-    {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
     }
 }
-
-apply plugin: 'forge'
-
-version = "Alpha-5.0"
+apply plugin: 'net.minecraftforge.gradle.forge'
+version = "Alpha-6.0"
 group= "net.probossgamers.turtlemod"
-archivesBaseName = "TurtleMod"
+archivesBaseName = "turtlemod"
 libsDirName = '../target'
 
-minecraft 
-{
-    version = "1.7.10-10.13.2.1291"
-    runDir = "minecraft"
+minecraft {
+    version = "1.10.2-12.18.1.2018"
+    runDir = "run"
+    mappings = "snapshot_20160518"
 }
 
 processResources
 {
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
-
-    from(sourceSets.main.resources.srcDirs)
-    {
+    from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
         expand 'version':project.version, 'mcversion':project.minecraft.version
     }
-        
-    from(sourceSets.main.resources.srcDirs)
-    {
+    from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
 }
