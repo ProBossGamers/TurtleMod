@@ -49,7 +49,7 @@ public class EnglishWriter {
         FileWriter fw = new FileWriter(newTextFile);
         fw.write("< This is a generated English file >\n");
         fw.write("\n---------Creative Tabs ---------\n");
-        fw.write("itemGroup.turtletab" + "=" + "Turtle Tab\n");
+        fw.write("itemGroup.turtlemod" + "=" + "Turtle Tab\n");
         fw.write("\n---------GUI Localization-------\n");
         fw.write("container.tutorial_tile_entity" + "=" + "Sample Container");
         fw.write("\n--------Blocks----------\n");

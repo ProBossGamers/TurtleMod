@@ -6,6 +6,7 @@ itemGroup.roleplaymod=RolePlay Tab
 container.tutorial_tile_entity=Recipiente de Amostra
 --------Blocks----------
 
+tile.cream_quartz.name=Quartzo creme
 -------Items-----------
 
 item.turtle_helmet.name=Capacete de tartaruga

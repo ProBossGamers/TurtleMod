@@ -24,7 +24,8 @@ public final class BlockRenderRegister {
 	}
 	
 	public static void reg(Block block) {
-	 ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(ModInfo.MODID.toLowerCase() + ":" + block.getUnlocalizedName().substring(5), "inventory"));
+	Item itemBlock= Item.getItemFromBlock(block);
+	 ModelLoader.setCustomModelResourceLocation(itemBlock, 0, new ModelResourceLocation(ModInfo.MODID.toLowerCase() + ":" + itemBlock.getUnlocalizedName().substring(5), "inventory"));
 	
 	}
 	

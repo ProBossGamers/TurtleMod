@@ -1,12 +1,13 @@
 < This is a generated English file >
 
 ---------Creative Tabs ---------
-itemGroup.roleplaymod=Turtle Tab
+itemGroup.turtlemod=Turtle Tab
 
 ---------GUI Localization-------
 container.tutorial_tile_entity=Sample Container
 --------Blocks----------
 
+tile.cream_quartz.name=Cream Quartz
 -------Items-----------
 
 item.turtle_helmet.name=Turtle Helmet

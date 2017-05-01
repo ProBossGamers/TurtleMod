@@ -6,6 +6,7 @@ itemGroup.roleplaymod=RolePlay Tab
 container.tutorial_tile_entity=Sample Container
 --------Blocks----------
 
+tile.cream_quartz.name=Quartz à la crème
 -------Items-----------
 
 item.turtle_helmet.name=Casque de tortue

@@ -6,6 +6,7 @@ itemGroup.roleplaymod=RolePlay Tab
 container.tutorial_tile_entity=Образец контейнера
 --------Blocks----------
 
+tile.cream_quartz.name=Крем-кварц
 -------Items-----------
 
 item.turtle_helmet.name=Черепаший шлем

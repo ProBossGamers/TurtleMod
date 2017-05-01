@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import com.a2937.turtlemod.blocks.ModBlocks;
-import com.a2937.turtlemod.crafting.ModCrafting;
 import com.a2937.turtlemod.creativetabs.TurtleTab;
 import com.a2937.turtlemod.items.ModItems;
 import com.a2937.turtlemod.localization.EnglishWriter;
@@ -15,13 +14,11 @@ import com.a2937.turtlemod.localization.RussianWriter;
 import com.a2937.turtlemod.localization.SpanishWriter;
 import com.a2937.turtlemod.packets.PacketDispatcher;
 import com.a2937.turtlemod.proxies.ServerProxy;
-import com.a2937.turtlemod.world.TutorialWorldGenerator;
 import com.google.common.collect.Lists;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -29,7 +26,6 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = ModInfo.MODID, name = ModInfo.MODNAME,version = ModInfo.VERSION)
 public class TurtleMain
