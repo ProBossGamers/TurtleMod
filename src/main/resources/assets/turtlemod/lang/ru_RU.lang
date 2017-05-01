@@ -9,6 +9,8 @@ container.tutorial_tile_entity=Образец контейнера
 tile.cream_quartz.name=Крем-кварц
 -------Items-----------
 
+item.cream_quartz_piece.name=Кремовый кварцевый ку�?ок
+item.turtle_shell.name=черепаший панцирь
 item.turtle_helmet.name=Черепаший шлем
 item.turtle_chest_plate.name=Черепаха грудна�? пла�?тина
 item.turtle_leggings.name=Гетры черепахи

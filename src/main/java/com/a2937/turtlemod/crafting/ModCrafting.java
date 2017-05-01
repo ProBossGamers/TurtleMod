@@ -1,5 +1,6 @@
 package com.a2937.turtlemod.crafting;
 
+import com.a2937.turtlemod.blocks.ModBlocks;
 import com.a2937.turtlemod.items.ModItems;
 
 //import net.minecraft.init.Blocks;
@@ -9,10 +10,18 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModCrafting {
 
+	public static ItemStack boneMeal = new ItemStack(Items.DYE, 1, 15);
+	public static ItemStack quartz = new ItemStack(Items.QUARTZ);
+		
 	public static void initCrafting() {
 
-		GameRegistry.addRecipe(new ItemStack(ModItems.turtleHelmet), new Object[] {"###", "# #", '#', ModItems.turtleLeather});
-		GameRegistry.addRecipe(new ItemStack(ModItems.turtleChestplate), new Object[] {"# #", "# #", '#', ModItems.turtleLeather});
+		
+		  GameRegistry.addRecipe(new ItemStack(ModItems.turtleHelmet), "LLL", "L L", 'L', ModItems.turtleLeather, 'S', ModItems.turtleShell);
+		  GameRegistry.addRecipe(new ItemStack(ModItems.turtleChestplate), "L L", "LSL", "LLL", 'L', ModItems.turtleLeather, 'S', ModItems.turtleShell);
+		  GameRegistry.addRecipe(new ItemStack(ModItems.turtleLeggings), "LLL", "L L", "L L", 'L', ModItems.turtleLeather);
+		  GameRegistry.addRecipe(new ItemStack(ModItems.turtleBoots), "L L", "L L", 'L', ModItems.turtleLeather);
+          GameRegistry.addRecipe(new ItemStack(ModBlocks.creamQuartz), "CC", "CC", 'C', ModItems.creamQuartzPiece);
+          GameRegistry.addShapelessRecipe(new ItemStack(ModItems.creamQuartzPiece), boneMeal, quartz);
 	}
 
 	

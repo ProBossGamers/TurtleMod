@@ -9,6 +9,8 @@ container.tutorial_tile_entity=Recipiente de Amostra
 tile.cream_quartz.name=Quartzo creme
 -------Items-----------
 
+item.cream_quartz_piece.name=Pedaço de quartzo creme
+item.turtle_shell.name=Concha de tartaruga
 item.turtle_helmet.name=Capacete de tartaruga
 item.turtle_chest_plate.name=Placa de tórax tartaruga
 item.turtle_leggings.name=Leggings de tartaruga

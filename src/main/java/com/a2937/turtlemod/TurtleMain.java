@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import com.a2937.turtlemod.blocks.ModBlocks;
+import com.a2937.turtlemod.crafting.ModCrafting;
 import com.a2937.turtlemod.creativetabs.TurtleTab;
 import com.a2937.turtlemod.items.ModItems;
 import com.a2937.turtlemod.localization.EnglishWriter;
@@ -99,7 +100,7 @@ public class TurtleMain
     public void init(FMLInitializationEvent e) {
     	
     	//MinecraftForge.EVENT_BUS.register(new MobDropEventHandler());
-    	//ModCrafting.initCrafting();
+    	ModCrafting.initCrafting();
     	//GameRegistry.registerWorldGenerator(new TutorialWorldGenerator(), 0);
    
     	

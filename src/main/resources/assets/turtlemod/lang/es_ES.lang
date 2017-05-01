@@ -9,6 +9,8 @@ container.tutorial_tile_entity=Contenedor de muestras
 tile.cream_quartz.name=Cuarzo crema
 -------Items-----------
 
+item.cream_quartz_piece.name=Pedazo de cuarzo crema
+item.turtle_shell.name=caparazón de tortuga
 item.turtle_helmet.name=Casco de tortuga
 item.turtle_chest_plate.name=Tortuga pecho placa
 item.turtle_leggings.name=Polainas de tortuga
