@@ -1,0 +1,16 @@
+<Это �?генерированный ру�?�?кий файл>
+---------Creative Tabs ---------
+itemGroup.roleplaymod=RolePlay Tab
+
+---------GUI Localization-------
+container.tutorial_tile_entity=Образец контейнера
+--------Blocks----------
+
+-------Items-----------
+
+item.turtle_helmet.name=Черепаший шлем
+item.turtle_chest_plate.name=Черепаха грудна�? пла�?тина
+item.turtle_leggings.name=Гетры черепахи
+item.turtle_boots.name=Ботинки черепахи
+item.turtle_leather.name=Кожа черепахи
+-------Entities--------

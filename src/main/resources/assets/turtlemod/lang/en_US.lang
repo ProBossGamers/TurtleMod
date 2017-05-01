@@ -1,23 +1,17 @@
-itemGroup.turtlemod.items=Turtle Mod Items
-itemGroup.turtlemod.blocks=Turtle Mod Blocks
+< This is a generated English file >
 
-item.turtleLeather.name=Turtle Leather
-item.turtleShell.name=Turtle Shell
-item.turtleHelmet.name=Turtle Helmet
-item.turtleChestplate.name=Turtle Chestplate
-item.turtleLeggings.name=Turtle Leggings
-item.turtleBoots.name=Turtle Boots
-item.creamQuartz.name=Cream Quartz
+---------Creative Tabs ---------
+itemGroup.roleplaymod=Turtle Tab
 
-entity.turtle.name=Turtle
-entity.zombieTurtle.name=Zombie Turtle
-entity.mineTurtle.name=Mine Turtle
-entity.helloGuy.name=Hello Guy
-entity.leonardo.name=Leonardo
-entity.michelangelo.name=Michelangelo
-entity.donatello.name=Donatello
-entity.raphael.name=Raphael
-entity.footNinja.name=Foot Ninja
+---------GUI Localization-------
+container.tutorial_tile_entity=Sample Container
+--------Blocks----------
 
-tile.shellBlock.name=Turtle Shell Block
-tile.creamQuartz.name=Block of Cream Quartz
+-------Items-----------
+
+item.turtle_helmet.name=Turtle Helmet
+item.turtle_chest_plate.name=Turtle Chest Plate
+item.turtle_leggings.name=Turtle Leggings
+item.turtle_boots.name=Turtle Boots
+item.turtle_leather.name=Turtle Leather
+-------Entities--------

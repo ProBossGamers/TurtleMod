@@ -1,0 +1,16 @@
+<Este é um ficheiro português gerado>
+---------Creative Tabs ---------
+itemGroup.roleplaymod=RolePlay Tab
+
+---------GUI Localization-------
+container.tutorial_tile_entity=Recipiente de Amostra
+--------Blocks----------
+
+-------Items-----------
+
+item.turtle_helmet.name=Capacete de tartaruga
+item.turtle_chest_plate.name=Placa de tórax tartaruga
+item.turtle_leggings.name=Leggings de tartaruga
+item.turtle_boots.name=Botas de tartaruga
+item.turtle_leather.name=Couro de tartaruga
+-------Entities--------

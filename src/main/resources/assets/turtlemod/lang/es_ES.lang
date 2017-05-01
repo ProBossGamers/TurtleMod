@@ -1,0 +1,16 @@
+<Este es un archivo en Español generado>
+---------Creative Tabs ---------
+itemGroup.roleplaymod=RolePlay Tab
+
+---------GUI Localization-------
+container.tutorial_tile_entity=Contenedor de muestras
+--------Blocks----------
+
+-------Items-----------
+
+item.turtle_helmet.name=Casco de tortuga
+item.turtle_chest_plate.name=Tortuga pecho placa
+item.turtle_leggings.name=Polainas de tortuga
+item.turtle_boots.name=Botas de tortuga
+item.turtle_leather.name=Piel de tortuga
+-------Entities--------

@@ -1,0 +1,16 @@
+<Questo è un file italiano generato>
+---------Creative Tabs ---------
+itemGroup.roleplaymod=RolePlay Tab
+
+---------GUI Localization-------
+container.tutorial_tile_entity=Contenitore di esempio
+--------Blocks----------
+
+-------Items-----------
+
+item.turtle_helmet.name=Casco tartaruga
+item.turtle_chest_plate.name=Piastra toracica della tartaruga
+item.turtle_leggings.name=Gambali in tartaruga
+item.turtle_boots.name=Stivali da tartaruga
+item.turtle_leather.name=Pelle di tartaruga
+-------Entities--------

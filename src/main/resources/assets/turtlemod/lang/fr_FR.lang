@@ -1,0 +1,16 @@
+<Ceci est un fichier français généré>
+---------Creative Tabs ---------
+itemGroup.roleplaymod=RolePlay Tab
+
+---------GUI Localization-------
+container.tutorial_tile_entity=Sample Container
+--------Blocks----------
+
+-------Items-----------
+
+item.turtle_helmet.name=Casque de tortue
+item.turtle_chest_plate.name=Plaque de tortue
+item.turtle_leggings.name=Leggings de tortue
+item.turtle_boots.name=Bottes de tortue
+item.turtle_leather.name=Cuir de tortue
+-------Entities--------
