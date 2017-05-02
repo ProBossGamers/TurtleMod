@@ -101,6 +101,7 @@ public class TurtleMain
     	
     	//MinecraftForge.EVENT_BUS.register(new MobDropEventHandler());
     	ModCrafting.initCrafting();
+    	SoundHandler.registerSounds();
     	//GameRegistry.registerWorldGenerator(new TutorialWorldGenerator(), 0);
    
     	
