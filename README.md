@@ -1,32 +1,42 @@
 Turtle Mod
 ===========
 
-DeathJusty's Crazy Turtle Mod
+The Crazy Turtle Mod
 
 
 Current Version
 ----------------
 
-Alpha 5.0
+Alpha 6.0
 
 Changelog
 ----------
 
-* Updated to 1.7.10
-* Better Mine Turtle ai
-* Turtle sizes fixed (Which fixed the burning height for the turtles)
-* New high quality textures
-* Wearable Turtle Shell and Peaceable Shell now same item
-* Water Breathing removed for Turtle Shell when worn
-* Foot Ninja added
-* Cream Quartz added
-* Better Logging
-* Removed music discs cause copyright
+* Rewritten by Aaron for 1.11.2
++ Shredder Added
++ Master Splinter Added
++ Smoke Bomb added
++ Kunai added
++ Katana added
++ Leonardos Katana added
++ Michelangelos Nunchuck added
++ Raphaels Sai added
++ Donatellos Staff added
++ Spatchula added
++ Nether Turtle added
++ Arctic Turtle added
++ Cure for Zombie Turtle added (cure like normal zombies)
+- TMNT voice lines removed (May be replaced)
 
 The Crew
 ---------
 
-* [DeathJusty](https://github.com/DeathJusty) - Textures/Models/Sounds
+* [LadyHaley](https://github.com/LadyHaley) - Textures/Models/Sounds
+* [Aaron] (https://github.com/a2937) - Code
+
+Old Coders
+----------
+
 * [TheGeekyGuy101](https://github.com/TheGeekyGuy101) - Code
 * [iLexiconn](https://github.com/iLexiconn) - A lot of crap, and a bit of code
 
