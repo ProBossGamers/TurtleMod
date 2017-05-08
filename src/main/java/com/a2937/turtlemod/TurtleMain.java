@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 import com.a2937.turtlemod.blocks.ModBlocks;
 import com.a2937.turtlemod.crafting.ModCrafting;
 import com.a2937.turtlemod.creativetabs.TurtleTab;
+import com.a2937.turtlemod.entities.ModEntities;
 import com.a2937.turtlemod.items.ModItems;
 import com.a2937.turtlemod.localization.EnglishWriter;
 import com.a2937.turtlemod.localization.FrenchWriter;
@@ -62,6 +63,13 @@ public class TurtleMain
     public void preInit(FMLPreInitializationEvent e) {
     	
 		 
+    	//entitiesToRegister.add(EntityEMP.class);
+		 //entitiesToRegister.add(EntityCustomFireball.class);
+		  	
+   	 	//tileEntitiesToRegister.add(ModTileEntity.class);
+   	 	
+   	 	//ModEntities.createEntity(entitiesToRegister);
+   	 	//ModTileEntities.createTileEntities(tileEntitiesToRegister);
     	 	  
     	 	ModItems.createItems();
     	
