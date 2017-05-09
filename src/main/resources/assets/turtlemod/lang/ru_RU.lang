@@ -16,4 +16,7 @@ item.turtle_chest_plate.name=Черепаха грудна�? пла�?тина
 item.turtle_leggings.name=Гетры черепахи
 item.turtle_boots.name=Ботинки черепахи
 item.turtle_leather.name=Кожа черепахи
+item.kunai.name=кунаи
 -------Entities--------
+
+entity.turtlemod.entitykunai.name=кунаи

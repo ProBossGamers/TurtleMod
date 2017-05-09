@@ -1,7 +1,8 @@
 package com.a2937.turtlemod.items;
 
+import com.a2937.turtlemod.entities.EntityKunai;
+
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntitySnowball;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
@@ -31,9 +32,9 @@ public class ItemKunai extends BasicItem
 
         if (!worldIn.isRemote)
         {
-            EntitySnowball entitysnowball = new EntitySnowball(worldIn, playerIn);
-            entitysnowball.setHeadingFromThrower(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
-            worldIn.spawnEntity(entitysnowball);
+            EntityKunai entitykunai = new EntityKunai(worldIn, playerIn);
+            entitykunai.setHeadingFromThrower(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
+            worldIn.spawnEntity(entitykunai);
         }
 
         return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);

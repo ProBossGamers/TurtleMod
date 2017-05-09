@@ -8,15 +8,20 @@ import com.a2937.turtlemod.TurtleMain;
 import com.a2937.turtlemod.blocks.ModBlocks;
 import com.a2937.turtlemod.client.render.blocks.BlockRenderRegister;
 import com.a2937.turtlemod.client.render.items.ItemRenderRegister;
+import com.a2937.turtlemod.entities.EntityKunai;
 import com.a2937.turtlemod.items.ModItems;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.RenderItem;
+import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraftforge.fml.client.registry.IRenderFactory;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
 public class ClientProxy extends ServerProxy {
@@ -83,7 +88,14 @@ public class ClientProxy extends ServerProxy {
 		
 	
 	
-		
+		RenderingRegistry.registerEntityRenderingHandler(EntityKunai.class, new IRenderFactory<EntityKunai>() 
+		{
+			@Override
+			public Render<? super EntityKunai> createRenderFor(RenderManager manager) 
+			{
+				return new RenderSnowball<EntityKunai>(manager,ModItems.kunai, Minecraft.getMinecraft().getRenderItem());
+			}
+		});
 	
 	}
 	

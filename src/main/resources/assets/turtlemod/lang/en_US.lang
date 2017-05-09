@@ -17,4 +17,7 @@ item.turtle_chest_plate.name=Turtle Chest Plate
 item.turtle_leggings.name=Turtle Leggings
 item.turtle_boots.name=Turtle Boots
 item.turtle_leather.name=Turtle Leather
+item.kunai.name=Kunai
 -------Entities--------
+
+entity.turtlemod.entitykunai.name=Kunai

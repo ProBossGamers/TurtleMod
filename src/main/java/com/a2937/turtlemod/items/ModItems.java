@@ -28,6 +28,8 @@ public final class ModItems {
 		
 
 	    public static ArmorMaterial turtleArmor = EnumHelper.addArmorMaterial("Turtle", "turtlemod:turtle", 5, new int[]{1, 3, 2, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
+
+		public static Item kunai;
 	    
 	    
 	   
@@ -57,6 +59,8 @@ public final class ModItems {
 
 	     	GameRegistry.register(turtleShell = new BasicItem("turtle_shell"),new ResourceLocation("turtlemod", "turtle_shell"));
 	    		
+	    	GameRegistry.register(kunai = new ItemKunai("kunai"),new ResourceLocation("turtlemod", "kunai"));
+	     	
 	    	GameRegistry.register(turtleHelmet = new ItemModArmor("turtle_helmet", turtleArmor, 0, EntityEquipmentSlot.HEAD),new ResourceLocation("turtlemod","turtle_helmet"));
 	    	
 	    	GameRegistry.register(turtleChestplate = new ItemModArmor("turtle_chest_plate", turtleArmor, 0, EntityEquipmentSlot.CHEST),new ResourceLocation("turtlemod","turtle_chest_plate"));
@@ -84,6 +88,7 @@ public final class ModItems {
 	    	items.add(turtleLeggings);
 	    	items.add(turtleBoots);
 	    	items.add(turtleLeather);
+	    	items.add(kunai);
 	    	//items.add(turtleBoots);
 	    	//items.add(turtleHelmet);
 	    }

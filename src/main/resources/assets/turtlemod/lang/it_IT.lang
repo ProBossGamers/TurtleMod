@@ -16,4 +16,7 @@ item.turtle_chest_plate.name=Piastra toracica della tartaruga
 item.turtle_leggings.name=Gambali in tartaruga
 item.turtle_boots.name=Stivali da tartaruga
 item.turtle_leather.name=Pelle di tartaruga
+item.kunai.name=kunai
 -------Entities--------
+
+entity.turtlemod.entitykunai.name=kunai
