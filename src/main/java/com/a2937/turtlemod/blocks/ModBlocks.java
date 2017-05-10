@@ -18,8 +18,9 @@ public final class ModBlocks {
 	 
 	public static Block creamQuartz;
 	public static BlockCustomCrop blockCorn; 
+	
 	public static ItemBlock ibCreamQuartz;
-
+	public static ItemBlock ibTurtleShell;
 	public static List<Block> blocks = Lists.newArrayList();
 	
 	//public static List<DirectionBlock> sidedBlocks = Lists.newArrayList();
@@ -27,6 +28,7 @@ public final class ModBlocks {
 	//public static Block petStatue;
 	//public static Block shrine;
 	//public static Block stairs;
+	public static Block turtleShell;
 
 	
 	public static void createPlants() {
@@ -40,8 +42,14 @@ public final class ModBlocks {
 	}
 	
     public static void createBlocks() {
-    	GameRegistry.register(creamQuartz=new BasicBlock("cream_quartz", SoundType.METAL, Material.ROCK, 0.8f, 0.8f),new ResourceLocation("turtlemod","cream_quartz")); 	
+    	GameRegistry.register(creamQuartz=new BasicBlock("cream_quartz", SoundType.METAL, Material.ROCK, 0.8f, 0.8f),new ResourceLocation("turtlemod","cream_quartz")); 
+    
+    	GameRegistry.register(turtleShell=new BasicBlock("shell_block", SoundType.STONE, Material.ROCK, 0.8f, 0.8f),new ResourceLocation("turtlemod","shell_block")); 
+    	
     	GameRegistry.register(ibCreamQuartz = (ItemBlock) new ItemBlock(creamQuartz), creamQuartz.getRegistryName());
+    	GameRegistry.register(ibTurtleShell = (ItemBlock) new ItemBlock(turtleShell), turtleShell.getRegistryName());
+    	
+    	
     	//	 GameRegistry.register(tutorialBlock = new BasicBlock("tutorial_block").setLightLevel(1.0f),new ResourceLocation("turtlemod","t"));
     	
     //	 GameRegistry.register(tutorialOre = new ModBlockOre("tutorial_ore", Material.ROCK, ModItems.turtleLeather, 2, 4));
@@ -50,6 +58,7 @@ public final class ModBlocks {
     	//localization
     
     blocks.add(creamQuartz);
+    blocks.add(turtleShell);
     //	blocks.add(tutorialBlock);
 	// blocks.add(tutorialOre);
 	// blocks.add(tutorialMultiOre);

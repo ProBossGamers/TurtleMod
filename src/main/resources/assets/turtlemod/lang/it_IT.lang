@@ -7,10 +7,10 @@ container.tutorial_tile_entity=Contenitore di esempio
 --------Blocks----------
 
 tile.cream_quartz.name=Crema di quarzo
+tile.shell_block.name=Blocco guscio
 -------Items-----------
 
 item.cream_quartz_piece.name=Pezzo di quarzo di crema
-item.turtle_shell.name=guscio di tartaruga
 item.turtle_helmet.name=Casco tartaruga
 item.turtle_chest_plate.name=Piastra toracica della tartaruga
 item.turtle_leggings.name=Gambali in tartaruga

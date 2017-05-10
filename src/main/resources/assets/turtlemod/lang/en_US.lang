@@ -8,10 +8,10 @@ container.tutorial_tile_entity=Sample Container
 --------Blocks----------
 
 tile.cream_quartz.name=Cream Quartz
+tile.shell_block.name=Shell Block
 -------Items-----------
 
 item.cream_quartz_piece.name=Cream Quartz Piece
-item.turtle_shell.name=Turtle Shell
 item.turtle_helmet.name=Turtle Helmet
 item.turtle_chest_plate.name=Turtle Chest Plate
 item.turtle_leggings.name=Turtle Leggings

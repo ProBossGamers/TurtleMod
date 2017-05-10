@@ -11,11 +11,11 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
-public class ItemKunai extends BasicItem
+public class ItemKunai extends BasicWeapon
 {
     public ItemKunai(String unlocalizedName)
     {
-    	super(unlocalizedName);
+    	super(unlocalizedName, ModItems.Kunai);
         this.maxStackSize = 16;
     }
 

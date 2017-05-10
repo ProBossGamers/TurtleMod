@@ -7,6 +7,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.util.EnumHelper;
@@ -20,7 +21,6 @@ public final class ModItems {
 	
 	  public static Item turtleLeather;
 	  
-	  public static Item turtleShell;
 	  
 	  
 	  public static Item creamQuartzPiece;
@@ -29,6 +29,9 @@ public final class ModItems {
 
 	    public static ArmorMaterial turtleArmor = EnumHelper.addArmorMaterial("Turtle", "turtlemod:turtle", 5, new int[]{1, 3, 2, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
 
+	    public static ToolMaterial Kunai = EnumHelper.addToolMaterial("Kunai", 2, 260, 6.5f, 2.5f, 18);
+	    //public static ToolMaterial TUTORIAL = EnumHelper.addToolMaterial("TUTORIAL", harvestLevel, durability, miningSpeed, damageVsEntities, enchantability);
+	    
 		public static Item kunai;
 	    
 	    
@@ -57,7 +60,7 @@ public final class ModItems {
 	     
 	     	GameRegistry.register(turtleLeather = new BasicItem("turtle_leather"),new ResourceLocation("turtlemod", "turtle_leather"));
 
-	     	GameRegistry.register(turtleShell = new BasicItem("turtle_shell"),new ResourceLocation("turtlemod", "turtle_shell"));
+	
 	    		
 	    	GameRegistry.register(kunai = new ItemKunai("kunai"),new ResourceLocation("turtlemod", "kunai"));
 	     	
@@ -82,7 +85,6 @@ public final class ModItems {
 	    	///items.add(turtleChestplate);
 	    	//items.add(turtleLeggings);
 	    	items.add(creamQuartzPiece);
-	    	items.add(turtleShell);
 	    	items.add(turtleHelmet);
 	    	items.add(turtleChestplate);
 	    	items.add(turtleLeggings);

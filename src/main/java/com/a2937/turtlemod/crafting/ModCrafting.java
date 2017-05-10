@@ -16,8 +16,8 @@ public class ModCrafting {
 	public static void initCrafting() {
 
 		
-		  GameRegistry.addRecipe(new ItemStack(ModItems.turtleHelmet), "LLL", "L L", 'L', ModItems.turtleLeather, 'S', ModItems.turtleShell);
-		  GameRegistry.addRecipe(new ItemStack(ModItems.turtleChestplate), "L L", "LSL", "LLL", 'L', ModItems.turtleLeather, 'S', ModItems.turtleShell);
+		  GameRegistry.addRecipe(new ItemStack(ModItems.turtleHelmet), "LLL", "L L", 'L', ModItems.turtleLeather, 'S', ModBlocks.turtleShell);
+		  GameRegistry.addRecipe(new ItemStack(ModItems.turtleChestplate), "L L", "LSL", "LLL", 'L', ModItems.turtleLeather, 'S', ModBlocks.turtleShell);
 		  GameRegistry.addRecipe(new ItemStack(ModItems.turtleLeggings), "LLL", "L L", "L L", 'L', ModItems.turtleLeather);
 		  GameRegistry.addRecipe(new ItemStack(ModItems.turtleBoots), "L L", "L L", 'L', ModItems.turtleLeather);
           GameRegistry.addRecipe(new ItemStack(ModBlocks.creamQuartz), "CC", "CC", 'C', ModItems.creamQuartzPiece);
