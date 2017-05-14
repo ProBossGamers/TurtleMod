@@ -9,6 +9,8 @@ import com.a2937.turtlemod.blocks.ModBlocks;
 import com.a2937.turtlemod.client.render.blocks.BlockRenderRegister;
 import com.a2937.turtlemod.client.render.items.ItemRenderRegister;
 import com.a2937.turtlemod.entities.EntityKunai;
+import com.a2937.turtlemod.entities.EntityTurtle;
+import com.a2937.turtlemod.entities.render.RenderTurtle;
 import com.a2937.turtlemod.items.ModItems;
 
 import net.minecraft.client.Minecraft;
@@ -86,7 +88,14 @@ public class ClientProxy extends ServerProxy {
 	@Override
 	public void renderEntities() {
 		
-	
+		RenderingRegistry.registerEntityRenderingHandler(EntityTurtle.class, new IRenderFactory<EntityTurtle>(){
+			@Override
+			public Render<? super EntityTurtle> createRenderFor(RenderManager manager) 
+			{
+				return new RenderTurtle(manager);
+			}
+		});
+		
 	
 		RenderingRegistry.registerEntityRenderingHandler(EntityKunai.class, new IRenderFactory<EntityKunai>() 
 		{

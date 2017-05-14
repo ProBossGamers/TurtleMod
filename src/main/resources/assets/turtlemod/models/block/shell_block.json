@@ -1,6 +1,5 @@
 {
   "ambientocclusion": true,
-  "textures": {},
   "elements": [
     {
       "name": "body",
@@ -166,5 +165,8 @@
         }
       }
     }
-  ]
+  ],
+  "textures":{
+	"all":"turtlemod:blocks/shell_block"
+	}
 }

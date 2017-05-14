@@ -7,6 +7,7 @@ import com.a2937.turtlemod.blocks.ModBlocks;
 import com.a2937.turtlemod.crafting.ModCrafting;
 import com.a2937.turtlemod.creativetabs.TurtleTab;
 import com.a2937.turtlemod.entities.EntityKunai;
+import com.a2937.turtlemod.entities.EntityTurtle;
 import com.a2937.turtlemod.entities.ModEntities;
 import com.a2937.turtlemod.items.ModItems;
 import com.a2937.turtlemod.localization.EnglishWriter;
@@ -65,6 +66,7 @@ public class TurtleMain
     	
 		 
     	entitiesToRegister.add(EntityKunai.class);
+    	entitiesToRegister.add(EntityTurtle.class);
 		 //entitiesToRegister.add(EntityCustomFireball.class);
 		  	
    	 	//tileEntitiesToRegister.add(ModTileEntity.class);
