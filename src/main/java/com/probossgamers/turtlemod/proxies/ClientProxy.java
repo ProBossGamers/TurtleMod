@@ -10,6 +10,8 @@ import com.probossgamers.turtlemod.client.render.blocks.BlockRenderRegister;
 import com.probossgamers.turtlemod.client.render.items.ItemRenderRegister;
 import com.probossgamers.turtlemod.entities.EntityKunai;
 import com.probossgamers.turtlemod.entities.EntityTurtle;
+import com.probossgamers.turtlemod.entities.monster.EntityMineTurtle;
+import com.probossgamers.turtlemod.entities.render.RenderMineTurtle;
 import com.probossgamers.turtlemod.entities.render.RenderTurtle;
 import com.probossgamers.turtlemod.items.ModItems;
 
@@ -105,7 +107,15 @@ public class ClientProxy extends ServerProxy {
 				return new RenderSnowball<EntityKunai>(manager,ModItems.kunai, Minecraft.getMinecraft().getRenderItem());
 			}
 		});
-	
+
+		RenderingRegistry.registerEntityRenderingHandler(EntityMineTurtle.class, new IRenderFactory<EntityMineTurtle>()
+		{
+			@Override
+			public Render<? super EntityMineTurtle> createRenderFor(RenderManager manager)
+			{
+				return new RenderMineTurtle(manager);
+			}
+		});
 	}
 	
 	
