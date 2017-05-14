@@ -9,6 +9,7 @@ import com.probossgamers.turtlemod.creativetabs.TurtleTab;
 import com.probossgamers.turtlemod.entities.EntityKunai;
 import com.probossgamers.turtlemod.entities.EntityTurtle;
 import com.probossgamers.turtlemod.entities.ModEntities;
+import com.probossgamers.turtlemod.entities.monster.EntityMineTurtle;
 import com.probossgamers.turtlemod.items.ModItems;
 import com.probossgamers.turtlemod.localization.EnglishWriter;
 import com.probossgamers.turtlemod.packets.PacketDispatcher;
@@ -62,6 +63,7 @@ public class TurtleMain
 		 
     	entitiesToRegister.add(EntityKunai.class);
     	entitiesToRegister.add(EntityTurtle.class);
+    	entitiesToRegister.add(EntityMineTurtle.class);
 		 //entitiesToRegister.add(EntityCustomFireball.class);
 		  	
    	 	//tileEntitiesToRegister.add(ModTileEntity.class);
