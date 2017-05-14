@@ -3,9 +3,10 @@
 	"modid": "turtlemod",
 	"name": "DeathJustys Crazy Turtle Mod",
 	"description": "Add turtles and other crazy things!",
-	"mcversion": "1.8.9",
-	"version": "Alpha 5.0",
+	"mcversion": "1.11.2",
+	"version": "0.0.6a",
 	"url": "",
-	"authorList": [ "TheGeekyGuy101", "DeathJusty", "iLexiconn" ]
+	"authorList": [ "TheGeekyGuy101", "DeathJusty", "iLexiconn", "TheGamingHuskyMC" ],
+	"logoFile": "assets/turtlemod/textures/logo.png"
 }
 ]
