@@ -33,7 +33,7 @@ The Crew
 
 * [LadyHaley](https://github.com/LadyHaley) - Textures/Models/Sounds
 * [a2937] (https://github.com/a2937) - Code
-* [sindrefag] (https://github.com/sindrefag) - Code
+* [TheGamingHuskyMC] (https://github.com/sindrefag) - Code
 
 Old Coders
 ----------
