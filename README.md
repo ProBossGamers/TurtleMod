@@ -32,7 +32,8 @@ The Crew
 ---------
 
 * [LadyHaley](https://github.com/LadyHaley) - Textures/Models/Sounds
-* [Aaron] (https://github.com/a2937) - Code
+* [a2937] (https://github.com/a2937) - Code
+* [sindrefag] (https://github.com/sindrefag) - Code
 
 Old Coders
 ----------
