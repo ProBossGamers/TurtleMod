@@ -5,6 +5,7 @@ import com.probossgamers.turtlemod.TurtleMain;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 
 public class BasicBlock extends Block {
 
@@ -29,7 +30,11 @@ public class BasicBlock extends Block {
     public BasicBlock(String unlocalizedName) {
         this(unlocalizedName, 2.0f, 10.0f);
     }
-   
+
+
+    @Override    public boolean isFullCube(IBlockState state) {        return false;    }
+
+    @Override    public boolean isOpaqueCube(IBlockState state) {        return false;    }
     /*
     public String getDescription() {
     	return "";
