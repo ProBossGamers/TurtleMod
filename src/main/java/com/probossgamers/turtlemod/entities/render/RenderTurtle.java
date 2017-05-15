@@ -12,7 +12,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  @SideOnly(Side.CLIENT)
  public class RenderTurtle extends RenderLiving<EntityTurtle>
  {
-    public ResourceLocation textureLocation = new ResourceLocation("turtlemod:textures/mobs/Turtle.png");
+    public ResourceLocation textureLocation = new ResourceLocation("turtlemod:textures/mobs/turtle.png");
  
      public RenderTurtle(RenderManager manager)
      {

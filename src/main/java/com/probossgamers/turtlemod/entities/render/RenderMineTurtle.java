@@ -1,6 +1,7 @@
 package com.probossgamers.turtlemod.entities.render;
 
 import com.probossgamers.turtlemod.entities.models.ModelMineTurtle;
+import com.probossgamers.turtlemod.entities.monster.EntityMineTurtle;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
@@ -15,16 +16,16 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 
 @SideOnly(Side.CLIENT)
-public class RenderMineTurtle extends RenderLiving
+public class RenderMineTurtle extends RenderLiving<EntityMineTurtle>
 {
-    public ResourceLocation textures = new ResourceLocation("turtlemod:textures/mobs/MineTurtle.png");
+    public ResourceLocation textures = new ResourceLocation("turtlemod:textures/mobs/mineturtle.png");
 
     public RenderMineTurtle(RenderManager manager)
     {
         super(manager,new ModelMineTurtle(), 0.5f);
     }
 
-    public ResourceLocation getEntityTexture(Entity entity)
+    public ResourceLocation getEntityTexture(EntityMineTurtle entity)
     {
         return textures;
     }

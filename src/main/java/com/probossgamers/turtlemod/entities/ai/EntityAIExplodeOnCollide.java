@@ -20,7 +20,7 @@ public class EntityAIExplodeOnCollide extends EntityAIBase
 
     public boolean shouldExecute()
     {
-        return !entityClass.world.getEntitiesWithinAABB(classTarget, entityClass.getCollisionBoundingBox()).isEmpty();
+        return !entityClass.world.getEntitiesWithinAABB(classTarget, entityClass.getEntityBoundingBox()).isEmpty();
     }
 
     public void startExecuting()
