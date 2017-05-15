@@ -14,7 +14,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 
 
-
+// I`ve set the name to lowercase.
 @SideOnly(Side.CLIENT)
 public class RenderMineTurtle extends RenderLiving<EntityMineTurtle>
 {
