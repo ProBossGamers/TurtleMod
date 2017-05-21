@@ -4,7 +4,6 @@ import com.probossgamers.turtlemod.entities.models.ModelMineTurtle;
 import com.probossgamers.turtlemod.entities.monster.EntityMineTurtle;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
