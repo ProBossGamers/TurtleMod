@@ -51,7 +51,7 @@ public class EntityMineTurtle extends EntityCreature
         getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000417232513D / 2);
     }
 
-    public SoundEvent getLivingSound()
+    public SoundEvent getAmbientSound()
     {
         return SoundHandler.turtle_living;
     }
