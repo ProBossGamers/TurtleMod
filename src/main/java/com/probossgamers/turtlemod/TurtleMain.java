@@ -1,5 +1,6 @@
 package com.probossgamers.turtlemod;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -18,6 +19,7 @@ import com.google.common.collect.Lists;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -52,23 +54,34 @@ public class TurtleMain
 	//public static int DimID = DimensionManager.getNextFreeDimId();
 	
 	public static CreativeTabs tabCustom = new TurtleTab();
-    
+
+	public static HashMap<Class<?extends EntityLivingBase>,Integer> entPrimaryColor = new HashMap<Class<?extends EntityLivingBase>,Integer>();
+	public static HashMap<Class<?extends EntityLivingBase>,Integer> entSecondayColor = new HashMap<Class<?extends EntityLivingBase>,Integer>();
+
     @Instance
     public static TurtleMain instance = new TurtleMain();
     
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent e) {
-    	
-		 
+
+
     	entitiesToRegister.add(EntityKunai.class);
+
+
+
     	entitiesToRegister.add(EntityTurtle.class);
+		entPrimaryColor.put(EntityTurtle.class,161425);
+		entSecondayColor.put(EntityTurtle.class,1582224);
+
     	entitiesToRegister.add(EntityMineTurtle.class);
+		entPrimaryColor.put(EntityMineTurtle.class,161425);
+		entSecondayColor.put(EntityMineTurtle.class,1582224);
 		 //entitiesToRegister.add(EntityCustomFireball.class);
 		  	
    	 	//tileEntitiesToRegister.add(ModTileEntity.class);
    	 	
-   	 	ModEntities.createEntity(entitiesToRegister);
+   	 	ModEntities.createEntity(entitiesToRegister,entPrimaryColor,entSecondayColor);
    	 	//ModTileEntities.createTileEntities(tileEntitiesToRegister);
     	 	  
     	 	ModItems.createItems();

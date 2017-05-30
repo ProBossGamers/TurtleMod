@@ -19,6 +19,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.pathfinding.PathNavigateGround;
 import net.minecraft.util.EntitySelectors;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -93,10 +94,6 @@ public class EntityZombieTurtle extends EntityMob
     {
         super.writeEntityToNBT(compound);
 
-        if (this.isChild())
-        {
-            compound.setBoolean("IsBaby", true);
-        }
 
         compound.setBoolean("CanBreakDoors", this.isBreakDoorsTaskSet());
     }
@@ -106,10 +103,7 @@ public class EntityZombieTurtle extends EntityMob
     {
         super.readEntityFromNBT(compound);
 
-        if (compound.getBoolean("IsBaby"))
-        {
-            this.setChild(true);
-        }
+
 
         this.setBreakDoorsAItask(compound.getBoolean("CanBreakDoors"));
     }
@@ -180,7 +174,7 @@ public class EntityZombieTurtle extends EntityMob
         if (world.isDaytime() && !world.isRemote && !isChild())
         {
             float f = getBrightness(1.0f);
-            if (f > 0.5f && rand.nextFloat() * 30.0f < (f - 0.4f) * 2.0f && world.canBlockSeeTheSky(MathHelper.floor(posX), MathHelper.floor(posY), MathHelper.floor(posZ)))
+            if (f > 0.5f && rand.nextFloat() * 30.0f < (f - 0.4f) * 2.0f && world.canBlockSeeSky(new BlockPos(MathHelper.floor(posX), MathHelper.floor(posY), MathHelper.floor(posZ))))
             {
                 setFire(8);
             }
