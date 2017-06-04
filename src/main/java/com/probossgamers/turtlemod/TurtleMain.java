@@ -71,12 +71,12 @@ public class TurtleMain
 
 
     	entitiesToRegister.add(EntityTurtle.class);
-		entPrimaryColor.put(EntityTurtle.class,161425);
-		entSecondayColor.put(EntityTurtle.class,1582224);
+		entPrimaryColor.put(EntityTurtle.class, 1999104);
+		entSecondayColor.put(EntityTurtle.class, 8206592);
 
     	entitiesToRegister.add(EntityMineTurtle.class);
-		entPrimaryColor.put(EntityMineTurtle.class,161425);
-		entSecondayColor.put(EntityMineTurtle.class,1582224);
+		entPrimaryColor.put(EntityMineTurtle.class, 1999104);
+		entSecondayColor.put(EntityMineTurtle.class, 15663104);
 		 //entitiesToRegister.add(EntityCustomFireball.class);
 		  	
    	 	//tileEntitiesToRegister.add(ModTileEntity.class);

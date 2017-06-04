@@ -8,7 +8,11 @@ import com.probossgamers.turtlemod.TurtleMain;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.biome.Biome;
+import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 	public final class ModEntities {
@@ -45,6 +49,7 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 		public static void regLiving(Class<? extends Entity> entities,HashMap<Class<?extends EntityLivingBase>,Integer> primaryColor, HashMap<Class<?extends EntityLivingBase>,Integer> secondaryColor) {
 			EntityRegistry.registerModEntity(new ResourceLocation(ModInfo.MODID,entities.getSimpleName()), entities, entities.getSimpleName().toLowerCase(),  modEntityID++, TurtleMain.instance, 64, 10, true);
 			EntityRegistry.registerEgg(new ResourceLocation(ModInfo.MODID,entities.getSimpleName()), primaryColor.get(entities), secondaryColor.get(entities));
+			EntityRegistry.addSpawn(entities.getSimpleName(),10, 2, 9, EnumCreatureType.CREATURE, Biomes.BEACH ,Biomes.FROZEN_RIVER, Biomes.ICE_MOUNTAINS, Biomes.ICE_PLAINS, Biomes.PLAINS, Biomes.RIVER, Biomes.SWAMPLAND, Biomes.TAIGA, Biomes.TAIGA_HILLS);
 		}
 		
 	}
