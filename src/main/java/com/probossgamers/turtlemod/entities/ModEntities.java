@@ -7,6 +7,7 @@ import com.probossgamers.turtlemod.ModInfo;
 import com.probossgamers.turtlemod.TurtleMain;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Biomes;
@@ -29,7 +30,9 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 		//	addToList();
 			for(Class<? extends Entity> ent : entityClass) {
 				if(EntityLivingBase.class.isAssignableFrom(ent)) {
-					regLiving(ent,primaryColor,secondaryColor);
+
+
+					regLiving((Class<? extends EntityLiving>) ent,primaryColor,secondaryColor);
 				}
 				else{
 					reg(ent);
@@ -46,10 +49,11 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 		
 				}
 		
-		public static void regLiving(Class<? extends Entity> entities,HashMap<Class<?extends EntityLivingBase>,Integer> primaryColor, HashMap<Class<?extends EntityLivingBase>,Integer> secondaryColor) {
-			EntityRegistry.registerModEntity(new ResourceLocation(ModInfo.MODID,entities.getSimpleName()), entities, entities.getSimpleName().toLowerCase(),  modEntityID++, TurtleMain.instance, 64, 10, true);
+		public static void regLiving(Class<? extends EntityLiving> entities,HashMap<Class<?extends EntityLivingBase>,Integer> primaryColor, HashMap<Class<?extends EntityLivingBase>,Integer> secondaryColor) {
+
+            EntityRegistry.registerModEntity(new ResourceLocation(ModInfo.MODID,entities.getSimpleName()), entities, entities.getSimpleName().toLowerCase(),  modEntityID++, TurtleMain.instance, 64, 10, true);
 			EntityRegistry.registerEgg(new ResourceLocation(ModInfo.MODID,entities.getSimpleName()), primaryColor.get(entities), secondaryColor.get(entities));
-			EntityRegistry.addSpawn(entities.getSimpleName(),10, 2, 9, EnumCreatureType.CREATURE, Biomes.BEACH ,Biomes.FROZEN_RIVER, Biomes.ICE_MOUNTAINS, Biomes.ICE_PLAINS, Biomes.PLAINS, Biomes.RIVER, Biomes.SWAMPLAND, Biomes.TAIGA, Biomes.TAIGA_HILLS);
+			EntityRegistry.addSpawn(entities,10, 2, 9, EnumCreatureType.CREATURE, Biomes.BEACH ,Biomes.FROZEN_RIVER, Biomes.ICE_MOUNTAINS, Biomes.ICE_PLAINS, Biomes.PLAINS, Biomes.RIVER, Biomes.SWAMPLAND, Biomes.TAIGA, Biomes.TAIGA_HILLS);
 		}
 		
 	}

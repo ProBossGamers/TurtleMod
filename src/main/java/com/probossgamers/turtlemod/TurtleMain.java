@@ -11,6 +11,7 @@ import com.probossgamers.turtlemod.entities.EntityKunai;
 import com.probossgamers.turtlemod.entities.EntityTurtle;
 import com.probossgamers.turtlemod.entities.ModEntities;
 import com.probossgamers.turtlemod.entities.monster.EntityMineTurtle;
+import com.probossgamers.turtlemod.entities.monster.EntityZombieTurtle;
 import com.probossgamers.turtlemod.items.ModItems;
 import com.probossgamers.turtlemod.localization.EnglishWriter;
 import com.probossgamers.turtlemod.packets.PacketDispatcher;
@@ -77,6 +78,11 @@ public class TurtleMain
     	entitiesToRegister.add(EntityMineTurtle.class);
 		entPrimaryColor.put(EntityMineTurtle.class, 1999104);
 		entSecondayColor.put(EntityMineTurtle.class, 15663104);
+
+
+		entitiesToRegister.add(EntityZombieTurtle.class);
+		entPrimaryColor.put(EntityZombieTurtle.class, 33604);
+		entSecondayColor.put(EntityZombieTurtle.class, 8535810);
 		 //entitiesToRegister.add(EntityCustomFireball.class);
 		  	
    	 	//tileEntitiesToRegister.add(ModTileEntity.class);

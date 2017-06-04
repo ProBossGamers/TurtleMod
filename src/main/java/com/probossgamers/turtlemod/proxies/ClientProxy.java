@@ -11,8 +11,10 @@ import com.probossgamers.turtlemod.client.render.items.ItemRenderRegister;
 import com.probossgamers.turtlemod.entities.EntityKunai;
 import com.probossgamers.turtlemod.entities.EntityTurtle;
 import com.probossgamers.turtlemod.entities.monster.EntityMineTurtle;
+import com.probossgamers.turtlemod.entities.monster.EntityZombieTurtle;
 import com.probossgamers.turtlemod.entities.render.RenderMineTurtle;
 import com.probossgamers.turtlemod.entities.render.RenderTurtle;
+import com.probossgamers.turtlemod.entities.render.RenderZombieTurtle;
 import com.probossgamers.turtlemod.items.ModItems;
 
 import net.minecraft.client.Minecraft;
@@ -21,6 +23,7 @@ import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.RenderSnowball;
+import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.nbt.NBTTagCompound;
@@ -116,9 +119,17 @@ public class ClientProxy extends ServerProxy {
 				return new RenderMineTurtle(manager);
 			}
 		});
-	}
+
 	
-	
+	RenderingRegistry.registerEntityRenderingHandler(EntityZombieTurtle.class, new IRenderFactory<EntityZombieTurtle>()
+	{
+		@Override
+		public Render<? super EntityZombieTurtle> createRenderFor(RenderManager manager)
+		{
+			return new RenderZombieTurtle(manager);
+		}
+	});
+}
 	
 	public static void storeEntityData(String name, NBTTagCompound compound)
 	{
