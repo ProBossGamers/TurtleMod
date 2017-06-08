@@ -17,6 +17,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderZombieTurtle extends RenderLiving<EntityZombieTurtle>
 {
+
+    //zombieturtle.png
     public ResourceLocation textureLocation = new ResourceLocation("turtlemod:textures/mobs/zombieturtle.png");
 
     public RenderZombieTurtle(RenderManager manager)

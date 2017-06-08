@@ -23,3 +23,5 @@ item.kunai.name=Kunai
 entity.turtlemod.entitykunai.name=Kunai
 entity.turtlemod.entityturtle.name=Turtle
 entity.turtlemod.entitymineturtle.name=Mineturtle
+entity.turtlemod.entityzombieturtle.name=Zombieturtle
+entity.turtlemod.entityhelloguy.name=Helloguy

@@ -8,10 +8,12 @@ import com.probossgamers.turtlemod.TurtleMain;
 import com.probossgamers.turtlemod.blocks.ModBlocks;
 import com.probossgamers.turtlemod.client.render.blocks.BlockRenderRegister;
 import com.probossgamers.turtlemod.client.render.items.ItemRenderRegister;
+import com.probossgamers.turtlemod.entities.EntityHelloGuy;
 import com.probossgamers.turtlemod.entities.EntityKunai;
 import com.probossgamers.turtlemod.entities.EntityTurtle;
 import com.probossgamers.turtlemod.entities.monster.EntityMineTurtle;
 import com.probossgamers.turtlemod.entities.monster.EntityZombieTurtle;
+import com.probossgamers.turtlemod.entities.render.RenderHelloGuy;
 import com.probossgamers.turtlemod.entities.render.RenderMineTurtle;
 import com.probossgamers.turtlemod.entities.render.RenderTurtle;
 import com.probossgamers.turtlemod.entities.render.RenderZombieTurtle;
@@ -129,6 +131,15 @@ public class ClientProxy extends ServerProxy {
 			return new RenderZombieTurtle(manager);
 		}
 	});
+
+		RenderingRegistry.registerEntityRenderingHandler(EntityHelloGuy.class, new IRenderFactory<EntityHelloGuy>()
+		{
+			@Override
+			public Render<? super EntityHelloGuy> createRenderFor(RenderManager manager)
+			{
+				return new RenderHelloGuy(manager);
+			}
+		});
 }
 	
 	public static void storeEntityData(String name, NBTTagCompound compound)

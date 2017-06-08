@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 import com.probossgamers.turtlemod.blocks.ModBlocks;
 import com.probossgamers.turtlemod.crafting.ModCrafting;
 import com.probossgamers.turtlemod.creativetabs.TurtleTab;
+import com.probossgamers.turtlemod.entities.EntityHelloGuy;
 import com.probossgamers.turtlemod.entities.EntityKunai;
 import com.probossgamers.turtlemod.entities.EntityTurtle;
 import com.probossgamers.turtlemod.entities.ModEntities;
@@ -83,6 +84,10 @@ public class TurtleMain
 		entitiesToRegister.add(EntityZombieTurtle.class);
 		entPrimaryColor.put(EntityZombieTurtle.class, 33604);
 		entSecondaryColor.put(EntityZombieTurtle.class, 8535810);
+
+		entitiesToRegister.add(EntityHelloGuy.class);
+		entPrimaryColor.put(EntityHelloGuy.class, 16777215);
+		entSecondaryColor.put(EntityHelloGuy.class, 16318464);
 		 //entitiesToRegister.add(EntityCustomFireball.class);
 		  	
    	 	//tileEntitiesToRegister.add(ModTileEntity.class);
