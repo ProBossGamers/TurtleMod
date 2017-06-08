@@ -57,7 +57,7 @@ public class TurtleMain
 	public static CreativeTabs tabCustom = new TurtleTab();
 
 	public static HashMap<Class<?extends EntityLivingBase>,Integer> entPrimaryColor = new HashMap<Class<?extends EntityLivingBase>,Integer>();
-	public static HashMap<Class<?extends EntityLivingBase>,Integer> entSecondayColor = new HashMap<Class<?extends EntityLivingBase>,Integer>();
+	public static HashMap<Class<?extends EntityLivingBase>,Integer> entSecondaryColor = new HashMap<Class<?extends EntityLivingBase>,Integer>();
 
     @Instance
     public static TurtleMain instance = new TurtleMain();
@@ -73,21 +73,21 @@ public class TurtleMain
 
     	entitiesToRegister.add(EntityTurtle.class);
 		entPrimaryColor.put(EntityTurtle.class, 1999104);
-		entSecondayColor.put(EntityTurtle.class, 8206592);
+		entSecondaryColor.put(EntityTurtle.class, 8206592);
 
     	entitiesToRegister.add(EntityMineTurtle.class);
 		entPrimaryColor.put(EntityMineTurtle.class, 1999104);
-		entSecondayColor.put(EntityMineTurtle.class, 15663104);
+		entSecondaryColor.put(EntityMineTurtle.class, 15663104);
 
 
 		entitiesToRegister.add(EntityZombieTurtle.class);
 		entPrimaryColor.put(EntityZombieTurtle.class, 33604);
-		entSecondayColor.put(EntityZombieTurtle.class, 8535810);
+		entSecondaryColor.put(EntityZombieTurtle.class, 8535810);
 		 //entitiesToRegister.add(EntityCustomFireball.class);
 		  	
    	 	//tileEntitiesToRegister.add(ModTileEntity.class);
    	 	
-   	 	ModEntities.createEntity(entitiesToRegister,entPrimaryColor,entSecondayColor);
+   	 	ModEntities.createEntity(entitiesToRegister,entPrimaryColor, entSecondaryColor);
    	 	//ModTileEntities.createTileEntities(tileEntitiesToRegister);
     	 	  
     	 	ModItems.createItems();
