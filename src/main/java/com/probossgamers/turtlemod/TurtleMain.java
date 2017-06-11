@@ -44,18 +44,17 @@ public class TurtleMain
 	private static List<Class<? extends Entity>> entitiesToRegister = Lists.newArrayList();
 	
 	public static List<Class<? extends TileEntity>> tileEntitiesToRegister=Lists.newArrayList();
-	// They still need to be manually added into the ClientProxy. 
-	// There are too many variables to account for. 
-	//
+	/*
+	They still need to be manually added into the ClientProxy.
+	There are too many variables to account for.
 
-	
-    //public static HashMap<String, Integer> playersWithPets = new HashMap<String, Integer>();	
-    //public static final PetAchievements pa = new PetAchievements();
-    
-	
-	//public static int DimID = DimensionManager.getNextFreeDimId();
-	
-	public static CreativeTabs tabCustom = new TurtleTab();
+	public static HashMap<String, Integer> playersWithPets = new HashMap<String, Integer>();
+	public static final PetAchievements pa = new PetAchievements();
+	public static int DimID = DimensionManager.getNextFreeDimId();
+	*/
+
+
+    public static CreativeTabs tabCustom = new TurtleTab();
 
 
 	private static HashMap<Class<?extends EntityLivingBase>,Integer> entPrimaryColor = new HashMap<Class<?extends EntityLivingBase>,Integer>();
