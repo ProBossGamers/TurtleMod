@@ -1,6 +1,7 @@
 package com.probossgamers.turtlemod.entities.render;
 
 import com.probossgamers.turtlemod.entities.models.ModelMineTurtle;
+import com.probossgamers.turtlemod.entities.models.ModelTurtle;
 import com.probossgamers.turtlemod.entities.monster.EntityMineTurtle;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -21,7 +22,8 @@ public class RenderMineTurtle extends RenderLiving<EntityMineTurtle>
 
     public RenderMineTurtle(RenderManager manager)
     {
-        super(manager,new ModelMineTurtle(), 0.5f);
+        super(manager,new ModelTurtle(), 0.5f); // Temporarily replacing it with the normal model
+
     }
 
     public ResourceLocation getEntityTexture(EntityMineTurtle entity)

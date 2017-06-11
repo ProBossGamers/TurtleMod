@@ -11,12 +11,8 @@ import com.probossgamers.turtlemod.client.render.items.ItemRenderRegister;
 import com.probossgamers.turtlemod.entities.EntityHelloGuy;
 import com.probossgamers.turtlemod.entities.EntityKunai;
 import com.probossgamers.turtlemod.entities.EntityTurtle;
-import com.probossgamers.turtlemod.entities.monster.EntityMineTurtle;
-import com.probossgamers.turtlemod.entities.monster.EntityZombieTurtle;
-import com.probossgamers.turtlemod.entities.render.RenderHelloGuy;
-import com.probossgamers.turtlemod.entities.render.RenderMineTurtle;
-import com.probossgamers.turtlemod.entities.render.RenderTurtle;
-import com.probossgamers.turtlemod.entities.render.RenderZombieTurtle;
+import com.probossgamers.turtlemod.entities.monster.*;
+import com.probossgamers.turtlemod.entities.render.*;
 import com.probossgamers.turtlemod.items.ModItems;
 
 import net.minecraft.client.Minecraft;
@@ -140,7 +136,53 @@ public class ClientProxy extends ServerProxy {
 				return new RenderHelloGuy(manager);
 			}
 		});
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityLeonardo.class, new IRenderFactory<EntityLeonardo>()
+        {
+            @Override
+            public Render<? super EntityLeonardo> createRenderFor(RenderManager manager)
+            {
+                return new RenderLeonardo(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityRaphael.class, new IRenderFactory<EntityRaphael>()
+        {
+            @Override
+            public Render<? super EntityRaphael> createRenderFor(RenderManager manager)
+            {
+                return new RenderRaphael(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityMichelangelo.class, new IRenderFactory<EntityMichelangelo>()
+        {
+            @Override
+            public Render<? super EntityMichelangelo> createRenderFor(RenderManager manager)
+            {
+                return new RenderMichelangelo(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityDonatello.class, new IRenderFactory<EntityDonatello>()
+        {
+            @Override
+            public Render<? super EntityDonatello> createRenderFor(RenderManager manager)
+            {
+                return new RenderDonatello(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityFootNinja.class, new IRenderFactory<EntityFootNinja>()
+        {
+            @Override
+            public Render<? super EntityFootNinja> createRenderFor(RenderManager manager)
+            {
+                return new RenderFootNinja(manager);
+            }
+        });
 }
+
 	
 	public static void storeEntityData(String name, NBTTagCompound compound)
 	{

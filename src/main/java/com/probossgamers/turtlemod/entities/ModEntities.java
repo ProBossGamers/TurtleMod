@@ -22,10 +22,6 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 		public static int modEntityID=0;
 
 
-		//public static void addToList() {
-		
-	// }
-
 		public static void createEntity(List<Class<? extends Entity>> entityClass,HashMap<Class<?extends EntityLivingBase>,Integer> primaryColor,HashMap<Class<?extends EntityLivingBase>,Integer> secondaryColor){
 		//	addToList();
 			for(Class<? extends Entity> ent : entityClass) {

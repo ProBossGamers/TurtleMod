@@ -11,8 +11,7 @@ import com.probossgamers.turtlemod.entities.EntityHelloGuy;
 import com.probossgamers.turtlemod.entities.EntityKunai;
 import com.probossgamers.turtlemod.entities.EntityTurtle;
 import com.probossgamers.turtlemod.entities.ModEntities;
-import com.probossgamers.turtlemod.entities.monster.EntityMineTurtle;
-import com.probossgamers.turtlemod.entities.monster.EntityZombieTurtle;
+import com.probossgamers.turtlemod.entities.monster.*;
 import com.probossgamers.turtlemod.items.ModItems;
 import com.probossgamers.turtlemod.localization.EnglishWriter;
 import com.probossgamers.turtlemod.packets.PacketDispatcher;
@@ -88,6 +87,26 @@ public class TurtleMain
 		entitiesToRegister.add(EntityHelloGuy.class);
 		entPrimaryColor.put(EntityHelloGuy.class, 16777215);
 		entSecondaryColor.put(EntityHelloGuy.class, 16318464);
+
+		entitiesToRegister.add(EntityLeonardo.class);
+		entPrimaryColor.put(EntityLeonardo.class, 1999104);
+		entSecondaryColor.put(EntityLeonardo.class, 11775);
+
+		entitiesToRegister.add(EntityDonatello.class);
+		entPrimaryColor.put(EntityDonatello.class, 1999104);
+		entSecondaryColor.put(EntityDonatello.class, 6553735);
+
+        entitiesToRegister.add(EntityRaphael.class);
+        entPrimaryColor.put(EntityRaphael.class, 1999104);
+        entSecondaryColor.put(EntityRaphael.class, 15466752);
+
+        entitiesToRegister.add(EntityMichelangelo.class);
+        entPrimaryColor.put(EntityMichelangelo.class, 1999104);
+        entSecondaryColor.put(EntityMichelangelo.class, 16738560);
+
+        entitiesToRegister.add(EntityFootNinja.class);
+        entPrimaryColor.put(EntityFootNinja.class, 0);
+        entSecondaryColor.put(EntityFootNinja.class, 5066072);
 		 //entitiesToRegister.add(EntityCustomFireball.class);
 		  	
    	 	//tileEntitiesToRegister.add(ModTileEntity.class);
