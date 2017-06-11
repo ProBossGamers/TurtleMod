@@ -80,12 +80,12 @@ public class EntityZombieTurtle extends EntityMob
     {
         return true;
     }
-    public boolean isBreakDoorsTaskSet()
+    private boolean isBreakDoorsTaskSet()
     {
         return this.isBreakDoorsTaskSet;
     }
 
-    public void setBreakDoorsAItask(boolean enabled)
+    private void setBreakDoorsAItask(boolean enabled)
     {
         if (this.isBreakDoorsTaskSet != enabled)
         {
@@ -121,9 +121,9 @@ public class EntityZombieTurtle extends EntityMob
         compound.setInteger("ConversionTime", this.isConverting() ? this.conversionTime : -1);
     }
 
-    public boolean isConverting()
+    private boolean isConverting()
     {
-        return ((Boolean)this.getDataManager().get(CONVERTING)).booleanValue();
+        return this.getDataManager().get(CONVERTING);
     }
 
     public void readEntityFromNBT(NBTTagCompound compound)
@@ -140,10 +140,10 @@ public class EntityZombieTurtle extends EntityMob
     }
 
 
-    protected void startConverting(int conversionTime)
+    private void startConverting(int conversionTime)
     {
         this.conversionTime = conversionTime;
-        this.getDataManager().set(CONVERTING, Boolean.valueOf(true));
+        this.getDataManager().set(CONVERTING, Boolean.TRUE);
         this.removePotionEffect(MobEffects.WEAKNESS);
         this.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, conversionTime, Math.min(this.world.getDifficulty().getDifficultyId() - 1, 0)));
         this.world.setEntityState(this, (byte)16);
@@ -218,7 +218,7 @@ public class EntityZombieTurtle extends EntityMob
         super.onUpdate();
     }
 
-    protected void finishConversion()
+    private void finishConversion()
     {
         EntityTurtle entityTurtle = new EntityTurtle(this.world);
         entityTurtle.copyLocationAndAnglesFrom(this);
