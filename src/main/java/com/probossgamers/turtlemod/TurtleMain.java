@@ -40,7 +40,7 @@ public class TurtleMain
     
 	
 	
-	public static List<Class<? extends Entity>> entitiesToRegister = Lists.newArrayList();	
+	private static List<Class<? extends Entity>> entitiesToRegister = Lists.newArrayList();
 	
 	public static List<Class<? extends TileEntity>> tileEntitiesToRegister=Lists.newArrayList();
 	// They still need to be manually added into the ClientProxy. 
@@ -56,8 +56,9 @@ public class TurtleMain
 	
 	public static CreativeTabs tabCustom = new TurtleTab();
 
-	public static HashMap<Class<?extends EntityLivingBase>,Integer> entPrimaryColor = new HashMap<Class<?extends EntityLivingBase>,Integer>();
-	public static HashMap<Class<?extends EntityLivingBase>,Integer> entSecondaryColor = new HashMap<Class<?extends EntityLivingBase>,Integer>();
+
+	private static HashMap<Class<?extends EntityLivingBase>,Integer> entPrimaryColor = new HashMap<Class<?extends EntityLivingBase>,Integer>();
+	private static HashMap<Class<?extends EntityLivingBase>,Integer> entSecondaryColor = new HashMap<Class<?extends EntityLivingBase>,Integer>();
 
     @Instance
     public static TurtleMain instance = new TurtleMain();
@@ -124,7 +125,7 @@ public class TurtleMain
     	 	//ModItems.createSeeds();
     	 	
     	 	//ModBlocks.linkPlants();
-    	 	
+    	 	//
     	 	
     	 //	MinecraftForge.addGrassSeed(new ItemStack(ModItems.cornSeeds), 10);
     	 	
