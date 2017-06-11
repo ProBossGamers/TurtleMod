@@ -1,4 +1,4 @@
-<Это �?генерированный ру�?�?кий файл>
+<Это сгенерированный русский файл>
 ---------Creative Tabs ---------
 itemGroup.roleplaymod=RolePlay Tab
 
@@ -7,16 +7,25 @@ container.tutorial_tile_entity=Образец контейнера
 --------Blocks----------
 
 tile.cream_quartz.name=Крем-кварц
-tile.shell_block.name=Оболочка блока
+tile.shell_block.name=Оболочка
 -------Items-----------
 
-item.cream_quartz_piece.name=Кремовый кварцевый ку�?ок
-item.turtle_helmet.name=Черепаший шлем
-item.turtle_chest_plate.name=Черепаха грудна�? пла�?тина
-item.turtle_leggings.name=Гетры черепахи
-item.turtle_boots.name=Ботинки черепахи
-item.turtle_leather.name=Кожа черепахи
+item.cream_quartz_piece.name=Крем-кварц
+item.turtle_helmet.name=Черепаховый шлем
+item.turtle_chest_plate.name=Тарелка с черепахой
+item.turtle_leggings.name=Черепаховые леггинсы
+item.turtle_boots.name=Сапоги черепахи
+item.turtle_leather.name=Черепаховая кожа
 item.kunai.name=кунаи
 -------Entities--------
 
-entity.turtlemod.entitykunai.name=кунаи
+entity.entitykunai.name=кунаи
+entity.entityturtle.name=черепаха
+entity.entitymineturtle.name=mineturtle
+entity.entityzombieturtle.name=zombieturtle
+entity.entityhelloguy.name=Привет парень
+entity.entityleonardo.name=Леонардо
+entity.entitydonatello.name=Донателло
+entity.entityraphael.name=Рафаэль
+entity.entitymichelangelo.name=Michelangelo
+entity.entityfootninja.name=footninja

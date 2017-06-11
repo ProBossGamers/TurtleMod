@@ -19,4 +19,13 @@ item.turtle_leather.name=Pelle di tartaruga
 item.kunai.name=kunai
 -------Entities--------
 
-entity.turtlemod.entitykunai.name=kunai
+entity.entitykunai.name=kunai
+entity.entityturtle.name=tartaruga
+entity.entitymineturtle.name=mineturtle
+entity.entityzombieturtle.name=zombieturtle
+entity.entityhelloguy.name=Ciao ragazzo
+entity.entityleonardo.name=leonardo
+entity.entitydonatello.name=donatello
+entity.entityraphael.name=raphael
+entity.entitymichelangelo.name=michelangelo
+entity.entityfootninja.name=footninja

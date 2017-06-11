@@ -19,4 +19,13 @@ item.turtle_leather.name=Piel de tortuga
 item.kunai.name=Kunai
 -------Entities--------
 
-entity.turtlemod.entitykunai.name=Kunai
+entity.entitykunai.name=Kunai
+entity.entityturtle.name=Tortuga
+entity.entitymineturtle.name=Mineturtle
+entity.entityzombieturtle.name=Zombieurtle
+entity.entityhelloguy.name=Hola chico
+entity.entityleonardo.name=Leonardo
+entity.entitydonatello.name=Donatello
+entity.entityraphael.name=Rafael
+entity.entitymichelangelo.name=Michelangelo
+entity.entityfootninja.name=Footninja

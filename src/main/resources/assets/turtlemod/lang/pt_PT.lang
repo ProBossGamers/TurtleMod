@@ -1,22 +1,31 @@
-<Este é um ficheiro português gerado>
+<Este é um arquivo português gerado>
 ---------Creative Tabs ---------
 itemGroup.roleplaymod=RolePlay Tab
 
 ---------GUI Localization-------
-container.tutorial_tile_entity=Recipiente de Amostra
+container.tutorial_tile_entity=Recipiente de amostra
 --------Blocks----------
 
-tile.cream_quartz.name=Quartzo creme
-tile.shell_block.name=Bloco de conchas
+tile.cream_quartz.name=Quartzo de creme
+tile.shell_block.name=Bloqueio de casca
 -------Items-----------
 
-item.cream_quartz_piece.name=Pedaço de quartzo creme
+item.cream_quartz_piece.name=Peça de quartzo creme
 item.turtle_helmet.name=Capacete de tartaruga
-item.turtle_chest_plate.name=Placa de tórax tartaruga
-item.turtle_leggings.name=Leggings de tartaruga
+item.turtle_chest_plate.name=Prato de tortuga
+item.turtle_leggings.name=Polainas de tartaruga
 item.turtle_boots.name=Botas de tartaruga
 item.turtle_leather.name=Couro de tartaruga
 item.kunai.name=Kunai
 -------Entities--------
 
-entity.turtlemod.entitykunai.name=Kunai
+entity.entitykunai.name=Kunai
+entity.entityturtle.name=tartaruga
+entity.entitymineturtle.name=Mineturtle
+entity.entityzombieturtle.name=Zombieturtle
+entity.entityhelloguy.name=Olá cara
+entity.entityleonardo.name=Leonardo
+entity.entitydonatello.name=Donatello
+entity.entityraphael.name=Raphael
+entity.entitymichelangelo.name=Michelangelo
+entity.entityfootninja.name=Footninja

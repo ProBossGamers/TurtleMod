@@ -1,5 +1,6 @@
 package com.probossgamers.turtlemod;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Logger;
@@ -13,7 +14,7 @@ import com.probossgamers.turtlemod.entities.EntityTurtle;
 import com.probossgamers.turtlemod.entities.ModEntities;
 import com.probossgamers.turtlemod.entities.monster.*;
 import com.probossgamers.turtlemod.items.ModItems;
-import com.probossgamers.turtlemod.localization.EnglishWriter;
+import com.probossgamers.turtlemod.localization.*;
 import com.probossgamers.turtlemod.packets.PacketDispatcher;
 import com.probossgamers.turtlemod.proxies.ServerProxy;
 import com.google.common.collect.Lists;
@@ -65,7 +66,7 @@ public class TurtleMain
     
 
     @EventHandler
-    public void preInit(FMLPreInitializationEvent e) {
+    public void preInit(FMLPreInitializationEvent e) throws IOException {
 
 
     	entitiesToRegister.add(EntityKunai.class);
@@ -132,8 +133,12 @@ public class TurtleMain
     	 	
 		 if(ModInfo.isDevVersion) {
 			 EnglishWriter.writeFile(ModBlocks.blocks, ModItems.items, entitiesToRegister);
-			 
-			 
+			/* FrenchWriter.writeFile(ModBlocks.blocks, ModItems.items, entitiesToRegister);
+             PortugueseWriter.writeFile(ModBlocks.blocks,ModItems.items,entitiesToRegister);
+             RussianWriter.writeFile(ModBlocks.blocks,ModItems.items,entitiesToRegister);
+             ItalianWriter.writeFile(ModBlocks.blocks,ModItems.items,entitiesToRegister);
+             SpanishWriter.writeFile(ModBlocks.blocks,ModItems.items,entitiesToRegister);
+             */
 			// EnglishWriter.writeFileForCrop(ModBlocks.crops);
 		 }
 		 
@@ -144,7 +149,8 @@ public class TurtleMain
     }
 
     @EventHandler
-    public void init(FMLInitializationEvent e) {
+    public void init(FMLInitializationEvent e)
+	{
     	
     	//MinecraftForge.EVENT_BUS.register(new MobDropEventHandler());
     	ModCrafting.initCrafting();

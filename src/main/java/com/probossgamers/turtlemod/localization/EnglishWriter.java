@@ -65,7 +65,7 @@ public class EnglishWriter {
     	fw.write("\n-------Entities--------\n");
     	for(Class<? extends Entity> ent : entities) {
     		String entClassName = ent.getSimpleName().toLowerCase();
-    		fw.write("\n" + "entity." + ModInfo.MODID + "." + entClassName + ".name" + "=" + WordUtils.capitalize(entClassName.substring(6).replaceAll("_", " ")));
+    		fw.write("\n" + "entity." + entClassName + ".name" + "=" + WordUtils.capitalize(entClassName.substring(6).replaceAll("_", " ")));
     	}
     	//fw.write("/n------Tile Entities----\n");
     	//for(Class<? extends TileEntity> tile : tileEntities) {

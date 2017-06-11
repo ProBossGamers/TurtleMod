@@ -20,8 +20,13 @@ item.turtle_leather.name=Turtle Leather
 item.kunai.name=Kunai
 -------Entities--------
 
-entity.turtlemod.entitykunai.name=Kunai
-entity.turtlemod.entityturtle.name=Turtle
-entity.turtlemod.entitymineturtle.name=Mineturtle
-entity.turtlemod.entityzombieturtle.name=Zombieturtle
-entity.turtlemod.entityhelloguy.name=Helloguy
+entity.entitykunai.name=Kunai
+entity.entityturtle.name=Turtle
+entity.entitymineturtle.name=Mineturtle
+entity.entityzombieturtle.name=Zombieturtle
+entity.entityhelloguy.name=Helloguy
+entity.entityleonardo.name=Leonardo
+entity.entitydonatello.name=Donatello
+entity.entityraphael.name=Raphael
+entity.entitymichelangelo.name=Michelangelo
+entity.entityfootninja.name=Footninja
