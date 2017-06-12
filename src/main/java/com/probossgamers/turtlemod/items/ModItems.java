@@ -66,7 +66,7 @@ public final class ModItems {
 	     	
 	    	GameRegistry.register(turtleHelmet = new ItemModArmor("turtle_helmet", turtleArmor, 0, EntityEquipmentSlot.HEAD),new ResourceLocation("turtlemod","turtle_helmet"));
 	    	
-	    	GameRegistry.register(turtleChestplate = new ItemModArmor("turtle_chest_plate", turtleArmor, 0, EntityEquipmentSlot.CHEST),new ResourceLocation("turtlemod","turtle_chest_plate"));
+	    	GameRegistry.register(turtleChestplate = new ItemTurtleArmor("turtle_chest_plate", turtleArmor, 0, EntityEquipmentSlot.CHEST),new ResourceLocation("turtlemod","turtle_chest_plate"));
 	    
 	    	GameRegistry.register(turtleLeggings = new ItemModArmor("turtle_leggings", turtleArmor, 0, EntityEquipmentSlot.LEGS),new ResourceLocation("turtlemod","turtle_leggings"));
 	    
