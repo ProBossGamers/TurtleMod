@@ -77,6 +77,7 @@ public class EntityRaphael extends EntityMob
     {
         this.entityDropItem(new ItemStack(ModItems.turtleLeather), 0);
         this.entityDropItem(new ItemStack(ModBlocks.turtleShell), 0);
+        this.entityDropItem(new ItemStack(ModItems.raphsSai),0);
     }
 
     public SoundEvent getAmbientSound()

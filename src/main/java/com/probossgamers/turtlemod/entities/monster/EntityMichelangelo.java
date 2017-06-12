@@ -76,6 +76,7 @@ public class EntityMichelangelo extends EntityMob
     {
         this.entityDropItem(new ItemStack(ModItems.turtleLeather), 0);
         this.entityDropItem(new ItemStack(ModBlocks.turtleShell), 0);
+        this.entityDropItem(new ItemStack(ModItems.mikesChucks),0);
     }
 
     public SoundEvent getAmbientSound()

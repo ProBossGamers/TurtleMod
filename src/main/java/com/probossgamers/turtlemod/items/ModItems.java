@@ -30,20 +30,34 @@ public final class ModItems {
 	    public static ArmorMaterial turtleArmor = EnumHelper.addArmorMaterial("Turtle", "turtlemod:turtle", 5, new int[]{1, 3, 2, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
 
 	    public static ToolMaterial Kunai = EnumHelper.addToolMaterial("Kunai", 2, 260, 6.5f, 2.5f, 18);
-	    //public static ToolMaterial TUTORIAL = EnumHelper.addToolMaterial("TUTORIAL", harvestLevel, durability, miningSpeed, damageVsEntities, enchantability);
+
+	    public static ToolMaterial LeoTool = EnumHelper.addToolMaterial("LeoTool", 2, 260, 6.5f, 2.5f, 18);
+
+        public static ToolMaterial MikeTool = EnumHelper.addToolMaterial("MikeTool", 2, 260, 6.5f, 2.5f, 18);
+
+        public static ToolMaterial RaphTool = EnumHelper.addToolMaterial("RaphTool", 2, 260, 6.5f, 2.5f, 18);
+
+    public static ToolMaterial DonTool = EnumHelper.addToolMaterial("DonTool", 2, 260, 6.5f, 2.5f, 18);
+    //public static ToolMaterial TUTORIAL = EnumHelper.addToolMaterial("TUTORIAL", harvestLevel, durability, miningSpeed, damageVsEntities, enchantability);
 	    
 		public static Item kunai;
+
+		public static Item leosKatana;
 	    
-	    
-	   
+	    public static Item mikesChucks;
+
+	    public static Item raphsSai;
+
+	    public static Item donsStick;
 		
 		public static void createSeeds() {
 		 	
-	    	///GameRegistry.registerItem(cornSeeds= new ItemCustomSeeds("cornSeed", ModBlocks.blockCorn, Blocks.farmland),"cornSeed");
-	    
-	    	//items.add(cornSeeds);
-	    	
-		}
+	    	/*
+	    	GameRegistry.registerItem(cornSeeds= new ItemCustomSeeds("cornSeed", ModBlocks.blockCorn, Blocks.farmland),"cornSeed");
+	    	items.add(cornSeeds);
+	    	*/
+
+        }
 	   
 	    public static void createItems() {
 	    	
@@ -60,8 +74,14 @@ public final class ModItems {
 	     
 	     	GameRegistry.register(turtleLeather = new BasicItem("turtle_leather"),new ResourceLocation("turtlemod", "turtle_leather"));
 
-	
-	    		//
+	     	GameRegistry.register(leosKatana = new BasicWeapon("leos_katana",LeoTool), new ResourceLocation("turtlemod", "leos_katana"));
+
+            GameRegistry.register(mikesChucks = new BasicWeapon("mikes_chucks",MikeTool), new ResourceLocation("turtlemod", "mikes_chucks"));
+
+            GameRegistry.register(raphsSai = new BasicWeapon("raphs_sai",RaphTool), new ResourceLocation("turtlemod", "raphs_sai"));
+
+            GameRegistry.register(donsStick = new BasicWeapon("dons_stick",DonTool), new ResourceLocation("turtlemod", "dons_stick"));
+
 	    	GameRegistry.register(kunai = new ItemKunai("kunai"),new ResourceLocation("turtlemod", "kunai"));
 	     	
 	    	GameRegistry.register(turtleHelmet = new ItemModArmor("turtle_helmet", turtleArmor, 0, EntityEquipmentSlot.HEAD),new ResourceLocation("turtlemod","turtle_helmet"));
@@ -91,6 +111,10 @@ public final class ModItems {
 	    	items.add(turtleBoots);
 	    	items.add(turtleLeather);
 	    	items.add(kunai);
+	    	items.add(leosKatana);
+	    	items.add(raphsSai);
+	    	items.add(mikesChucks);
+	    	items.add(donsStick);
 	    	//items.add(turtleBoots);
 	    	//items.add(turtleHelmet);
 	    }

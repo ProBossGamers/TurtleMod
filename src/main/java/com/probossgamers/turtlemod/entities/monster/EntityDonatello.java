@@ -11,8 +11,12 @@ package com.probossgamers.turtlemod.entities.monster;
         import net.minecraft.entity.ai.*;
         import net.minecraft.entity.monster.*;
         import net.minecraft.entity.player.EntityPlayer;
+        import net.minecraft.init.Items;
+        import net.minecraft.inventory.EntityEquipmentSlot;
         import net.minecraft.item.ItemStack;
         import net.minecraft.util.SoundEvent;
+        import net.minecraft.world.DifficultyInstance;
+        import net.minecraft.world.EnumDifficulty;
         import net.minecraft.world.World;
 
 
@@ -76,7 +80,21 @@ public class EntityDonatello extends EntityMob
     {
         this.entityDropItem(new ItemStack(ModItems.turtleLeather), 0);
         this.entityDropItem(new ItemStack(ModBlocks.turtleShell), 0);
+        this.entityDropItem(new ItemStack(ModItems.donsStick),0);
     }
+
+    protected void setEquipmentBasedOnDifficulty(DifficultyInstance difficulty)
+    {
+        super.setEquipmentBasedOnDifficulty(difficulty);
+
+        if (this.rand.nextFloat() < (this.world.getDifficulty() == EnumDifficulty.NORMAL ? 0.05F : 0.01F))
+        {
+            int i = this.rand.nextInt(3);
+
+                this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(ModItems.donsStick));
+        }
+    }
+
 
     public SoundEvent getAmbientSound()
     {
