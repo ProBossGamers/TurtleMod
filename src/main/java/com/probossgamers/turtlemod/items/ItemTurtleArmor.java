@@ -25,7 +25,7 @@ public class ItemTurtleArmor extends ItemModArmor
     {
         super(unlocalizedName,material, renderIndex, type);
     }
-
+    //
     public EnumActionResult onItemUse(ItemStack stack, EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
         switch (facing)

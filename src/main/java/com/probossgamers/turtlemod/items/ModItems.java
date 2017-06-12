@@ -61,7 +61,7 @@ public final class ModItems {
 	     	GameRegistry.register(turtleLeather = new BasicItem("turtle_leather"),new ResourceLocation("turtlemod", "turtle_leather"));
 
 	
-	    		
+	    		//
 	    	GameRegistry.register(kunai = new ItemKunai("kunai"),new ResourceLocation("turtlemod", "kunai"));
 	     	
 	    	GameRegistry.register(turtleHelmet = new ItemModArmor("turtle_helmet", turtleArmor, 0, EntityEquipmentSlot.HEAD),new ResourceLocation("turtlemod","turtle_helmet"));
