@@ -32,9 +32,6 @@ public class BasicBlock extends Block {
     }
 
 
-    @Override    public boolean isFullCube(IBlockState state) {        return false;    }
-
-    @Override    public boolean isOpaqueCube(IBlockState state) {        return false;    }
     /*
     public String getDescription() {
     	return "";

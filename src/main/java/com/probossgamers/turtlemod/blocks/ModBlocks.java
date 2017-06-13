@@ -44,7 +44,7 @@ public final class ModBlocks {
     public static void createBlocks() {
     	GameRegistry.register(creamQuartz=new BasicBlock("cream_quartz", SoundType.METAL, Material.ROCK, 0.8f, 0.8f),new ResourceLocation("turtlemod","cream_quartz")); 
     
-    	GameRegistry.register(turtleShell=new BasicBlock("shell_block", SoundType.STONE, Material.ROCK, 0.8f, 0.8f),new ResourceLocation("turtlemod","shell_block")); 
+    	GameRegistry.register(turtleShell=new ModeledBlock("shell_block", SoundType.STONE, Material.ROCK, 0.8f, 0.8f),new ResourceLocation("turtlemod","shell_block"));
     	
     	GameRegistry.register(ibCreamQuartz = (ItemBlock) new ItemBlock(creamQuartz), creamQuartz.getRegistryName());
     	GameRegistry.register(ibTurtleShell = (ItemBlock) new ItemBlock(turtleShell), turtleShell.getRegistryName());
