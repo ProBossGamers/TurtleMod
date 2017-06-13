@@ -1,5 +1,6 @@
 package com.probossgamers.turtlemod.entities;
 
+import com.probossgamers.turtlemod.items.ModItems;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.DamageSource;
@@ -59,7 +60,9 @@ public class EntityKunai extends EntityThrowable
         if (!this.world.isRemote)
         {
             this.world.setEntityState(this, (byte)3);
+            this.dropItem(ModItems.kunai,1);
             this.setDead();
+
         }
     }
     
