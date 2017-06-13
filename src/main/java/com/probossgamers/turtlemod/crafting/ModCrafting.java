@@ -21,6 +21,7 @@ public class ModCrafting {
 		  GameRegistry.addRecipe(new ItemStack(ModItems.turtleLeggings), "LLL", "L L", "L L", 'L', ModItems.turtleLeather);
 		  GameRegistry.addRecipe(new ItemStack(ModItems.turtleBoots), "L L", "L L", 'L', ModItems.turtleLeather);
           GameRegistry.addRecipe(new ItemStack(ModBlocks.creamQuartz), "CC", "CC", 'C', ModItems.creamQuartzPiece);
+          GameRegistry.addRecipe(new ItemStack(ModItems.kunai)," II", "SII","IS ",'I',Items.IRON_INGOT,'S',Items.STRING);
           GameRegistry.addShapelessRecipe(new ItemStack(ModItems.creamQuartzPiece), boneMeal, quartz);
 	}
 
