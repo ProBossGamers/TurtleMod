@@ -42,6 +42,7 @@ public class EntityMichelangelo extends EntityMob
         tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         tasks.addTask(5, new EntityAILookIdle(this));
         targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
+        tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, false));
         targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityBlaze.class,  true));
         targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityCaveSpider.class,  true));
         targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityCreeper.class,  true));

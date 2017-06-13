@@ -60,6 +60,7 @@ public class EntityZombieTurtle extends EntityMob
         tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         tasks.addTask(8, new EntityAILookIdle(this));
         targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
+        tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, false));
         targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
         targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityVillager.class, false));
         setSize(0.6F, 0.5F);

@@ -26,7 +26,11 @@ public class EntityDonatello extends EntityMob
     {
         super(world);
         tasks.addTask(0, new EntityAISwimming(this));
-        /*tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityBlaze.class, 1.0D, false));
+        tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, false));
+
+       /*
+       tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityBlaze.class, 1.0D, false));
+
         tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityCaveSpider.class, 1.0D, false));
         tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityCreeper.class, 1.0D, false));
         tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityEnderman.class, 1.0D, false));
@@ -41,11 +45,12 @@ public class EntityDonatello extends EntityMob
         tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityWitch.class, 1.0D, false));
         tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityZombie.class, 1.0D, false));
         tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityFootNinja.class, 1.0D, false));
-        */
+            */
         tasks.addTask(4, new EntityAIWander(this, 1.0D));
         tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         tasks.addTask(5, new EntityAILookIdle(this));
         targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
+
         targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityBlaze.class,  true));
         targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityCaveSpider.class,  true));
         targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityCreeper.class,  true));

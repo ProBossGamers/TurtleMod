@@ -2,14 +2,12 @@ package com.probossgamers.turtlemod.entities.monster;
 
 import com.probossgamers.turtlemod.SoundHandler;
 import com.probossgamers.turtlemod.blocks.ModBlocks;
+import com.probossgamers.turtlemod.entities.EntityHelloGuy;
 import com.probossgamers.turtlemod.entities.ai.EntityAIExplodeOnCollide;
 import com.probossgamers.turtlemod.items.ModItems;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAISwimming;
-import net.minecraft.entity.ai.EntityAIWander;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.ai.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -28,6 +26,9 @@ public class EntityMineTurtle extends EntityCreature
         tasks.addTask(2, new EntityAIExplodeOnCollide(this, EntityPlayer.class));
         tasks.addTask(3, new EntityAIWander(this, 1.0D));
         tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0f));
+        tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, false));
+        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityHelloGuy.class, true));
+        //this.tasks.addTask(6, new EntityAIAttackOnCollide(this, EntityZombie.class, 1.0D, true));
         tasks.addTask(5, new EntityAILookIdle(this));
         setSize(0.6f, 0.5f);
     }
