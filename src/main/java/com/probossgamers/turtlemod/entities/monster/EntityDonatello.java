@@ -100,8 +100,21 @@ public class EntityDonatello extends EntityMob
         }
     }
 
-
     public SoundEvent getAmbientSound()
+    {
+        return SoundHandler.turtle_living;
+    }
+
+    public SoundEvent getHurtSound()
+    {
+        return SoundHandler.turtle_hurt;
+    }
+
+    public SoundEvent getDeathSound()
+    {
+        return SoundHandler.turtle_death;
+    }
+    /*public SoundEvent getAmbientSound()
     {
         return SoundHandler.don_living;
     }
@@ -115,4 +128,5 @@ public class EntityDonatello extends EntityMob
     {
         return SoundHandler.turtle_death;
     }
+    */
 }

@@ -83,6 +83,22 @@ public class EntityRaphael extends EntityMob
 
     public SoundEvent getAmbientSound()
     {
+        return SoundHandler.turtle_living;
+    }
+
+    public SoundEvent getHurtSound()
+    {
+        return SoundHandler.turtle_hurt;
+    }
+
+    public SoundEvent getDeathSound()
+    {
+        return SoundHandler.turtle_death;
+    }
+    /*
+    public SoundEvent getAmbientSound()
+
+    {
         return SoundHandler.raph_living;
     }
 
@@ -95,4 +111,5 @@ public class EntityRaphael extends EntityMob
     {
         return SoundHandler.turtle_death;
     }
+    */
 }

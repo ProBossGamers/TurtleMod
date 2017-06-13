@@ -81,6 +81,20 @@ public class EntityLeonardo extends EntityMob
 
     public SoundEvent getAmbientSound()
     {
+        return SoundHandler.turtle_living;
+    }
+
+    public SoundEvent getHurtSound()
+    {
+        return SoundHandler.turtle_hurt;
+    }
+
+    public SoundEvent getDeathSound()
+    {
+        return SoundHandler.turtle_death;
+    }
+   /* public SoundEvent getAmbientSound()
+    {
         return SoundHandler.leo_living;
     }
 
@@ -93,4 +107,5 @@ public class EntityLeonardo extends EntityMob
     {
         return SoundHandler.turtle_death;
     }
+    */
 }
