@@ -43,20 +43,20 @@ public class EntityHelloGuy extends EntityCreature
     {
         //todo
     }
-/*
+
     public SoundEvent getAmbientSound()
     {
-        return SoundHandler.hello;
+        return SoundHandler.helloguy_hg;
     }
 
-    public String getHurtSound()
+    public SoundEvent getHurtSound()
     {
-        return "turtlemod:helloGuy:hgh";
+        return SoundHandler.helloguy_hgh;
     }
 
-    public String getDeathSound()
+    public SoundEvent getDeathSound()
     {
-        return "turtlemod:helloGuy;hgd";
+        return SoundHandler.helloguy_hgd;
     }
-    */
+
 }

@@ -15,6 +15,9 @@ public class SoundHandler {
 	public static SoundEvent leo_living;
 	public static SoundEvent mike_living;
 	public static SoundEvent raph_living;
+	public static SoundEvent helloguy_hg;
+    public static SoundEvent helloguy_hgh;
+    public static SoundEvent helloguy_hgd;
 	/**
 	 * Register the {@link SoundEvent}s.
 	 */
@@ -27,7 +30,9 @@ public class SoundHandler {
 		leo_living = registerSound("leo.living");
 		mike_living = registerSound("mike.living");
 		raph_living = registerSound("raph.living");
-		
+        helloguy_hg = registerSound("helloguy.hg");
+        helloguy_hgh = registerSound("helloguy.hgh");
+        helloguy_hgd = registerSound("helloguy.hgd");
 	}
 
 	/**
@@ -36,7 +41,8 @@ public class SoundHandler {
 	 * @param soundName The SoundEvent's name without the testmod3 prefix
 	 * @return The SoundEvent
 	 */
-	private static SoundEvent registerSound(String soundName) {
+	private static SoundEvent registerSound(String soundName)
+    {
 		final ResourceLocation soundID = new ResourceLocation(ModInfo.MODID, soundName);
 		return GameRegistry.register(new SoundEvent(soundID).setRegistryName(soundID));
 	}

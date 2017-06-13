@@ -70,4 +70,32 @@
                 "turtlemod:tmnt/raphael/raph2"
             ]
     }
+    ,
+    "helloguy.hg":
+    {
+        "category":"neutral",
+        "sounds":
+        [
+            "turtlemod:helloguy/hg",
+            "turtlemod:helloguy/hg1",
+            "turtlemod:helloguy/hg2"
+        ]
+    }
+    ,
+    "helloguy.hgh":
+    {
+        "category": "neutral",
+        "sounds": [
+            "turtlemod:helloguy/hgh0",
+            "turtlemod:helloguy/hgh1"
+        ]
+    },
+    "helloguy.hgd":
+    {
+        "category": "neutral",
+        "sounds": [
+            "turtlemod:helloguy/hgd"
+        ]
+    }
+
 }
