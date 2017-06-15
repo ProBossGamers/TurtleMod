@@ -9,6 +9,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public final class ModBlocks {
@@ -44,7 +45,7 @@ public final class ModBlocks {
     public static void createBlocks() {
     	GameRegistry.register(creamQuartz=new BasicBlock("cream_quartz", SoundType.METAL, Material.ROCK, 0.8f, 0.8f),new ResourceLocation("turtlemod","cream_quartz")); 
     
-    	GameRegistry.register(turtleShell=new ModeledBlock("shell_block", SoundType.STONE, Material.ROCK, 0.8f, 0.8f),new ResourceLocation("turtlemod","shell_block"));
+    	GameRegistry.register(turtleShell=new ModeledBlock("shell_block", SoundType.STONE, Material.ROCK, 0.8f, 0.8f,new AxisAlignedBB(0.25f, 0f, 0.25f, 0.75f, 0.3125f, 0.75f)),new ResourceLocation("turtlemod","shell_block"));
     	
     	GameRegistry.register(ibCreamQuartz = (ItemBlock) new ItemBlock(creamQuartz), creamQuartz.getRegistryName());
     	GameRegistry.register(ibTurtleShell = (ItemBlock) new ItemBlock(turtleShell), turtleShell.getRegistryName());
