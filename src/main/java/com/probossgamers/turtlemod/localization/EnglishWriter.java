@@ -114,22 +114,10 @@ public class EnglishWriter {
     		File modelItemFile = new File(dirname + "/models/item/" + item.getUnlocalizedName().substring(5) +".json");
     		FileWriter fwItem = new FileWriter(modelItemFile);
     		fwItem.write("{ \n");
-    		fwItem.write("'parent': 'builtin/generated', \n".replace('\'', '"'));
+    		fwItem.write("'parent': 'item/generated', \n".replace('\'', '"'));
     		fwItem.write("'textures': { \n".replace('\'', '"'));
     		fwItem.write("'layer0': '".replace('\'', '"') + ModInfo.MODID + ":" + "items/" + item.getUnlocalizedName().substring(5) + "'".replace('\'', '"'));
-    		fwItem.write("\n }, \n");
-    		fwItem.write("'display': { \n".replace('\'', '"'));
-    		fwItem.write("'thirdperson': { \n".replace('\'', '"'));
-    		fwItem.write("'rotation': [-90,0,0], \n".replace('\'', '"'));
-    		fwItem.write("'translation': [0,1,-3], \n".replace('\'', '"'));
-    		fwItem.write("'scale': [0.55,0.55, 0.55 ] \n".replace('\'', '"'));
-    		fwItem.write("}, \n");
-    		fwItem.write("'firstperson': { \n".replace('\'', '"'));
-    		fwItem.write("'rotation': [0, -135, 25 ], \n".replace('\'', '"'));
-    		fwItem.write("'translation': [0, 4, 2 ],".replace('\'', '"'));
-    		fwItem.write("'scale': [1.7, 1.7, 1.7] \n".replace('\'', '"'));
-    		fwItem.write("} \n");
-    		fwItem.write("} \n");
+    		fwItem.write("\n } \n");
     		fwItem.write("} \n");
     		fwItem.close();
     	}
