@@ -1,6 +1,13 @@
 {
+  "parent": "block/block",
   "ambientocclusion": true,
-  "textures": {},
+  "textures":
+  {
+    "side":"turtlemod:blocks/shell_side",
+    "under":"turtlemod:blocks/shell_under",
+    "particle": "turtlemod:blocks/shell_block"
+
+  },
   "elements": [
     {
       "name": "boxbase",

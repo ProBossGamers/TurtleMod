@@ -1,9 +1,11 @@
 {
   "parent": "block/block",
-  "ambientocclusion": false,
+  "ambientocclusion": true,
   "textures":{
-    "all":"turtlemod:blocks/shell_block",
+    "side":"turtlemod:blocks/shell_side",
+    "under":"turtlemod:blocks/shell_under",
     "particle": "turtlemod:blocks/shell_block"
+
   },
   "elements": [
     {
@@ -18,66 +20,73 @@
         4.0,
         12.0
       ],
+      "shade": true,
       "faces": {
         "east": {
-          "texture": "#all",
+          "texture": "#side",
           "uv": [
             0.0,
             0.0,
             1.0,
             1.0
           ],
-          "rotation": 0
+          "rotation": 0,
+          "tintindex": 0
         },
         "south": {
-          "texture": "#all",
+          "texture": "#side",
           "uv": [
             0.0,
             0.0,
             1.0,
             1.0
           ],
-          "rotation": 0
+          "rotation": 0,
+          "tintindex": 0
         },
         "north": {
-          "texture": "#all",
+          "texture": "#side",
           "uv": [
             0.0,
             0.0,
             1.0,
             1.0
           ],
-          "rotation": 0
+          "rotation": 0,
+          "tintindex": 0
         },
         "west": {
-          "texture": "#all",
+          "texture": "#side",
           "uv": [
             0.0,
             0.0,
             1.0,
             1.0
           ],
-          "rotation": 0
+          "rotation": 0,
+          "tintindex": 0
         },
         "up": {
-          "texture": "#all",
+          "texture": "#side",
           "uv": [
             0.0,
             0.0,
             1.0,
             1.0
           ],
-          "rotation": 0
+          "rotation": 0,
+          "tintindex": 0
         },
         "down": {
-          "texture": "#all",
+          "texture": "#under",
           "uv": [
             0.0,
             0.0,
             1.0,
             1.0
           ],
-          "rotation": 0
+          "rotation": 0,
+          "tintindex": 0
         }
       }
     },
@@ -93,66 +102,73 @@
         5.0,
         11.0
       ],
+      "shade": true,
       "faces": {
         "east": {
-          "texture": "#all",
+          "texture": "#side",
           "uv": [
             0.0,
             0.0,
             1.0,
             1.0
           ],
-          "rotation": 0
+          "rotation": 0,
+          "tintindex": 0
         },
         "south": {
-          "texture": "#all",
+          "texture": "#side",
           "uv": [
             0.0,
             0.0,
             1.0,
             1.0
           ],
-          "rotation": 0
+          "rotation": 0,
+          "tintindex": 0
         },
         "north": {
-          "texture": "#all",
+          "texture": "#side",
           "uv": [
             0.0,
             0.0,
             1.0,
             1.0
           ],
-          "rotation": 0
+          "rotation": 0,
+          "tintindex": 0
         },
         "west": {
-          "texture": "#all",
+          "texture": "#side",
           "uv": [
             0.0,
             0.0,
             1.0,
             1.0
           ],
-          "rotation": 0
+          "rotation": 0,
+          "tintindex": 0
         },
         "up": {
-          "texture": "#all",
+          "texture": "#side",
           "uv": [
             0.0,
             0.0,
             1.0,
             1.0
           ],
-          "rotation": 0
+          "rotation": 0,
+          "tintindex": 0
         },
         "down": {
-          "texture": "#all",
+          "texture": "#side",
           "uv": [
             0.0,
             0.0,
             1.0,
             1.0
           ],
-          "rotation": 0
+          "rotation": 0,
+          "tintindex": 0
         }
       }
     }
