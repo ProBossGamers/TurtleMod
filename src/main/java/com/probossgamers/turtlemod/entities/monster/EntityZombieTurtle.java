@@ -5,6 +5,7 @@ import com.probossgamers.turtlemod.blocks.ModBlocks;
 import com.probossgamers.turtlemod.entities.EntityTurtle;
 import com.probossgamers.turtlemod.items.ModItems;
 import net.minecraft.block.Block;
+import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
@@ -55,6 +56,7 @@ public class EntityZombieTurtle extends EntityMob
         //tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, 1.0D, false));
         //tasks.addTask(3, new EntityAIAttackOnCollide(this, EntityVillager.class, 1.0D, true));
         tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
+
         tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
         tasks.addTask(7, new EntityAIWander(this, 1.0D));
         tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
@@ -81,6 +83,11 @@ public class EntityZombieTurtle extends EntityMob
         return this.isBreakDoorsTaskSet;
     }
 
+    public EnumCreatureAttribute getCreatureAttribute()
+    {
+        return EnumCreatureAttribute.UNDEAD;
+    }
+
     private void setBreakDoorsAItask(boolean enabled)
     {
         if (this.isBreakDoorsTaskSet != enabled)
@@ -98,13 +105,15 @@ public class EntityZombieTurtle extends EntityMob
             }
         }
     }
+
+
     public void applyEntityAttributes()
     {
         super.applyEntityAttributes();
         getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(40.0D);
         getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(15.0D);
-        getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000417232513D / 2);
-        getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6.0D);
+        getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.20000000417232513D / 2);
+        getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6.4D);
     }
 
     public void writeEntityToNBT(NBTTagCompound compound)

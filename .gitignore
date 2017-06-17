@@ -13,6 +13,8 @@ tmp/
 local.properties
 .settings/
 .loadpath
+.classpath
+.project
 
 # External tool builders
 .externalToolBuilders/
@@ -86,3 +88,4 @@ hs_err_pid*
 ## Additional for Minecraft Development
 minecraft/
 build/
+run/

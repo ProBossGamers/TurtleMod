@@ -21,6 +21,7 @@ import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.RenderSnowball;
+import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -120,13 +121,22 @@ public class ClientProxy extends ServerProxy {
 
 	
 	RenderingRegistry.registerEntityRenderingHandler(EntityZombieTurtle.class, new IRenderFactory<EntityZombieTurtle>()
-	{
-		@Override
-		public Render<? super EntityZombieTurtle> createRenderFor(RenderManager manager)
 		{
-			return new RenderZombieTurtle(manager);
-		}
-	});
+			@Override
+			public Render<? super EntityZombieTurtle> createRenderFor(RenderManager manager)
+			{
+				return new RenderZombieTurtle(manager);
+			}
+		});
+
+		RenderingRegistry.registerEntityRenderingHandler(EntitySkeletonTurtle.class, new IRenderFactory<EntitySkeletonTurtle>()
+		{
+			@Override
+			public Render<? super EntitySkeletonTurtle> createRenderFor(RenderManager manager)
+			{
+				return new RenderSkeletonTurtle(manager);
+			}
+		});
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityHelloGuy.class, new IRenderFactory<EntityHelloGuy>()
 		{

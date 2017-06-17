@@ -95,6 +95,10 @@ public class TurtleMain
 		entPrimaryColor.put(EntityZombieTurtle.class, 33604);
 		entSecondaryColor.put(EntityZombieTurtle.class, 8535810);
 
+		entitiesToRegister.add(EntitySkeletonTurtle.class);
+		entPrimaryColor.put(EntitySkeletonTurtle.class,12698049);
+		entSecondaryColor.put(EntitySkeletonTurtle.class,4802889);
+
 		entitiesToRegister.add(EntityHelloGuy.class);
 		entPrimaryColor.put(EntityHelloGuy.class, 16777215);
 		entSecondaryColor.put(EntityHelloGuy.class, 16318464);

@@ -12,7 +12,6 @@ import org.apache.commons.lang3.text.WordUtils;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
-//import net.minecraft.tileentity.TileEntity;
 
 public class EnglishWriter {
 
