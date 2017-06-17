@@ -71,10 +71,6 @@ public class ItemKunai extends BasicWeapon
         if (entityLiving instanceof EntityPlayer)
         {
             EntityPlayer entityplayer = (EntityPlayer)entityLiving;
-            if (!entityplayer.capabilities.isCreativeMode)
-            {
-                stack.shrink(1);
-            }
             if ((double)f >= 0.1D)
             {
                 boolean flag1 = entityplayer.capabilities.isCreativeMode || (stack.getItem() instanceof ItemKunai && ((ItemKunai) stack.getItem()).isInfinite(stack, entityplayer));
