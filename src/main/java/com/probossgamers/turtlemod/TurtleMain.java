@@ -19,6 +19,7 @@ import com.probossgamers.turtlemod.entities.monster.EntityLeonardo;
 import com.probossgamers.turtlemod.entities.monster.EntityMichelangelo;
 import com.probossgamers.turtlemod.entities.monster.EntityMineTurtle;
 import com.probossgamers.turtlemod.entities.monster.EntityRaphael;
+import com.probossgamers.turtlemod.entities.monster.EntitySkeletonTurtle;
 import com.probossgamers.turtlemod.entities.monster.EntityZombieTurtle;
 import com.probossgamers.turtlemod.items.ModItems;
 import com.probossgamers.turtlemod.localization.EnglishWriter;
