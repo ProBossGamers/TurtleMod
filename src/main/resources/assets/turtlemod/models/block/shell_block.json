@@ -1,176 +1,61 @@
 {
-  "parent": "block/block",
-  "ambientocclusion": true,
-  "textures":{
-    "side":"turtlemod:blocks/shell_side",
-    "under":"turtlemod:blocks/shell_under",
-    "particle": "turtlemod:blocks/shell_side"
-
-  },
-  "elements": [
-    {
-      "name": "body",
-      "from": [
-        4.0,
-        0.0,
-        4.0
-      ],
-      "to": [
-        12.0,
-        4.0,
-        12.0
-      ],
-      "shade": true,
-      "faces": {
-        "east": {
-          "texture": "#side",
-          "uv": [
-            0.0,
-            0.0,
-            1.0,
-            1.0
-          ],
-          "rotation": 0,
-          "tintindex": 0
-        },
-        "south": {
-          "texture": "#side",
-          "uv": [
-            0.0,
-            0.0,
-            1.0,
-            1.0
-          ],
-          "rotation": 0,
-          "tintindex": 0
-        },
-        "north": {
-          "texture": "#side",
-          "uv": [
-            0.0,
-            0.0,
-            1.0,
-            1.0
-          ],
-          "rotation": 0,
-          "tintindex": 0
-        },
-        "west": {
-          "texture": "#side",
-          "uv": [
-            0.0,
-            0.0,
-            1.0,
-            1.0
-          ],
-          "rotation": 0,
-          "tintindex": 0
-        },
-        "up": {
-          "texture": "#side",
-          "uv": [
-            0.0,
-            0.0,
-            1.0,
-            1.0
-          ],
-          "rotation": 0,
-          "tintindex": 0
-        },
-        "down": {
-          "texture": "#under",
-          "uv": [
-            0.0,
-            0.0,
-            1.0,
-            1.0
-          ],
-          "rotation": 0,
-          "tintindex": 0
-        }
-      }
+    "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
+    "textures": {
+        "0": "turtlemod:blocks/shell_block"
     },
-    {
-      "name": "bodytop",
-      "from": [
-        5.0,
-        4.0,
-        5.0
-      ],
-      "to": [
-        11.0,
-        5.0,
-        11.0
-      ],
-      "shade": true,
-      "faces": {
-        "east": {
-          "texture": "#side",
-          "uv": [
-            0.0,
-            0.0,
-            1.0,
-            1.0
-          ],
-          "rotation": 0,
-          "tintindex": 0
+    "display": {
+        "gui": {
+            "rotation": [ 30, 225, 0 ],
+            "translation": [ 0, 0, 0],
+            "scale":[ 0.625, 0.625, 0.625 ]
         },
-        "south": {
-          "texture": "#side",
-          "uv": [
-            0.0,
-            0.0,
-            1.0,
-            1.0
-          ],
-          "rotation": 0,
-          "tintindex": 0
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 3, 0],
+            "scale":[ 0.5, 0.5, 0.5 ]
         },
-        "north": {
-          "texture": "#side",
-          "uv": [
-            0.0,
-            0.0,
-            1.0,
-            1.0
-          ],
-          "rotation": 0,
-          "tintindex": 0
+        "thirdperson_righthand": {
+            "rotation": [ 75, 45, 0 ],
+            "translation": [ 0, 2.5, 0],
+            "scale": [ 0.375, 0.375, 0.375 ]
         },
-        "west": {
-          "texture": "#side",
-          "uv": [
-            0.0,
-            0.0,
-            1.0,
-            1.0
-          ],
-          "rotation": 0,
-          "tintindex": 0
+        "firstperson_righthand": {
+            "rotation": [ 75, 35, 0 ],
+            "translation": [ 0, 2, 0 ],
+            "scale": [ 0.40, 0.40, 0.40 ]
         },
-        "up": {
-          "texture": "#side",
-          "uv": [
-            0.0,
-            0.0,
-            1.0,
-            1.0
-          ],
-          "rotation": 0,
-          "tintindex": 0
-        },
-        "down": {
-          "texture": "#side",
-          "uv": [
-            0.0,
-            0.0,
-            1.0,
-            1.0
-          ],
-          "rotation": 0,
-          "tintindex": 0
+        "firstperson_lefthand": {
+            "rotation": [ 0, 225, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 0.40, 0.40, 0.40 ]
         }
-      }
-    }
-  ]
+    },
+    "elements": [
+        {
+            "name": "Cube",
+            "from": [ 4.0, 0.0, 4.0 ], 
+            "to": [ 12.0, 4.0, 12.0 ], 
+            "faces": {
+                "north": { "texture": "#0", "uv": [ 9.0, 2.0, 12.0, 3.0 ] },
+                "east": { "texture": "#0", "uv": [ 9.0, 2.0, 12.0, 3.0 ] },
+                "south": { "texture": "#0", "uv": [ 9.0, 2.0, 12.0, 3.0 ] },
+                "west": { "texture": "#0", "uv": [ 9.0, 2.0, 12.0, 3.0 ] },
+                "up": { "texture": "#0", "uv": [ 10.0, 3.0, 13.0, 5.0 ] },
+                "down": { "texture": "#0", "uv": [ 7.8, 3.0, 10.2, 5.0 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 5.0, 4.0, 5.0 ], 
+            "to": [ 11.0, 5.0, 11.0 ], 
+            "faces": {
+                "north": { "texture": "#0", "uv": [ 9.0, 2.0, 12.0, 3.0 ] },
+                "east": { "texture": "#0", "uv": [ 9.0, 2.0, 12.0, 3.0 ] },
+                "south": { "texture": "#0", "uv": [ 9.0, 2.0, 12.0, 3.0 ] },
+                "west": { "texture": "#0", "uv": [ 9.0, 2.0, 12.0, 3.0 ] },
+                "up": { "texture": "#0", "uv": [ 10.0, 3.0, 13.0, 5.0 ] },
+                "down": { "texture": "#0", "uv": [ 10.0, 3.0, 13.0, 5.0 ] }
+        	}
+    	}
+	]
 }
