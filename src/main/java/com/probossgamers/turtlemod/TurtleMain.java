@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Logger;
 
+import com.google.common.collect.Lists;
 import com.probossgamers.turtlemod.blocks.ModBlocks;
 import com.probossgamers.turtlemod.crafting.ModCrafting;
 import com.probossgamers.turtlemod.creativetabs.TurtleTab;
@@ -12,17 +13,25 @@ import com.probossgamers.turtlemod.entities.EntityHelloGuy;
 import com.probossgamers.turtlemod.entities.EntityKunai;
 import com.probossgamers.turtlemod.entities.EntityTurtle;
 import com.probossgamers.turtlemod.entities.ModEntities;
-import com.probossgamers.turtlemod.entities.monster.*;
+import com.probossgamers.turtlemod.entities.monster.EntityDonatello;
+import com.probossgamers.turtlemod.entities.monster.EntityFootNinja;
+import com.probossgamers.turtlemod.entities.monster.EntityLeonardo;
+import com.probossgamers.turtlemod.entities.monster.EntityMichelangelo;
+import com.probossgamers.turtlemod.entities.monster.EntityMineTurtle;
+import com.probossgamers.turtlemod.entities.monster.EntityRaphael;
+import com.probossgamers.turtlemod.entities.monster.EntityZombieTurtle;
 import com.probossgamers.turtlemod.items.ModItems;
-import com.probossgamers.turtlemod.localization.*;
+import com.probossgamers.turtlemod.localization.EnglishWriter;
 import com.probossgamers.turtlemod.packets.PacketDispatcher;
 import com.probossgamers.turtlemod.proxies.ServerProxy;
-import com.google.common.collect.Lists;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.stats.StatBase;
+import net.minecraft.stats.StatBasic;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -53,6 +62,7 @@ public class TurtleMain
 	public static int DimID = DimensionManager.getNextFreeDimId();
 	*/
 
+	public static StatBase PIZZA_EATEN = (new StatBasic("stat.eatPizza", new TextComponentTranslation("stat.eatPizza", new Object[0]))).initIndependentStat().registerStat();
 
     public static CreativeTabs tabCustom = new TurtleTab();
 

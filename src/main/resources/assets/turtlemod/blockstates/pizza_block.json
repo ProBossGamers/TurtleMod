@@ -1,0 +1,8 @@
+{
+	"variants": {
+        "bites=0": { "model": "turtlemod:full_pizza" },
+        "bites=1": { "model": "turtlemod:1_pizza" },
+        "bites=2": { "model": "turtlemod:2_pizza" },
+        "bites=3": { "model": "turtlemod:3_pizza" }
+	}
+}

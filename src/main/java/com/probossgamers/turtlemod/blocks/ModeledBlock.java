@@ -13,7 +13,7 @@ import net.minecraft.world.IBlockAccess;
 public class ModeledBlock extends BasicBlock
 {
 
-	public static AxisAlignedBB COLLISION_BOX_FULL;
+	private static AxisAlignedBB COLLISION_BOX_FULL;
 	
     public ModeledBlock(String unlocalizedName, SoundType sound, Material material, float hardness, float resistance)
     {

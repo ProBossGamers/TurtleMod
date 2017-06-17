@@ -50,6 +50,8 @@ public final class ModItems {
 	    public static Item raphsSai;
 
 	    public static Item donsStick;
+	    
+	    public static Item pizzaSlice;
 		
 		public static void createSeeds() {
 		 	
@@ -92,6 +94,8 @@ public final class ModItems {
 	    	GameRegistry.register(turtleLeggings = new ItemModArmor("turtle_leggings", turtleArmor, 0, EntityEquipmentSlot.LEGS),new ResourceLocation("turtlemod","turtle_leggings"));
 	    
 	    	GameRegistry.register(turtleBoots = new ItemModArmor("turtle_boots", turtleArmor, 0, EntityEquipmentSlot.FEET),new ResourceLocation("turtlemod","turtle_boots"));
+	    
+	    	GameRegistry.register(pizzaSlice = new ItemPizzaSlice("pizza_slice"), new ResourceLocation("turtlemod","pizza_slice"));
 	    	 
 	    	
 	    	/*
@@ -116,6 +120,7 @@ public final class ModItems {
 	    	items.add(raphsSai);
 	    	items.add(mikesChucks);
 	    	items.add(donsStick);
+	    	items.add(pizzaSlice);
 	    	//items.add(turtleBoots);
 	    	//items.add(turtleHelmet);
 	    }
