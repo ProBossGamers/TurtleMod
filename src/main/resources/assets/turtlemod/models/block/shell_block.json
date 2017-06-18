@@ -1,7 +1,8 @@
 {
     "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
     "textures": {
-        "0": "turtlemod:blocks/shell_block"
+        "0": "turtlemod:blocks/shell_block",
+        "particle" :"turtlemod:blocks/shell_block"
     },
     "display": {
         "gui": {
