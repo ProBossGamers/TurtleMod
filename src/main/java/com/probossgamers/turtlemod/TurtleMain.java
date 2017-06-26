@@ -21,6 +21,7 @@ import com.probossgamers.turtlemod.proxies.ServerProxy;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.stats.StatBase;
 import net.minecraft.stats.StatBasic;
@@ -45,7 +46,8 @@ public class TurtleMain
 	
 	
 	private static List<Class<? extends Entity>> entitiesToRegister = Lists.newArrayList();
-	
+    private static List<Class<? extends EntityLiving>> netherEntitiesToRegister = Lists.newArrayList();
+
 	public static List<Class<? extends TileEntity>> tileEntitiesToRegister=Lists.newArrayList();
 	/*
 	They still need to be manually added into the ClientProxy.
@@ -97,6 +99,10 @@ public class TurtleMain
         entPrimaryColor.put(EntityDubStepTurtle.class, 1999104);
         entSecondaryColor.put(EntityDubStepTurtle.class, 8206592);
 
+		netherEntitiesToRegister.add(EntityNetherTurtle.class);
+		entPrimaryColor.put(EntityNetherTurtle.class, 16167425);
+		entSecondaryColor.put(EntityNetherTurtle.class, 16775294);
+
 		entitiesToRegister.add(EntityHelloGuy.class);
 		entPrimaryColor.put(EntityHelloGuy.class, 16777215);
 		entSecondaryColor.put(EntityHelloGuy.class, 16318464);
@@ -125,6 +131,7 @@ public class TurtleMain
    	 	//tileEntitiesToRegister.add(ModTileEntity.class);
    	 	
    	 	ModEntities.createEntity(entitiesToRegister,entPrimaryColor, entSecondaryColor);
+        ModEntities.createNetherEntity(netherEntitiesToRegister,entPrimaryColor, entSecondaryColor);
    	 	//ModTileEntities.createTileEntities(tileEntitiesToRegister);
     	 	  
     	 	ModItems.createItems();

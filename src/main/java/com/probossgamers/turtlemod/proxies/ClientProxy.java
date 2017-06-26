@@ -147,6 +147,15 @@ public class ClientProxy extends ServerProxy {
 			}
 		});
 
+		RenderingRegistry.registerEntityRenderingHandler(EntityNetherTurtle.class, new IRenderFactory<EntityNetherTurtle>()
+		{
+			@Override
+			public Render<? super EntityNetherTurtle> createRenderFor(RenderManager manager)
+			{
+				return new RenderNetherTurtle(manager);
+			}
+		});
+
 		RenderingRegistry.registerEntityRenderingHandler(EntityHelloGuy.class, new IRenderFactory<EntityHelloGuy>()
 		{
 			@Override

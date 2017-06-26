@@ -38,7 +38,22 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 			
 
 		}
-		
+
+
+		public static void createNetherEntity(List<Class<? extends EntityLiving>> entityClass,HashMap<Class<?extends EntityLivingBase>,Integer> primaryColor,HashMap<Class<?extends EntityLivingBase>,Integer> secondaryColor){
+			//	addToList();
+			for(Class<? extends EntityLiving> ent : entityClass) {
+
+
+					regLiving((Class<? extends EntityLiving>) ent,primaryColor,secondaryColor);
+
+
+				EntityRegistry.registerModEntity(new ResourceLocation(ModInfo.MODID,ent.getSimpleName()), ent, ent.getSimpleName().toLowerCase(),  modEntityID++, TurtleMain.instance, 64, 10, true);
+				EntityRegistry.registerEgg(new ResourceLocation(ModInfo.MODID,ent.getSimpleName()), primaryColor.get(ent), secondaryColor.get(ent));
+				EntityRegistry.addSpawn(ent,10, 2, 9, EnumCreatureType.CREATURE, Biomes.HELL);
+				}
+
+			}
 		
 		public static void reg(Class<? extends Entity> entities) {
 			EntityRegistry.registerModEntity(new ResourceLocation(ModInfo.MODID,entities.getSimpleName()), entities, entities.getSimpleName().toLowerCase(),  modEntityID++, TurtleMain.instance, 64, 10, true);
