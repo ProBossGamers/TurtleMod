@@ -52,6 +52,8 @@ public final class ModItems {
 	    public static Item donsStick;
 	    
 	    public static Item pizzaSlice;
+
+	    public static Item smokeBall;
 		
 		public static void createSeeds() {
 		 	
@@ -96,7 +98,8 @@ public final class ModItems {
 	    	GameRegistry.register(turtleBoots = new ItemModArmor("turtle_boots", turtleArmor, 0, EntityEquipmentSlot.FEET),new ResourceLocation("turtlemod","turtle_boots"));
 	    
 	    	GameRegistry.register(pizzaSlice = new ItemPizzaSlice("pizza_slice"), new ResourceLocation("turtlemod","pizza_slice"));
-	    	 
+
+	    	GameRegistry.register(smokeBall = new ItemSmokeBall("smoke_ball"),new ResourceLocation("turtlemod","smoke_ball"));
 	    	
 	    	/*
 	    	GameRegistry.registerItem(turtleChocolate = new ItemModFood("chocolate", 2, 0.2f, false,

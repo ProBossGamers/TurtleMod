@@ -9,7 +9,8 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
-public class ItemModFood extends ItemFood {
+public class ItemModFood extends ItemFood
+{
 
 	private PotionEffect[] effects;
 	
@@ -21,7 +22,8 @@ public class ItemModFood extends ItemFood {
 	    }
 	 
 	 @Override
-	 protected void onFoodEaten(ItemStack stack, World world, EntityPlayer player) {
+	 protected void onFoodEaten(ItemStack stack, World world, EntityPlayer player)
+	 {
 	     super.onFoodEaten(stack, world, player);
 	     
 	     for (int i = 0; i < effects.length; i ++) {

@@ -58,6 +58,9 @@ public class TurtleMain
 	public static int DimID = DimensionManager.getNextFreeDimId();
 	*/
 
+	/**
+	 * Triggered in the ItemPizzaSlice class
+	 */
 	public static StatBase PIZZA_EATEN = (new StatBasic("stat.eatPizza", new TextComponentTranslation("stat.eatPizza", new Object[0]))).initIndependentStat().registerStat();
 
     public static CreativeTabs tabCustom = new TurtleTab();
