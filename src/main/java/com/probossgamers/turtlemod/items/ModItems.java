@@ -27,18 +27,18 @@ public final class ModItems {
 		public static Item turtleHelmet,turtleChestplate,turtleLeggings,turtleBoots;
 		
 
-	    public static ArmorMaterial turtleArmor = EnumHelper.addArmorMaterial("Turtle", "turtlemod:turtle", 5, new int[]{1, 3, 2, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
+	    private static ArmorMaterial turtleArmor = EnumHelper.addArmorMaterial("Turtle", "turtlemod:turtle", 5, new int[]{1, 3, 2, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
 
 	    //Fun fact: Damage is 4 by default. It adds the tool material to it.
-	    public static ToolMaterial Kunai = EnumHelper.addToolMaterial("Kunai", 2, 260, 6.5f, -2f, 18);
+	    private static ToolMaterial Kunai = EnumHelper.addToolMaterial("Kunai", 2, 260, 6.5f, -2f, 18);
 
-	    public static ToolMaterial LeoTool = EnumHelper.addToolMaterial("LeoTool", 2, 260, 6.5f, 2.5f, 18);
+	    private static ToolMaterial LeoTool = EnumHelper.addToolMaterial("LeoTool", 2, 260, 6.5f, 2.5f, 18);
 
-        public static ToolMaterial MikeTool = EnumHelper.addToolMaterial("MikeTool", 2, 260, 6.5f, 2.5f, 18);
+        private static ToolMaterial MikeTool = EnumHelper.addToolMaterial("MikeTool", 2, 260, 6.5f, 2.5f, 18);
 
-        public static ToolMaterial RaphTool = EnumHelper.addToolMaterial("RaphTool", 2, 260, 6.5f, 2.5f, 18);
+        private static ToolMaterial RaphTool = EnumHelper.addToolMaterial("RaphTool", 2, 260, 6.5f, 2.5f, 18);
 
-    public static ToolMaterial DonTool = EnumHelper.addToolMaterial("DonTool", 2, 260, 6.5f, 2.5f, 18);
+    private static ToolMaterial DonTool = EnumHelper.addToolMaterial("DonTool", 2, 260, 6.5f, 2.5f, 18);
     //public static ToolMaterial TUTORIAL = EnumHelper.addToolMaterial("TUTORIAL", harvestLevel, durability, miningSpeed, damageVsEntities, enchantability);
 	    
 		public static Item kunai;
@@ -100,8 +100,8 @@ public final class ModItems {
 	    	GameRegistry.register(pizzaSlice = new ItemPizzaSlice("pizza_slice"), new ResourceLocation("turtlemod","pizza_slice"));
 
 	    	GameRegistry.register(smokeBall = new ItemSmokeBall("smoke_ball"),new ResourceLocation("turtlemod","smoke_ball"));
-	    	
-	    	/*
+
+	   	/*
 	    	GameRegistry.registerItem(turtleChocolate = new ItemModFood("chocolate", 2, 0.2f, false,
 	    		    new PotionEffect(Potion.moveSpeed.id, 1200, 1),
 	    		    new PotionEffect(Potion.jump.id, 600, 0),
@@ -124,6 +124,7 @@ public final class ModItems {
 	    	items.add(mikesChucks);
 	    	items.add(donsStick);
 	    	items.add(pizzaSlice);
+	    	items.add(smokeBall);
 	    	//items.add(turtleBoots);
 	    	//items.add(turtleHelmet);
 	    }
