@@ -25,12 +25,17 @@ public class ItemModFood extends ItemFood
 	 protected void onFoodEaten(ItemStack stack, World world, EntityPlayer player)
 	 {
 	     super.onFoodEaten(stack, world, player);
-	     
-	     for (int i = 0; i < effects.length; i ++) {
-	         effects[i].getPotion();
-			if (!world.isRemote && effects[i] != null && Potion.getIdFromPotion(effects[i].getPotion()) > 0)
-	             player.addPotionEffect(new PotionEffect(this.effects[i]));
-	     }
+	     if(!(effects == null))
+         {
+			 for (int i = 0; i < effects.length; i++)
+			 {
+				 effects[i].getPotion();
+				 if (!world.isRemote && effects[i] != null && Potion.getIdFromPotion(effects[i].getPotion()) > 0)
+				 {
+					 player.addPotionEffect(new PotionEffect(this.effects[i]));
+				 }
+			 }
+		 }
 	 }
 	 
 	 
