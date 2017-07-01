@@ -47,6 +47,8 @@ public class TurtleMain
 	
 	private static List<Class<? extends Entity>> entitiesToRegister = Lists.newArrayList();
     private static List<Class<? extends EntityLiving>> netherEntitiesToRegister = Lists.newArrayList();
+	private static List<Class<? extends EntityLiving>> frozenEntitiesToRegister = Lists.newArrayList();
+
 
 	public static List<Class<? extends TileEntity>> tileEntitiesToRegister=Lists.newArrayList();
 	/*
@@ -105,6 +107,10 @@ public class TurtleMain
 		netherEntitiesToRegister.add(EntityNetherTurtle.class);
 		entPrimaryColor.put(EntityNetherTurtle.class, 16167425);
 		entSecondaryColor.put(EntityNetherTurtle.class, 16775294);
+
+        frozenEntitiesToRegister.add(EntityArcticTurtle.class);
+        entPrimaryColor.put(EntityArcticTurtle.class, 16167425);
+        entSecondaryColor.put(EntityArcticTurtle.class, 16775294);
 
 		entitiesToRegister.add(EntityHelloGuy.class);
 		entPrimaryColor.put(EntityHelloGuy.class, 16777215);

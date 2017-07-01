@@ -26,7 +26,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 /**
  * Created by aaron on 6/26/2017.
  */
-public class EntityNetherTurtle extends EntityMob {
+public class EntityNetherTurtle extends EntityMob
+{
 
     private static final DataParameter<Byte> ON_FIRE = EntityDataManager.<Byte>createKey(EntityNetherTurtle.class, DataSerializers.BYTE);
 
@@ -106,11 +107,13 @@ public class EntityNetherTurtle extends EntityMob {
 
         if (this.world.isRemote)
         {
-            if (this.rand.nextInt(24) == 0 && !this.isSilent()) {
+            if (this.rand.nextInt(24) == 0 && !this.isSilent())
+            {
                 this.world.playSound(this.posX + 0.5D, this.posY + 0.5D, this.posZ + 0.5D, SoundEvents.ENTITY_BLAZE_BURN, this.getSoundCategory(), 1.0F + this.rand.nextFloat(), this.rand.nextFloat() * 0.7F + 0.3F, false);
             }
 
-            for (int i = 0; i < 2; ++i) {
+            for (int i = 0; i < 2; ++i)
+            {
                 this.world.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX + (this.rand.nextDouble() - 0.5D) * (double) this.width, this.posY + this.rand.nextDouble() * (double) this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double) this.width, 0.0D, 0.0D, 0.0D, new int[0]);
             }
 
@@ -123,6 +126,11 @@ public class EntityNetherTurtle extends EntityMob {
             int i = MathHelper.floor(this.posX);
             int j = MathHelper.floor(this.posY);
             int k = MathHelper.floor(this.posZ);
+
+            if (!this.world.getGameRules().getBoolean("mobGriefing"))
+            {
+                return;
+            }
 
             for (int l = 0; l < 4; ++l)
             {

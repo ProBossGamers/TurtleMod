@@ -148,13 +148,23 @@ public class ClientProxy extends ServerProxy {
 		});
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityNetherTurtle.class, new IRenderFactory<EntityNetherTurtle>()
-		{
-			@Override
-			public Render<? super EntityNetherTurtle> createRenderFor(RenderManager manager)
-			{
-				return new RenderNetherTurtle(manager);
-			}
-		});
+        {
+            @Override
+            public Render<? super EntityNetherTurtle> createRenderFor(RenderManager manager)
+            {
+                return new RenderNetherTurtle(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityArcticTurtle.class, new IRenderFactory<EntityArcticTurtle>()
+        {
+            @Override
+            public Render<? super EntityArcticTurtle> createRenderFor(RenderManager manager)
+            {
+                return new RenderArcticTurtle(manager);
+            }
+        });
+
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityHelloGuy.class, new IRenderFactory<EntityHelloGuy>()
 		{
@@ -164,6 +174,7 @@ public class ClientProxy extends ServerProxy {
 				return new RenderHelloGuy(manager);
 			}
 		});
+
 
         RenderingRegistry.registerEntityRenderingHandler(EntityLeonardo.class, new IRenderFactory<EntityLeonardo>()
         {
