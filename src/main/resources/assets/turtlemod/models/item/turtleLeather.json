@@ -3,7 +3,7 @@
     "textures": 
     {
         "layer0": "turtlemod:items/turtleLeather"
-    }
+    },
     "ground": 
     {   
     "rotation": [ 0, 0, 0 ],    

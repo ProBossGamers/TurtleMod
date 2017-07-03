@@ -21,9 +21,14 @@ public class ItemSmokeBall extends BasicItem
 
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
     {
+
         ItemStack itemStackIn = playerIn.getHeldItem(handIn);
+        if (!playerIn.capabilities.isCreativeMode)
+        {
+            itemStackIn.shrink(1);
+        }
         BlockPos currentPos = playerIn.getPosition();
-        if(!worldIn.isRemote)
+        if(worldIn.isRemote)
         {
             worldIn.spawnParticle(EnumParticleTypes.CLOUD, currentPos.getX(),currentPos.getY(), currentPos.getZ(),0.0,0.5,0.0);
         }

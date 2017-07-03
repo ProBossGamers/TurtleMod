@@ -141,6 +141,7 @@ public class TurtleMain
    	 	
    	 	ModEntities.createEntity(entitiesToRegister,entPrimaryColor, entSecondaryColor);
         ModEntities.createNetherEntity(netherEntitiesToRegister,entPrimaryColor, entSecondaryColor);
+		ModEntities.createFrozenEntity(frozenEntitiesToRegister,entPrimaryColor, entSecondaryColor);
    	 	//ModTileEntities.createTileEntities(tileEntitiesToRegister);
     	 	  
     	 	ModItems.createItems();

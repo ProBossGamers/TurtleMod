@@ -63,6 +63,7 @@ public class ItemKunai extends BasicWeapon
 
 
 
+
     @Override
     public void onPlayerStoppedUsing(ItemStack stack, World worldIn, EntityLivingBase entityLiving, int timeLeft)
     {
@@ -135,7 +136,6 @@ public class ItemKunai extends BasicWeapon
 
         }
     }
-
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
     {
         ItemStack itemStackIn = playerIn.getHeldItem(handIn);

@@ -30,13 +30,13 @@ public final class ModItems {
 	    private static ArmorMaterial turtleArmor = EnumHelper.addArmorMaterial("Turtle", "turtlemod:turtle", 5, new int[]{1, 3, 2, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
 
 	    //Fun fact: Damage is 4 by default. It adds the tool material to it.
-	    private static ToolMaterial Kunai = EnumHelper.addToolMaterial("Kunai", 2, 260, 6.5f, -2f, 18);
+	    public static ToolMaterial Kunai = EnumHelper.addToolMaterial("Kunai", 2, 260, 6.5f, -2f, 18);
 
-	    private static ToolMaterial LeoTool = EnumHelper.addToolMaterial("LeoTool", 2, 260, 6.5f, 2.5f, 18);
+	    public static ToolMaterial LeoTool = EnumHelper.addToolMaterial("LeoTool", 2, 260, 6.5f, 2.5f, 18);
 
-        private static ToolMaterial MikeTool = EnumHelper.addToolMaterial("MikeTool", 2, 260, 6.5f, 2.5f, 18);
+        public static ToolMaterial MikeTool = EnumHelper.addToolMaterial("MikeTool", 2, 260, 6.5f, 2.5f, 18);
 
-        private static ToolMaterial RaphTool = EnumHelper.addToolMaterial("RaphTool", 2, 260, 6.5f, 2.5f, 18);
+        public static ToolMaterial RaphTool = EnumHelper.addToolMaterial("RaphTool", 2, 260, 6.5f, 2.5f, 18);
 
     private static ToolMaterial DonTool = EnumHelper.addToolMaterial("DonTool", 2, 260, 6.5f, 2.5f, 18);
     //public static ToolMaterial TUTORIAL = EnumHelper.addToolMaterial("TUTORIAL", harvestLevel, durability, miningSpeed, damageVsEntities, enchantability);

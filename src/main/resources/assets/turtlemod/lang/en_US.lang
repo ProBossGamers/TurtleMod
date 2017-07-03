@@ -1,19 +1,15 @@
 < This is a generated English file >
 
 ---------Creative Tabs ---------
-
 itemGroup.turtlemod=Turtle Tab
 
 ---------GUI Localization-------
-
 container.tutorial_tile_entity=Sample Container
-
 --------Blocks----------
 
 tile.cream_quartz.name=Cream Quartz
 tile.shell_block.name=Shell Block
 tile.pizza_block.name=Pizza Block
-
 -------Items-----------
 
 item.cream_quartz_piece.name=Cream Quartz Piece
@@ -28,20 +24,18 @@ item.raphs_sai.name=Raphs Sai
 item.mikes_chucks.name=Mikes Chucks
 item.dons_stick.name=Dons Stick
 item.pizza_slice.name=Pizza Slice
-
+item.smoke_ball.name=Smoke Ball
 -------Entities--------
 
 entity.entitykunai.name=Kunai
 entity.entityturtle.name=Turtle
 entity.entitymineturtle.name=Mineturtle
 entity.entityzombieturtle.name=Zombieturtle
+entity.entityskeletonturtle.name=Skeletonturtle
+entity.entitydubstepturtle.name=Dubstepturtle
 entity.entityhelloguy.name=Helloguy
 entity.entityleonardo.name=Leonardo
 entity.entitydonatello.name=Donatello
 entity.entityraphael.name=Raphael
 entity.entitymichelangelo.name=Michelangelo
 entity.entityfootninja.name=Footninja
-
--------Stats-----------
-
-stat.eatPizza=Times Eated Pizza Slice
