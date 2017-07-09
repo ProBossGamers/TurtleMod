@@ -1,6 +1,8 @@
 package com.probossgamers.turtlemod.entities.monster;
 
 import com.probossgamers.turtlemod.SoundHandler;
+import com.probossgamers.turtlemod.entities.EntityTurtle;
+import com.probossgamers.turtlemod.entities.interfaces.ITurtle;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
@@ -32,8 +34,10 @@ import javax.annotation.Nullable;
 /**
  * Created by aaron on 7/1/2017.
  */
-public class EntityArcticTurtle extends EntityMob implements IRangedAttackMob
+public class EntityArcticTurtle extends EntityMob implements IRangedAttackMob,ITurtle
 {
+    private boolean upsideDown = false;
+
     public EntityArcticTurtle(World worldIn)
     {
         super(worldIn);
@@ -42,7 +46,7 @@ public class EntityArcticTurtle extends EntityMob implements IRangedAttackMob
 
     public static void registerFixesSnowman(DataFixer fixer)
     {
-        EntityLiving.registerFixesMob(fixer, EntitySnowman.class);
+        EntityLiving.registerFixesMob(fixer, EntityArcticTurtle.class);
     }
 
     protected void initEntityAI()
@@ -71,7 +75,9 @@ public class EntityArcticTurtle extends EntityMob implements IRangedAttackMob
      */
     public void writeEntityToNBT(NBTTagCompound compound)
     {
+
         super.writeEntityToNBT(compound);
+        compound.setBoolean("upsideDown", this.isUpsideDown());
     }
 
     /**
@@ -79,7 +85,9 @@ public class EntityArcticTurtle extends EntityMob implements IRangedAttackMob
      */
     public void readEntityFromNBT(NBTTagCompound compound)
     {
+
         super.readEntityFromNBT(compound);
+        setUpsideDown(compound.getBoolean("upsideDown"));
     }
 
     /**
@@ -126,6 +134,11 @@ public class EntityArcticTurtle extends EntityMob implements IRangedAttackMob
         }
     }
 
+    public boolean isTurtle()
+    {
+        return true;
+    }
+
     @Nullable
     protected ResourceLocation getLootTable()
     {
@@ -163,5 +176,14 @@ public class EntityArcticTurtle extends EntityMob implements IRangedAttackMob
         return SoundHandler.turtle_death;
     }
 
+    public boolean isUpsideDown()
+    {
+        return upsideDown;
+    }
+
+    public void setUpsideDown(boolean upsideDown)
+    {
+        this.upsideDown = upsideDown;
+    }
 
 }

@@ -54,6 +54,8 @@ public final class ModItems {
 	    public static Item pizzaSlice;
 
 	    public static Item smokeBall;
+
+        public static Item spatula;
 		
 		public static void createSeeds() {
 		 	
@@ -101,6 +103,7 @@ public final class ModItems {
 
 	    	GameRegistry.register(smokeBall = new ItemSmokeBall("smoke_ball"),new ResourceLocation("turtlemod","smoke_ball"));
 
+            GameRegistry.register(spatula = new ItemSpatula("spatula"),new ResourceLocation("turtlemod","spatchula"));
 	   	/*
 	    	GameRegistry.registerItem(turtleChocolate = new ItemModFood("chocolate", 2, 0.2f, false,
 	    		    new PotionEffect(Potion.moveSpeed.id, 1200, 1),
@@ -125,6 +128,7 @@ public final class ModItems {
 	    	items.add(donsStick);
 	    	items.add(pizzaSlice);
 	    	items.add(smokeBall);
+	    	items.add(spatula);
 	    	//items.add(turtleBoots);
 	    	//items.add(turtleHelmet);
 	    }

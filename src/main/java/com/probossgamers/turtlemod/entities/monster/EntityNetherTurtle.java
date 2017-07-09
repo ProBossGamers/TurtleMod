@@ -1,15 +1,19 @@
 package com.probossgamers.turtlemod.entities.monster;
 
 import com.probossgamers.turtlemod.SoundHandler;
+import com.probossgamers.turtlemod.entities.EntityTurtle;
+import com.probossgamers.turtlemod.entities.interfaces.ITurtle;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -26,10 +30,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 /**
  * Created by aaron on 6/26/2017.
  */
-public class EntityNetherTurtle extends EntityMob
+public class EntityNetherTurtle extends EntityMob implements ITurtle
 {
 
     private static final DataParameter<Byte> ON_FIRE = EntityDataManager.<Byte>createKey(EntityNetherTurtle.class, DataSerializers.BYTE);
+    private boolean upsideDown = false;
 
     public EntityNetherTurtle(World worldIn)
     {
@@ -41,7 +46,6 @@ public class EntityNetherTurtle extends EntityMob
         tasks.addTask(8, new EntityAILookIdle(this));
         targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
         tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, false));
-        targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
         this.setPathPriority(PathNodeType.WATER, -1.0F);
         this.setPathPriority(PathNodeType.LAVA, 8.0F);
         this.setPathPriority(PathNodeType.DANGER_FIRE, 0.0F);
@@ -63,6 +67,7 @@ public class EntityNetherTurtle extends EntityMob
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(15.0D);
         this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000417232513D);
         this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(48.0D);
@@ -72,6 +77,37 @@ public class EntityNetherTurtle extends EntityMob
     {
         super.entityInit();
         this.dataManager.register(ON_FIRE, Byte.valueOf((byte) 0));
+    }
+
+
+    public boolean isUpsideDown()
+    {
+        return upsideDown;
+    }
+
+    public void setUpsideDown(boolean upsideDown)
+    {
+        this.upsideDown = upsideDown;
+    }
+
+    /**
+     * (abstract) Protected helper method to write subclass entity data to NBT.
+     */
+    public void writeEntityToNBT(NBTTagCompound compound)
+    {
+
+        super.writeEntityToNBT(compound);
+        compound.setBoolean("upsideDown", this.isUpsideDown());
+    }
+
+    /**
+     * (abstract) Protected helper method to read subclass entity data from NBT.
+     */
+    public void readEntityFromNBT(NBTTagCompound compound)
+    {
+
+        super.readEntityFromNBT(compound);
+        setUpsideDown(compound.getBoolean("upsideDown"));
     }
 
     public SoundEvent getAmbientSound() {
@@ -149,6 +185,10 @@ public class EntityNetherTurtle extends EntityMob
         super.onLivingUpdate();
     }
 
+    public boolean isTurtle()
+    {
+        return true;
+    }
     protected void updateAITasks()
     {
         if (this.isWet()) {

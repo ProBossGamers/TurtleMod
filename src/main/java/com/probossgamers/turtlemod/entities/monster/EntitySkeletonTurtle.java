@@ -1,17 +1,21 @@
 package com.probossgamers.turtlemod.entities.monster;
 
 import com.probossgamers.turtlemod.SoundHandler;
+import com.probossgamers.turtlemod.entities.EntityTurtle;
+import com.probossgamers.turtlemod.entities.interfaces.ITurtle;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -19,8 +23,10 @@ import net.minecraft.world.World;
 /**
  * Created by aaron on 6/17/2017.
  */
-public class EntitySkeletonTurtle extends EntityMob
+public class EntitySkeletonTurtle extends EntityMob implements ITurtle
 {
+
+    private boolean upsideDown = false;
 
     public EntitySkeletonTurtle(World world)
     {
@@ -46,6 +52,43 @@ public class EntitySkeletonTurtle extends EntityMob
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
     }
+    public boolean isTurtle()
+    {
+        return true;
+    }
+
+    /**
+     * (abstract) Protected helper method to write subclass entity data to NBT.
+     */
+    public void writeEntityToNBT(NBTTagCompound compound)
+    {
+
+        super.writeEntityToNBT(compound);
+        compound.setBoolean("upsideDown", this.isUpsideDown());
+    }
+
+    /**
+     * (abstract) Protected helper method to read subclass entity data from NBT.
+     */
+    public void readEntityFromNBT(NBTTagCompound compound)
+    {
+
+        super.readEntityFromNBT(compound);
+        setUpsideDown(compound.getBoolean("upsideDown"));
+    }
+
+
+    @Override
+    public boolean isUpsideDown() {
+        return upsideDown;
+    }
+
+    @Override
+    public void setUpsideDown(boolean upsideDown)
+    {
+        this.upsideDown = upsideDown;
+    }
+
 
     public EnumCreatureAttribute getCreatureAttribute()
     {

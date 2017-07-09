@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.probossgamers.turtlemod.ModInfo;
 import com.probossgamers.turtlemod.blocks.BlockCustomCrop;
+import net.minecraft.entity.EntityLiving;
 import org.apache.commons.lang3.text.WordUtils;
 
 import net.minecraft.block.Block;
@@ -16,7 +17,7 @@ import net.minecraft.item.Item;
 public class EnglishWriter {
 
 	
-	public static void writeFile(List<Block> blocks, List<Item> items, List<Class<? extends Entity>> entities) {
+	public static void writeFile(List<Block> blocks, List<Item> items, List<Class<? extends Entity>> entities, List<Class<? extends EntityLiving>> netherEntities,  List<Class<? extends EntityLiving>> frozenEntities ) {
     try {
        
     	   String dirname = "output/" + ModInfo.MODID;
@@ -66,6 +67,14 @@ public class EnglishWriter {
     		String entClassName = ent.getSimpleName().toLowerCase();
     		fw.write("\n" + "entity." + entClassName + ".name" + "=" + WordUtils.capitalize(entClassName.substring(6).replaceAll("_", " ")));
     	}
+		for(Class<? extends Entity> ent : frozenEntities) {
+			String entClassName = ent.getSimpleName().toLowerCase();
+			fw.write("\n" + "entity." + entClassName + ".name" + "=" + WordUtils.capitalize(entClassName.substring(6).replaceAll("_", " ")));
+		}
+		for(Class<? extends Entity> ent :  netherEntities) {
+			String entClassName = ent.getSimpleName().toLowerCase();
+			fw.write("\n" + "entity." + entClassName + ".name" + "=" + WordUtils.capitalize(entClassName.substring(6).replaceAll("_", " ")));
+		}
     	//fw.write("/n------Tile Entities----\n");
     	//for(Class<? extends TileEntity> tile : tileEntities) {
     	//	String tileClassName = tile.getName().toLowerCase();

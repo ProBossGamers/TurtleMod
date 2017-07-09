@@ -25,6 +25,7 @@ item.mikes_chucks.name=Mikes Chucks
 item.dons_stick.name=Dons Stick
 item.pizza_slice.name=Pizza Slice
 item.smoke_ball.name=Smoke Ball
+item.spatula.name=Spatula
 -------Entities--------
 
 entity.entitykunai.name=Kunai
@@ -39,3 +40,5 @@ entity.entitydonatello.name=Donatello
 entity.entityraphael.name=Raphael
 entity.entitymichelangelo.name=Michelangelo
 entity.entityfootninja.name=Footninja
+entity.entitynetherturtle.name=Netherturtle
+entity.entityarcticturtle.name=Arcticturtle

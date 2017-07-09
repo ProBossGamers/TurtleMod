@@ -30,6 +30,7 @@ public class EntityAIExplodeOnCollide extends EntityAIBase
 
     public void explode()
     {
+
         entityClass.world.createExplosion(entityClass, entityClass.posX, entityClass.posY, entityClass.posZ, 10f, entityClass.world.getGameRules().getBoolean("mobGriefing"));
         entityClass.setDead();
     }

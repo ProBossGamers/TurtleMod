@@ -3,6 +3,7 @@ package com.probossgamers.turtlemod.entities.monster;
 import com.probossgamers.turtlemod.SoundHandler;
 import com.probossgamers.turtlemod.blocks.ModBlocks;
 import com.probossgamers.turtlemod.entities.EntityTurtle;
+import com.probossgamers.turtlemod.entities.interfaces.ITurtle;
 import com.probossgamers.turtlemod.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -11,6 +12,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -40,11 +42,12 @@ import java.util.Calendar;
 /**
  * Created by aaron on 5/29/2017.
  */
-public class EntityZombieTurtle extends EntityMob
+public class EntityZombieTurtle extends EntityMob implements ITurtle
 {
     private boolean isBreakDoorsTaskSet;
     private int conversionTime;
     private static final DataParameter<Boolean> CONVERTING = EntityDataManager.<Boolean>createKey(EntityZombieTurtle.class, DataSerializers.BOOLEAN);
+    private boolean upsideDown = false;
 
     private final EntityAIBreakDoor breakDoor = new EntityAIBreakDoor(this);
 //
@@ -73,6 +76,13 @@ public class EntityZombieTurtle extends EntityMob
         super.entityInit();
         this.dataManager.register(CONVERTING, Boolean.valueOf(false));
     }
+
+    @Override
+    public boolean isTurtle()
+    {
+        return true;
+    }
+
 
     public boolean isAIEnabled()
     {
@@ -120,7 +130,7 @@ public class EntityZombieTurtle extends EntityMob
     {
         super.writeEntityToNBT(compound);
 
-
+        compound.setBoolean("upsideDown", this.isUpsideDown());
         compound.setBoolean("CanBreakDoors", this.isBreakDoorsTaskSet());
 
         compound.setInteger("ConversionTime", this.isConverting() ? this.conversionTime : -1);
@@ -136,7 +146,7 @@ public class EntityZombieTurtle extends EntityMob
         super.readEntityFromNBT(compound);
 
 
-
+        setUpsideDown(compound.getBoolean("upsideDown"));
         this.setBreakDoorsAItask(compound.getBoolean("CanBreakDoors"));
         if (compound.hasKey("ConversionTime", 99) && compound.getInteger("ConversionTime") > -1)
         {
@@ -144,6 +154,10 @@ public class EntityZombieTurtle extends EntityMob
         }
     }
 
+    public boolean isUpsideDown()
+    {
+        return upsideDown;
+    }
 
     private void startConverting(int conversionTime)
     {
@@ -267,6 +281,13 @@ public class EntityZombieTurtle extends EntityMob
             return false;
         }
     }
+
+    @Override
+    public void setUpsideDown(boolean upsideDown)
+    {
+        this.upsideDown = upsideDown;
+    }
+
     /**
      * Called only once on an entity when first time spawned, via egg, mob spawner, natural spawning etc, but not called
      * when entity is reloaded from nbt. Mainly used for initializing attributes and inventory

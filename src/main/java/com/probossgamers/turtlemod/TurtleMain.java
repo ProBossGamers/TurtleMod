@@ -108,9 +108,10 @@ public class TurtleMain
 		entPrimaryColor.put(EntityNetherTurtle.class, 16167425);
 		entSecondaryColor.put(EntityNetherTurtle.class, 16775294);
 
+
         frozenEntitiesToRegister.add(EntityArcticTurtle.class);
-        entPrimaryColor.put(EntityArcticTurtle.class, 16167425);
-        entSecondaryColor.put(EntityArcticTurtle.class, 16775294);
+        entPrimaryColor.put(EntityArcticTurtle.class,15921906 );
+        entSecondaryColor.put(EntityArcticTurtle.class,9803152) ;
 
 		entitiesToRegister.add(EntityHelloGuy.class);
 		entPrimaryColor.put(EntityHelloGuy.class, 16777215);
@@ -160,7 +161,7 @@ public class TurtleMain
     	 	
     	 	
 		 if(ModInfo.isDevVersion) {
-			 EnglishWriter.writeFile(ModBlocks.blocks, ModItems.items, entitiesToRegister);
+			 EnglishWriter.writeFile(ModBlocks.blocks, ModItems.items, entitiesToRegister, frozenEntitiesToRegister , netherEntitiesToRegister);
 			/* FrenchWriter.writeFile(ModBlocks.blocks, ModItems.items, entitiesToRegister);
              PortugueseWriter.writeFile(ModBlocks.blocks,ModItems.items,entitiesToRegister);
              RussianWriter.writeFile(ModBlocks.blocks,ModItems.items,entitiesToRegister);

@@ -2,6 +2,8 @@ package com.probossgamers.turtlemod.entities;
 
 import com.probossgamers.turtlemod.SoundHandler;
 import com.probossgamers.turtlemod.blocks.ModBlocks;
+import com.probossgamers.turtlemod.entities.interfaces.ITurtle;
+import com.probossgamers.turtlemod.entities.monster.EntityZombieTurtle;
 import com.probossgamers.turtlemod.items.ModItems;
 
 import net.minecraft.entity.EntityAgeable;
@@ -15,11 +17,17 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
-public class EntityTurtle extends EntityAnimal
+public class EntityTurtle extends EntityAnimal implements ITurtle
 {
+   private boolean upsideDown = false;
+
     public EntityTurtle(World world)
     {
         super(world);
@@ -35,6 +43,31 @@ public class EntityTurtle extends EntityAnimal
     public boolean isAIEnabled()
     {
        return true;
+    }
+
+    public boolean isTurtle()
+    {
+        return true;
+    }
+
+    /**
+     * (abstract) Protected helper method to write subclass entity data to NBT.
+     */
+    public void writeEntityToNBT(NBTTagCompound compound)
+    {
+
+        super.writeEntityToNBT(compound);
+        compound.setBoolean("upsideDown", this.isUpsideDown());
+    }
+
+    /**
+     * (abstract) Protected helper method to read subclass entity data from NBT.
+     */
+    public void readEntityFromNBT(NBTTagCompound compound)
+    {
+
+        super.readEntityFromNBT(compound);
+        setUpsideDown(compound.getBoolean("upsideDown"));
     }
 
     protected void applyEntityAttributes()
@@ -74,4 +107,14 @@ public class EntityTurtle extends EntityAnimal
 	public EntityAgeable createChild(EntityAgeable ageable) {
 		return new EntityTurtle(this.world);
 	}
+
+    public boolean isUpsideDown()
+    {
+        return upsideDown;
+    }
+
+    public void setUpsideDown(boolean upsideDown)
+    {
+        this.upsideDown = upsideDown;
+    }
 }
