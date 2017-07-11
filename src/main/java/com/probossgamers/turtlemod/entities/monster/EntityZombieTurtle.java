@@ -47,7 +47,9 @@ public class EntityZombieTurtle extends EntityMob implements ITurtle
     private boolean isBreakDoorsTaskSet;
     private int conversionTime;
     private static final DataParameter<Boolean> CONVERTING = EntityDataManager.<Boolean>createKey(EntityZombieTurtle.class, DataSerializers.BOOLEAN);
-    private boolean upsideDown = false;
+    private static final DataParameter<Boolean> UPSIDEDOWN = EntityDataManager.<Boolean>createKey(EntityArcticTurtle.class, DataSerializers.BOOLEAN);
+
+
 
     private final EntityAIBreakDoor breakDoor = new EntityAIBreakDoor(this);
 //
@@ -75,6 +77,7 @@ public class EntityZombieTurtle extends EntityMob implements ITurtle
     {
         super.entityInit();
         this.dataManager.register(CONVERTING, Boolean.valueOf(false));
+        this.dataManager.register(UPSIDEDOWN, false);
     }
 
     @Override
@@ -148,15 +151,9 @@ public class EntityZombieTurtle extends EntityMob implements ITurtle
 
         setUpsideDown(compound.getBoolean("upsideDown"));
         this.setBreakDoorsAItask(compound.getBoolean("CanBreakDoors"));
-        if (compound.hasKey("ConversionTime", 99) && compound.getInteger("ConversionTime") > -1)
-        {
+        if (compound.hasKey("ConversionTime", 99) && compound.getInteger("ConversionTime") > -1) {
             this.startConverting(compound.getInteger("ConversionTime"));
         }
-    }
-
-    public boolean isUpsideDown()
-    {
-        return upsideDown;
     }
 
     private void startConverting(int conversionTime)
@@ -282,12 +279,6 @@ public class EntityZombieTurtle extends EntityMob implements ITurtle
         }
     }
 
-    @Override
-    public void setUpsideDown(boolean upsideDown)
-    {
-        this.upsideDown = upsideDown;
-    }
-
     /**
      * Called only once on an entity when first time spawned, via egg, mob spawner, natural spawning etc, but not called
      * when entity is reloaded from nbt. Mainly used for initializing attributes and inventory
@@ -363,4 +354,15 @@ public class EntityZombieTurtle extends EntityMob implements ITurtle
         }
         super.onLivingUpdate();
     }
+
+    public boolean isUpsideDown()
+    {
+        return this.dataManager.get(UPSIDEDOWN);
+    }
+
+    public void setUpsideDown(boolean upsideDown)
+    {
+        this.dataManager.set(UPSIDEDOWN,upsideDown);
+    }
+
 }

@@ -16,6 +16,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
@@ -24,7 +27,7 @@ import net.minecraft.world.World;
  */
 public class EntityMineTurtle extends EntityCreature implements ITurtle
 {
-    private boolean upsideDown = false;
+    private static final DataParameter<Boolean> UPSIDEDOWN = EntityDataManager.<Boolean>createKey(EntityMineTurtle.class, DataSerializers.BOOLEAN);
 
     public EntityMineTurtle(World world)
     {
@@ -105,11 +108,11 @@ public class EntityMineTurtle extends EntityCreature implements ITurtle
 
     public boolean isUpsideDown()
     {
-        return upsideDown;
+        return this.dataManager.get(UPSIDEDOWN);
     }
 
     public void setUpsideDown(boolean upsideDown)
     {
-        this.upsideDown = upsideDown;
+        this.dataManager.set(UPSIDEDOWN,upsideDown);
     }
 }

@@ -19,6 +19,9 @@ import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
@@ -35,8 +38,10 @@ import javax.annotation.Nullable;
  * Created by aaron on 7/1/2017.
  */
 public class EntityArcticTurtle extends EntityMob implements IRangedAttackMob,ITurtle
-{
-    private boolean upsideDown = false;
+    {
+
+    private static final DataParameter<Boolean> UPSIDEDOWN = EntityDataManager.<Boolean>createKey(EntityArcticTurtle.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Boolean> FROSTED = EntityDataManager.<Boolean>createKey(EntityArcticTurtle.class, DataSerializers.BOOLEAN);
 
     public EntityArcticTurtle(World worldIn)
     {
@@ -68,6 +73,8 @@ public class EntityArcticTurtle extends EntityMob implements IRangedAttackMob,IT
     protected void entityInit()
     {
         super.entityInit();
+        this.dataManager.register(FROSTED, false);
+        this.dataManager.register(UPSIDEDOWN, false);
     }
 
     /**
@@ -78,6 +85,7 @@ public class EntityArcticTurtle extends EntityMob implements IRangedAttackMob,IT
 
         super.writeEntityToNBT(compound);
         compound.setBoolean("upsideDown", this.isUpsideDown());
+        compound.setBoolean("Frosted", this.isFrosted());
     }
 
     /**
@@ -88,6 +96,10 @@ public class EntityArcticTurtle extends EntityMob implements IRangedAttackMob,IT
 
         super.readEntityFromNBT(compound);
         setUpsideDown(compound.getBoolean("upsideDown"));
+        if (compound.hasKey("Frosted"))
+        {
+            this.setFrosted(compound.getBoolean("Frosted"));
+        }
     }
 
     /**
@@ -178,12 +190,21 @@ public class EntityArcticTurtle extends EntityMob implements IRangedAttackMob,IT
 
     public boolean isUpsideDown()
     {
-        return upsideDown;
+        return this.dataManager.get(UPSIDEDOWN);
     }
 
     public void setUpsideDown(boolean upsideDown)
     {
-        this.upsideDown = upsideDown;
+        this.dataManager.set(UPSIDEDOWN,upsideDown);
+    }
+
+    public void setFrosted(boolean frosted)
+    {
+        this.dataManager.set(FROSTED,frosted);
+    }
+    public boolean isFrosted()
+    {
+        return (this.dataManager.get(FROSTED));
     }
 
 }

@@ -16,6 +16,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -26,7 +29,7 @@ import net.minecraft.world.World;
 public class EntitySkeletonTurtle extends EntityMob implements ITurtle
 {
 
-    private boolean upsideDown = false;
+    private static final DataParameter<Boolean> UPSIDEDOWN = EntityDataManager.<Boolean>createKey(EntityArcticTurtle.class, DataSerializers.BOOLEAN);
 
     public EntitySkeletonTurtle(World world)
     {
@@ -52,6 +55,14 @@ public class EntitySkeletonTurtle extends EntityMob implements ITurtle
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
     }
+
+    protected void entityInit()
+    {
+        super.entityInit();
+        this.dataManager.register(UPSIDEDOWN, false);
+    }
+
+
     public boolean isTurtle()
     {
         return true;
@@ -78,15 +89,14 @@ public class EntitySkeletonTurtle extends EntityMob implements ITurtle
     }
 
 
-    @Override
-    public boolean isUpsideDown() {
-        return upsideDown;
+    public boolean isUpsideDown()
+    {
+        return this.dataManager.get(UPSIDEDOWN);
     }
 
-    @Override
     public void setUpsideDown(boolean upsideDown)
     {
-        this.upsideDown = upsideDown;
+        this.dataManager.set(UPSIDEDOWN,upsideDown);
     }
 
 

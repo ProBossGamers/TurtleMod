@@ -32,9 +32,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 public class EntityNetherTurtle extends EntityMob implements ITurtle
 {
-
+    private static final DataParameter<Boolean> UPSIDEDOWN = EntityDataManager.<Boolean>createKey(EntityArcticTurtle.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Byte> ON_FIRE = EntityDataManager.<Byte>createKey(EntityNetherTurtle.class, DataSerializers.BYTE);
-    private boolean upsideDown = false;
 
     public EntityNetherTurtle(World worldIn)
     {
@@ -77,17 +76,18 @@ public class EntityNetherTurtle extends EntityMob implements ITurtle
     {
         super.entityInit();
         this.dataManager.register(ON_FIRE, Byte.valueOf((byte) 0));
+        this.dataManager.register(UPSIDEDOWN, false);
     }
 
 
     public boolean isUpsideDown()
     {
-        return upsideDown;
+        return this.dataManager.get(UPSIDEDOWN);
     }
 
     public void setUpsideDown(boolean upsideDown)
     {
-        this.upsideDown = upsideDown;
+        this.dataManager.set(UPSIDEDOWN,upsideDown);
     }
 
     /**
