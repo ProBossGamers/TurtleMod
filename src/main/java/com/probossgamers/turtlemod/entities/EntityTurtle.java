@@ -11,8 +11,10 @@ import com.probossgamers.turtlemod.items.ModItems;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.passive.EntityAnimal;
+import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
@@ -20,7 +22,9 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.scoreboard.Team;
 import net.minecraft.server.management.PreYggdrasilConverter;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -28,9 +32,14 @@ import java.util.UUID;
 
 public class EntityTurtle extends EntityTameable implements ITurtle
 {
+    private static final DataParameter<Boolean> SADDLED = EntityDataManager.<Boolean>createKey(EntityTurtle.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> UPSIDEDOWN = EntityDataManager.<Boolean>createKey(EntityArcticTurtle.class, DataSerializers.BOOLEAN);
     protected static final DataParameter<Byte> TAMED = EntityDataManager.<Byte>createKey(EntityTurtle.class, DataSerializers.BYTE);
     protected static final DataParameter<Optional<UUID>> OWNER_UNIQUE_ID = EntityDataManager.<Optional<UUID>>createKey(EntityTurtle.class, DataSerializers.OPTIONAL_UNIQUE_ID);
+    private static final DataParameter<Integer> field_191520_bx = EntityDataManager.<Integer>createKey(EntityTurtle.class, DataSerializers.VARINT);
+    private boolean boosting;
+    private int boostTime;
+    private int totalBoostTime;
 
     public EntityTurtle(World world)
     {
@@ -58,11 +67,43 @@ public class EntityTurtle extends EntityTameable implements ITurtle
         this.dataManager.register(TAMED, Byte.valueOf((byte)0));
         this.dataManager.register(OWNER_UNIQUE_ID, Optional.<UUID>absent());
         this.dataManager.register(UPSIDEDOWN, false);
+        this.dataManager.register(SADDLED, Boolean.valueOf(false));
+        this.dataManager.register(field_191520_bx, Integer.valueOf(0));
     }
 
     public boolean isTurtle()
     {
         return true;
+    }
+
+
+    /**
+     * For vehicles, the first passenger is generally considered the controller and "drives" the vehicle. For example,
+     * Pigs, Horses, and Boats are generally "steered" by the controlling passenger.
+     */
+    @Nullable
+    public Entity getControllingPassenger()
+    {
+        return this.getPassengers().isEmpty() ? null : (Entity)this.getPassengers().get(0);
+    }
+
+    /**
+     * returns true if all the conditions for steering the entity are met. For pigs, this is true if it is being ridden
+     * by a player and the player is holding a carrot-on-a-stick
+     */
+    public boolean canBeSteered()
+    {
+        Entity entity = this.getControllingPassenger();
+
+        if (!(entity instanceof EntityPlayer))
+        {
+            return false;
+        }
+        else
+        {
+            EntityPlayer entityplayer = (EntityPlayer)entity;
+            return entityplayer.getHeldItemMainhand().getItem() == Items.CARROT_ON_A_STICK || entityplayer.getHeldItemOffhand().getItem() == Items.CARROT_ON_A_STICK;
+        }
     }
 
     public Team getTeam()
@@ -116,7 +157,7 @@ public class EntityTurtle extends EntityTameable implements ITurtle
 
         super.writeEntityToNBT(compound);
         compound.setBoolean("upsideDown", this.isUpsideDown());
-        super.writeEntityToNBT(compound);
+        this.setSaddled(compound.getBoolean("Saddle"));
 
         if (this.getOwnerId() == null)
         {
@@ -190,6 +231,85 @@ public class EntityTurtle extends EntityTameable implements ITurtle
         this.setupTamedAI();
     }
 
+    /**
+     * Moves the entity based on the specified heading.
+     */
+    public void moveEntityWithHeading(float strafe, float forward)
+    {
+        Entity entity = this.getPassengers().isEmpty() ? null : (Entity)this.getPassengers().get(0);
+
+        if (this.isBeingRidden() && this.canBeSteered())
+        {
+            this.rotationYaw = entity.rotationYaw;
+            this.prevRotationYaw = this.rotationYaw;
+            this.rotationPitch = entity.rotationPitch * 0.5F;
+            this.setRotation(this.rotationYaw, this.rotationPitch);
+            this.renderYawOffset = this.rotationYaw;
+            this.rotationYawHead = this.rotationYaw;
+            this.stepHeight = 1.0F;
+            this.jumpMovementFactor = this.getAIMoveSpeed() * 0.1F;
+
+            if (this.boosting && this.boostTime++ > this.totalBoostTime)
+            {
+                this.boosting = false;
+            }
+
+            if (this.canPassengerSteer())
+            {
+                float f = (float)this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue() * 0.225F;
+
+                if (this.boosting)
+                {
+                    f += f * 1.15F * MathHelper.sin((float)this.boostTime / (float)this.totalBoostTime * (float)Math.PI);
+                }
+
+                this.setAIMoveSpeed(f);
+                super.moveEntityWithHeading(0.0F, 1.0F);
+            }
+            else
+            {
+                this.motionX = 0.0D;
+                this.motionY = 0.0D;
+                this.motionZ = 0.0D;
+            }
+
+            this.prevLimbSwingAmount = this.limbSwingAmount;
+            double d1 = this.posX - this.prevPosX;
+            double d0 = this.posZ - this.prevPosZ;
+            float f1 = MathHelper.sqrt(d1 * d1 + d0 * d0) * 4.0F;
+
+            if (f1 > 1.0F)
+            {
+                f1 = 1.0F;
+            }
+
+            this.limbSwingAmount += (f1 - this.limbSwingAmount) * 0.4F;
+            this.limbSwing += this.limbSwingAmount;
+        }
+        else
+        {
+            this.stepHeight = 0.5F;
+            this.jumpMovementFactor = 0.02F;
+            super.moveEntityWithHeading(strafe, forward);
+        }
+    }
+
+    public boolean boost()
+    {
+        if (this.boosting)
+        {
+            return false;
+        }
+        else
+        {
+            this.boosting = true;
+            this.boostTime = 0;
+            this.totalBoostTime = this.getRNG().nextInt(841) + 140;
+            this.getDataManager().set(field_191520_bx, Integer.valueOf(this.totalBoostTime));
+            return true;
+        }
+    }
+
     protected void setupTamedAI()
     {
     }
@@ -254,6 +374,54 @@ public class EntityTurtle extends EntityTameable implements ITurtle
         this.dataManager.set(OWNER_UNIQUE_ID, Optional.fromNullable(p_184754_1_));
     }
 
+    public boolean processInteract(EntityPlayer player, EnumHand hand)
+    {
+        if (!super.processInteract(player, hand))
+        {
+            ItemStack itemstack = player.getHeldItem(hand);
+
+            if (itemstack.getItem() == Items.NAME_TAG)
+            {
+                itemstack.interactWithEntity(player, this, hand);
+                return true;
+            }
+            else if (this.getSaddled() && !this.isBeingRidden())
+            {
+                if (!this.world.isRemote)
+                {
+                    player.startRiding(this);
+                }
+
+                return true;
+            }
+            else if (itemstack.getItem() == Items.SADDLE)
+            {
+                itemstack.interactWithEntity(player, this, hand);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    public void notifyDataManagerChange(DataParameter<?> key)
+    {
+        if (field_191520_bx.equals(key) && this.world.isRemote)
+        {
+            this.boosting = true;
+            this.boostTime = 0;
+            this.totalBoostTime = ((Integer)this.dataManager.get(field_191520_bx)).intValue();
+        }
+
+        super.notifyDataManagerChange(key);
+    }
+
     @Nullable
     public EntityLivingBase getOwner()
     {
@@ -265,6 +433,29 @@ public class EntityTurtle extends EntityTameable implements ITurtle
         catch (IllegalArgumentException var2)
         {
             return null;
+        }
+    }
+
+    /**
+     * Returns true if the pig is saddled.
+     */
+    public boolean getSaddled()
+    {
+        return ((Boolean)this.dataManager.get(SADDLED)).booleanValue();
+    }
+
+    /**
+     * Set or remove the saddle of the pig.
+     */
+    public void setSaddled(boolean saddled)
+    {
+        if (saddled)
+        {
+            this.dataManager.set(SADDLED, Boolean.valueOf(true));
+        }
+        else
+        {
+            this.dataManager.set(SADDLED, Boolean.valueOf(false));
         }
     }
 }

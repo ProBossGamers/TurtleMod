@@ -4,9 +4,11 @@ package com.probossgamers.turtlemod.entities.render;
 import com.probossgamers.turtlemod.entities.models.ModelTurtle;
 
  import com.probossgamers.turtlemod.entities.monster.EntityZombieTurtle;
+ import com.probossgamers.turtlemod.entities.render.layers.LayerTurtleSaddle;
  import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.util.ResourceLocation;
+ import net.minecraft.client.renderer.entity.layers.LayerSaddle;
+ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
  import org.lwjgl.opengl.GL11;
@@ -19,6 +21,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
      public RenderTurtle(RenderManager manager)
      {
          super(manager, new ModelTurtle(), 0.5f);
+        this.addLayer(new LayerTurtleSaddle(this));
+         // A copy was made.
      }
 
      public void doRender(EntityTurtle entity, double x, double y, double z, float entityYaw, float partialTicks)
