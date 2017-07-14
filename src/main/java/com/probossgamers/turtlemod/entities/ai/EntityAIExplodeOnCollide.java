@@ -20,12 +20,13 @@ public class EntityAIExplodeOnCollide extends EntityAIBase
 
     public boolean shouldExecute()
     {
-        return !entityClass.world.getEntitiesWithinAABB(classTarget, entityClass.getEntityBoundingBox()).isEmpty();
+        return !entityClass.world.getEntitiesWithinAABB(classTarget, entityClass.getEntityBoundingBox()).isEmpty() || !this.entityClass.world.getGameRules().getBoolean("mobGriefing") ;
     }
 
     public void startExecuting()
     {
-        explode();
+
+            explode();
     }
 
     public void explode()

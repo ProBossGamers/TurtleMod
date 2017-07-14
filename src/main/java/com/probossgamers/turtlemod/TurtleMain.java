@@ -141,7 +141,15 @@ public class TurtleMain
         entPrimaryColor.put(EntityFootNinja.class, 0);
         entSecondaryColor.put(EntityFootNinja.class, 5066072);
 		 //entitiesToRegister.add(EntityCustomFireball.class);
-		  	
+
+		entitiesToRegister.add(EntityEightiesShredder.class);
+		entPrimaryColor.put(EntityEightiesShredder.class, 0);
+		entSecondaryColor.put(EntityEightiesShredder.class, 5066072);
+
+		entitiesToRegister.add(EntityNewerShredder.class);
+		entPrimaryColor.put(EntityNewerShredder.class, 0);
+		entSecondaryColor.put(EntityNewerShredder.class, 5066072);
+
    	 	//tileEntitiesToRegister.add(ModTileEntity.class);
    	 	
    	 	ModEntities.createEntity(entitiesToRegister,entPrimaryColor, entSecondaryColor);

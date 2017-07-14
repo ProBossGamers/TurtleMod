@@ -33,10 +33,8 @@ public class EntityMineTurtle extends EntityCreature implements ITurtle
     {
         super(world);
         tasks.addTask(1, new EntityAISwimming(this));
-        if (!this.world.getGameRules().getBoolean("mobGriefing"))
-        {
-            tasks.addTask(2, new EntityAIExplodeOnCollide(this, EntityPlayer.class));
-        }
+
+        tasks.addTask(2, new EntityAIExplodeOnCollide(this, EntityPlayer.class));
 
         tasks.addTask(3, new EntityAIWander(this, 1.0D));
         tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0f));
@@ -45,6 +43,12 @@ public class EntityMineTurtle extends EntityCreature implements ITurtle
         //this.tasks.addTask(6, new EntityAIAttackOnCollide(this, EntityZombie.class, 1.0D, true));
         tasks.addTask(5, new EntityAILookIdle(this));
         setSize(0.6f, 0.5f);
+    }
+
+    protected void entityInit()
+    {
+        super.entityInit();
+        this.dataManager.register(UPSIDEDOWN, false);
     }
 
     public boolean isTurtle()

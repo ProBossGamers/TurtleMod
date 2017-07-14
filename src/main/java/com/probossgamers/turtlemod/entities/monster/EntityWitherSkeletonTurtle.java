@@ -6,6 +6,7 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.monster.EntityWitherSkeleton;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
@@ -34,7 +35,7 @@ import javax.annotation.Nullable;
 public class EntityWitherSkeletonTurtle extends EntityMob implements ITurtle,IRangedAttackMob
 {
 
-    private static final DataParameter<Boolean> UPSIDEDOWN = EntityDataManager.<Boolean>createKey(EntityArcticTurtle.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Boolean> UPSIDEDOWN = EntityDataManager.<Boolean>createKey(EntityWitherSkeletonTurtle.class, DataSerializers.BOOLEAN);
 
     private final EntityAIAttackMelee aiAttackOnCollide = new EntityAIAttackMelee(this, 1.2D, false);
     public EntityWitherSkeletonTurtle(World world)

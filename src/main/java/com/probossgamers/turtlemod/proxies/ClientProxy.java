@@ -13,6 +13,7 @@ import com.probossgamers.turtlemod.entities.EntityKunai;
 import com.probossgamers.turtlemod.entities.EntityTurtle;
 import com.probossgamers.turtlemod.entities.monster.*;
 import com.probossgamers.turtlemod.entities.render.*;
+import com.probossgamers.turtlemod.entities.render.RenderNewerShredder;
 import com.probossgamers.turtlemod.items.ModItems;
 
 import net.minecraft.client.Minecraft;
@@ -21,8 +22,6 @@ import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.RenderSnowball;
-import net.minecraft.entity.monster.EntitySkeleton;
-import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.nbt.NBTTagCompound;
@@ -220,6 +219,24 @@ public class ClientProxy extends ServerProxy {
                 return new RenderFootNinja(manager);
             }
         });
+
+		RenderingRegistry.registerEntityRenderingHandler(EntityEightiesShredder.class, new IRenderFactory<EntityEightiesShredder>()
+		{
+			@Override
+			public Render<? super EntityEightiesShredder> createRenderFor(RenderManager manager)
+			{
+				return new RenderEightiesShredder(manager);
+			}
+		});
+
+		RenderingRegistry.registerEntityRenderingHandler(EntityNewerShredder.class, new IRenderFactory<EntityNewerShredder>()
+		{
+			@Override
+			public Render<? super EntityNewerShredder> createRenderFor(RenderManager manager)
+			{
+				return new RenderNewerShredder(manager);
+			}
+		});
 }
 
 	

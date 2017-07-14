@@ -14,13 +14,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class ModelTurtle extends ModelQuadruped
 {
-    public ModelRenderer body;
-    public ModelRenderer bodytop;
-    public ModelRenderer head;
-    public ModelRenderer leftbackfoot;
-    public ModelRenderer rightbackfoot;
-    public ModelRenderer rightfrontfoot;
-    public ModelRenderer leftfrontfoot;
 
     public ModelTurtle()
     {

@@ -24,7 +24,7 @@ import net.minecraft.world.World;
  */
 public class EntityDubStepTurtle extends EntityAnimal implements ITurtle
 {
-    private static final DataParameter<Boolean> UPSIDEDOWN = EntityDataManager.<Boolean>createKey(EntityArcticTurtle.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Boolean> UPSIDEDOWN = EntityDataManager.<Boolean>createKey(EntityDubStepTurtle.class, DataSerializers.BOOLEAN);
 
     public EntityDubStepTurtle(World world) {
         super(world);

@@ -11,6 +11,7 @@ import net.minecraft.entity.ai.*;
 import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.passive.EntityWolf;
@@ -37,7 +38,7 @@ import net.minecraft.world.World;
 public class EntitySkeletonTurtle extends EntityMob implements ITurtle,IRangedAttackMob
 {
 
-    private static final DataParameter<Boolean> UPSIDEDOWN = EntityDataManager.<Boolean>createKey(EntityArcticTurtle.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Boolean> UPSIDEDOWN = EntityDataManager.<Boolean>createKey(EntitySkeletonTurtle.class, DataSerializers.BOOLEAN);
 
     public EntitySkeletonTurtle(World world)
     {
