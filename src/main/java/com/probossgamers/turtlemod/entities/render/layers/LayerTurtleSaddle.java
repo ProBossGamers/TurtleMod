@@ -14,9 +14,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class LayerTurtleSaddle implements LayerRenderer<EntityTurtle>
 {
-    private static final ResourceLocation TEXTURE = new ResourceLocation("textures/entity/pig/pig_saddle.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation("turtlemod:textures/mobs/saddle_turtle.png");
     private final RenderTurtle turtleRenderer;
-    private final ModelTurtle turtleModel = new ModelTurtle(0.5F);
+    private final ModelTurtle turtleModel = new ModelTurtle();
 
     public LayerTurtleSaddle(RenderTurtle turtleRendererIn)
     {
