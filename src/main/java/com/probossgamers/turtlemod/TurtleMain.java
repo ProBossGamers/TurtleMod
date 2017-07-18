@@ -15,7 +15,7 @@ import com.probossgamers.turtlemod.entities.EntityTurtle;
 import com.probossgamers.turtlemod.entities.ModEntities;
 import com.probossgamers.turtlemod.entities.monster.*;
 import com.probossgamers.turtlemod.items.ModItems;
-import com.probossgamers.turtlemod.localization.EnglishWriter;
+
 import com.probossgamers.turtlemod.packets.PacketDispatcher;
 import com.probossgamers.turtlemod.proxies.ServerProxy;
 
@@ -34,6 +34,8 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
+import com.probossgamers.turtlemod.localization.*;
 
 @Mod(modid = ModInfo.MODID, name = ModInfo.MODNAME,version = ModInfo.VERSION)
 public class TurtleMain
@@ -174,12 +176,12 @@ public class TurtleMain
     	 	
 		 if(ModInfo.isDevVersion) {
 			 EnglishWriter.writeFile(ModBlocks.blocks, ModItems.items, entitiesToRegister, frozenEntitiesToRegister , netherEntitiesToRegister);
-			/* FrenchWriter.writeFile(ModBlocks.blocks, ModItems.items, entitiesToRegister);
-             PortugueseWriter.writeFile(ModBlocks.blocks,ModItems.items,entitiesToRegister);
-             RussianWriter.writeFile(ModBlocks.blocks,ModItems.items,entitiesToRegister);
-             ItalianWriter.writeFile(ModBlocks.blocks,ModItems.items,entitiesToRegister);
-             SpanishWriter.writeFile(ModBlocks.blocks,ModItems.items,entitiesToRegister);
-             */
+			 //FrenchWriter.writeFile(ModBlocks.blocks, ModItems.items, entitiesToRegister, frozenEntitiesToRegister , netherEntitiesToRegister);
+            // PortugueseWriter.writeFile(ModBlocks.blocks,ModItems.items,entitiesToRegister, frozenEntitiesToRegister , netherEntitiesToRegister);
+             //RussianWriter.writeFile(ModBlocks.blocks,ModItems.items,entitiesToRegister, frozenEntitiesToRegister , netherEntitiesToRegister);
+             //ItalianWriter.writeFile(ModBlocks.blocks,ModItems.items,entitiesToRegister, frozenEntitiesToRegister , netherEntitiesToRegister);
+            // SpanishWriter.writeFile(ModBlocks.blocks,ModItems.items,entitiesToRegister, frozenEntitiesToRegister , netherEntitiesToRegister);
+
 			// EnglishWriter.writeFileForCrop(ModBlocks.crops);
 		 }
 		 
