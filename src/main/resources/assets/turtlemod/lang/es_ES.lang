@@ -1,13 +1,13 @@
 <Este es un archivo en Español generado>
 ---------Creative Tabs ---------
-itemGroup.roleplaymod=RolePlay Tab
-
+itemGroup.Turtlemod=Tortuga Tab
 ---------GUI Localization-------
 container.tutorial_tile_entity=Contenedor de muestras
 --------Blocks----------
 
 tile.cream_quartz.name=Cuarzo crema
 tile.shell_block.name=Bloque de cáscara
+tile.pizza_block.name=Bloque de pizza
 -------Items-----------
 
 item.cream_quartz_piece.name=Pedazo de cuarzo crema
@@ -17,15 +17,29 @@ item.turtle_leggings.name=Polainas de tortuga
 item.turtle_boots.name=Botas de tortuga
 item.turtle_leather.name=Piel de tortuga
 item.kunai.name=Kunai
+item.leos_katana.name=Leos katana
+item.raphs_sai.name=Raphs sai
+item.mikes_chucks.name=Clavijas de micrófono
+item.dons_stick.name=Dons stick
+item.pizza_slice.name=porción de pizza
+item.smoke_ball.name=bola de humo
+item.spatula.name=espátula
 -------Entities--------
 
 entity.entitykunai.name=Kunai
 entity.entityturtle.name=Tortuga
 entity.entitymineturtle.name=Mineturtle
 entity.entityzombieturtle.name=Zombieurtle
+entity.entityskeletonturtle.name=Skeletonturtle
+entity.entitywitherskeletonturtle.name=Sin esfuerzo
+entity.entitydubstepturtle.name=Dubstepturtle
 entity.entityhelloguy.name=Hola chico
 entity.entityleonardo.name=Leonardo
 entity.entitydonatello.name=Donatello
 entity.entityraphael.name=Rafael
 entity.entitymichelangelo.name=Michelangelo
 entity.entityfootninja.name=Footninja
+entity.entityeightiesshredder.name=Ochenta años
+entity.entitynewershredder.name=Newershredder
+entity.entityarcticturtle.name=Tortuga ártica
+entity.entitynetherturtle.name=Tortuga de mar

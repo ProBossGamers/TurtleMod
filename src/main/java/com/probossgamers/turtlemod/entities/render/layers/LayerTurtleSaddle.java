@@ -2,6 +2,7 @@ package com.probossgamers.turtlemod.entities.render.layers;
 
 import com.probossgamers.turtlemod.entities.EntityTurtle;
 import com.probossgamers.turtlemod.entities.models.ModelTurtle;
+import com.probossgamers.turtlemod.entities.models.Saddle_Turtle;
 import com.probossgamers.turtlemod.entities.render.RenderTurtle;
 import net.minecraft.client.model.ModelPig;
 import net.minecraft.client.renderer.entity.RenderPig;
@@ -28,7 +29,7 @@ public class LayerTurtleSaddle implements LayerRenderer<EntityTurtle>
         if (entitylivingbaseIn.getSaddled())
         {
             this.turtleRenderer.bindTexture(TEXTURE);
-            this.turtleModel.setModelAttributes(this.turtleRenderer.getMainModel());
+            this.turtleModel.setModelAttributes(new Saddle_Turtle());
             this.turtleModel.render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
         }
     }

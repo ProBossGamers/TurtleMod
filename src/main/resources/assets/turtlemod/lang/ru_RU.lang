@@ -1,13 +1,13 @@
 <Это сгенерированный русский файл>
 ---------Creative Tabs ---------
-itemGroup.roleplaymod=RolePlay Tab
-
+itemGroup.Turtlemod=Вкладка черепахи
 ---------GUI Localization-------
 container.tutorial_tile_entity=Образец контейнера
 --------Blocks----------
 
 tile.cream_quartz.name=Крем-кварц
 tile.shell_block.name=Оболочка
+tile.pizza_block.name=Блок пиццы
 -------Items-----------
 
 item.cream_quartz_piece.name=Крем-кварц
@@ -17,15 +17,29 @@ item.turtle_leggings.name=Черепаховые леггинсы
 item.turtle_boots.name=Сапоги черепахи
 item.turtle_leather.name=Черепаховая кожа
 item.kunai.name=кунаи
+item.leos_katana.name=Leos katana
+item.raphs_sai.name=Raphs sai
+item.mikes_chucks.name=Микрофонные патроны
+item.dons_stick.name=Дон-стоп
+item.pizza_slice.name=кусок пиццы
+item.smoke_ball.name=Дымовой шарик
+item.spatula.name=шпатель
 -------Entities--------
 
 entity.entitykunai.name=кунаи
 entity.entityturtle.name=черепаха
 entity.entitymineturtle.name=mineturtle
 entity.entityzombieturtle.name=zombieturtle
+entity.entityskeletonturtle.name=skeletonturtle
+entity.entitywitherskeletonturtle.name=witherskeletonturtle
+entity.entitydubstepturtle.name=dubstepturtle
 entity.entityhelloguy.name=Привет парень
 entity.entityleonardo.name=Леонардо
 entity.entitydonatello.name=Донателло
 entity.entityraphael.name=Рафаэль
 entity.entitymichelangelo.name=Michelangelo
 entity.entityfootninja.name=footninja
+entity.entityeightiesshredder.name=eightiesshredder
+entity.entitynewershredder.name=newershredder
+entity.entityarcticturtle.name=arcticturtle
+entity.entitynetherturtle.name=netherturtle

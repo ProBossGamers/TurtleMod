@@ -33,7 +33,7 @@ import java.util.UUID;
 public class EntityTurtle extends EntityTameable implements ITurtle
 {
     private static final DataParameter<Boolean> SADDLED = EntityDataManager.<Boolean>createKey(EntityTurtle.class, DataSerializers.BOOLEAN);
-    private static final DataParameter<Boolean> UPSIDEDOWN = EntityDataManager.<Boolean>createKey(EntityArcticTurtle.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Boolean> UPSIDEDOWN = EntityDataManager.<Boolean>createKey(EntityTurtle.class, DataSerializers.BOOLEAN);
     protected static final DataParameter<Byte> TAMED = EntityDataManager.<Byte>createKey(EntityTurtle.class, DataSerializers.BYTE);
     protected static final DataParameter<Optional<UUID>> OWNER_UNIQUE_ID = EntityDataManager.<Optional<UUID>>createKey(EntityTurtle.class, DataSerializers.OPTIONAL_UNIQUE_ID);
     private static final DataParameter<Integer> field_191520_bx = EntityDataManager.<Integer>createKey(EntityTurtle.class, DataSerializers.VARINT);

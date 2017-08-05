@@ -1,13 +1,13 @@
 <Ceci est un fichier français généré>
 ---------Creative Tabs ---------
-itemGroup.roleplaymod=RolePlay Tab
-
+itemGroup.Turtlemod=Onglet Tortue
 ---------GUI Localization-------
 container.tutorial_tile_entity=Sample Container
 --------Blocks----------
 
 tile.cream_quartz.name=Quartz à la crème
 tile.shell_block.name=Bloc de coquilles
+tile.pizza_block.name=Bloc de pizza
 -------Items-----------
 
 item.cream_quartz_piece.name=Morceau de quartz à la crème
@@ -17,15 +17,29 @@ item.turtle_leggings.name=Leggings de tortue
 item.turtle_boots.name=Bottes de tortue
 item.turtle_leather.name=Cuir de tortue
 item.kunai.name=Kunai
+item.leos_katana.name=Leos katana
+item.raphs_sai.name=Raphs sai
+item.mikes_chucks.name=Mandrins
+item.dons_stick.name=Dons Stick
+item.pizza_slice.name=Tranche de pizza
+item.smoke_ball.name=Balle de fumée
+item.spatula.name=spatule
 -------Entities--------
 
 entity.entitykunai.name=Kunai
 entity.entityturtle.name=tortue
 entity.entitymineturtle.name=Mineturtle
 entity.entityzombieturtle.name=Zombieturtle
+entity.entityskeletonturtle.name=Skeletonturtle
+entity.entitywitherskeletonturtle.name=Witherskeletonturtle
+entity.entitydubstepturtle.name=Dubstepturtle
 entity.entityhelloguy.name=Helloguy
 entity.entityleonardo.name=Leonardo
 entity.entitydonatello.name=Donatello
 entity.entityraphael.name=Raphael
 entity.entitymichelangelo.name=Michelangelo
 entity.entityfootninja.name=Footninja
+entity.entityeightiesshredder.name=Eightiesshredder
+entity.entitynewershredder.name=Newershredder
+entity.entityarcticturtle.name=Arcticturtle
+entity.entitynetherturtle.name=Netherturtle
