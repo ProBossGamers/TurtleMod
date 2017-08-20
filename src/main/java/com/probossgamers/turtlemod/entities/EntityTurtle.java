@@ -34,8 +34,6 @@ public class EntityTurtle extends EntityTameable implements ITurtle
 {
     private static final DataParameter<Boolean> SADDLED = EntityDataManager.<Boolean>createKey(EntityTurtle.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> UPSIDEDOWN = EntityDataManager.<Boolean>createKey(EntityTurtle.class, DataSerializers.BOOLEAN);
-    protected static final DataParameter<Byte> TAMED = EntityDataManager.<Byte>createKey(EntityTurtle.class, DataSerializers.BYTE);
-    protected static final DataParameter<Optional<UUID>> OWNER_UNIQUE_ID = EntityDataManager.<Optional<UUID>>createKey(EntityTurtle.class, DataSerializers.OPTIONAL_UNIQUE_ID);
     private static final DataParameter<Integer> field_191520_bx = EntityDataManager.<Integer>createKey(EntityTurtle.class, DataSerializers.VARINT);
     private boolean boosting;
     private int boostTime;
@@ -64,11 +62,11 @@ public class EntityTurtle extends EntityTameable implements ITurtle
     protected void entityInit()
     {
         super.entityInit();
-        this.dataManager.register(TAMED, Byte.valueOf((byte)0));
+        this.dataManager.register(TAMED, (byte) 0);
         this.dataManager.register(OWNER_UNIQUE_ID, Optional.<UUID>absent());
         this.dataManager.register(UPSIDEDOWN, false);
-        this.dataManager.register(SADDLED, Boolean.valueOf(false));
-        this.dataManager.register(field_191520_bx, Integer.valueOf(0));
+        this.dataManager.register(SADDLED, Boolean.FALSE);
+        this.dataManager.register(field_191520_bx, 0);
     }
 
     public boolean isTurtle()
