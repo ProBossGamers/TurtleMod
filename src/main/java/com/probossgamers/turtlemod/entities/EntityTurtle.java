@@ -15,6 +15,10 @@ import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.ContainerHorseChest;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.IInventoryChangedListener;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
@@ -30,7 +34,7 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-public class EntityTurtle extends EntityTameable implements ITurtle
+public class EntityTurtle extends EntityTameable implements IInventoryChangedListener,ITurtle
 {
     private static final DataParameter<Boolean> SADDLED = EntityDataManager.<Boolean>createKey(EntityTurtle.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> UPSIDEDOWN = EntityDataManager.<Boolean>createKey(EntityTurtle.class, DataSerializers.BOOLEAN);
@@ -38,7 +42,8 @@ public class EntityTurtle extends EntityTameable implements ITurtle
     private boolean boosting;
     private int boostTime;
     private int totalBoostTime;
-
+    protected ContainerHorseChest chest;
+    private float prevRearingAmount;
     public EntityTurtle(World world)
     {
         super(world);
@@ -51,6 +56,7 @@ public class EntityTurtle extends EntityTameable implements ITurtle
         this.tasks.addTask(6, new EntityAIFollowOwner(this, 1.0D, 10.0F, 2.0F));
         this.tasks.addTask(7, new EntityAIMate(this, 1.0D));
         this.setupTamedAI();
+        this.initChest();
         setSize(0.6F, 0.5F);
     }
 
@@ -72,6 +78,38 @@ public class EntityTurtle extends EntityTameable implements ITurtle
     public boolean isTurtle()
     {
         return true;
+    }
+
+    protected int getInventorySize()
+    {
+        return 2;
+    }
+
+    protected void initChest()
+    {
+        ContainerHorseChest containerhorsechest = this.chest;
+        this.chest = new ContainerHorseChest("chest", this.getInventorySize());
+        this.chest.setCustomName(this.getName());
+
+        if (containerhorsechest != null)
+        {
+            containerhorsechest.removeInventoryChangeListener(this);
+            int i = Math.min(containerhorsechest.getSizeInventory(), this.chest.getSizeInventory());
+
+            for (int j = 0; j < i; ++j)
+            {
+                ItemStack itemstack = containerhorsechest.getStackInSlot(j);
+
+                if (!itemstack.isEmpty())
+                {
+                    this.chest.setInventorySlotContents(j, itemstack.copy());
+                }
+            }
+        }
+
+        this.chest.addInventoryChangeListener(this);
+        this.updateSlots();
+        this.itemHandler = new net.minecraftforge.items.wrapper.InvWrapper(this.chest);
     }
 
 
@@ -122,6 +160,31 @@ public class EntityTurtle extends EntityTameable implements ITurtle
     public boolean isTamed()
     {
         return ((Byte) this.dataManager.get(TAMED) & 4) != 0;
+    }
+
+    /**
+     * Called by InventoryBasic.onInventoryChanged() on a array that is never filled.
+     */
+    public void onInventoryChanged(IInventory invBasic)
+    {
+        boolean flag = this.getSaddled();
+        this.updateSlots();
+
+        if (this.ticksExisted > 20 && !flag && this.getSaddled())
+        {
+            this.playSound(SoundEvents.ENTITY_HORSE_SADDLE, 0.5F, 1.0F);
+        }
+    }
+
+    /**
+     * Updates the items in the saddle and armor slots of the horse's inventory.
+     */
+    protected void updateSlots()
+    {
+        if (!this.world.isRemote)
+        {
+            this.setSaddled(!this.chest.getStackInSlot(0).isEmpty());
+        }
     }
 
     /**
@@ -372,6 +435,31 @@ public class EntityTurtle extends EntityTameable implements ITurtle
         this.dataManager.set(OWNER_UNIQUE_ID, Optional.fromNullable(p_184754_1_));
     }
 
+    public void updatePassenger(Entity passenger)
+    {
+        super.updatePassenger(passenger);
+
+        if (passenger instanceof EntityLiving)
+        {
+            EntityLiving entityliving = (EntityLiving)passenger;
+            this.renderYawOffset = entityliving.renderYawOffset;
+        }
+
+        if (this.prevRearingAmount > 0.0F)
+        {
+            float f3 = MathHelper.sin(this.renderYawOffset * 0.017453292F);
+            float f = MathHelper.cos(this.renderYawOffset * 0.017453292F);
+            float f1 = 0.7F * this.prevRearingAmount;
+            float f2 = 0.15F * this.prevRearingAmount;
+            passenger.setPosition(this.posX + (double)(f1 * f3), this.posY + this.getMountedYOffset() + passenger.getYOffset() + (double)f2, this.posZ - (double)(f1 * f));
+
+            if (passenger instanceof EntityLivingBase)
+            {
+                ((EntityLivingBase)passenger).renderYawOffset = this.renderYawOffset;
+            }
+        }
+    }
+
     public boolean processInteract(EntityPlayer player, EnumHand hand)
     {
         if (!super.processInteract(player, hand))
@@ -455,5 +543,23 @@ public class EntityTurtle extends EntityTameable implements ITurtle
         {
             this.dataManager.set(SADDLED, Boolean.valueOf(false));
         }
+    }
+
+    private net.minecraftforge.items.IItemHandler itemHandler = null;
+
+
+    @SuppressWarnings("unchecked")
+    @Override
+    @Nullable
+    public <T> T getCapability(net.minecraftforge.common.capabilities.Capability<T> capability, @Nullable net.minecraft.util.EnumFacing facing)
+    {
+        if (capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) return (T) itemHandler;
+        return super.getCapability(capability, facing);
+    }
+
+    @Override
+    public boolean hasCapability(net.minecraftforge.common.capabilities.Capability<?> capability, @Nullable net.minecraft.util.EnumFacing facing)
+    {
+        return capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY || super.hasCapability(capability, facing);
     }
 }

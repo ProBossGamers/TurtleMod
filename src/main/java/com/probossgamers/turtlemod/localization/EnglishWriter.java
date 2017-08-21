@@ -18,7 +18,8 @@ public class EnglishWriter {
 
 	
 	public static void writeFile(List<Block> blocks, List<Item> items, List<Class<? extends Entity>> entities, List<Class<? extends EntityLiving>> netherEntities,  List<Class<? extends EntityLiving>> frozenEntities ) {
-    try {
+    try
+    {
        
     	   String dirname = "output/" + ModInfo.MODID;
     	      File d = new File(dirname);
@@ -328,7 +329,8 @@ public class EnglishWriter {
 				}
 				
 			} 
-   		catch (IOException e) {
+   		catch (IOException e)
+			{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
