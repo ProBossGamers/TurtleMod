@@ -29,7 +29,8 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
-public class ClientProxy extends ServerProxy {
+public class ClientProxy extends ServerProxy
+{
     
 	private static int originalGuiScale;
 
@@ -48,14 +49,17 @@ public class ClientProxy extends ServerProxy {
 
 	
 	
-	private void addArmorModel(Item armor, ModelBiped model) {
-		if (model == null) {
+	private void addArmorModel(Item armor, ModelBiped model)
+    {
+		if (model == null)
+		{
 			// technically, you CAN add a null model, but the default is already to return null, so it would be redundant
 			TurtleMain.logger.log(Level.WARNING, String.format("Error adding model for %s: Cannot add a NULL armor model!", armor.getUnlocalizedName()));
 			return;
 		}
 		// better let yourself / users know when overwriting an entry, as it is likely to be a mistake!
-		if (armorModels.containsKey(armor)) {
+		if (armorModels.containsKey(armor))
+		{
 			TurtleMain.logger.log(Level.WARNING, String.format("A model for %s has already been registered! It will now be overwritten.", armor.getUnlocalizedName()));
 		}
 		armorModels.put(armor, model);
@@ -63,7 +67,8 @@ public class ClientProxy extends ServerProxy {
 	
 	
 	@Override
-	public EntityPlayer getPlayerEntity(MessageContext ctx) {
+	public EntityPlayer getPlayerEntity(MessageContext ctx)
+    {
 	 // Note that if you simply return 'Minecraft.getMinecraft().thePlayer',
 	 // your packets will not work because you will be getting a client
 	 // player even when you are on the server! Sounds absurd, but it's true.
@@ -72,7 +77,8 @@ public class ClientProxy extends ServerProxy {
 	 return (ctx.side.isClient() ? Minecraft.getMinecraft().player : super.getPlayerEntity(ctx));
 	}
 	
-	public void render() {
+	public void render()
+    {
 		
 	
 	   //  OBJLoader.instance.addDomain(ModInfo.MODID.toLowerCase());
@@ -89,9 +95,11 @@ public class ClientProxy extends ServerProxy {
 	}
 	
 	@Override
-	public void renderEntities() {
+	public void renderEntities()
+    {
 		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTurtle.class, new IRenderFactory<EntityTurtle>(){
+		RenderingRegistry.registerEntityRenderingHandler(EntityTurtle.class, new IRenderFactory<EntityTurtle>()
+        {
 			@Override
 			public Render<? super EntityTurtle> createRenderFor(RenderManager manager) 
 			{

@@ -16,6 +16,7 @@ import com.probossgamers.turtlemod.entities.ModEntities;
 import com.probossgamers.turtlemod.entities.monster.*;
 import com.probossgamers.turtlemod.items.ModItems;
 
+import com.probossgamers.turtlemod.network.ModGUIHandler;
 import com.probossgamers.turtlemod.packets.PacketDispatcher;
 import com.probossgamers.turtlemod.proxies.ServerProxy;
 
@@ -36,6 +37,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import com.probossgamers.turtlemod.localization.*;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 @Mod(modid = ModInfo.MODID, name = ModInfo.MODNAME,version = ModInfo.VERSION)
 public class TurtleMain
@@ -78,7 +80,8 @@ public class TurtleMain
     
 
     @EventHandler
-    public void preInit(FMLPreInitializationEvent e) throws IOException {
+    public void preInit(FMLPreInitializationEvent e)
+	{
 
 
     	entitiesToRegister.add(EntityKunai.class);
@@ -174,7 +177,8 @@ public class TurtleMain
     	 //	MinecraftForge.addGrassSeed(new ItemStack(ModItems.cornSeeds), 10);
     	 	
     	 	
-		 if(ModInfo.isDevVersion) {
+		 if(ModInfo.isDevVersion)
+		 {
 			 EnglishWriter.writeFile(ModBlocks.blocks, ModItems.items, entitiesToRegister, frozenEntitiesToRegister , netherEntitiesToRegister);
 			 //FrenchWriter.writeFile(ModBlocks.blocks, ModItems.items, entitiesToRegister, frozenEntitiesToRegister , netherEntitiesToRegister);
             // PortugueseWriter.writeFile(ModBlocks.blocks,ModItems.items,entitiesToRegister, frozenEntitiesToRegister , netherEntitiesToRegister);
@@ -194,7 +198,7 @@ public class TurtleMain
     @EventHandler
     public void init(FMLInitializationEvent e)
 	{
-    	
+        NetworkRegistry.INSTANCE.registerGuiHandler(TurtleMain.instance, new ModGUIHandler());
     	//MinecraftForge.EVENT_BUS.register(new MobDropEventHandler());
     	ModCrafting.initCrafting();
     	SoundHandler.registerSounds();
