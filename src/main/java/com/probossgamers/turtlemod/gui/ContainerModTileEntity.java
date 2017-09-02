@@ -24,7 +24,8 @@ public class ContainerModTileEntity extends Container
  * Player Inventory 9-35 .. 9  - 35
  * Player Inventory 0-8 ... 36 - 44
  */
-    public ContainerModTileEntity(IInventory playerInv, ModTileEntity te) {
+    public ContainerModTileEntity(IInventory playerInv, ModTileEntity te)
+    {
         this.te = te;
 
         // Tile Entity, Slot 0-8, Slot IDs 0-8

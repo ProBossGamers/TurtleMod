@@ -54,8 +54,8 @@ public final class ModBlocks {
     	GameRegistry.register(ibCreamQuartz = (ItemBlock) new ItemBlock(creamQuartz), creamQuartz.getRegistryName());
     	GameRegistry.register(ibTurtleShell = (ItemBlock) new ItemBlock(turtleShell), turtleShell.getRegistryName());
     	GameRegistry.register(ibPizza = (ItemBlock) new ItemBlock(pizza), pizza.getRegistryName());
-    	
-    	
+
+		GameRegistry.registerTileEntity(ModTileEntity.class, "tutorial_tile_entity");
     	//	 GameRegistry.register(tutorialBlock = new BasicBlock("tutorial_block").setLightLevel(1.0f),new ResourceLocation("turtlemod","t"));
     	
     //	 GameRegistry.register(tutorialOre = new ModBlockOre("tutorial_ore", Material.ROCK, ModItems.turtleLeather, 2, 4));

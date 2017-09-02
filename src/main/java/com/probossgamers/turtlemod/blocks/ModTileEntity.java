@@ -1,15 +1,28 @@
 package com.probossgamers.turtlemod.blocks;
 
+import com.probossgamers.turtlemod.TurtleMain;
+import com.probossgamers.turtlemod.network.ModGUIHandler;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.world.World;
 
+/**
+ * Something I want to try at a later date.
+ * https://bedrockminer.jimdo.com/modding-tutorials/advanced-modding/tile-entities/
+ * This class is from
+ * https://bedrockminer.jimdo.com/modding-tutorials/advanced-modding/tile-entity-with-inventory/
+ */
 public class ModTileEntity extends TileEntity implements IInventory {
 
     private ItemStack[] inventory;
