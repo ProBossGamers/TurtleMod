@@ -1,3 +1,6 @@
+/**
+ * A sample tile entity
+ */
 package com.probossgamers.turtlemod.blocks;
 
 import com.probossgamers.turtlemod.TurtleMain;
@@ -28,8 +31,21 @@ public class ModTileEntity extends TileEntity implements IInventory {
     private ItemStack[] inventory;
     private String customName;
 
-    public ModTileEntity() {
+    /**
+     * Default constructor
+     */
+    public ModTileEntity()
+    {
         this.inventory = new ItemStack[this.getSizeInventory()];
+    }
+
+    /**
+     * Overloaded constructor
+     * @param newName : the name from the new block
+     */
+    public ModTileEntity(String newName)
+    {
+
     }
 
     public String getCustomName()

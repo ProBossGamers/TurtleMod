@@ -1,3 +1,7 @@
+/**
+ * A class to link all the tile entities to
+ * their corresponding Gui's.
+ */
 package com.probossgamers.turtlemod.network;
 
 import com.probossgamers.turtlemod.blocks.ModTileEntity;

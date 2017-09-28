@@ -1,3 +1,7 @@
+/**
+ * A GUI for a tile entity in the works
+ * @Todo
+ */
 package com.probossgamers.turtlemod.gui;
 
 import com.probossgamers.turtlemod.blocks.ModTileEntity;

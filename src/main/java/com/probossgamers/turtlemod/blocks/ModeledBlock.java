@@ -1,3 +1,7 @@
+/**
+ * A class for a block that has different model
+ * dimensions than default
+ */
 package com.probossgamers.turtlemod.blocks;
 
 import net.minecraft.block.SoundType;
@@ -14,12 +18,18 @@ public class ModeledBlock extends BasicBlock
 {
 
 	private static AxisAlignedBB COLLISION_BOX_FULL;
-	
+
+	/**
+	 A constructor for a normal block
+	 */
     public ModeledBlock(String unlocalizedName, SoundType sound, Material material, float hardness, float resistance)
     {
         this(unlocalizedName, sound, material, hardness, resistance, new AxisAlignedBB(0f, 0f, 0f, 1f, 1f, 1f));
     }
 
+    /**
+     A constructor for a modelled block
+     */
     public ModeledBlock(String unlocalizedName, SoundType sound, Material material, float hardness, float resistance, AxisAlignedBB collisionBox)
     {
         super(unlocalizedName, sound, material, hardness, resistance);

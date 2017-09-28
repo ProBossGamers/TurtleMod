@@ -1,3 +1,6 @@
+/**
+ * Place where I deliberately define each single sound.
+ */
 package com.probossgamers.turtlemod;
 
 import net.minecraft.util.ResourceLocation;

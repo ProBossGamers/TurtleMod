@@ -1,3 +1,6 @@
+/**
+ * A class where all itemblocks and normal blocks are created
+ */
 package com.probossgamers.turtlemod.blocks;
 
 import java.util.List;

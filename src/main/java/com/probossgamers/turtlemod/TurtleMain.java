@@ -48,12 +48,12 @@ public class TurtleMain
 	public static Logger logger = Logger.getLogger(ModInfo.MODNAME);
     
 	
-	
+	//Lists used to dynamically create the entities. Gets called in ModEntities
 	private static List<Class<? extends Entity>> entitiesToRegister = Lists.newArrayList();
     private static List<Class<? extends EntityLiving>> netherEntitiesToRegister = Lists.newArrayList();
 	private static List<Class<? extends EntityLiving>> frozenEntitiesToRegister = Lists.newArrayList();
 
-
+	//List used for tile entities
 	public static List<Class<? extends TileEntity>> tileEntitiesToRegister=Lists.newArrayList();
 	/*
 	They still need to be manually added into the ClientProxy.
@@ -72,13 +72,19 @@ public class TurtleMain
     public static CreativeTabs tabCustom = new TurtleTab();
 
 
-	private static HashMap<Class<?extends EntityLivingBase>,Integer> entPrimaryColor = new HashMap<Class<?extends EntityLivingBase>,Integer>();
-	private static HashMap<Class<?extends EntityLivingBase>,Integer> entSecondaryColor = new HashMap<Class<?extends EntityLivingBase>,Integer>();
+	private static HashMap<Class<?extends EntityLivingBase>,Integer> entPrimaryColor = new HashMap<Class<?extends EntityLivingBase>,Integer>();	//Hashmap for first color
+	private static HashMap<Class<?extends EntityLivingBase>,Integer> entSecondaryColor = new HashMap<Class<?extends EntityLivingBase>,Integer>(); 	//Hashmap for second color
 
     @Instance
     public static TurtleMain instance = new TurtleMain();
     
 
+    /*
+      In order I map all the colors. Create all entities, items, and blocks,
+      then send all my stuff from ModStuff(where Stuff is entity,item,or block)
+      to be localized and optionally get files.
+      Then I register the renderers and the packets in PacketDispatcher
+     */
     @EventHandler
     public void preInit(FMLPreInitializationEvent e)
 	{
@@ -87,7 +93,9 @@ public class TurtleMain
     	entitiesToRegister.add(EntityKunai.class);
 
 
-
+	/*
+	Begin long list of colors
+	 */
     	entitiesToRegister.add(EntityTurtle.class);
 		entPrimaryColor.put(EntityTurtle.class, 1999104);
 		entSecondaryColor.put(EntityTurtle.class, 8206592);
@@ -155,6 +163,9 @@ public class TurtleMain
 		entPrimaryColor.put(EntityNewerShredder.class, 0);
 		entSecondaryColor.put(EntityNewerShredder.class, 5066072);
 
+		/*
+			End long list for colors
+		 */
    	 	//tileEntitiesToRegister.add(ModTileEntity.class);
    	 	
    	 	ModEntities.createEntity(entitiesToRegister,entPrimaryColor, entSecondaryColor);
@@ -176,7 +187,9 @@ public class TurtleMain
     	 	
     	 //	MinecraftForge.addGrassSeed(new ItemStack(ModItems.cornSeeds), 10);
     	 	
-    	 	
+    	 	/*
+    	 	  Where I
+    	 	 */
 		 if(ModInfo.isDevVersion)
 		 {
 			 EnglishWriter.writeFile(ModBlocks.blocks, ModItems.items, entitiesToRegister, frozenEntitiesToRegister , netherEntitiesToRegister);
@@ -186,7 +199,6 @@ public class TurtleMain
              //ItalianWriter.writeFile(ModBlocks.blocks,ModItems.items,entitiesToRegister, frozenEntitiesToRegister , netherEntitiesToRegister);
             // SpanishWriter.writeFile(ModBlocks.blocks,ModItems.items,entitiesToRegister, frozenEntitiesToRegister , netherEntitiesToRegister);
 
-			// EnglishWriter.writeFileForCrop(ModBlocks.crops);
 		 }
 		 
 		proxy.render();

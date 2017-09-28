@@ -1,3 +1,7 @@
+/**
+ * The place where all smelting and crafting recipes using Vanilla crafting means
+ * go.
+ */
 package com.probossgamers.turtlemod.crafting;
 
 import com.probossgamers.turtlemod.blocks.ModBlocks;

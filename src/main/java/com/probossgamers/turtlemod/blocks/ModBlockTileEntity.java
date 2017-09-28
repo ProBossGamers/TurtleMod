@@ -1,3 +1,6 @@
+/**
+ * A block that has a tile entity
+ */
 package com.probossgamers.turtlemod.blocks;
 
 import com.probossgamers.turtlemod.TurtleMain;
@@ -19,9 +22,11 @@ import net.minecraft.world.World;
 /**
  * From https://bedrockminer.jimdo.com/modding-tutorials/advanced-modding/tile-entities/
  */
-public class ModBlockTileEntity extends BlockContainer implements ITileEntityProvider {
+public class ModBlockTileEntity extends BlockContainer implements ITileEntityProvider
+{
 
-    protected ModBlockTileEntity(String unlocalizedName) {
+    protected ModBlockTileEntity(String unlocalizedName)
+    {
         super(Material.IRON);
         this.setUnlocalizedName(unlocalizedName);
         this.setHardness(2.0f);
@@ -31,7 +36,8 @@ public class ModBlockTileEntity extends BlockContainer implements ITileEntityPro
     }
 
     @Override
-    public TileEntity createNewTileEntity(World worldIn, int meta) {
+    public TileEntity createNewTileEntity(World worldIn, int meta)
+    {
         return new ModTileEntity();
     }
 

@@ -1,3 +1,7 @@
+/**
+ * The place where all mod entities are created.
+ * They get registered, eggs added, and spawn biomes if applicable
+ */
 package com.probossgamers.turtlemod.entities;
 
 import java.util.HashMap;
