@@ -34,7 +34,6 @@ The Crew
 * [LadyHaley](https://github.com/LadyHaley) - Textures/Models/Sounds
 * [Aaron](https://github.com/a2937) - Code
 * [TheGamingHuskyMC](https://github.com/sindrefag) - Code
-* [Maki](https:github.com/Maki325) - Code
 
 Old Coders
 ----------
